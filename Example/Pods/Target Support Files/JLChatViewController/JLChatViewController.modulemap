@@ -1,0 +1,6 @@
+framework module JLChatViewController {
+  umbrella header "JLChatViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

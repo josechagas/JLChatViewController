@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BBC-de-bxj">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="B9G-hJ-VUG">
+            <objects>
+                <navigationController storyboardIdentifier="JLNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BBC-de-bxj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g7z-LD-PoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kWl-2u-beQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f8B-GZ-A36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1996" y="-265"/>
+        </scene>
+        <!--My View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="JLChatVC" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MyViewController" customModule="JLChatViewController_Example" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="156" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o8S-YK-lnp" customClass="ChatTableView" customModule="JLChatViewController" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingTextCell" rowHeight="186" id="1GK-Ad-wOe" customClass="TextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="186"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1GK-Ad-wOe" id="bWl-tr-iZs">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="186"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-yZ-VFU">
+                                                    <rect key="frame" x="565" y="151" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="7Rt-K9-V4P"/>
+                                                        <constraint firstAttribute="width" constant="30" id="tct-qi-euV"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-cS-rvB">
+                                                    <rect key="frame" x="39" y="82" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="6UC-Xd-ERa"/>
+                                                        <constraint firstAttribute="width" constant="30" id="NDX-ga-9P7"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="1GK-Ad-wOe" eventType="touchUpInside" id="8fB-0P-nfl"/>
+                                                    </connections>
+                                                </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-Ua-FXr" customClass="ChatTextView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="34" y="13" width="531" height="167.5"/>
+                                                    <animations/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-6t-aRi">
+                                                    <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="NgC-cS-rvB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bWl-tr-iZs" secondAttribute="leading" constant="5" id="0RR-Tz-ckh"/>
+                                                <constraint firstItem="x4e-Ua-FXr" firstAttribute="bottom" secondItem="hv4-yZ-VFU" secondAttribute="bottom" id="1yl-rm-uGq"/>
+                                                <constraint firstItem="x4e-Ua-FXr" firstAttribute="leading" secondItem="NgC-cS-rvB" secondAttribute="trailing" constant="-35" id="2Ty-CW-JmB"/>
+                                                <constraint firstAttribute="bottom" secondItem="hv4-yZ-VFU" secondAttribute="bottom" constant="5" id="4D2-5l-qQp"/>
+                                                <constraint firstAttribute="topMargin" secondItem="rK9-6t-aRi" secondAttribute="top" id="4Sy-ig-o7x"/>
+                                                <constraint firstItem="hv4-yZ-VFU" firstAttribute="leading" secondItem="x4e-Ua-FXr" secondAttribute="trailing" id="Abp-cm-g56"/>
+                                                <constraint firstAttribute="trailing" secondItem="hv4-yZ-VFU" secondAttribute="trailing" constant="5" id="ECF-l7-oM6"/>
+                                                <constraint firstItem="x4e-Ua-FXr" firstAttribute="top" secondItem="rK9-6t-aRi" secondAttribute="bottom" constant="5" id="b6e-UE-KgW"/>
+                                                <constraint firstItem="x4e-Ua-FXr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bWl-tr-iZs" secondAttribute="leading" constant="30" id="cgU-7i-fIg"/>
+                                                <constraint firstItem="rK9-6t-aRi" firstAttribute="centerX" secondItem="bWl-tr-iZs" secondAttribute="centerX" id="oFA-Eo-k34"/>
+                                                <constraint firstItem="NgC-cS-rvB" firstAttribute="centerY" secondItem="x4e-Ua-FXr" secondAttribute="centerY" id="xht-kP-isn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="chatTextView" destination="x4e-Ua-FXr" id="ZlY-rN-aJY"/>
+                                            <outlet property="errorToSendButton" destination="NgC-cS-rvB" id="dT2-YS-Tux"/>
+                                            <outlet property="errorToSendLeadingDist" destination="2Ty-CW-JmB" id="3s8-h3-eyl"/>
+                                            <outlet property="messageDateLabel" destination="rK9-6t-aRi" id="P1G-hP-4kV"/>
+                                            <outlet property="senderImageHeight" destination="7Rt-K9-V4P" id="C8A-E2-tq0"/>
+                                            <outlet property="senderImageView" destination="hv4-yZ-VFU" id="zZ2-ex-azs"/>
+                                            <outlet property="senderImageWidth" destination="tct-qi-euV" id="lVx-QZ-E1K"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingTextCell" rowHeight="186" id="X1B-4M-wwX" customClass="TextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="299.5" width="600" height="186"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1B-4M-wwX" id="nAZ-Kw-1xL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="186"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZI-eG-fZ4">
+                                                    <rect key="frame" x="531" y="82" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="bVW-Mg-U0N"/>
+                                                        <constraint firstAttribute="height" constant="30" id="mET-mI-TCX"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="X1B-4M-wwX" eventType="touchUpInside" id="k2p-Qo-biX"/>
+                                                    </connections>
+                                                </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-jb-mjO" customClass="ChatTextView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="13" width="531" height="168.5"/>
+                                                    <animations/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZF-Bu-IIb">
+                                                    <rect key="frame" x="5" y="151" width="30" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="dmQ-i0-zsA"/>
+                                                        <constraint firstAttribute="width" constant="30" id="zHw-2i-GtS"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLE-cS-279">
+                                                    <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="topMargin" secondItem="SLE-cS-279" secondAttribute="top" id="0qs-1q-OCQ"/>
+                                                <constraint firstItem="mZF-Bu-IIb" firstAttribute="leading" secondItem="nAZ-Kw-1xL" secondAttribute="leading" constant="5" id="BQn-FU-9Ua"/>
+                                                <constraint firstItem="OZI-eG-fZ4" firstAttribute="leading" secondItem="1rM-jb-mjO" secondAttribute="trailing" constant="-35" id="C4m-gU-Ioz"/>
+                                                <constraint firstItem="mZF-Bu-IIb" firstAttribute="bottom" secondItem="1rM-jb-mjO" secondAttribute="bottom" id="C4t-bH-Jaa"/>
+                                                <constraint firstItem="SLE-cS-279" firstAttribute="centerX" secondItem="nAZ-Kw-1xL" secondAttribute="centerX" id="N2n-L2-qGq"/>
+                                                <constraint firstItem="1rM-jb-mjO" firstAttribute="leading" secondItem="mZF-Bu-IIb" secondAttribute="trailing" id="cjg-E8-jGA"/>
+                                                <constraint firstItem="1rM-jb-mjO" firstAttribute="top" secondItem="SLE-cS-279" secondAttribute="bottom" constant="5" id="gSh-Sm-TWB"/>
+                                                <constraint firstItem="OZI-eG-fZ4" firstAttribute="centerY" secondItem="1rM-jb-mjO" secondAttribute="centerY" id="hcQ-46-OG7"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OZI-eG-fZ4" secondAttribute="trailing" constant="5" id="i9Y-Xo-LSO"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1rM-jb-mjO" secondAttribute="trailing" constant="30" id="ulh-87-zUE"/>
+                                                <constraint firstAttribute="bottom" secondItem="mZF-Bu-IIb" secondAttribute="bottom" constant="5" id="zHI-5v-mK9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="chatTextView" destination="1rM-jb-mjO" id="iC2-sn-UWM"/>
+                                            <outlet property="errorToSendButton" destination="OZI-eG-fZ4" id="0wX-mY-bW2"/>
+                                            <outlet property="errorToSendLeadingDist" destination="C4m-gU-Ioz" id="CYs-h5-O3I"/>
+                                            <outlet property="messageDateLabel" destination="SLE-cS-279" id="0xj-a8-VPM"/>
+                                            <outlet property="senderImageHeight" destination="dmQ-i0-zsA" id="bGR-sN-Xcv"/>
+                                            <outlet property="senderImageView" destination="mZF-Bu-IIb" id="D5j-DV-bNd"/>
+                                            <outlet property="senderImageWidth" destination="zHw-2i-GtS" id="g9D-58-2Kn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingImageCell" rowHeight="346" id="qxe-dI-7Nx" customClass="ImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="485.5" width="600" height="346"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qxe-dI-7Nx" id="avK-cS-LiH">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="346"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22E-e3-JIN">
+                                                    <rect key="frame" x="333" y="162" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="6h6-y2-8rL"/>
+                                                        <constraint firstAttribute="width" constant="30" id="dQr-sY-GCC"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="qxe-dI-7Nx" eventType="touchUpInside" id="CW9-zT-e1x"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-Me-D77" customClass="ChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="40" y="13" width="328" height="328"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="3Fz-Me-D77" secondAttribute="height" id="44Q-Hw-10c"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CJJ-xu-V1N">
+                                                    <rect key="frame" x="5" y="311" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="LI1-rZ-LOJ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="SWb-cI-6Ri"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Y1-2eC">
+                                                    <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="CJJ-xu-V1N" firstAttribute="leading" secondItem="avK-cS-LiH" secondAttribute="leading" constant="5" id="1d2-B1-oNP"/>
+                                                <constraint firstAttribute="bottom" secondItem="CJJ-xu-V1N" secondAttribute="bottom" constant="5" id="6Cl-Yf-Lrd"/>
+                                                <constraint firstItem="sdS-Y1-2eC" firstAttribute="centerX" secondItem="avK-cS-LiH" secondAttribute="centerX" id="6fc-SU-zjP"/>
+                                                <constraint firstItem="22E-e3-JIN" firstAttribute="centerY" secondItem="3Fz-Me-D77" secondAttribute="centerY" id="CHx-4U-9JI"/>
+                                                <constraint firstItem="3Fz-Me-D77" firstAttribute="bottom" secondItem="CJJ-xu-V1N" secondAttribute="bottom" id="Gzd-sY-Mw8"/>
+                                                <constraint firstItem="3Fz-Me-D77" firstAttribute="leading" secondItem="CJJ-xu-V1N" secondAttribute="trailing" constant="5" id="UVZ-zn-G4B"/>
+                                                <constraint firstAttribute="topMargin" secondItem="sdS-Y1-2eC" secondAttribute="top" id="UnA-fr-Xot"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="22E-e3-JIN" secondAttribute="trailing" constant="5" id="YoY-bk-bDz"/>
+                                                <constraint firstItem="22E-e3-JIN" firstAttribute="leading" secondItem="3Fz-Me-D77" secondAttribute="trailing" constant="-35" id="cPL-3C-roO"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Fz-Me-D77" secondAttribute="trailing" constant="30" id="i7K-QS-sLM"/>
+                                                <constraint firstItem="3Fz-Me-D77" firstAttribute="top" secondItem="sdS-Y1-2eC" secondAttribute="bottom" constant="5" id="pYk-Vy-SLb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="errorButton" destination="22E-e3-JIN" id="d7F-0X-jQ7"/>
+                                            <outlet property="errorButtonDist" destination="cPL-3C-roO" id="iye-Zq-J20"/>
+                                            <outlet property="messageDateLabel" destination="sdS-Y1-2eC" id="gWu-zj-gye"/>
+                                            <outlet property="messageImageView" destination="3Fz-Me-D77" id="zo8-ny-q93"/>
+                                            <outlet property="senderImageView" destination="CJJ-xu-V1N" id="phz-2p-2XL"/>
+                                            <outlet property="senderImageViewWidth" destination="LI1-rZ-LOJ" id="fhr-Xa-jBS"/>
+                                            <outlet property="senderImageViewheight" destination="SWb-cI-6Ri" id="gyb-EZ-dqI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingImageCell" rowHeight="346" id="nIq-qR-Lgx" customClass="ImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="831.5" width="600" height="346"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nIq-qR-Lgx" id="fm0-fR-UZ9">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="346"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-B0-WP0">
+                                                    <rect key="frame" x="237" y="162" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Pne-Mo-hZz"/>
+                                                        <constraint firstAttribute="height" constant="30" id="gav-4z-d6X"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="nIq-qR-Lgx" eventType="touchUpInside" id="IAI-El-2Cc"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izH-iH-shk" customClass="ChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="232" y="13" width="328" height="328"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="izH-iH-shk" secondAttribute="height" id="SKS-3O-I3a"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4aN-Gh-kRF">
+                                                    <rect key="frame" x="565" y="311" width="30" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="KkI-YT-ZGi"/>
+                                                        <constraint firstAttribute="height" constant="30" id="MQe-aA-2sF"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UH-rR-gUD">
+                                                    <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="izH-iH-shk" firstAttribute="top" secondItem="3UH-rR-gUD" secondAttribute="bottom" constant="5" id="Eq6-U9-Mmn"/>
+                                                <constraint firstItem="4aN-Gh-kRF" firstAttribute="leading" secondItem="izH-iH-shk" secondAttribute="trailing" constant="5" id="F0l-dp-H3v"/>
+                                                <constraint firstItem="aVi-B0-WP0" firstAttribute="centerY" secondItem="izH-iH-shk" secondAttribute="centerY" id="Id2-19-Xh5"/>
+                                                <constraint firstItem="3UH-rR-gUD" firstAttribute="centerX" secondItem="fm0-fR-UZ9" secondAttribute="centerX" id="N1E-xU-Xwq"/>
+                                                <constraint firstAttribute="topMargin" secondItem="3UH-rR-gUD" secondAttribute="top" id="Ux5-a9-sgd"/>
+                                                <constraint firstAttribute="trailing" secondItem="4aN-Gh-kRF" secondAttribute="trailing" constant="5" id="XMv-KG-nW4"/>
+                                                <constraint firstItem="izH-iH-shk" firstAttribute="bottom" secondItem="4aN-Gh-kRF" secondAttribute="bottom" id="h6E-gz-NHf"/>
+                                                <constraint firstItem="izH-iH-shk" firstAttribute="leading" secondItem="aVi-B0-WP0" secondAttribute="trailing" constant="-35" id="i9B-Wr-sFt"/>
+                                                <constraint firstAttribute="bottom" secondItem="4aN-Gh-kRF" secondAttribute="bottom" constant="5" id="m7J-Ys-BIr"/>
+                                                <constraint firstItem="izH-iH-shk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fm0-fR-UZ9" secondAttribute="leading" constant="30" id="w8e-wD-YSy"/>
+                                                <constraint firstItem="aVi-B0-WP0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fm0-fR-UZ9" secondAttribute="leading" constant="5" id="yUL-6h-Cjt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="errorButton" destination="aVi-B0-WP0" id="NOQ-00-ooa"/>
+                                            <outlet property="errorButtonDist" destination="i9B-Wr-sFt" id="OGF-nd-Ktr"/>
+                                            <outlet property="messageDateLabel" destination="3UH-rR-gUD" id="LP1-Yg-dGO"/>
+                                            <outlet property="messageImageView" destination="izH-iH-shk" id="BjW-BY-3Rt"/>
+                                            <outlet property="senderImageView" destination="4aN-Gh-kRF" id="uPE-rn-Nzc"/>
+                                            <outlet property="senderImageViewWidth" destination="KkI-YT-ZGi" id="IY1-lQ-Bne"/>
+                                            <outlet property="senderImageViewheight" destination="MQe-aA-2sF" id="rGX-NH-Ej2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-WS-EGp" customClass="ChatToolBar" customModule="JLChatViewController" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1256" width="600" height="44"/>
+                                <animations/>
+                                <items/>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o8S-YK-lnp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BAR-O9-eDp"/>
+                            <constraint firstItem="o8S-YK-lnp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NxK-cf-kAT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o8S-YK-lnp" secondAttribute="bottom" id="byO-mF-akP"/>
+                            <constraint firstAttribute="trailing" secondItem="o8S-YK-lnp" secondAttribute="trailing" id="dOq-or-WDD"/>
+                            <constraint firstItem="xOK-WS-EGp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kOF-Ic-0Ua"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xOK-WS-EGp" secondAttribute="bottom" id="l3J-XB-ROa"/>
+                            <constraint firstAttribute="trailing" secondItem="xOK-WS-EGp" secondAttribute="trailing" id="nHu-NQ-bI4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sJN-0l-REQ">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="gmw-sX-ZVa">
+                            <connections>
+                                <action selector="backButtonAction:" destination="BYZ-38-t0r" id="qJw-gC-S7W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1300"/>
+                    <connections>
+                        <outlet property="backButton" destination="gmw-sX-ZVa" id="BMo-oZ-n0g"/>
+                        <outlet property="chatTableView" destination="o8S-YK-lnp" id="CkM-UR-P6G"/>
+                        <outlet property="toolBar" destination="xOK-WS-EGp" id="68z-Bs-nYM"/>
+                        <outlet property="toolBarDistToBottom" destination="l3J-XB-ROa" id="1hH-j6-zJA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1224" y="85"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alert9Normal.png" width="256" height="256"/>
+        <image name="alert9Selected.png" width="256" height="256"/>
+    </resources>
+</document>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProductMessageCell" customModule="JLChatViewController_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrR-hi-j5Y">
+                    <rect key="frame" x="284" y="8" width="31" height="14.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ha6-Av-eqU">
+                    <rect key="frame" x="310" y="46" width="30" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="uLV-Z8-zuM"/>
+                        <constraint firstAttribute="width" constant="30" id="zje-RM-nhr"/>
+                    </constraints>
+                    <state key="normal" title="!" image="alert9Normal.png"/>
+                    <connections>
+                        <action selector="errorButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="8r5-9X-Zwb"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zp-xl-uGc">
+                    <rect key="frame" x="305" y="27" width="259.5" height="68.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rX1-nx-taJ">
+                            <rect key="frame" x="1" y="1" width="66.5" height="66.5"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="66.5" id="a4h-eE-W9Y"/>
+                                <constraint firstAttribute="height" constant="66.5" id="hHd-fQ-eyR"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sadasdasdasdasdasdas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tb0-pw-S4H">
+                            <rect key="frame" x="72.5" y="5" width="172" height="18.5"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.81629061713164019" green="0.83932453215071534" blue="0.91006982853982299" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="rX1-nx-taJ" secondAttribute="bottom" constant="1" id="CX4-eg-4Nc"/>
+                        <constraint firstItem="Tb0-pw-S4H" firstAttribute="leading" secondItem="rX1-nx-taJ" secondAttribute="trailing" constant="5" id="DIP-dn-3nV"/>
+                        <constraint firstItem="rX1-nx-taJ" firstAttribute="top" secondItem="7Zp-xl-uGc" secondAttribute="top" constant="1" id="F7e-bK-g4y"/>
+                        <constraint firstAttribute="trailing" secondItem="Tb0-pw-S4H" secondAttribute="trailing" constant="15" id="IcX-wb-onI"/>
+                        <constraint firstItem="rX1-nx-taJ" firstAttribute="leading" secondItem="7Zp-xl-uGc" secondAttribute="leading" constant="1" id="MNw-M7-XfX"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Tb0-pw-S4H" secondAttribute="bottom" constant="5" id="SPn-fQ-i5j"/>
+                        <constraint firstItem="Tb0-pw-S4H" firstAttribute="top" secondItem="7Zp-xl-uGc" secondAttribute="top" constant="5" id="hUo-ah-V3j"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mpg-oE-3CM">
+                    <rect key="frame" x="565" y="65" width="30" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Jcc-RL-3ym"/>
+                        <constraint firstAttribute="height" constant="30" id="eGr-DT-2NH"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7Zp-xl-uGc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="4Hd-3O-KrO"/>
+                <constraint firstItem="Ha6-Av-eqU" firstAttribute="centerY" secondItem="7Zp-xl-uGc" secondAttribute="centerY" id="A9o-aN-ceo"/>
+                <constraint firstItem="QrR-hi-j5Y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="B2m-p4-NCJ"/>
+                <constraint firstItem="Ha6-Av-eqU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Liy-Lc-a5y"/>
+                <constraint firstItem="mpg-oE-3CM" firstAttribute="left" secondItem="7Zp-xl-uGc" secondAttribute="right" id="MRe-IR-WkL"/>
+                <constraint firstItem="QrR-hi-j5Y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Xfn-cl-J7F"/>
+                <constraint firstItem="7Zp-xl-uGc" firstAttribute="leading" secondItem="Ha6-Av-eqU" secondAttribute="trailing" constant="-35" id="mc6-3c-h8u"/>
+                <constraint firstAttribute="bottom" secondItem="mpg-oE-3CM" secondAttribute="bottom" constant="5" id="n4z-oQ-6lz"/>
+                <constraint firstAttribute="trailing" secondItem="mpg-oE-3CM" secondAttribute="trailing" constant="5" id="rik-Bp-T7I"/>
+                <constraint firstItem="7Zp-xl-uGc" firstAttribute="top" secondItem="QrR-hi-j5Y" secondAttribute="bottom" constant="5" id="sSr-jT-qSG"/>
+                <constraint firstItem="mpg-oE-3CM" firstAttribute="bottom" secondItem="7Zp-xl-uGc" secondAttribute="bottom" id="yaH-yM-CXQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="delimiterView" destination="7Zp-xl-uGc" id="1GO-kb-LsW"/>
+                <outlet property="errorToSendButton" destination="Ha6-Av-eqU" id="PSz-mQ-KIP"/>
+                <outlet property="errorToSendLeadingDist" destination="mc6-3c-h8u" id="ck2-ta-3Em"/>
+                <outlet property="messageDateLabel" destination="QrR-hi-j5Y" id="AAV-S0-Ug5"/>
+                <outlet property="nameLabel" destination="Tb0-pw-S4H" id="A2f-Cn-pEd"/>
+                <outlet property="productImageView" destination="rX1-nx-taJ" id="lU9-Pn-zZI"/>
+                <outlet property="senderImageHeight" destination="eGr-DT-2NH" id="FtW-wH-luN"/>
+                <outlet property="senderImageView" destination="mpg-oE-3CM" id="Sei-ws-kUc"/>
+                <outlet property="senderImageWidth" destination="Jcc-RL-3ym" id="Ixl-hO-TYn"/>
+            </connections>
+            <point key="canvasLocation" x="360" y="174"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="alert9Normal.png" width="256" height="256"/>
+    </resources>
+</document>
