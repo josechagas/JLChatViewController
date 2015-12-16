@@ -165,13 +165,17 @@ public class TextMessageCell: ChatMessageCell {
         self.errorToSendLeadingDist.constant = -35
         
         if animated{
-            UIView.animateWithDuration(0.4) { () -> Void in
-                self.layoutIfNeeded()
-            }
+            
             UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorToSendButton.alpha = 0
                 
                 }, completion: nil)
+            
+            UIView.animateWithDuration(0.4, delay: 0.4, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+                self.layoutIfNeeded()
+                
+                }, completion: nil)
+
 
         }
         else{

@@ -200,8 +200,23 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
     
     //MARK: - Messages menu delegate methods
     
-    func shouldShowMenuForCellAtIndexPath(indexPath: NSIndexPath) -> Bool {
-        return true
+    func shouldShowMenuItemForCellAtIndexPath(title: String, indexPath: NSIndexPath) -> Bool {
+        
+        if title == "Deletar"{
+            return true
+        }
+        
+        else if title == "Enviar novamente"{
+            let correctPosition = self.messages.count - 1 - indexPath.row
+            let message = self.messages[correctPosition]
+            
+            if message.messageStatus == MessageSendStatus.ErrorToSend{
+                return true
+            }
+            
+            
+        }
+        return false
     }
     
     func titleForDeleteMenuItem() -> String? {
@@ -216,16 +231,19 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         
         let correctPosition = self.messages.count - 1 - indexPath.row
-        self.messages.removeAtIndex(correctPosition)
-        self.chatTableView.removeMessage(indexPath)
+        //self.messages.removeAtIndex(correctPosition)
+        //self.chatTableView.removeMessage(indexPath)
 
-        //self.messages[correctPosition].updateMessageSendStatus(MessageSendStatus.ErrorToSend)
-        //self.chatTableView.updateMessageStatusOfCellAtIndexPath(indexPath, message: self.messages[correctPosition])
+        self.messages[correctPosition].updateMessageSendStatus(MessageSendStatus.ErrorToSend)
+        self.chatTableView.updateMessageStatusOfCellAtIndexPath(indexPath, message: self.messages[correctPosition])
     }
     
     func performSendActionForCellAtIndexPath(indexPath: NSIndexPath) {
         
-        
+        let correctPosition = self.messages.count - 1 - indexPath.row
+
+        self.messages[correctPosition].updateMessageSendStatus(MessageSendStatus.Sent)
+        self.chatTableView.updateMessageStatusOfCellAtIndexPath(indexPath, message: self.messages[correctPosition])
         
     }
     
@@ -237,7 +255,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         toolBar.toolBarDelegate = self
         
         toolBar.toolBarFrameDelegate = self.chatTableView
-
+        
     }
     
     func didTapLeftButton() {

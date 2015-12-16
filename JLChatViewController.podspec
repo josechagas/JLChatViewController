@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "JLChatViewController"
-  s.version          = "0.1.0"
-  s.summary          = "JLChatViewController is a messages UI library that wants to make easy a creation of a chat."
+  s.version          = "1.0.0"
+  s.summary          = "JLChatViewController is a messages UI library that makes easy a creation of a chat."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

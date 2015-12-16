@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+If you want to use this framework you will need at least IOS 8!
+
 ## Installation
 
 JLChatViewController is available through [CocoaPods](http://cocoapods.org). To install
@@ -19,6 +21,12 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "JLChatViewController"
 ```
+
+## Configurations
+
+Comming soon do not worry , I am making some adjustments.
+
+Thanks for your pacience.
 
 ## Author
 

@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 public class JLBundleController {
     
     private(set) public static var jLChatFirstVC:UINavigationController? = nil
@@ -44,6 +43,9 @@ public class JLBundleController {
         return nil
     }
     
+    /**
+    Instantiate the initialViewController from JLChat.storyboard into jLChatFirstVC
+    */
     public class func loadJLChatNavigation(){
         
         if let jLChatStoryboard = JLBundleController.getStoryboard(){

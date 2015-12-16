@@ -11,7 +11,7 @@ import UIKit
 
 public protocol ChatMessagesMenuDelegate{
     
-    func shouldShowMenuForCellAtIndexPath(indexPath:NSIndexPath)->Bool
+    func shouldShowMenuItemForCellAtIndexPath(title:String,indexPath:NSIndexPath)->Bool
     
     func titleForDeleteMenuItem()->String?
     
@@ -23,9 +23,15 @@ public protocol ChatMessagesMenuDelegate{
     
 }
 
+
+/**
+This is a public protocol that inherits from UITableViewDataSource
+*/
 public protocol ChatDataSource:UITableViewDataSource{
     
-    
+    /**
+    This method will be called always when there is a message with messageKind = MessageKind.Custom 
+    */
     func chat(chat: ChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> ChatMessageCell
     
     
@@ -306,17 +312,36 @@ public class ChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
         
         if let delegate = self.messagesMenuDelegate{
             
-            if delegate.shouldShowMenuForCellAtIndexPath(indexPath){
+            let deleteTitle = delegate.titleForDeleteMenuItem()
+            let sendTitle = delegate.titleForSendMenuItem()
+            
+            cellToReturn.sendMenuEnabled = { () -> Bool in
                 
-                cellToReturn.configMenu(delegate.titleForDeleteMenuItem(), sendTitle: delegate.titleForSendMenuItem(), deleteBlock: { () -> () in
-                    delegate.performDeleteActionForCellAtIndexPath(indexPath)
-                    
-                    }, sendBlock: { () -> () in
-                        delegate.performSendActionForCellAtIndexPath(indexPath)
-                })
+                if let sendTitle = sendTitle{
+                    return delegate.shouldShowMenuItemForCellAtIndexPath(sendTitle, indexPath: indexPath)
+                }
+                return delegate.shouldShowMenuItemForCellAtIndexPath("Try Again", indexPath: indexPath)
 
+            }
+            
+            cellToReturn.deleteMenuEnabled = { () -> Bool in
+                
+                if let deleteTitle = deleteTitle{
+                    return delegate.shouldShowMenuItemForCellAtIndexPath(deleteTitle, indexPath: indexPath)
+                }
+                return delegate.shouldShowMenuItemForCellAtIndexPath("Delete", indexPath: indexPath)
                 
             }
+
+            
+            
+            cellToReturn.configMenu(deleteTitle, sendTitle: sendTitle, deleteBlock: { () -> () in
+                delegate.performDeleteActionForCellAtIndexPath(indexPath)
+                
+                }, sendBlock: { () -> () in
+                    delegate.performSendActionForCellAtIndexPath(indexPath)
+            })
+
             
         }
 

@@ -20,7 +20,17 @@ public class ChatMessageCell: UITableViewCell {
     private var sendBlock:(()->())!
     private var deleteBlock:(()->())!
     
-    private var enableSendMenu:Bool = false
+    internal var sendMenuEnabled:()->Bool = { () -> Bool in
+        
+        return true
+    }
+
+    
+    internal var deleteMenuEnabled:()->Bool = { () -> Bool in
+        
+        return true
+    }
+
   
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -41,7 +51,7 @@ public class ChatMessageCell: UITableViewCell {
     
     public override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
         
-        if action == "deleteAction:" || (action == "sendAction:" && enableSendMenu){
+        if (action == "deleteAction:" && deleteMenuEnabled()) || (action == "sendAction:" && sendMenuEnabled()){
             return true
         }
         
@@ -84,12 +94,10 @@ public class ChatMessageCell: UITableViewCell {
     
     public func showErrorButton(animated:Bool){
         
-        self.enableSendMenu = true
     }
     
     public func hideErrorButton(animated:Bool){
        
-        self.enableSendMenu = false
     }
     
     //MARK: MenuController methods
