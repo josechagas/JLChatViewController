@@ -26,7 +26,7 @@ pod "JLChatViewController"
 
 Comming soon do not worry , I am making some adjustments.
 
-Thanks for your pacience.
+Thanks for your patience.
 
 ## Author
 
