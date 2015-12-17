@@ -23,7 +23,6 @@ class ShowChatViewController: UIViewController {
     
     @IBAction func showChatButtonAction(sender: AnyObject) {
         
-        
         //use this for you present the JLChatViewController
         if let vc = JLBundleController.jLChatFirstVC{
             

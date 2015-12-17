@@ -1,5 +1,5 @@
 PODS:
-  - JLChatViewController (1.0.0)
+  - JLChatViewController (1.0.1)
 
 DEPENDENCIES:
   - JLChatViewController (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  JLChatViewController: 3667ca115d50a5cc78b5e27ea4f0591c42940649
+  JLChatViewController: de1547c1b6a19a601c8f4d1790adcf8cbc971e0c
 
 COCOAPODS: 0.39.0

@@ -36,12 +36,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="156" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o8S-YK-lnp" customClass="ChatTableView" customModule="JLChatViewController" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="156" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o8S-YK-lnp" customClass="JLChatTableView" customModule="JLChatViewController" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="1300"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingTextCell" rowHeight="186" id="1GK-Ad-wOe" customClass="TextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingTextCell" rowHeight="186" id="1GK-Ad-wOe" customClass="JLTextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="113.5" width="600" height="186"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1GK-Ad-wOe" id="bWl-tr-iZs">
@@ -77,7 +77,7 @@
                                                         <action selector="errorButtonAction:" destination="1GK-Ad-wOe" eventType="touchUpInside" id="8fB-0P-nfl"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-Ua-FXr" customClass="ChatTextView" customModule="JLChatViewController" customModuleProvider="target">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-Ua-FXr" customClass="JLChatTextView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="34" y="13" width="531" height="167.5"/>
                                                     <animations/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -119,7 +119,7 @@
                                             <outlet property="senderImageWidth" destination="tct-qi-euV" id="lVx-QZ-E1K"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingTextCell" rowHeight="186" id="X1B-4M-wwX" customClass="TextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingTextCell" rowHeight="186" id="X1B-4M-wwX" customClass="JLTextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="299.5" width="600" height="186"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1B-4M-wwX" id="nAZ-Kw-1xL">
@@ -141,7 +141,7 @@
                                                         <action selector="errorButtonAction:" destination="X1B-4M-wwX" eventType="touchUpInside" id="k2p-Qo-biX"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-jb-mjO" customClass="ChatTextView" customModule="JLChatViewController" customModuleProvider="target">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-jb-mjO" customClass="JLChatTextView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="35" y="13" width="531" height="168.5"/>
                                                     <animations/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -198,7 +198,7 @@
                                             <outlet property="senderImageWidth" destination="zHw-2i-GtS" id="g9D-58-2Kn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingImageCell" rowHeight="346" id="qxe-dI-7Nx" customClass="ImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingImageCell" rowHeight="346" id="qxe-dI-7Nx" customClass="JLImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="485.5" width="600" height="346"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qxe-dI-7Nx" id="avK-cS-LiH">
@@ -220,7 +220,7 @@
                                                         <action selector="errorButtonAction:" destination="qxe-dI-7Nx" eventType="touchUpInside" id="CW9-zT-e1x"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-Me-D77" customClass="ChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-Me-D77" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="40" y="13" width="328" height="328"/>
                                                     <animations/>
                                                     <constraints>
@@ -281,7 +281,7 @@
                                             <outlet property="senderImageViewheight" destination="SWb-cI-6Ri" id="gyb-EZ-dqI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingImageCell" rowHeight="346" id="nIq-qR-Lgx" customClass="ImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingImageCell" rowHeight="346" id="nIq-qR-Lgx" customClass="JLImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="831.5" width="600" height="346"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nIq-qR-Lgx" id="fm0-fR-UZ9">
@@ -303,7 +303,7 @@
                                                         <action selector="errorButtonAction:" destination="nIq-qR-Lgx" eventType="touchUpInside" id="IAI-El-2Cc"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izH-iH-shk" customClass="ChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izH-iH-shk" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="232" y="13" width="328" height="328"/>
                                                     <animations/>
                                                     <constraints>
@@ -366,7 +366,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-WS-EGp" customClass="ChatToolBar" customModule="JLChatViewController" customModuleProvider="target">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-WS-EGp" customClass="JLChatToolBar" customModule="JLChatViewController" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1256" width="600" height="44"/>
                                 <animations/>
                                 <items/>
