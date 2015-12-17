@@ -1,5 +1,5 @@
 //
-//  CustomTextView.swift
+//  JLCustomTextView.swift
 //  ecommerce
 //
 //  Created by José Lucas Souza das Chagas on 07/11/15.
@@ -17,7 +17,7 @@ protocol FileDelegate{
 }
 
 
-public class CustomTextView: UITextView,FileIndicatorViewDelegate {
+public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
 
     
     @IBInspectable var placeHolderText:String! = ""{
@@ -34,7 +34,7 @@ public class CustomTextView: UITextView,FileIndicatorViewDelegate {
     var placeHolderTopDist:NSLayoutConstraint!
     
     
-    private var fileIndicatorView:FileIndicatorView!
+    private var fileIndicatorView:JLFileIndicatorView!
     private var fileIndicatorViewHeight:NSLayoutConstraint!
     private let fileIndicatorViewHeightValue:CGFloat = 35
     private(set) var fileAddedState:Bool = false
@@ -142,7 +142,7 @@ public class CustomTextView: UITextView,FileIndicatorViewDelegate {
     
     
     //adiciona um indicador de que algum arquivo foi adicionado para ser enviado
-    public func addFile(file:File){
+    public func addFile(file:JLFile){
         //caso o valor antigo de fileAddedState for true quer dizer que ja havia algo adicionado entao nao precisa ajeitar o textinsets
         let correctEdges:Bool = !fileAddedState
         
@@ -239,7 +239,7 @@ public class CustomTextView: UITextView,FileIndicatorViewDelegate {
     
     func initFileIndicator(){
         
-        fileIndicatorView = FileIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: fileIndicatorViewHeightValue))
+        fileIndicatorView = JLFileIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: fileIndicatorViewHeightValue))
         
         fileIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         

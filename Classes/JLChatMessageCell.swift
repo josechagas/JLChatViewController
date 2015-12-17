@@ -1,5 +1,5 @@
 //
-//  ChatMessageCell.swift
+//  JLChatMessageCell.swift
 //  Pods
 //
 //  Created by José Lucas Souza das Chagas on 10/12/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ChatMessageCell: UITableViewCell {
+public class JLChatMessageCell: UITableViewCell {
     
     
     public var cellAlreadyUsed:Bool = false
@@ -79,7 +79,7 @@ public class ChatMessageCell: UITableViewCell {
     
     
     
-    public func initCell(message:Message,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
+    public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
        
         
         
@@ -88,7 +88,7 @@ public class ChatMessageCell: UITableViewCell {
     
     //MARK: Status methods
     
-    public func updateMessageStatus(message:Message){
+    public func updateMessageStatus(message:JLMessage){
         
     }
     

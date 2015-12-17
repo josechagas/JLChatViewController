@@ -1,5 +1,5 @@
 //
-//  ChatToolBar.swift
+//  JLChatToolBar.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 28/11/15.
@@ -21,7 +21,7 @@ public protocol ToolBarFrameDelegate{
 
 
 
-public class ChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
+public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     override public var frame:CGRect{
         didSet{
@@ -29,7 +29,7 @@ public class ChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         }
     }
     
-    public private(set) var inputText:CustomTextView!
+    public private(set) var inputText:JLCustomTextView!
     
     
     
@@ -306,8 +306,8 @@ public class ChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     private func initTextView(){
                 
-        inputText = CustomTextView(frame: CGRect(origin: CGPoint(x: 40, y: 5), size: CGSize(width: self.frame.size.width - 80, height: self.frame.size.height - 10)))
-        inputText.font = ChatAppearence.chatFont
+        inputText = JLCustomTextView(frame: CGRect(origin: CGPoint(x: 40, y: 5), size: CGSize(width: self.frame.size.width - 80, height: self.frame.size.height - 10)))
+        inputText.font = JLChatAppearence.chatFont
         inputText.scrollEnabled = false
         inputText.fileDelegate = self
         inputText.translatesAutoresizingMaskIntoConstraints = false

@@ -1,5 +1,5 @@
 //
-//  TextMessageCell.swift
+//  JLTextMessageCell.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 29/11/15.
@@ -12,12 +12,12 @@ import UIKit
 
 
 
-public class TextMessageCell: ChatMessageCell {
+public class JLTextMessageCell: JLChatMessageCell {
     
     
     @IBOutlet weak var messageDateLabel: UILabel!
     
-    @IBOutlet weak var chatTextView: ChatTextView!
+    @IBOutlet weak var chatTextView: JLChatTextView!
     
     @IBOutlet weak var senderImageView: UIImageView!
     
@@ -70,7 +70,7 @@ public class TextMessageCell: ChatMessageCell {
         // Configure the view for the selected state
     }
     
-    override public func initCell(message:Message,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
+    override public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
     
         self.chatTextView.text = message.text
         
@@ -94,7 +94,7 @@ public class TextMessageCell: ChatMessageCell {
             
             //self.transform = CGAffineTransformMakeScale(1, -1)//CGAffineTransformInvert(self.transform)
             
-            self.chatTextView.font = ChatAppearence.chatFont
+            self.chatTextView.font = JLChatAppearence.chatFont
             
             if isOutgoingMessage{
                 
@@ -116,7 +116,7 @@ public class TextMessageCell: ChatMessageCell {
     }
     
     
-    override public func updateMessageStatus(message:Message){
+    override public func updateMessageStatus(message:JLMessage){
         
         super.updateMessageStatus(message)
         
@@ -252,14 +252,14 @@ public class TextMessageCell: ChatMessageCell {
     
     //MARK: - Config methods
     public override func configAsOutgoingMessage(){
-        if ChatAppearence.showOutgoingSenderImage{
-            self.senderImageView.backgroundColor = ChatAppearence.senderImageBackgroundColor
+        if JLChatAppearence.showOutgoingSenderImage{
+            self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
-            self.senderImageHeight.constant = ChatAppearence.senderImageSize.height
+            self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             
-            self.senderImageWidth.constant = ChatAppearence.senderImageSize.width
+            self.senderImageWidth.constant = JLChatAppearence.senderImageSize.width
             
-            self.senderImageView.layer.cornerRadius = ChatAppearence.senderImageCornerRadius
+            self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
         }
         else{
@@ -268,19 +268,19 @@ public class TextMessageCell: ChatMessageCell {
             self.senderImageWidth.constant = 0
         }
         
-        self.chatTextView.textColor = ChatAppearence.outGoingTextColor
+        self.chatTextView.textColor = JLChatAppearence.outGoingTextColor
 
     }
     
     public override func configAsIncomingMessage(){
-        if ChatAppearence.showIncomingSenderImage{
-            self.senderImageView.backgroundColor = ChatAppearence.senderImageBackgroundColor
+        if JLChatAppearence.showIncomingSenderImage{
+            self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
-            self.senderImageHeight.constant = ChatAppearence.senderImageSize.height
+            self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             
-            self.senderImageWidth.constant = ChatAppearence.senderImageSize.width
+            self.senderImageWidth.constant = JLChatAppearence.senderImageSize.width
             
-            self.senderImageView.layer.cornerRadius = ChatAppearence.senderImageCornerRadius
+            self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
         }
         else{
@@ -290,7 +290,7 @@ public class TextMessageCell: ChatMessageCell {
         }
         
         
-        self.chatTextView.textColor = ChatAppearence.incomingTextColor
+        self.chatTextView.textColor = JLChatAppearence.incomingTextColor
 
     }
     

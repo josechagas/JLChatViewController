@@ -1,5 +1,5 @@
 //
-//  ImageMessageCell.swift
+//  JLImageMessageCell.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 02/12/15.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class ImageMessageCell: ChatMessageCell {
+public class JLImageMessageCell: JLChatMessageCell {
 
-    @IBOutlet weak var messageImageView: ChatImageView!
+    @IBOutlet weak var messageImageView: JLChatImageView!
     
     @IBOutlet weak var senderImageView: UIImageView!
     
@@ -57,7 +57,7 @@ public class ImageMessageCell: ChatMessageCell {
     
       
     
-    override public func initCell(message:Message,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
+    override public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
         
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, showDate: showDate, isOutgoingMessage: isOutgoingMessage)
         
@@ -89,7 +89,7 @@ public class ImageMessageCell: ChatMessageCell {
         
     }
     
-    override public func updateMessageStatus(message:Message){
+    override public func updateMessageStatus(message:JLMessage){
         
         super.updateMessageStatus(message)
         
@@ -219,14 +219,14 @@ public class ImageMessageCell: ChatMessageCell {
     //MARK: - Config methods
     
     public override func configAsIncomingMessage(){
-        if ChatAppearence.showIncomingSenderImage{
-            self.senderImageView.backgroundColor = ChatAppearence.senderImageBackgroundColor
+        if JLChatAppearence.showIncomingSenderImage{
+            self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
-            self.senderImageViewheight.constant = ChatAppearence.senderImageSize.height
+            self.senderImageViewheight.constant = JLChatAppearence.senderImageSize.height
             
-            self.senderImageViewWidth.constant = ChatAppearence.senderImageSize.width
+            self.senderImageViewWidth.constant = JLChatAppearence.senderImageSize.width
             
-            self.senderImageView.layer.cornerRadius = ChatAppearence.senderImageCornerRadius
+            self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
         }
         else{
@@ -238,14 +238,14 @@ public class ImageMessageCell: ChatMessageCell {
     }
     
     public override func configAsOutgoingMessage(){
-        if ChatAppearence.showOutgoingSenderImage{
-            self.senderImageView.backgroundColor = ChatAppearence.senderImageBackgroundColor
+        if JLChatAppearence.showOutgoingSenderImage{
+            self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
-            self.senderImageViewheight.constant = ChatAppearence.senderImageSize.height
+            self.senderImageViewheight.constant = JLChatAppearence.senderImageSize.height
             
-            self.senderImageViewWidth.constant = ChatAppearence.senderImageSize.width
+            self.senderImageViewWidth.constant = JLChatAppearence.senderImageSize.width
             
-            self.senderImageView.layer.cornerRadius = ChatAppearence.senderImageCornerRadius
+            self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
         }
         else{

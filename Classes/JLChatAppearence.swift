@@ -1,5 +1,5 @@
 //
-//  ChatAppearence.swift
+//  JLChatAppearence.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 30/11/15.  s.version.to_s
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ChatAppearence: NSObject {
+public class JLChatAppearence: NSObject {
     
     
     

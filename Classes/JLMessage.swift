@@ -1,5 +1,5 @@
 //
-//  Message.swift
+//  JLMessage.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 30/11/15.
@@ -25,7 +25,7 @@ public enum MessageSendStatus:Int{
     case ErrorToSend = 3
 }
 
-public class Message: NSObject {
+public class JLMessage: NSObject {
 
     public var senderID:String!
     

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  JLFile.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 03/12/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class File: NSObject {
+public class JLFile: NSObject {
 
     var title:String = "arquivo"
     

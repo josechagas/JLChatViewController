@@ -11,7 +11,7 @@ import JLChatViewController
 
 
 
-class ProductMessageCell: ChatMessageCell {
+class ProductMessageCell: JLChatMessageCell {
     
     
     @IBOutlet weak var delimiterView: UIView!
@@ -62,7 +62,7 @@ class ProductMessageCell: ChatMessageCell {
         self.messageDateLabel.text = nil
     }
    
-    override internal func initCell(message:Message,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
+    override internal func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
         
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, showDate: showDate, isOutgoingMessage: isOutgoingMessage)
         
@@ -89,7 +89,7 @@ class ProductMessageCell: ChatMessageCell {
         //se a celula estiver sendo reutilizada nao configura essas coisas novamente
         if cellAlreadyUsed == false{
             
-            self.nameLabel.font = ChatAppearence.chatFont
+            self.nameLabel.font = JLChatAppearence.chatFont
             
             if isOutgoingMessage{
                 
@@ -116,7 +116,7 @@ class ProductMessageCell: ChatMessageCell {
     
     
     
-    override func updateMessageStatus(message:Message){
+    override func updateMessageStatus(message:JLMessage){
         super.updateMessageStatus(message)
         if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(true)
@@ -249,14 +249,14 @@ class ProductMessageCell: ChatMessageCell {
         
         super.configAsOutgoingMessage()
         
-        if ChatAppearence.showOutgoingSenderImage{
-            self.senderImageView.backgroundColor = ChatAppearence.senderImageBackgroundColor
+        if JLChatAppearence.showOutgoingSenderImage{
+            self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
-            self.senderImageHeight.constant = ChatAppearence.senderImageSize.height
+            self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             
-            self.senderImageWidth.constant = ChatAppearence.senderImageSize.width
+            self.senderImageWidth.constant = JLChatAppearence.senderImageSize.width
             
-            self.senderImageView.layer.cornerRadius = ChatAppearence.senderImageCornerRadius
+            self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
         }
         else{
@@ -264,11 +264,11 @@ class ProductMessageCell: ChatMessageCell {
             
             self.senderImageWidth.constant = 0
         }
-        self.nameLabel.font = ChatAppearence.chatFont
+        self.nameLabel.font = JLChatAppearence.chatFont
         
-        self.nameLabel.textColor = ChatAppearence.outGoingTextColor
+        self.nameLabel.textColor = JLChatAppearence.outGoingTextColor
         
-        self.delimiterView.backgroundColor = ChatAppearence.outgoingBubbleColor
+        self.delimiterView.backgroundColor = JLChatAppearence.outgoingBubbleColor
         
     }
     
@@ -276,14 +276,14 @@ class ProductMessageCell: ChatMessageCell {
         
         super.configAsIncomingMessage()
         
-        if ChatAppearence.showIncomingSenderImage{
-            self.senderImageView.backgroundColor = ChatAppearence.senderImageBackgroundColor
+        if JLChatAppearence.showIncomingSenderImage{
+            self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
-            self.senderImageHeight.constant = ChatAppearence.senderImageSize.height
+            self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             
-            self.senderImageWidth.constant = ChatAppearence.senderImageSize.width
+            self.senderImageWidth.constant = JLChatAppearence.senderImageSize.width
             
-            self.senderImageView.layer.cornerRadius = ChatAppearence.senderImageCornerRadius
+            self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
         }
         else{
@@ -292,11 +292,11 @@ class ProductMessageCell: ChatMessageCell {
             self.senderImageWidth.constant = 0
         }
         
-        self.nameLabel.font = ChatAppearence.chatFont
+        self.nameLabel.font = JLChatAppearence.chatFont
         
-        self.nameLabel.textColor = ChatAppearence.incomingTextColor
+        self.nameLabel.textColor = JLChatAppearence.incomingTextColor
         
-        self.delimiterView.backgroundColor = ChatAppearence.incomingBubbleColor
+        self.delimiterView.backgroundColor = JLChatAppearence.incomingBubbleColor
 
         
     }

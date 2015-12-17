@@ -16,10 +16,10 @@ enum ID:String{//used only for the example
 }
 
 
-class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,ChatMessagesMenuDelegate,ChatDelegate {
+class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,JLChatMessagesMenuDelegate,ChatDelegate {
 
    
-    var messages:[Message] = [Message]()
+    var messages:[JLMessage] = [JLMessage]()
     
     var addedFile:AnyObject? // o arquivo que foi adicionado , como uma imagem
 
@@ -42,12 +42,12 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         for i in 0..<19{
             
-            let newMessage = Message(text: "teste \(i)", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
+            let newMessage = JLMessage(text: "teste \(i)", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
             
             self.messages.insert(newMessage, atIndex: 0)
         }
         
-        let newMessage = Message(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
+        let newMessage = JLMessage(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
         
         self.messages.insert(newMessage, atIndex: 0)
         
@@ -58,12 +58,12 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         for i in 0..<20{
             
-            let newMessage = Message(text: "teste velhas\(i)", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
+            let newMessage = JLMessage(text: "teste velhas\(i)", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
             
             self.messages.append(newMessage)
         }
         
-        let newMessage = Message(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
+        let newMessage = JLMessage(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
         
         self.messages.append(newMessage)
 
@@ -90,14 +90,14 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         let sort = arc4random()%3
         
         if sort == 0{
-            self.messages.insert(Message(text: text, senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage: nil) , atIndex: 0)
+            self.messages.insert(JLMessage(text: text, senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage: nil) , atIndex: 0)
             
         }
         else if sort == 1{
             self.messages.insert(ProductMessage(senderID: ID.otherID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "Produto", relatedImage: UIImage(named: "imagem")!, productPrice: nil), atIndex: 0)
         }
         else{
-            self.messages.insert(Message(senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage:nil, relatedImage: UIImage(named: "imagem")!), atIndex: 0)
+            self.messages.insert(JLMessage(senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage:nil, relatedImage: UIImage(named: "imagem")!), atIndex: 0)
             
         }
         
@@ -119,12 +119,12 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         self.chatTableView.myID = ID.myID.rawValue
                 
-        ChatAppearence.configIncomingMessages(nil, showIncomingSenderImage: true, incomingTextColor: nil)
+        JLChatAppearence.configIncomingMessages(nil, showIncomingSenderImage: true, incomingTextColor: nil)
         
-        ChatAppearence.configOutgoingMessages(nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
+        JLChatAppearence.configOutgoingMessages(nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
         
         
-        ChatAppearence.configChatFont(nil) { (indexPath) -> Bool in
+        JLChatAppearence.configChatFont(nil) { (indexPath) -> Bool in
             
             if indexPath.row % 3 == 0{
                 return true
@@ -157,13 +157,13 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
     }
     
     
-    func chat(chat: ChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> ChatMessageCell {
+    func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell {
         
         let correctPosition = self.messages.count - 1 - indexPath.row
 
         let message = self.messages[correctPosition]
         
-        var cell:ChatMessageCell!
+        var cell:JLChatMessageCell!
         if message.senderID == self.chatTableView.myID{
             cell = self.chatTableView.dequeueReusableCellWithIdentifier("outgoingProductCell") as! ProductMessageCell
         }
@@ -267,7 +267,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
         
-        self.toolBar.inputText.addFile(File(title: "Produto", image: UIImage(named: "imagem")))
+        self.toolBar.inputText.addFile(JLFile(title: "Produto", image: UIImage(named: "imagem")))
         
     }
     
@@ -277,7 +277,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = addedFile{
             
             if addedFile is UIImage{
-                self.messages.insert(Message(senderID: self.chatTableView.myID,messageDate:NSDate(), senderImage: UIImage(named: "imagem"), relatedImage: addedFile as! UIImage), atIndex: 0)
+                self.messages.insert(JLMessage(senderID: self.chatTableView.myID,messageDate:NSDate(), senderImage: UIImage(named: "imagem"), relatedImage: addedFile as! UIImage), atIndex: 0)
 
             }
             else if addedFile is ProductMessage{
@@ -291,7 +291,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         
         if self.toolBar.inputText.thereIsSomeText(){
-            self.messages.insert(Message(text: self.toolBar.inputText.text, senderID: self.chatTableView.myID,messageDate:NSDate(), senderImage: UIImage(named:"imagem")), atIndex: 0)
+            self.messages.insert(JLMessage(text: self.toolBar.inputText.text, senderID: self.chatTableView.myID,messageDate:NSDate(), senderImage: UIImage(named:"imagem")), atIndex: 0)
         }
         
         

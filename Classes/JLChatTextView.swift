@@ -1,5 +1,5 @@
 //
-//  ChatTextView.swift
+//  JLChatTextView.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 29/11/15.
@@ -15,10 +15,10 @@ enum PasteboardKeysForValueTypes:String{
     case CustomData = "CustomData"
 }
 
-public class ChatTextView: UITextView {
+public class JLChatTextView: UITextView {
 
     
-    var bubbleImageView:ChatImageView!
+    var bubbleImageView:JLChatImageView!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -65,7 +65,7 @@ public class ChatTextView: UITextView {
     
     private func initBallon(){
         
-        bubbleImageView = ChatImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:self.frame.size))
+        bubbleImageView = JLChatImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:self.frame.size))
         bubbleImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(bubbleImageView)
         
@@ -96,14 +96,14 @@ public class ChatTextView: UITextView {
         
         if isOutgoingMessage{
             
-            self.bubbleImageView.image = ChatAppearence.outgoingBubbleImage
+            self.bubbleImageView.image = JLChatAppearence.outgoingBubbleImage
             
-            self.bubbleImageView.tintColor = ChatAppearence.outgoingBubbleColor
+            self.bubbleImageView.tintColor = JLChatAppearence.outgoingBubbleColor
         }
         else{
-            self.bubbleImageView.image = ChatAppearence.incomingBubbleImage
+            self.bubbleImageView.image = JLChatAppearence.incomingBubbleImage
             
-            self.bubbleImageView.tintColor = ChatAppearence.incomingBubbleColor
+            self.bubbleImageView.tintColor = JLChatAppearence.incomingBubbleColor
         }
         
     }

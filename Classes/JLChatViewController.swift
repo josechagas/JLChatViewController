@@ -11,9 +11,9 @@ import UIKit
 
 public class JLChatViewController: UIViewController {
 
-    @IBOutlet public weak var chatTableView: ChatTableView!
+    @IBOutlet public weak var chatTableView: JLChatTableView!
     
-    @IBOutlet public weak var toolBar: ChatToolBar!
+    @IBOutlet public weak var toolBar: JLChatToolBar!
     
     @IBOutlet public weak var toolBarDistToBottom: NSLayoutConstraint!
     

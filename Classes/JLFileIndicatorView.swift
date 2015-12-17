@@ -1,5 +1,5 @@
 //
-//  FileIndicatorView.swift
+//  JLFileIndicatorView.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 03/12/15.
@@ -14,7 +14,7 @@ protocol FileIndicatorViewDelegate{
     func didTapFileIndicatorView()
 }
 
-public class FileIndicatorView: UIView {
+public class JLFileIndicatorView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -33,7 +33,7 @@ public class FileIndicatorView: UIView {
     
     private var removeFileButton:UIButton!
     
-    private var fileInformations:File?
+    private var fileInformations:JLFile?
     
     
     var delegate:FileIndicatorViewDelegate?
@@ -86,7 +86,7 @@ public class FileIndicatorView: UIView {
     }
     
     
-    func addFileInformations(file:File){
+    func addFileInformations(file:JLFile){
         
         if let image = file.image{
             fileImageView.image = image

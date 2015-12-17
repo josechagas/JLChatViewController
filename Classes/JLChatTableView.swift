@@ -1,5 +1,5 @@
 //
-//  ChatTableView.swift
+//  JLChatTableView.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 29/11/15.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-public protocol ChatMessagesMenuDelegate{
+public protocol JLChatMessagesMenuDelegate{
     
     func shouldShowMenuItemForCellAtIndexPath(title:String,indexPath:NSIndexPath)->Bool
     
@@ -32,7 +32,7 @@ public protocol ChatDataSource:UITableViewDataSource{
     /**
     This method will be called always when there is a message with messageKind = MessageKind.Custom 
     */
-    func chat(chat: ChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> ChatMessageCell
+    func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell
     
     
 }
@@ -47,14 +47,14 @@ public protocol ChatDelegate{
 
 
 
-public class ChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate {
+public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate {
 
     
     private var cells:[Int:UITableViewCell]! =  [Int:UITableViewCell]()
 
     
     public var myID:String!
-    public var messagesMenuDelegate:ChatMessagesMenuDelegate?
+    public var messagesMenuDelegate:JLChatMessagesMenuDelegate?
     public var chatDelegate:ChatDelegate?
     public var chatDataSource:ChatDataSource?{
         didSet{
@@ -181,11 +181,11 @@ public class ChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
 
     }
     
-    public func updateMessageStatusOfCellAtIndexPath(indexPath:NSIndexPath,message:Message){
+    public func updateMessageStatusOfCellAtIndexPath(indexPath:NSIndexPath,message:JLMessage){
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            let cell = self.cellForRowAtIndexPath(indexPath) as! ChatMessageCell
+            let cell = self.cellForRowAtIndexPath(indexPath) as! JLChatMessageCell
             cell.updateMessageStatus(message)
         }
     }
@@ -276,7 +276,7 @@ public class ChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
         self.cells[position] = cell
     }
     
-    public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath,message:Message)->ChatMessageCell{
+    public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath,message:JLMessage)->JLChatMessageCell{
         
         let thisIsNewMessage:Bool = (addedNewMessage && indexPath.row == self.numberOfRowsInSection(0) - 1)
         
@@ -296,17 +296,17 @@ public class ChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
             identifier = "custom"
         }
 
-        var cellToReturn:ChatMessageCell!
+        var cellToReturn:JLChatMessageCell!
         
         if identifier == "custom"{
             cellToReturn = self.chatDataSource?.chat(self, customMessageCellForRowAtIndexPath: indexPath)
         }
         else{
-            cellToReturn = self.dequeueReusableCellWithIdentifier(identifier) as! ChatMessageCell
+            cellToReturn = self.dequeueReusableCellWithIdentifier(identifier) as! JLChatMessageCell
         }
         
         
-        cellToReturn.initCell(message, thisIsNewMessage: thisIsNewMessage,showDate: ChatAppearence.shouldShowMessageDateAtIndexPath(indexPath: indexPath),isOutgoingMessage: isOutgoingMessage)
+        cellToReturn.initCell(message, thisIsNewMessage: thisIsNewMessage,showDate: JLChatAppearence.shouldShowMessageDateAtIndexPath(indexPath: indexPath),isOutgoingMessage: isOutgoingMessage)
         
         
         

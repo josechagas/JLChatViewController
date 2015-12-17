@@ -8,39 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		020440D179BA3121478A6DE4ACE3B896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		1106AEC14CDD3D262B0AAF31C1951039 /* JLBundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F8CFB0D9B9A309B689A895A60EC019 /* JLBundleController.swift */; };
 		1BB6286900B6E6138E429B6032FDC541 /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5E24D0CFD4D44608317E2E64E4B016 /* bubble_min.png */; };
 		1BC9765537A8905B1CB0BBA930372BB1 /* bubble_min_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B87508FFC4AEC9E039D2718B24ACDB /* bubble_min_incoming.png */; };
-		21EA8351E19C01C5B6EE1893D41CC1A9 /* JLChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24630B1BD8539C9A7648897D0D0A4F /* JLChatViewController.swift */; };
+		1F50EFDB0D96A9FFE51D22DCEA68FF42 /* JLChatLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19BBA00917EE430147E2B40B99CA549 /* JLChatLoadingView.swift */; };
 		248D65F4D3DF40110AFDA5761B2EFE32 /* alert9Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 122A97CE8B3B83CDCD1A8FE9E1282287 /* alert9Normal.png */; };
+		272EDDF1565FCA8A3442AC5DCF5D85ED /* JLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1FC768B8DBBF8A9F3D21145F9BCAB /* JLFile.swift */; };
 		2C2BCD05D4E3FFC865F7A51CBBC8B422 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		482D72091FF4F75FE36DE9C5CF39B35C /* FileIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AC67E073C83C5D7D94D3E384DD2485 /* FileIndicatorView.swift */; };
+		32B25E58A690A8577D07285D310241C7 /* JLTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15137FD13447C88F9DECB1677D319C68 /* JLTextMessageCell.swift */; };
 		4B68ADCC965DB1FFDDE8763018E617B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		53E7921600FB7F9D7BA1709E89A6E643 /* TextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDB4D09EB06B30C1EA12BC8922868F6 /* TextMessageCell.swift */; };
 		55F958CAEFEFD9633CD80E1C08CA9B40 /* Pods-JLChatViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57E8B786E32C5ECD6960B7E1AE559920 /* ImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E290A23F59CF86498B724755E4CE23 /* ImageMessageCell.swift */; };
-		61EE1FE63700D1504010DA35F3A16998 /* ChatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F15724EE3E678D804848BA4B23749 /* ChatImageView.swift */; };
-		6387833AC8A342C6154E80970AADAB7E /* ChatToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E78A934B8E304E34F76B0025775A9B0 /* ChatToolBar.swift */; };
-		665FF753AE0E0EDF64EDE66062D401A7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D43DADF92A3BD06A88B8C362237FD2 /* File.swift */; };
+		5EAF45DCB609F2A77AF795C5DAC076E4 /* JLChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283258F24A70A97703E08012172DA3E /* JLChatTableView.swift */; };
+		611CE2B7CD23D287B4F89E5A50AB49DC /* JLImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD727C01AD1A5FDCF07F2B86676AA6 /* JLImageMessageCell.swift */; };
 		6A8949A35201933265D69EF94E05B6E8 /* JLChatViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */; };
-		7435520FA5672A6D63D5A8DE348A9D69 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B9F4C4946DF1182728BB219B4E55B3 /* ChatMessageCell.swift */; };
 		75591300525113B80C4A1B50050CF7EB /* Pods-JLChatViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */; };
-		75A98220B70C65AC71D26C48BBF7383A /* JLChatLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438670E4847ED7215C9730AC24B204D8 /* JLChatLoadingView.swift */; };
 		7E8125168CC7987AB0E71B3BAEC2EA52 /* Pods-JLChatViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8549DAAD3547A2FFDBD838D1E094FE62 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170F0067821E2CD444A5E674002D269 /* CustomTextView.swift */; };
+		7EDFBB1E990EAC345183F3100EFCECB1 /* JLChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32AF7D7DBC4C8CF673915C5340943E /* JLChatTextView.swift */; };
+		86AA346758A34066121A40184146D20F /* JLChatViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FA24DF96F4538AC848BFAB8B4A60F /* JLChatViewController-dummy.m */; };
 		88090EDC9BD337DAE98EA36ACD412D5E /* alert9Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8F166D15C1DB0A89B0F5F403D0B8EA /* alert9Selected.png */; };
-		8DA2BC5113D6E6485CB7CDABEDF6DA8B /* JLBundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D73C0849DC04997527A2E9945E2356 /* JLBundleController.swift */; };
+		8BD396D58987B858C73449D8543B717F /* JLChatAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009F858F15CF497EF414CE2977C8B4E /* JLChatAppearence.swift */; };
 		9A2EB9FF2DE4B26D4596B545CAF56A5A /* JLChatViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB9C61726F17617A3D1799158CA11878 /* JLChatViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6F4A2E60B8D8844DB6FC6BA6D95FBBB /* ChatAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA5FA1E9AFC9D9DC8FFFB671C90B406 /* ChatAppearence.swift */; };
+		B1945676EE0BBADE49C693C1EBDA0EF8 /* JLChatToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61860FD8538BB04AC6009420D92E2DFE /* JLChatToolBar.swift */; };
+		B2197A5676F436ECE3314FDFB3578775 /* JLChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1249B21E4361752ED642A754D281D /* JLChatViewController.swift */; };
 		B318D1B695BC5246D8DC4DCD803A163B /* Pods-JLChatViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */; };
-		C2CAAA57DD73C12AD21EECD2528AD841 /* JLChatViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FA24DF96F4538AC848BFAB8B4A60F /* JLChatViewController-dummy.m */; };
+		BAA11DC372C48455A1CEB844B8632BAB /* JLMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C1915D1E5605424F322CA5B9F5D6A /* JLMessage.swift */; };
+		C0B2023E23414DE833BC85D57F354B79 /* JLFileIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7700B33A2CBA450721C7C5D0D3C1E9 /* JLFileIndicatorView.swift */; };
 		C338B46422A09037785BC5E525343563 /* bubble_min@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A45884B83271AFFC3F2954879E6B6C /* bubble_min@3x.png */; };
 		C7EE7918DAB7B854561DD3730D54F68A /* JLChatLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66B739B8C3D90C1E43EC231D64EB781 /* JLChatLoadingView.xib */; };
-		D1761864A7FA45CCB3718DE45E2BF936 /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5419E7BEF54B2E04EE17436EC2A2FF /* ChatTableView.swift */; };
+		CCEDD4DEAB5EA082D9C7110686FED8C4 /* JLCustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5622EC3B55E95314C4B554012CCC09ED /* JLCustomTextView.swift */; };
 		DA8BA5CD27315896B6B81059F6E7C474 /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977B64D687FD8648C844BF4724E04A11 /* bubble_min@2x.png */; };
 		DE24BDC4FD60057DE0DBB7D54B8720FE /* bubble_min_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0BBAA0651B0F245C05F80551111A58 /* bubble_min_incoming@3x.png */; };
-		E28BF235FEF92C68123014D68D03A501 /* ChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF26C0019EAAFE1FC0CAAC3DF906FAED /* ChatTextView.swift */; };
-		EA75F7392AAC6B9ECB8DE2B2A00F0F9F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B295C4D96240362553886A969C78B8 /* Message.swift */; };
+		F112AB2A2F19D1C3C331836FDF2CBD16 /* JLChatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF5DDEFB80566A2038016F5003F931 /* JLChatImageView.swift */; };
 		F5EF2461332A6E41307D5C56C47147A2 /* bubble_min_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8708E41128E134BB1AF718D2416BB69B /* bubble_min_incoming@2x.png */; };
+		FB777E11E773F807D32D7D80EE23610D /* JLChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FD28B8F7279D1B60C8C24CBC16FCB /* JLChatMessageCell.swift */; };
 		FB9EFCBA671BE89188D946599D957985 /* JLChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C75DF5FC2608373EDA92D6A73C0513 /* JLChat.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +73,10 @@
 		0847DCE12255A6424F740C3402FB17EC /* Pods-JLChatViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0A772C5E5E299E6FBACDA48CED7FC3AD /* Pods-JLChatViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		122A97CE8B3B83CDCD1A8FE9E1282287 /* alert9Normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Normal.png; sourceTree = "<group>"; };
+		15137FD13447C88F9DECB1677D319C68 /* JLTextMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLTextMessageCell.swift; sourceTree = "<group>"; };
+		2009F858F15CF497EF414CE2977C8B4E /* JLChatAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatAppearence.swift; sourceTree = "<group>"; };
+		2CBD727C01AD1A5FDCF07F2B86676AA6 /* JLImageMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLImageMessageCell.swift; sourceTree = "<group>"; };
+		2CF1FC768B8DBBF8A9F3D21145F9BCAB /* JLFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFile.swift; sourceTree = "<group>"; };
 		2E8F166D15C1DB0A89B0F5F403D0B8EA /* alert9Selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Selected.png; sourceTree = "<group>"; };
 		2FBE367B2D05F5C50E5084DC2EF73170 /* Pods-JLChatViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		35504E0157D35ACD2B7922AC6D1DDDEB /* Pods-JLChatViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -80,50 +84,46 @@
 		39BC80F05B69354B1F2A2B717733C193 /* Pods-JLChatViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3A21714F23DE9B63718CA38FACB574DC /* Pods-JLChatViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		42E290A23F59CF86498B724755E4CE23 /* ImageMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageMessageCell.swift; sourceTree = "<group>"; };
-		438670E4847ED7215C9730AC24B204D8 /* JLChatLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLoadingView.swift; sourceTree = "<group>"; };
 		45AA5BF01B7D1FBC9B5187F518B4103A /* JLChatViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-prefix.pch"; sourceTree = "<group>"; };
 		47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Tests-dummy.m"; sourceTree = "<group>"; };
-		60D73C0849DC04997527A2E9945E2356 /* JLBundleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLBundleController.swift; sourceTree = "<group>"; };
+		4D7700B33A2CBA450721C7C5D0D3C1E9 /* JLFileIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFileIndicatorView.swift; sourceTree = "<group>"; };
+		4F32AF7D7DBC4C8CF673915C5340943E /* JLChatTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTextView.swift; sourceTree = "<group>"; };
+		5622EC3B55E95314C4B554012CCC09ED /* JLCustomTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLCustomTextView.swift; sourceTree = "<group>"; };
+		5B4FD28B8F7279D1B60C8C24CBC16FCB /* JLChatMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatMessageCell.swift; sourceTree = "<group>"; };
+		61860FD8538BB04AC6009420D92E2DFE /* JLChatToolBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatToolBar.swift; sourceTree = "<group>"; };
 		641C1BE7F3B2653991B7DCB4104CC6FE /* Pods-JLChatViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6EDB4D09EB06B30C1EA12BC8922868F6 /* TextMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextMessageCell.swift; sourceTree = "<group>"; };
 		6F71E83F345459312DCBA731D8209CFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7170F0067821E2CD444A5E674002D269 /* CustomTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		7696A6625C035B2B2AE75A82863B6FCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79CC80C2B47F07969455A65F20802738 /* JLChatViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JLChatViewController.modulemap; sourceTree = "<group>"; };
 		7A8341FD4D388BD6F21C498B5A4A3C60 /* Pods_JLChatViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E78A934B8E304E34F76B0025775A9B0 /* ChatToolBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatToolBar.swift; sourceTree = "<group>"; };
 		7ED26B7335D02E09A758CD3DABD75FC5 /* Pods-JLChatViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		84746E033736AD06D32F2E385FC53DDF /* Pods-JLChatViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		857F15724EE3E678D804848BA4B23749 /* ChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatImageView.swift; sourceTree = "<group>"; };
 		86EDB6C3AB2F49059CEE4EF53634F7C3 /* Pods-JLChatViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8708E41128E134BB1AF718D2416BB69B /* bubble_min_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@2x.png"; sourceTree = "<group>"; };
 		8CB45A011B98D7613ADDD80A6893F805 /* Pods-JLChatViewController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-resources.sh"; sourceTree = "<group>"; };
 		9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLChatViewController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9592467C1245A346AF2A32260282C9C1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95C6ECEFB2174A32E71E7266B2BFA525 /* JLChatViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLChatViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95D43DADF92A3BD06A88B8C362237FD2 /* File.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		977B64D687FD8648C844BF4724E04A11 /* bubble_min@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
 		9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		9DA5FA1E9AFC9D9DC8FFFB671C90B406 /* ChatAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatAppearence.swift; sourceTree = "<group>"; };
 		A2C75DF5FC2608373EDA92D6A73C0513 /* JLChat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = JLChat.storyboard; sourceTree = "<group>"; };
+		A8BF5DDEFB80566A2038016F5003F931 /* JLChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatImageView.swift; sourceTree = "<group>"; };
 		AB9C61726F17617A3D1799158CA11878 /* JLChatViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-umbrella.h"; sourceTree = "<group>"; };
-		AC24630B1BD8539C9A7648897D0D0A4F /* JLChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatViewController.swift; sourceTree = "<group>"; };
 		AE5E24D0CFD4D44608317E2E64E4B016 /* bubble_min.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min.png; sourceTree = "<group>"; };
-		AF26C0019EAAFE1FC0CAAC3DF906FAED /* ChatTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatTextView.swift; sourceTree = "<group>"; };
 		B04A36A0DD8D04758674C07FE14E885E /* Pods-JLChatViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Tests.modulemap"; sourceTree = "<group>"; };
-		B1B9F4C4946DF1182728BB219B4E55B3 /* ChatMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		B58C1915D1E5605424F322CA5B9F5D6A /* JLMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLMessage.swift; sourceTree = "<group>"; };
+		B5A1249B21E4361752ED642A754D281D /* JLChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatViewController.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C5AC67E073C83C5D7D94D3E384DD2485 /* FileIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FileIndicatorView.swift; sourceTree = "<group>"; };
-		C5B295C4D96240362553886A969C78B8 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		CF5419E7BEF54B2E04EE17436EC2A2FF /* ChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
+		C283258F24A70A97703E08012172DA3E /* JLChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTableView.swift; sourceTree = "<group>"; };
 		D5209C24BDEE577269CA37A04847EFE6 /* Pods-JLChatViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Example.modulemap"; sourceTree = "<group>"; };
 		D66B739B8C3D90C1E43EC231D64EB781 /* JLChatLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatLoadingView.xib; sourceTree = "<group>"; };
 		DA68CAAA8521FAE8021081261B8C8C5B /* Pods-JLChatViewController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-resources.sh"; sourceTree = "<group>"; };
+		E19BBA00917EE430147E2B40B99CA549 /* JLChatLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLoadingView.swift; sourceTree = "<group>"; };
 		ED0BBAA0651B0F245C05F80551111A58 /* bubble_min_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@3x.png"; sourceTree = "<group>"; };
 		ED35FBB557E61AF6D7452FBC89D4EFF0 /* Pods_JLChatViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02FA24DF96F4538AC848BFAB8B4A60F /* JLChatViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLChatViewController-dummy.m"; sourceTree = "<group>"; };
+		F1F8CFB0D9B9A309B689A895A60EC019 /* JLBundleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLBundleController.swift; sourceTree = "<group>"; };
 		F89CE36DEEAA73C3A917C62F02D0D0D4 /* JLChatViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLChatViewController.xcconfig; sourceTree = "<group>"; };
 		F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +171,28 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		038AC0C63CB7D4F1A0D3E6DD2EF5AE98 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F1F8CFB0D9B9A309B689A895A60EC019 /* JLBundleController.swift */,
+				2009F858F15CF497EF414CE2977C8B4E /* JLChatAppearence.swift */,
+				A8BF5DDEFB80566A2038016F5003F931 /* JLChatImageView.swift */,
+				E19BBA00917EE430147E2B40B99CA549 /* JLChatLoadingView.swift */,
+				5B4FD28B8F7279D1B60C8C24CBC16FCB /* JLChatMessageCell.swift */,
+				C283258F24A70A97703E08012172DA3E /* JLChatTableView.swift */,
+				4F32AF7D7DBC4C8CF673915C5340943E /* JLChatTextView.swift */,
+				61860FD8538BB04AC6009420D92E2DFE /* JLChatToolBar.swift */,
+				B5A1249B21E4361752ED642A754D281D /* JLChatViewController.swift */,
+				5622EC3B55E95314C4B554012CCC09ED /* JLCustomTextView.swift */,
+				2CF1FC768B8DBBF8A9F3D21145F9BCAB /* JLFile.swift */,
+				4D7700B33A2CBA450721C7C5D0D3C1E9 /* JLFileIndicatorView.swift */,
+				2CBD727C01AD1A5FDCF07F2B86676AA6 /* JLImageMessageCell.swift */,
+				B58C1915D1E5605424F322CA5B9F5D6A /* JLMessage.swift */,
+				15137FD13447C88F9DECB1677D319C68 /* JLTextMessageCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		1DDD02E01907CC2B385D9976913A2403 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +205,7 @@
 		3F3C5764E3C2D03C110F79C2B104C0F9 /* JLChatViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C9373BC0EB2C88F5C4947307174F64E4 /* Classes */,
+				038AC0C63CB7D4F1A0D3E6DD2EF5AE98 /* Classes */,
 				000237C894DCF74B3F37E7E2F684B66D /* Resources */,
 				DB2813BE6F84A995CCDD5B2B396AB45F /* Support Files */,
 			);
@@ -272,28 +294,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C9373BC0EB2C88F5C4947307174F64E4 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				9DA5FA1E9AFC9D9DC8FFFB671C90B406 /* ChatAppearence.swift */,
-				857F15724EE3E678D804848BA4B23749 /* ChatImageView.swift */,
-				B1B9F4C4946DF1182728BB219B4E55B3 /* ChatMessageCell.swift */,
-				CF5419E7BEF54B2E04EE17436EC2A2FF /* ChatTableView.swift */,
-				AF26C0019EAAFE1FC0CAAC3DF906FAED /* ChatTextView.swift */,
-				7E78A934B8E304E34F76B0025775A9B0 /* ChatToolBar.swift */,
-				7170F0067821E2CD444A5E674002D269 /* CustomTextView.swift */,
-				95D43DADF92A3BD06A88B8C362237FD2 /* File.swift */,
-				C5AC67E073C83C5D7D94D3E384DD2485 /* FileIndicatorView.swift */,
-				42E290A23F59CF86498B724755E4CE23 /* ImageMessageCell.swift */,
-				60D73C0849DC04997527A2E9945E2356 /* JLBundleController.swift */,
-				438670E4847ED7215C9730AC24B204D8 /* JLChatLoadingView.swift */,
-				AC24630B1BD8539C9A7648897D0D0A4F /* JLChatViewController.swift */,
-				C5B295C4D96240362553886A969C78B8 /* Message.swift */,
-				6EDB4D09EB06B30C1EA12BC8922868F6 /* TextMessageCell.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		DB2813BE6F84A995CCDD5B2B396AB45F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,7 +378,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53293F0304986D01BF18A4AB12480865 /* Build configuration list for PBXNativeTarget "JLChatViewController" */;
 			buildPhases = (
-				F1F57879CD1CE4FEEDB3C3D932174BD0 /* Sources */,
+				8F46CAC64D950795F6F5BC7D3FC629F6 /* Sources */,
 				1F86AD990F424A638FC0B2E8AC21EA49 /* Frameworks */,
 				F34E1941C15D9DA35AF9C6308EAC6CB0 /* Resources */,
 				F50A410CBD2E0E0E1DD918A84CAD2085 /* Headers */,
@@ -435,7 +435,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -501,26 +501,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1F57879CD1CE4FEEDB3C3D932174BD0 /* Sources */ = {
+		8F46CAC64D950795F6F5BC7D3FC629F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6F4A2E60B8D8844DB6FC6BA6D95FBBB /* ChatAppearence.swift in Sources */,
-				61EE1FE63700D1504010DA35F3A16998 /* ChatImageView.swift in Sources */,
-				7435520FA5672A6D63D5A8DE348A9D69 /* ChatMessageCell.swift in Sources */,
-				D1761864A7FA45CCB3718DE45E2BF936 /* ChatTableView.swift in Sources */,
-				E28BF235FEF92C68123014D68D03A501 /* ChatTextView.swift in Sources */,
-				6387833AC8A342C6154E80970AADAB7E /* ChatToolBar.swift in Sources */,
-				8549DAAD3547A2FFDBD838D1E094FE62 /* CustomTextView.swift in Sources */,
-				665FF753AE0E0EDF64EDE66062D401A7 /* File.swift in Sources */,
-				482D72091FF4F75FE36DE9C5CF39B35C /* FileIndicatorView.swift in Sources */,
-				57E8B786E32C5ECD6960B7E1AE559920 /* ImageMessageCell.swift in Sources */,
-				8DA2BC5113D6E6485CB7CDABEDF6DA8B /* JLBundleController.swift in Sources */,
-				75A98220B70C65AC71D26C48BBF7383A /* JLChatLoadingView.swift in Sources */,
-				C2CAAA57DD73C12AD21EECD2528AD841 /* JLChatViewController-dummy.m in Sources */,
-				21EA8351E19C01C5B6EE1893D41CC1A9 /* JLChatViewController.swift in Sources */,
-				EA75F7392AAC6B9ECB8DE2B2A00F0F9F /* Message.swift in Sources */,
-				53E7921600FB7F9D7BA1709E89A6E643 /* TextMessageCell.swift in Sources */,
+				1106AEC14CDD3D262B0AAF31C1951039 /* JLBundleController.swift in Sources */,
+				8BD396D58987B858C73449D8543B717F /* JLChatAppearence.swift in Sources */,
+				F112AB2A2F19D1C3C331836FDF2CBD16 /* JLChatImageView.swift in Sources */,
+				1F50EFDB0D96A9FFE51D22DCEA68FF42 /* JLChatLoadingView.swift in Sources */,
+				FB777E11E773F807D32D7D80EE23610D /* JLChatMessageCell.swift in Sources */,
+				5EAF45DCB609F2A77AF795C5DAC076E4 /* JLChatTableView.swift in Sources */,
+				7EDFBB1E990EAC345183F3100EFCECB1 /* JLChatTextView.swift in Sources */,
+				B1945676EE0BBADE49C693C1EBDA0EF8 /* JLChatToolBar.swift in Sources */,
+				86AA346758A34066121A40184146D20F /* JLChatViewController-dummy.m in Sources */,
+				B2197A5676F436ECE3314FDFB3578775 /* JLChatViewController.swift in Sources */,
+				CCEDD4DEAB5EA082D9C7110686FED8C4 /* JLCustomTextView.swift in Sources */,
+				272EDDF1565FCA8A3442AC5DCF5D85ED /* JLFile.swift in Sources */,
+				C0B2023E23414DE833BC85D57F354B79 /* JLFileIndicatorView.swift in Sources */,
+				611CE2B7CD23D287B4F89E5A50AB49DC /* JLImageMessageCell.swift in Sources */,
+				BAA11DC372C48455A1CEB844B8632BAB /* JLMessage.swift in Sources */,
+				32B25E58A690A8577D07285D310241C7 /* JLTextMessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +611,6 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_JLChatViewController_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -643,7 +642,6 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_JLChatViewController_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -672,7 +670,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -712,7 +709,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JLChatViewController/JLChatViewController.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = JLChatViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -756,7 +752,6 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_JLChatViewController_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -784,7 +779,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JLChatViewController/JLChatViewController.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = JLChatViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -827,7 +821,6 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_JLChatViewController_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

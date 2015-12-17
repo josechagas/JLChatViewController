@@ -11,7 +11,7 @@ import JLChatViewController
 
 
 
-class ProductMessage: Message {
+class ProductMessage: JLMessage {
 
     var productPrice:String?
     

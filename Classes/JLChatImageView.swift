@@ -1,5 +1,5 @@
 //
-//  ChatImageView.swift
+//  JLChatImageView.swift
 //  ChatViewController
 //
 //  Created by José Lucas Souza das Chagas on 02/12/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ChatImageView: UIImageView {
+public class JLChatImageView: UIImageView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
