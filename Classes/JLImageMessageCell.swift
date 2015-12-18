@@ -204,7 +204,7 @@ public class JLImageMessageCell: JLChatMessageCell {
     }
     
     func showMenu(){
-        self.messageImageView.becomeFirstResponder()
+        self.becomeFirstResponder()
         
         self.messageImageView.alpha = 1
         

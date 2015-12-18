@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JLChatViewController"
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.summary          = "JLChatViewController is a messages UI library that makes easy a creation of a chat."
 
 # This description is used to generate tags and improve search results.

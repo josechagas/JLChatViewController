@@ -64,6 +64,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     
     private var addedNewMessage:Bool = true
+    private var updatingRowsForNewInsets:Bool = false
     private var blockLoadOldMessages:Bool = false//avoid to do multiples requesitions for old messages
     
     
@@ -90,7 +91,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
         if key == "contentSize"{
             
-            if addedNewMessage{
+            if addedNewMessage || updatingRowsForNewInsets{
                 
                 
                 if self.numberOfSections == 0 || self.numberOfRowsInSection(0) == 0{
@@ -129,6 +130,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
         self.addObserver()
     }
+    
+    
+    
     //Use it to add messages that you sent and that you received
     //Never use it to add old messages inside chat tableView
     public func addNewMessage(){
@@ -137,6 +141,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
         self.reloadData()
         
+    }
+    
+    private func updateRowsForNewInsets(){
+        updatingRowsForNewInsets = true
+        self.reloadData()
     }
     
     public func addOldMessages(quant:Int){
@@ -209,18 +218,24 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         return nil
         
     }
+    
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
+        if self.contentOffset.y >= -(self.contentInset.top + 40){
+            print("entrou dois")
+            blockLoadOldMessages = false
+        }
+
+    }
 
     public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
         if self.contentOffset.y <= 0 - (self.contentInset.top){
-            
-            if !blockLoadOldMessages && !isLoadingOldMessages{
+            if loadedOldMessagesButNotShowing{
+                self.addOldMessages(quant)
+            }
+            else if !blockLoadOldMessages && !isLoadingOldMessages{
                 
-                if loadedOldMessagesButNotShowing{
-                    self.addOldMessages(quant)
-                }
-                else{
-                    let header = self.headerViewForSection(0) as! JLChatLoadingView
+                if let header = self.headerViewForSection(0) as? JLChatLoadingView{
                     
                     header.activityIndicator.startAnimating()
                     
@@ -235,13 +250,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             }
             
         }
-        else if self.contentOffset.y >= -(self.contentInset.top + 40){
-            print("entrou dois")
-            blockLoadOldMessages = false
-        }
         
-
-
     }
     
     public func scrollViewWillBeginDecelerating(scrollView: UIScrollView) {
@@ -366,6 +375,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             }
             
         }
+        else if updatingRowsForNewInsets{
+            if self.numberOfRowsInSection(0) - 1 == indexPath.row{
+                self.updatingRowsForNewInsets = false
+            }
+        }
         
         
         return cellToReturn
@@ -414,12 +428,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         self.scrollIndicatorInsets = self.contentInset
         
         
-        
         let numberOfRows = self.numberOfRowsInSection(0)
 
         if numberOfRows > 0 && scrollToBottom{
-           
-            self.scrollChatToBottom(false)
+            
+            self.scrollChatToBottom(true)
+
+            
         }
         
     }

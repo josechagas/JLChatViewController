@@ -179,9 +179,9 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     func registerKeyBoardNotifications(){
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showkeyBoardTarget:", name: UIKeyboardWillShowNotification, object: nil)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideKeyBoardTarget:", name: UIKeyboardWillHideNotification, object: nil)
     }
-    
     
     func showkeyBoardTarget(notification:NSNotification){
         

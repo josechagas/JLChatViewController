@@ -71,7 +71,7 @@ public class JLChatMessageCell: UITableViewCell {
     
     public override func resignFirstResponder() -> Bool {
         
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIMenuControllerDidHideMenuNotification, object: nil)
+        //NSNotificationCenter.defaultCenter().removeObserver(self, name: UIMenuControllerDidHideMenuNotification, object: nil)
         
         return super.resignFirstResponder()
     }

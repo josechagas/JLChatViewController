@@ -19,7 +19,7 @@ public class JLChatViewController: UIViewController {
     
     @IBOutlet public weak var backButton: UIBarButtonItem!
     
-    private var backButtonBlock:(()->())?
+    public var backButtonActionBlock:(()->())?
     
     override public func viewDidLoad() {
                 
@@ -48,7 +48,7 @@ public class JLChatViewController: UIViewController {
     
     
     @IBAction func backButtonAction(sender: AnyObject) {
-        if let backButtonBlock = backButtonBlock{
+        if let backButtonBlock = backButtonActionBlock{
             backButtonBlock()
         }
         else{
