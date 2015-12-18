@@ -10,11 +10,11 @@ import UIKit
 
 public class JLImageMessageCell: JLChatMessageCell {
 
-    @IBOutlet weak var messageImageView: JLChatImageView!
+    @IBOutlet public weak var messageImageView: JLChatImageView!
     
-    @IBOutlet weak var senderImageView: UIImageView!
+    @IBOutlet public weak var senderImageView: UIImageView!
     
-    @IBOutlet weak var messageDateLabel: UILabel!
+    @IBOutlet public weak var messageDateLabel: UILabel!
     
     
     @IBOutlet weak var errorButton: UIButton!

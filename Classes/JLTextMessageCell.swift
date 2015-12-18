@@ -15,11 +15,11 @@ import UIKit
 public class JLTextMessageCell: JLChatMessageCell {
     
     
-    @IBOutlet weak var messageDateLabel: UILabel!
+    @IBOutlet public weak var messageDateLabel: UILabel!
     
-    @IBOutlet weak var chatTextView: JLChatTextView!
+    @IBOutlet public weak var chatTextView: JLChatTextView!
     
-    @IBOutlet weak var senderImageView: UIImageView!
+    @IBOutlet public weak var senderImageView: UIImageView!
     
     @IBOutlet weak var errorToSendButton: UIButton!
     

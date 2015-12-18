@@ -26,8 +26,8 @@ public class JLFileIndicatorView: UIView {
     
     
     private var fileImageView:UIImageView!
+    
     private var leadingAlignmentConstraint:NSLayoutConstraint!
-
     
     private var fileTitleLabel:UILabel!
     
