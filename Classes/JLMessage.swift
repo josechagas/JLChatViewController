@@ -57,7 +57,7 @@ public class JLMessage: NSObject {
         
     }
     
-    public init(senderID:String,messageDate:NSDate,senderImage:UIImage?,relatedImage:UIImage){
+    public init(senderID:String,messageDate:NSDate,senderImage:UIImage?,relatedImage:UIImage?){
         
         super.init()
         

@@ -18,7 +18,7 @@ enum PasteboardKeysForValueTypes:String{
 public class JLChatTextView: UITextView {
 
     
-    var bubbleImageView:JLChatImageView!
+    var bubbleImageView:UIImageView!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -65,7 +65,7 @@ public class JLChatTextView: UITextView {
     
     private func initBallon(){
         
-        bubbleImageView = JLChatImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:self.frame.size))
+        bubbleImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:self.frame.size))
         bubbleImageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(bubbleImageView)
         

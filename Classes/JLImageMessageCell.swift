@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//346
 
 public class JLImageMessageCell: JLChatMessageCell {
 

@@ -37,6 +37,10 @@ public class JLChatViewController: UIViewController {
 
         super.viewDidAppear(animated)
         
+        let indexPath = NSIndexPath(forRow: self.chatTableView.numberOfRowsInSection(0) - 1, inSection: 0)
+        
+        self.chatTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+    
     }
 
     override public func didReceiveMemoryWarning() {

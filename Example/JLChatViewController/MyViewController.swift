@@ -97,7 +97,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
             self.messages.insert(ProductMessage(senderID: ID.otherID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "Produto", relatedImage: UIImage(named: "imagem")!, productPrice: nil), atIndex: 0)
         }
         else{
-            self.messages.insert(JLMessage(senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage:nil, relatedImage: UIImage(named: "imagem")!), atIndex: 0)
+            self.messages.insert(JLMessage(senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage:UIImage(named: "imagem")!, relatedImage: nil), atIndex: 0)
             
         }
         
@@ -153,7 +153,26 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         let correctPosition = self.messages.count - 1 - indexPath.row
         
-        return chatTableView.chatMessageForRowAtIndexPath(indexPath, message: self.messages[correctPosition])
+        let message = self.messages[correctPosition]
+        
+        let mess = chatTableView.chatMessageForRowAtIndexPath(indexPath, message: message)
+
+        if mess is JLImageMessageCell{
+            
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
+            dispatch_after(delayTime, dispatch_get_main_queue()) {
+                
+                let imageMess = mess as! JLImageMessageCell
+                
+                imageMess.messageImageView.image = UIImage(named: "imagem")!
+                
+                message.relatedImage = UIImage(named: "imagem")!
+            
+            }
+        }
+        
+        return mess
+    
     }
     
     
