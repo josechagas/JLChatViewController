@@ -19,11 +19,11 @@ public class JLChatImageView: UIImageView {
     */
     override public var image:UIImage?{
         didSet{
-            if self.image == nil{
-                loadActivity.startAnimating()
+            if let _ = self.image{
+                loadActivity.stopAnimating()
             }
             else{
-                loadActivity.stopAnimating()
+                loadActivity.startAnimating()
             }
         }
     }
@@ -56,6 +56,8 @@ public class JLChatImageView: UIImageView {
         loadActivity.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(loadActivity)
+        
+        loadActivity.startAnimating()
         //Constraints
         
         let centerX = NSLayoutConstraint(item: loadActivity, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)

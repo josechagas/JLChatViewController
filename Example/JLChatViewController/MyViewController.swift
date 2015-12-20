@@ -51,6 +51,10 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         self.messages.insert(newMessage, atIndex: 0)
         
+        
+        let newerMessage = JLMessage(senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), relatedImage: nil)
+        
+        self.messages.insert(newerMessage, atIndex: 0)
     }
     
     func loadOldMessages(){
@@ -216,7 +220,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
     }
     
-    //https://www.google.com.br/search?client=safari&rls=en&q=adding+new+elements+into+a+tableView+without+making+scroll+to+top&ie=UTF-8&oe=UTF-8&gfe_rd=cr&ei=C9VsVsjfD4ik8wfH9IK4DA
+  
     func didTapMessageAtIndexPath(indexPath: NSIndexPath) {
         print("tocou na mensagem")
     }
@@ -254,11 +258,9 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         
         let correctPosition = self.messages.count - 1 - indexPath.row
-        //self.messages.removeAtIndex(correctPosition)
-        //self.chatTableView.removeMessage(indexPath)
+        self.messages.removeAtIndex(correctPosition)
+        self.chatTableView.removeMessage(indexPath)
 
-        self.messages[correctPosition].updateMessageSendStatus(MessageSendStatus.ErrorToSend)
-        self.chatTableView.updateMessageStatusOfCellAtIndexPath(indexPath, message: self.messages[correctPosition])
     }
     
     func performSendActionForCellAtIndexPath(indexPath: NSIndexPath) {
@@ -284,10 +286,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
     func didTapLeftButton() {
         
         //se ainda nao tiver um arquivo adicionado adiciona um
-        /*addedFile = UIImage(named: "imagem")
-        
-        self.toolBar.inputText.addFile(File(title: "imagem", image: addedFile as? UIImage))*/
-        
+                
         self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
         
         self.toolBar.inputText.addFile(JLFile(title: "Produto", image: UIImage(named: "imagem")))
@@ -300,7 +299,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = addedFile{
             
             if addedFile is UIImage{
-                self.messages.insert(JLMessage(senderID: self.chatTableView.myID,messageDate:NSDate(), senderImage: UIImage(named: "imagem"), relatedImage: addedFile as! UIImage), atIndex: 0)
+                self.messages.insert(JLMessage(senderID: self.chatTableView.myID,messageDate:NSDate(), senderImage: UIImage(named: "imagem"), relatedImage: addedFile as? UIImage), atIndex: 0)
 
             }
             else if addedFile is ProductMessage{
