@@ -16,21 +16,24 @@ public class JLChatViewController: UIViewController {
     @IBOutlet public weak var toolBar: JLChatToolBar!
     
     @IBOutlet public weak var toolBarDistToBottom: NSLayoutConstraint!
-    
-    @IBOutlet public weak var backButton: UIBarButtonItem!
-    
-    public var backButtonActionBlock:(()->())?
+        
     
     override public func viewDidLoad() {
                 
         super.viewDidLoad()
         
         self.registerKeyBoardNotifications()
+        
+        
 
     }
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let tabController = self.tabBarController{
+            tabController.tabBar.hidden = true
+        }
     }
     
     public override func viewDidAppear(animated: Bool) {
@@ -42,6 +45,15 @@ public class JLChatViewController: UIViewController {
         self.chatTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
     
     }
+    
+    public override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let tabController = self.tabBarController{
+            tabController.tabBar.hidden = false
+        }
+
+    }
 
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,17 +61,6 @@ public class JLChatViewController: UIViewController {
     }
     
     //MARK: Back button methods
-    
-    
-    @IBAction func backButtonAction(sender: AnyObject) {
-        if let backButtonBlock = backButtonActionBlock{
-            backButtonBlock()
-        }
-        else{
-            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        }
-
-    }
     
     
     //MARK: - KeyBoard notifications

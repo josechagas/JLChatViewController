@@ -5,10 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="hbu-My-XHS">
             <objects>
                 <navigationController id="Gnw-Js-7wG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Z1P-pj-cIL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ceg-GL-bHR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -20,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOb-IT-5pK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994" y="-1"/>
+            <point key="canvasLocation" x="-1718" y="-108"/>
         </scene>
         <!--Show Chat View Controller-->
         <scene sceneID="ufC-wZ-h7g">

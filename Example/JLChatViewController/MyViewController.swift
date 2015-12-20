@@ -18,6 +18,7 @@ enum ID:String{//used only for the example
 
 class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,JLChatMessagesMenuDelegate,ChatDelegate {
 
+    
    
     var messages:[JLMessage] = [JLMessage]()
     
@@ -26,7 +27,6 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.backButton.title = "close"
         loadMessages()
         configChat()
         configToolBar()
@@ -194,6 +194,10 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         return cell
         
+    }
+    
+    func titleforChatLoadingHeaderView() -> String? {
+        return "JLChatViewController"
     }
     
     //MARK: ChatDelegate

@@ -34,7 +34,7 @@ public protocol ChatDataSource:UITableViewDataSource{
     */
     func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell
     
-    
+    func titleforChatLoadingHeaderView()->String?
 }
 
 
@@ -48,10 +48,6 @@ public protocol ChatDelegate{
 
 
 public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate {
-
-    
-    private var cells:[Int:UITableViewCell]! =  [Int:UITableViewCell]()
-
     
     public var myID:String!
     public var messagesMenuDelegate:JLChatMessagesMenuDelegate?
@@ -61,7 +57,6 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             self.dataSource = chatDataSource 
         }
     }
-    
     
     private var addedNewMessage:Bool = true
     private var updatingRowsForNewInsets:Bool = false
@@ -175,6 +170,17 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         isLoadingOldMessages = false
     }
     
+    /**
+     Use this method when some kind of error when trying to load old messages happend and you just want to stop the animation
+    */
+    public func forceToFinishLoadingAnimation(){
+        blockLoadOldMessages = false
+        if let header = self.headerViewForSection(0) as? JLChatLoadingView{
+            header.activityIndicator.stopAnimating()
+        }
+        isLoadingOldMessages = false
+    }
+    
     
     public func removeMessage(indexPath:NSIndexPath){
         
@@ -211,8 +217,15 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if self.contentSize.height > self.bounds.height{
+            
             let view = self.dequeueReusableHeaderFooterViewWithIdentifier("LoadingView") as! JLChatLoadingView
+
+            if let title = chatDataSource?.titleforChatLoadingHeaderView(){
+                view.loadingTextLabel.text = title
+            }
+            
             view.activityIndicator.stopAnimating()
+            
             return view
         }
         return nil
@@ -280,10 +293,6 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     //MARK: -  Datasource
     
-    private func saveReferenceOfCell(cell:UITableViewCell,position:Int){
-        
-        self.cells[position] = cell
-    }
     
     public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath,message:JLMessage)->JLChatMessageCell{
         
@@ -354,9 +363,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             
         }
 
-        
-        self.saveReferenceOfCell(cellToReturn, position: indexPath.row)
-        
+                
         if thisIsNewMessage {
             
             print(" antes de animar\(indexPath.row)")

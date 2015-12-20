@@ -23,12 +23,50 @@ class ShowChatViewController: UIViewController {
     
     @IBAction func showChatButtonAction(sender: AnyObject) {
         
-        //use this for you present the JLChatViewController
+        /*
         if let vc = JLBundleController.jLChatFirstVC{
+        
+        vc.view.frame = self.view.frame
+        
+        /*let chatSegue = UIStoryboardSegue(identifier: "ChatListVCToChatVC", source: self, destination: vc)
+        
+        self.prepareForSegue(chatSegue, sender: nil)
+        
+        chatSegue.perform()*/
+        
+        let selectedChat = ClientChatSingleton.sharedInstance.listChats[indexPath.row]
+        
+        let firstNavVC = vc.viewControllers[0] as! MyChatViewController
+        
+        firstNavVC.currentChat = selectedChat
+        
+        firstNavVC.userTwo = firstNavVC.currentChat?.userTwo
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        
+        }
+*/
+        
+        //use this for you present the JLChatViewController
+        if let vc = JLBundleController.instantiateJLChatVC() as? MyViewController{
             
             vc.view.frame = self.view.frame
             
-            self.presentViewController(vc, animated: true, completion: nil)
+            let chatSegue = UIStoryboardSegue(identifier: "ChatListVCToChatVC", source: self, destination: vc, performHandler: { () -> Void in
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+                //self.presentViewController(vc, animated: true, completion: nil)
+                
+            })//UIStoryboardSegue(identifier: "ChatListVCToChatVC", source: self, destination: vc)
+            
+            
+            
+            chatSegue.perform()
+            
+            //self.navigationController?.pushViewController(vc, animated: true)
+            
+            //self.presentViewController(vc, animated: true, completion: nil)
             
         }
         

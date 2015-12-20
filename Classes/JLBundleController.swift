@@ -11,8 +11,9 @@ import UIKit
 
 public class JLBundleController {
     
-    private(set) public static var jLChatFirstVC:UINavigationController? = nil
-    
+    private(set) public static var jLChatSb:UIStoryboard? = nil
+
+
     class func getBundle()->NSBundle?{
         let podBundle = NSBundle(forClass: JLChatViewController.classForCoder())
         
@@ -25,7 +26,7 @@ public class JLBundleController {
         return nil
     }
     
-    private class func getStoryboard()->UIStoryboard?{
+    public class func loadJLChatStoryboard(){
         
         let podBundle = NSBundle(forClass: JLChatViewController.classForCoder())
         
@@ -35,25 +36,25 @@ public class JLBundleController {
                 
                 let storyboard = UIStoryboard(name: "JLChat", bundle: assetsBundle)
                 
-                return storyboard
+                self.jLChatSb = storyboard
             }
             
         }
         
-        return nil
     }
     
     /**
     Instantiate the initialViewController from JLChat.storyboard into jLChatFirstVC
     */
-    public class func loadJLChatNavigation(){
+    public class func instantiateJLChatVC()->AnyObject?{
         
-        if let jLChatStoryboard = JLBundleController.getStoryboard(){
+        if let jLChatStoryboard = jLChatSb{
             
-            jLChatFirstVC = jLChatStoryboard.instantiateInitialViewController() as? UINavigationController
+            let jLChatFirstVC = jLChatStoryboard.instantiateInitialViewController()
             
+            return jLChatFirstVC
         }
-        
+        return nil
     }
 
 
