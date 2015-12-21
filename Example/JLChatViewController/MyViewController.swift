@@ -168,7 +168,9 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
                 
                 let imageMess = mess as! JLImageMessageCell
                 
-                imageMess.messageImageView.image = UIImage(named: "imagem")!
+                imageMess.addImage(UIImage(named: "imagem")!)
+                
+                //imageMess.messageImageView.image = UIImage(named: "imagem")!
                 
                 message.relatedImage = UIImage(named: "imagem")!
             

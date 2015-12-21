@@ -18,6 +18,8 @@ public class JLChatAppearence: NSObject {
     //Incoming messages
     static public private(set) var incomingBubbleImage:UIImage?
     
+    static public private(set) var incomingBubbleImageMask:UIImage?
+    
     static public private(set) var incomingBubbleColor:UIColor = UIColor(red: 0.2, green: 0.6, blue: 0.7, alpha: 1)
     
     static public private(set) var showIncomingSenderImage:Bool = true
@@ -48,6 +50,9 @@ public class JLChatAppearence: NSObject {
             
             incomingBubbleImage = incomingBubbleImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             
+            
+            //mask
+            incomingBubbleImageMask = UIImage(named: "bubble_min_mask_incoming", inBundle: bundle, compatibleWithTraitCollection: nil)?.resizableImageWithCapInsets(edges)
         }
 
     }
@@ -57,6 +62,9 @@ public class JLChatAppearence: NSObject {
     
     //Outgoing messages
     static public private(set) var outgoingBubbleImage:UIImage?
+    
+    static public private(set) var outgoingBubbleImageMask:UIImage?
+
 
     static public private(set) var outgoingBubbleColor:UIColor = UIColor(red: 0, green: 0.7, blue: 0.4, alpha: 0.5)
     
@@ -88,7 +96,14 @@ public class JLChatAppearence: NSObject {
             
             outgoingBubbleImage = outgoingBubbleImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             
+            
+            //mask
+            outgoingBubbleImageMask = UIImage(named: "bubble_min_mask", inBundle: bundle, compatibleWithTraitCollection: nil)?.resizableImageWithCapInsets(edges)
+            
+
         }
+        
+        
 
     }
 

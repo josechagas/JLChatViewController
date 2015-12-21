@@ -16,6 +16,7 @@ public class JLChatMessageCell: UITableViewCell {
 
     public private(set) var isMenuConfigured:Bool = false
     
+    internal var isOutgoingMessage:Bool = false
     
     private var sendBlock:(()->())!
     private var deleteBlock:(()->())!
@@ -81,7 +82,7 @@ public class JLChatMessageCell: UITableViewCell {
     
     public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
        
-        
+        self.isOutgoingMessage = isOutgoingMessage
         
     }
 

@@ -8,40 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		020440D179BA3121478A6DE4ACE3B896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		02EAC97432DD6C6C30EED0E7C5A79E7E /* bubble_min_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 1700BEAA1D8BF3DEC5A81A69599250CB /* bubble_min_incoming.png */; };
 		1106AEC14CDD3D262B0AAF31C1951039 /* JLBundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F8CFB0D9B9A309B689A895A60EC019 /* JLBundleController.swift */; };
-		1BB6286900B6E6138E429B6032FDC541 /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5E24D0CFD4D44608317E2E64E4B016 /* bubble_min.png */; };
-		1BC9765537A8905B1CB0BBA930372BB1 /* bubble_min_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B87508FFC4AEC9E039D2718B24ACDB /* bubble_min_incoming.png */; };
+		134C9C5E40B4C384414898CB15FB9459 /* bubble_min_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D336026D4DC692A3B4B2976E4802F45 /* bubble_min_mask.png */; };
+		175514BCD9A9F7C31E37FE1886214059 /* alert9Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EE332CD853D6CEC6FFC77DFA91AC09 /* alert9Selected.png */; };
 		1F50EFDB0D96A9FFE51D22DCEA68FF42 /* JLChatLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19BBA00917EE430147E2B40B99CA549 /* JLChatLoadingView.swift */; };
-		248D65F4D3DF40110AFDA5761B2EFE32 /* alert9Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 122A97CE8B3B83CDCD1A8FE9E1282287 /* alert9Normal.png */; };
 		272EDDF1565FCA8A3442AC5DCF5D85ED /* JLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF1FC768B8DBBF8A9F3D21145F9BCAB /* JLFile.swift */; };
 		2C2BCD05D4E3FFC865F7A51CBBC8B422 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		32B25E58A690A8577D07285D310241C7 /* JLTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15137FD13447C88F9DECB1677D319C68 /* JLTextMessageCell.swift */; };
+		3FE87F77F54BB2569C48192230F280D7 /* bubble_min_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F3DE14003269C2B3D40200C5D12328 /* bubble_min_incoming@2x.png */; };
 		4B68ADCC965DB1FFDDE8763018E617B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		4ED7CD4226DE41A133A814E54E3B89F7 /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC726EFAA70FC432B382D16F5BF662 /* bubble_min@2x.png */; };
 		55F958CAEFEFD9633CD80E1C08CA9B40 /* Pods-JLChatViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EAF45DCB609F2A77AF795C5DAC076E4 /* JLChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C283258F24A70A97703E08012172DA3E /* JLChatTableView.swift */; };
+		61044694D0750B22D9507416B979E999 /* bubble_min@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ECA6C8A168FD27CDC46DF303D9A818D /* bubble_min@3x.png */; };
 		611CE2B7CD23D287B4F89E5A50AB49DC /* JLImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD727C01AD1A5FDCF07F2B86676AA6 /* JLImageMessageCell.swift */; };
 		6A8949A35201933265D69EF94E05B6E8 /* JLChatViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */; };
 		75591300525113B80C4A1B50050CF7EB /* Pods-JLChatViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */; };
+		77701583668F51945B25B2AA778AB12F /* bubble_min_mask_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B564FFFE8DEF6E6C94E80A981434E8E /* bubble_min_mask_incoming@2x.png */; };
+		77F062F4B95DF239BE6A5D6298D1C627 /* JLChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EBE10EE26006251B5AE2D47E09538A4 /* JLChat.storyboard */; };
+		7D886FB036EA90A2FC783EE60DAC0647 /* JLChatLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B65B78442936935A22B073DD3171F7C /* JLChatLoadingView.xib */; };
 		7E8125168CC7987AB0E71B3BAEC2EA52 /* Pods-JLChatViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EDFBB1E990EAC345183F3100EFCECB1 /* JLChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32AF7D7DBC4C8CF673915C5340943E /* JLChatTextView.swift */; };
 		86AA346758A34066121A40184146D20F /* JLChatViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F02FA24DF96F4538AC848BFAB8B4A60F /* JLChatViewController-dummy.m */; };
-		88090EDC9BD337DAE98EA36ACD412D5E /* alert9Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8F166D15C1DB0A89B0F5F403D0B8EA /* alert9Selected.png */; };
 		8BD396D58987B858C73449D8543B717F /* JLChatAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2009F858F15CF497EF414CE2977C8B4E /* JLChatAppearence.swift */; };
+		8E3F5A78CAF557679EDD82359394216C /* bubble_min_mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72633FC5B155B5973B0E42FEF5397C75 /* bubble_min_mask@3x.png */; };
+		9144AEEAA603A474260CA79D456EAA32 /* alert9Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F75F1492CEB2676493777C135EBEA76 /* alert9Normal.png */; };
+		99628AF872BEC5A0B783B50B431A9131 /* bubble_min_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 024657EAA3091274D1E53B49E9B406D5 /* bubble_min_incoming@3x.png */; };
 		9A2EB9FF2DE4B26D4596B545CAF56A5A /* JLChatViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB9C61726F17617A3D1799158CA11878 /* JLChatViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1945676EE0BBADE49C693C1EBDA0EF8 /* JLChatToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61860FD8538BB04AC6009420D92E2DFE /* JLChatToolBar.swift */; };
 		B2197A5676F436ECE3314FDFB3578775 /* JLChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A1249B21E4361752ED642A754D281D /* JLChatViewController.swift */; };
 		B318D1B695BC5246D8DC4DCD803A163B /* Pods-JLChatViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */; };
+		B424DE3976D29A22497A2C4812DBBBF5 /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 5243B1DCB858CF7AF2B263AF874F03A9 /* bubble_min.png */; };
 		BAA11DC372C48455A1CEB844B8632BAB /* JLMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58C1915D1E5605424F322CA5B9F5D6A /* JLMessage.swift */; };
+		BF885745EF2D950574CC3C7A42E9E595 /* bubble_min_mask_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CE2EB0A20ECB47929A574EA1281180D /* bubble_min_mask_incoming@3x.png */; };
 		C0B2023E23414DE833BC85D57F354B79 /* JLFileIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7700B33A2CBA450721C7C5D0D3C1E9 /* JLFileIndicatorView.swift */; };
-		C338B46422A09037785BC5E525343563 /* bubble_min@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A45884B83271AFFC3F2954879E6B6C /* bubble_min@3x.png */; };
-		C7EE7918DAB7B854561DD3730D54F68A /* JLChatLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66B739B8C3D90C1E43EC231D64EB781 /* JLChatLoadingView.xib */; };
 		CCEDD4DEAB5EA082D9C7110686FED8C4 /* JLCustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5622EC3B55E95314C4B554012CCC09ED /* JLCustomTextView.swift */; };
-		DA8BA5CD27315896B6B81059F6E7C474 /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 977B64D687FD8648C844BF4724E04A11 /* bubble_min@2x.png */; };
-		DE24BDC4FD60057DE0DBB7D54B8720FE /* bubble_min_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED0BBAA0651B0F245C05F80551111A58 /* bubble_min_incoming@3x.png */; };
+		DE3CB3DB1ED73F8F110567D21EE36F1A /* bubble_min_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 628C8E41119E215541D8BC9FA329243B /* bubble_min_mask@2x.png */; };
 		F112AB2A2F19D1C3C331836FDF2CBD16 /* JLChatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF5DDEFB80566A2038016F5003F931 /* JLChatImageView.swift */; };
-		F5EF2461332A6E41307D5C56C47147A2 /* bubble_min_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8708E41128E134BB1AF718D2416BB69B /* bubble_min_incoming@2x.png */; };
+		F227F8C80F0C0EF512D59127F14B12DE /* bubble_min_mask_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 1189131470EA62E2F17A4B3BC7068419 /* bubble_min_mask_incoming.png */; };
 		FB777E11E773F807D32D7D80EE23610D /* JLChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FD28B8F7279D1B60C8C24CBC16FCB /* JLChatMessageCell.swift */; };
-		FB9EFCBA671BE89188D946599D957985 /* JLChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2C75DF5FC2608373EDA92D6A73C0513 /* JLChat.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,30 +75,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01B87508FFC4AEC9E039D2718B24ACDB /* bubble_min_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_incoming.png; sourceTree = "<group>"; };
+		00F3DE14003269C2B3D40200C5D12328 /* bubble_min_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@2x.png"; sourceTree = "<group>"; };
+		024657EAA3091274D1E53B49E9B406D5 /* bubble_min_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@3x.png"; sourceTree = "<group>"; };
 		0847DCE12255A6424F740C3402FB17EC /* Pods-JLChatViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0A772C5E5E299E6FBACDA48CED7FC3AD /* Pods-JLChatViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		122A97CE8B3B83CDCD1A8FE9E1282287 /* alert9Normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Normal.png; sourceTree = "<group>"; };
+		1189131470EA62E2F17A4B3BC7068419 /* bubble_min_mask_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask_incoming.png; sourceTree = "<group>"; };
 		15137FD13447C88F9DECB1677D319C68 /* JLTextMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLTextMessageCell.swift; sourceTree = "<group>"; };
+		1700BEAA1D8BF3DEC5A81A69599250CB /* bubble_min_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_incoming.png; sourceTree = "<group>"; };
+		1EBE10EE26006251B5AE2D47E09538A4 /* JLChat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = JLChat.storyboard; sourceTree = "<group>"; };
 		2009F858F15CF497EF414CE2977C8B4E /* JLChatAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatAppearence.swift; sourceTree = "<group>"; };
+		2CBC726EFAA70FC432B382D16F5BF662 /* bubble_min@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
 		2CBD727C01AD1A5FDCF07F2B86676AA6 /* JLImageMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLImageMessageCell.swift; sourceTree = "<group>"; };
 		2CF1FC768B8DBBF8A9F3D21145F9BCAB /* JLFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFile.swift; sourceTree = "<group>"; };
-		2E8F166D15C1DB0A89B0F5F403D0B8EA /* alert9Selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Selected.png; sourceTree = "<group>"; };
+		2D336026D4DC692A3B4B2976E4802F45 /* bubble_min_mask.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask.png; sourceTree = "<group>"; };
 		2FBE367B2D05F5C50E5084DC2EF73170 /* Pods-JLChatViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		35504E0157D35ACD2B7922AC6D1DDDEB /* Pods-JLChatViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		35A45884B83271AFFC3F2954879E6B6C /* bubble_min@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@3x.png"; sourceTree = "<group>"; };
 		39BC80F05B69354B1F2A2B717733C193 /* Pods-JLChatViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3A21714F23DE9B63718CA38FACB574DC /* Pods-JLChatViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		3B564FFFE8DEF6E6C94E80A981434E8E /* bubble_min_mask_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@2x.png"; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		45AA5BF01B7D1FBC9B5187F518B4103A /* JLChatViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-prefix.pch"; sourceTree = "<group>"; };
 		47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Tests-dummy.m"; sourceTree = "<group>"; };
 		4D7700B33A2CBA450721C7C5D0D3C1E9 /* JLFileIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFileIndicatorView.swift; sourceTree = "<group>"; };
 		4F32AF7D7DBC4C8CF673915C5340943E /* JLChatTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTextView.swift; sourceTree = "<group>"; };
+		5243B1DCB858CF7AF2B263AF874F03A9 /* bubble_min.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min.png; sourceTree = "<group>"; };
 		5622EC3B55E95314C4B554012CCC09ED /* JLCustomTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLCustomTextView.swift; sourceTree = "<group>"; };
+		59EE332CD853D6CEC6FFC77DFA91AC09 /* alert9Selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Selected.png; sourceTree = "<group>"; };
 		5B4FD28B8F7279D1B60C8C24CBC16FCB /* JLChatMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatMessageCell.swift; sourceTree = "<group>"; };
+		5CE2EB0A20ECB47929A574EA1281180D /* bubble_min_mask_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@3x.png"; sourceTree = "<group>"; };
 		61860FD8538BB04AC6009420D92E2DFE /* JLChatToolBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatToolBar.swift; sourceTree = "<group>"; };
+		628C8E41119E215541D8BC9FA329243B /* bubble_min_mask@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@2x.png"; sourceTree = "<group>"; };
 		641C1BE7F3B2653991B7DCB4104CC6FE /* Pods-JLChatViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6B65B78442936935A22B073DD3171F7C /* JLChatLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatLoadingView.xib; sourceTree = "<group>"; };
+		6ECA6C8A168FD27CDC46DF303D9A818D /* bubble_min@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@3x.png"; sourceTree = "<group>"; };
 		6F71E83F345459312DCBA731D8209CFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72633FC5B155B5973B0E42FEF5397C75 /* bubble_min_mask@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@3x.png"; sourceTree = "<group>"; };
 		7696A6625C035B2B2AE75A82863B6FCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79CC80C2B47F07969455A65F20802738 /* JLChatViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JLChatViewController.modulemap; sourceTree = "<group>"; };
 		7A8341FD4D388BD6F21C498B5A4A3C60 /* Pods_JLChatViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,27 +117,22 @@
 		84746E033736AD06D32F2E385FC53DDF /* Pods-JLChatViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
 		86EDB6C3AB2F49059CEE4EF53634F7C3 /* Pods-JLChatViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8708E41128E134BB1AF718D2416BB69B /* bubble_min_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@2x.png"; sourceTree = "<group>"; };
 		8CB45A011B98D7613ADDD80A6893F805 /* Pods-JLChatViewController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-resources.sh"; sourceTree = "<group>"; };
 		9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLChatViewController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9592467C1245A346AF2A32260282C9C1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95C6ECEFB2174A32E71E7266B2BFA525 /* JLChatViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLChatViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		977B64D687FD8648C844BF4724E04A11 /* bubble_min@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
 		9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		A2C75DF5FC2608373EDA92D6A73C0513 /* JLChat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = JLChat.storyboard; sourceTree = "<group>"; };
+		9F75F1492CEB2676493777C135EBEA76 /* alert9Normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Normal.png; sourceTree = "<group>"; };
 		A8BF5DDEFB80566A2038016F5003F931 /* JLChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatImageView.swift; sourceTree = "<group>"; };
 		AB9C61726F17617A3D1799158CA11878 /* JLChatViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-umbrella.h"; sourceTree = "<group>"; };
-		AE5E24D0CFD4D44608317E2E64E4B016 /* bubble_min.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min.png; sourceTree = "<group>"; };
 		B04A36A0DD8D04758674C07FE14E885E /* Pods-JLChatViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Tests.modulemap"; sourceTree = "<group>"; };
 		B58C1915D1E5605424F322CA5B9F5D6A /* JLMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLMessage.swift; sourceTree = "<group>"; };
 		B5A1249B21E4361752ED642A754D281D /* JLChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatViewController.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C283258F24A70A97703E08012172DA3E /* JLChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTableView.swift; sourceTree = "<group>"; };
 		D5209C24BDEE577269CA37A04847EFE6 /* Pods-JLChatViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Example.modulemap"; sourceTree = "<group>"; };
-		D66B739B8C3D90C1E43EC231D64EB781 /* JLChatLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatLoadingView.xib; sourceTree = "<group>"; };
 		DA68CAAA8521FAE8021081261B8C8C5B /* Pods-JLChatViewController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-resources.sh"; sourceTree = "<group>"; };
 		E19BBA00917EE430147E2B40B99CA549 /* JLChatLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLoadingView.swift; sourceTree = "<group>"; };
-		ED0BBAA0651B0F245C05F80551111A58 /* bubble_min_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@3x.png"; sourceTree = "<group>"; };
 		ED35FBB557E61AF6D7452FBC89D4EFF0 /* Pods_JLChatViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02FA24DF96F4538AC848BFAB8B4A60F /* JLChatViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLChatViewController-dummy.m"; sourceTree = "<group>"; };
 		F1F8CFB0D9B9A309B689A895A60EC019 /* JLBundleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLBundleController.swift; sourceTree = "<group>"; };
@@ -163,14 +175,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		000237C894DCF74B3F37E7E2F684B66D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				633F1F14772AA0ECC0372A9CBBF81C07 /* Assets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		038AC0C63CB7D4F1A0D3E6DD2EF5AE98 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,11 +206,34 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		375A7C19A5A3484305B8E6D52668E867 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9F75F1492CEB2676493777C135EBEA76 /* alert9Normal.png */,
+				59EE332CD853D6CEC6FFC77DFA91AC09 /* alert9Selected.png */,
+				5243B1DCB858CF7AF2B263AF874F03A9 /* bubble_min.png */,
+				2CBC726EFAA70FC432B382D16F5BF662 /* bubble_min@2x.png */,
+				6ECA6C8A168FD27CDC46DF303D9A818D /* bubble_min@3x.png */,
+				1700BEAA1D8BF3DEC5A81A69599250CB /* bubble_min_incoming.png */,
+				00F3DE14003269C2B3D40200C5D12328 /* bubble_min_incoming@2x.png */,
+				024657EAA3091274D1E53B49E9B406D5 /* bubble_min_incoming@3x.png */,
+				2D336026D4DC692A3B4B2976E4802F45 /* bubble_min_mask.png */,
+				628C8E41119E215541D8BC9FA329243B /* bubble_min_mask@2x.png */,
+				72633FC5B155B5973B0E42FEF5397C75 /* bubble_min_mask@3x.png */,
+				1189131470EA62E2F17A4B3BC7068419 /* bubble_min_mask_incoming.png */,
+				3B564FFFE8DEF6E6C94E80A981434E8E /* bubble_min_mask_incoming@2x.png */,
+				5CE2EB0A20ECB47929A574EA1281180D /* bubble_min_mask_incoming@3x.png */,
+				1EBE10EE26006251B5AE2D47E09538A4 /* JLChat.storyboard */,
+				6B65B78442936935A22B073DD3171F7C /* JLChatLoadingView.xib */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		3F3C5764E3C2D03C110F79C2B104C0F9 /* JLChatViewController */ = {
 			isa = PBXGroup;
 			children = (
 				038AC0C63CB7D4F1A0D3E6DD2EF5AE98 /* Classes */,
-				000237C894DCF74B3F37E7E2F684B66D /* Resources */,
+				E855A0BBC5FB13071F0B40900ABEEA7C /* Resources */,
 				DB2813BE6F84A995CCDD5B2B396AB45F /* Support Files */,
 			);
 			name = JLChatViewController;
@@ -222,23 +249,6 @@
 				7A8341FD4D388BD6F21C498B5A4A3C60 /* Pods_JLChatViewController_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		633F1F14772AA0ECC0372A9CBBF81C07 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				122A97CE8B3B83CDCD1A8FE9E1282287 /* alert9Normal.png */,
-				2E8F166D15C1DB0A89B0F5F403D0B8EA /* alert9Selected.png */,
-				AE5E24D0CFD4D44608317E2E64E4B016 /* bubble_min.png */,
-				977B64D687FD8648C844BF4724E04A11 /* bubble_min@2x.png */,
-				35A45884B83271AFFC3F2954879E6B6C /* bubble_min@3x.png */,
-				01B87508FFC4AEC9E039D2718B24ACDB /* bubble_min_incoming.png */,
-				8708E41128E134BB1AF718D2416BB69B /* bubble_min_incoming@2x.png */,
-				ED0BBAA0651B0F245C05F80551111A58 /* bubble_min_incoming@3x.png */,
-				A2C75DF5FC2608373EDA92D6A73C0513 /* JLChat.storyboard */,
-				D66B739B8C3D90C1E43EC231D64EB781 /* JLChatLoadingView.xib */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -306,6 +316,14 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/JLChatViewController";
+			sourceTree = "<group>";
+		};
+		E855A0BBC5FB13071F0B40900ABEEA7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				375A7C19A5A3484305B8E6D52668E867 /* Assets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		F7D10027BD23F00FF17B31B85280947D /* Pods-JLChatViewController_Tests */ = {
@@ -417,7 +435,7 @@
 			buildPhases = (
 				3F5C3754D2F2ED2EAEB28FE2515FE21F /* Sources */,
 				4CB48141E7C788DDA11F6F03A8A361A4 /* Frameworks */,
-				02DFDD2B1BA7ED70EC0EDABE5E6E3E68 /* Resources */,
+				C178735CD49D55BBF09A0C4F580E55B9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -458,20 +476,26 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		02DFDD2B1BA7ED70EC0EDABE5E6E3E68 /* Resources */ = {
+		C178735CD49D55BBF09A0C4F580E55B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				248D65F4D3DF40110AFDA5761B2EFE32 /* alert9Normal.png in Resources */,
-				88090EDC9BD337DAE98EA36ACD412D5E /* alert9Selected.png in Resources */,
-				1BB6286900B6E6138E429B6032FDC541 /* bubble_min.png in Resources */,
-				DA8BA5CD27315896B6B81059F6E7C474 /* bubble_min@2x.png in Resources */,
-				C338B46422A09037785BC5E525343563 /* bubble_min@3x.png in Resources */,
-				1BC9765537A8905B1CB0BBA930372BB1 /* bubble_min_incoming.png in Resources */,
-				F5EF2461332A6E41307D5C56C47147A2 /* bubble_min_incoming@2x.png in Resources */,
-				DE24BDC4FD60057DE0DBB7D54B8720FE /* bubble_min_incoming@3x.png in Resources */,
-				FB9EFCBA671BE89188D946599D957985 /* JLChat.storyboard in Resources */,
-				C7EE7918DAB7B854561DD3730D54F68A /* JLChatLoadingView.xib in Resources */,
+				9144AEEAA603A474260CA79D456EAA32 /* alert9Normal.png in Resources */,
+				175514BCD9A9F7C31E37FE1886214059 /* alert9Selected.png in Resources */,
+				B424DE3976D29A22497A2C4812DBBBF5 /* bubble_min.png in Resources */,
+				4ED7CD4226DE41A133A814E54E3B89F7 /* bubble_min@2x.png in Resources */,
+				61044694D0750B22D9507416B979E999 /* bubble_min@3x.png in Resources */,
+				02EAC97432DD6C6C30EED0E7C5A79E7E /* bubble_min_incoming.png in Resources */,
+				3FE87F77F54BB2569C48192230F280D7 /* bubble_min_incoming@2x.png in Resources */,
+				99628AF872BEC5A0B783B50B431A9131 /* bubble_min_incoming@3x.png in Resources */,
+				134C9C5E40B4C384414898CB15FB9459 /* bubble_min_mask.png in Resources */,
+				DE3CB3DB1ED73F8F110567D21EE36F1A /* bubble_min_mask@2x.png in Resources */,
+				8E3F5A78CAF557679EDD82359394216C /* bubble_min_mask@3x.png in Resources */,
+				F227F8C80F0C0EF512D59127F14B12DE /* bubble_min_mask_incoming.png in Resources */,
+				77701583668F51945B25B2AA778AB12F /* bubble_min_mask_incoming@2x.png in Resources */,
+				BF885745EF2D950574CC3C7A42E9E595 /* bubble_min_mask_incoming@3x.png in Resources */,
+				77F062F4B95DF239BE6A5D6298D1C627 /* JLChat.storyboard in Resources */,
+				7D886FB036EA90A2FC783EE60DAC0647 /* JLChatLoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

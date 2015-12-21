@@ -64,7 +64,10 @@ public class JLImageMessageCell: JLChatMessageCell {
         
         senderImageView.image = message.senderImage
         
-        self.messageImageView.image = message.relatedImage
+        if let image = message.relatedImage{
+            self.addImage(image)
+        }
+        
 
         if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(false)
@@ -89,6 +92,16 @@ public class JLImageMessageCell: JLChatMessageCell {
         }
         
     }
+    
+    public func addImage(image:UIImage){
+        
+        
+        let mask = self.isOutgoingMessage ? JLChatAppearence.outgoingBubbleImageMask : JLChatAppearence.incomingBubbleImageMask
+        
+        self.messageImageView.addImage(image, mask: mask)
+        
+    }
+    
     
     override public func updateMessageStatus(message:JLMessage){
         

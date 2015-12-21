@@ -6,6 +6,9 @@
 //  Copyright © 2015 José Lucas Souza das Chagas. All rights reserved.
 //
 
+
+//http://iosdevelopertips.com/cocoa/how-to-mask-an-image.html
+
 import UIKit
 
 public class JLChatImageView: UIImageView {
@@ -17,12 +20,19 @@ public class JLChatImageView: UIImageView {
         // Drawing code
     }
     */
+    
+    @IBInspectable public var useBubbleForm:Bool = false
+    
     override public var image:UIImage?{
         didSet{
             if let _ = self.image{
+                self.layer.masksToBounds = false
+                self.backgroundColor = UIColor.clearColor()
                 loadActivity.stopAnimating()
             }
             else{
+                self.layer.masksToBounds = true
+                self.backgroundColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 0.3)
                 loadActivity.startAnimating()
             }
         }
@@ -44,6 +54,48 @@ public class JLChatImageView: UIImageView {
         
         self.backgroundColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 0.3)
         initLoadActivity()
+    }
+    
+    
+    public func addImage(image:UIImage,mask:UIImage?){
+        
+        
+        if let mask = mask{
+            let imageReference = image.CGImage
+            
+            
+            //----
+            let hasAlpha = true
+            let scale: CGFloat = 0.0
+            
+            UIGraphicsBeginImageContextWithOptions(self.frame.size, !hasAlpha, scale)
+            mask.drawInRect(CGRect(origin: CGPointZero, size: self.frame.size))
+            
+            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+            
+            let maskReference = scaledImage.CGImage
+            //-----
+            
+            
+            let imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
+                CGImageGetHeight(maskReference),
+                CGImageGetBitsPerComponent(maskReference),
+                CGImageGetBitsPerPixel(maskReference),
+                CGImageGetBytesPerRow(maskReference),
+                CGImageGetDataProvider(maskReference), nil, true)
+            
+            let maskedReference = CGImageCreateWithMask(imageReference, imageMask)
+            
+            let maskedImage = UIImage(CGImage:maskedReference!)
+            
+            
+            self.image = maskedImage
+
+        }
+        else{
+            self.image = image
+
+        }
     }
     
     
