@@ -168,11 +168,9 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
                 
                 let imageMess = mess as! JLImageMessageCell
                 
-                imageMess.addImage(UIImage(named: "imagem")!)
-                
-                //imageMess.messageImageView.image = UIImage(named: "imagem")!
-                
-                message.relatedImage = UIImage(named: "imagem")!
+                imageMess.addImage(UIImage(named: "imagem2")!)
+                                
+                message.relatedImage = UIImage(named: "imagem2")!
             
             }
         }
@@ -225,6 +223,8 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
   
     func didTapMessageAtIndexPath(indexPath: NSIndexPath) {
         print("tocou na mensagem")
+        
+        
     }
     
     //MARK: - Messages menu delegate methods

@@ -25,55 +25,77 @@ public class JLChatImageView: UIImageView {
     
     override public var image:UIImage?{
         didSet{
-            if let _ = self.image{
-                self.layer.masksToBounds = false
-                self.backgroundColor = UIColor.clearColor()
-                loadActivity.stopAnimating()
-            }
-            else{
-                self.layer.masksToBounds = true
-                self.backgroundColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 0.3)
-                loadActivity.startAnimating()
-            }
+            self.clipsToBounds = true
         }
     }
-    
     
     public var loadActivity:UIActivityIndicatorView!
 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.backgroundColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 0.3)
+
         initLoadActivity()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        self.backgroundColor = UIColor(red: 222/255, green: 222/255, blue: 222/255, alpha: 0.3)
+
         initLoadActivity()
+        
     }
     
+    private func cutImage(image:UIImage)->UIImage{
+        let contextImage: UIImage = UIImage(CGImage: image.CGImage!)
+        
+        let contextSize: CGSize = contextImage.size
+        
+        var posX: CGFloat = 0.0
+        var posY: CGFloat = 0.0
+        var newWidth: CGFloat!
+        var newHeight: CGFloat!
+        
+        // See what size is longer and create the center off of that
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            newWidth = contextSize.height
+            newHeight = contextSize.height
+        }else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            newWidth = contextSize.width
+            newHeight = contextSize.width
+        }
+        
+        let rect: CGRect = CGRectMake(posX, posY, newWidth, newHeight)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let newImage: UIImage = UIImage(CGImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+
+        return newImage
+    }
     
     public func addImage(image:UIImage,mask:UIImage?){
         
-        
         if let mask = mask{
-            let imageReference = image.CGImage
+            let imageReference = cutImage(image).CGImage
+
             
             
-            //----
+            //---- resizing the bubble mask
             let hasAlpha = true
             let scale: CGFloat = 0.0
             
             UIGraphicsBeginImageContextWithOptions(self.frame.size, !hasAlpha, scale)
             mask.drawInRect(CGRect(origin: CGPointZero, size: self.frame.size))
             
-            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+            let resizedMask = UIGraphicsGetImageFromCurrentImageContext()
             
-            let maskReference = scaledImage.CGImage
+            let maskReference = resizedMask.CGImage
             //-----
             
             
@@ -87,7 +109,6 @@ public class JLChatImageView: UIImageView {
             let maskedReference = CGImageCreateWithMask(imageReference, imageMask)
             
             let maskedImage = UIImage(CGImage:maskedReference!)
-            
             
             self.image = maskedImage
 
@@ -108,7 +129,7 @@ public class JLChatImageView: UIImageView {
         loadActivity.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(loadActivity)
-        
+    
         loadActivity.startAnimating()
         //Constraints
         

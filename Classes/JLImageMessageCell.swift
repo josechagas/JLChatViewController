@@ -64,9 +64,15 @@ public class JLImageMessageCell: JLChatMessageCell {
         
         senderImageView.image = message.senderImage
         
+        
         if let image = message.relatedImage{
             self.addImage(image)
         }
+        else{
+            self.achiveLoadingMode()
+        }
+        
+        
         
 
         if message.messageStatus == MessageSendStatus.ErrorToSend{
@@ -100,6 +106,16 @@ public class JLImageMessageCell: JLChatMessageCell {
         
         self.messageImageView.addImage(image, mask: mask)
         
+        self.messageImageView.loadActivity.stopAnimating()
+        
+    }
+    
+    public func achiveLoadingMode(){
+        self.messageImageView.image = isOutgoingMessage ? JLChatAppearence.outgoingBubbleImage : JLChatAppearence.incomingBubbleImage
+        
+        self.messageImageView.tintColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
+        
+        self.messageImageView.loadActivity.startAnimating()
     }
     
     

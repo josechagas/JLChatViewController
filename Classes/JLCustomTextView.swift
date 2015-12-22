@@ -155,18 +155,7 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
         fileIndicatorViewHeight.constant = fileIndicatorViewHeightValue
         
         
-        var a = self.text
-        
-        a = a.stringByAppendingString(" ")
-        
-        self.text = a
-        
-        self.text = String(self.text.characters.dropLast())
-        
-        if correctEdges{
-            self.correctEdgesForFile(self.fileIndicatorViewHeightValue)
-        }
-
+       
         
         UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
             
@@ -174,7 +163,18 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
             
 
             }) { (finished) -> Void in
-               
+                var a = self.text
+                
+                a = a.stringByAppendingString(" ")
+                
+                self.text = a
+                
+                self.text = String(self.text.characters.dropLast())
+                
+                if correctEdges{
+                    self.correctEdgesForFile(self.fileIndicatorViewHeightValue)
+                }
+
         }
         
         UIView.animateWithDuration(0.4, delay: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in

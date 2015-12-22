@@ -191,7 +191,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22E-e3-JIN">
-                                                    <rect key="frame" x="505" y="288" width="30" height="30"/>
+                                                    <rect key="frame" x="505" y="285.5" width="30" height="30"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6h6-y2-8rL"/>
@@ -205,17 +205,14 @@
                                                         <action selector="errorButtonAction:" destination="qxe-dI-7Nx" eventType="touchUpInside" id="CW9-zT-e1x"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-Me-D77" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
-                                                    <rect key="frame" x="40" y="53" width="500" height="500"/>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-Me-D77" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="48" width="505" height="505"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="3Fz-Me-D77" secondAttribute="height" id="44Q-Hw-10c"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="useBubbleForm" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
@@ -234,7 +231,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Y1-2eC">
-                                                    <rect key="frame" x="300" y="8" width="0.0" height="40"/>
+                                                    <rect key="frame" x="300" y="8" width="0.0" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,7 +246,7 @@
                                                 <constraint firstItem="22E-e3-JIN" firstAttribute="centerY" secondItem="3Fz-Me-D77" secondAttribute="centerY" id="CHx-4U-9JI"/>
                                                 <constraint firstItem="CJJ-xu-V1N" firstAttribute="top" relation="greaterThanOrEqual" secondItem="avK-cS-LiH" secondAttribute="topMargin" constant="5" id="Gam-J6-kXD"/>
                                                 <constraint firstItem="3Fz-Me-D77" firstAttribute="bottom" secondItem="CJJ-xu-V1N" secondAttribute="bottom" id="Gzd-sY-Mw8"/>
-                                                <constraint firstItem="3Fz-Me-D77" firstAttribute="leading" secondItem="CJJ-xu-V1N" secondAttribute="trailing" constant="5" id="UVZ-zn-G4B"/>
+                                                <constraint firstItem="3Fz-Me-D77" firstAttribute="leading" secondItem="CJJ-xu-V1N" secondAttribute="trailing" id="UVZ-zn-G4B"/>
                                                 <constraint firstAttribute="topMargin" secondItem="sdS-Y1-2eC" secondAttribute="top" id="UnA-fr-Xot"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="22E-e3-JIN" secondAttribute="trailing" constant="5" id="YoY-bk-bDz"/>
                                                 <constraint firstItem="22E-e3-JIN" firstAttribute="leading" secondItem="3Fz-Me-D77" secondAttribute="trailing" constant="-35" id="cPL-3C-roO"/>
@@ -276,7 +273,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-B0-WP0">
-                                                    <rect key="frame" x="65" y="288" width="30" height="30"/>
+                                                    <rect key="frame" x="65" y="285.5" width="30" height="30"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Pne-Mo-hZz"/>
@@ -290,17 +287,14 @@
                                                         <action selector="errorButtonAction:" destination="nIq-qR-Lgx" eventType="touchUpInside" id="IAI-El-2Cc"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izH-iH-shk" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
-                                                    <rect key="frame" x="60" y="53" width="500" height="500"/>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izH-iH-shk" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="60" y="48" width="505" height="505"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="izH-iH-shk" secondAttribute="height" id="SKS-3O-I3a"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="NO"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="useBubbleForm" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
@@ -319,7 +313,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UH-rR-gUD">
-                                                    <rect key="frame" x="300" y="8" width="0.0" height="40"/>
+                                                    <rect key="frame" x="300" y="8" width="0.0" height="35"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,7 +324,7 @@
                                             <constraints>
                                                 <constraint firstItem="4aN-Gh-kRF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fm0-fR-UZ9" secondAttribute="topMargin" constant="5" id="0ox-Is-nfL"/>
                                                 <constraint firstItem="izH-iH-shk" firstAttribute="top" secondItem="3UH-rR-gUD" secondAttribute="bottom" constant="5" id="Eq6-U9-Mmn"/>
-                                                <constraint firstItem="4aN-Gh-kRF" firstAttribute="leading" secondItem="izH-iH-shk" secondAttribute="trailing" constant="5" id="F0l-dp-H3v"/>
+                                                <constraint firstItem="4aN-Gh-kRF" firstAttribute="leading" secondItem="izH-iH-shk" secondAttribute="trailing" id="F0l-dp-H3v"/>
                                                 <constraint firstItem="aVi-B0-WP0" firstAttribute="centerY" secondItem="izH-iH-shk" secondAttribute="centerY" id="Id2-19-Xh5"/>
                                                 <constraint firstItem="3UH-rR-gUD" firstAttribute="centerX" secondItem="fm0-fR-UZ9" secondAttribute="centerX" id="N1E-xU-Xwq"/>
                                                 <constraint firstAttribute="topMargin" secondItem="3UH-rR-gUD" secondAttribute="top" id="Ux5-a9-sgd"/>

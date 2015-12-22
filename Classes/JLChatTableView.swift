@@ -234,7 +234,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     public func scrollViewDidScroll(scrollView: UIScrollView) {
         if self.contentOffset.y >= -(self.contentInset.top + 40){
-            print("entrou dois")
+            //print("entrou dois")
             blockLoadOldMessages = false
         }
 
