@@ -55,6 +55,7 @@ public class JLChatImageView: UIImageView {
         var newWidth: CGFloat!
         var newHeight: CGFloat!
         
+        
         // See what size is longer and create the center off of that
         if contextSize.width > contextSize.height {
             posX = ((contextSize.width - contextSize.height) / 2)
@@ -67,6 +68,8 @@ public class JLChatImageView: UIImageView {
             newWidth = contextSize.width
             newHeight = contextSize.width
         }
+        
+            
         
         let rect: CGRect = CGRectMake(posX, posY, newWidth, newHeight)
         
