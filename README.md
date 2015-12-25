@@ -24,37 +24,38 @@ pod "JLChatViewController"
 
 ## Initial Configurations
 ##### *First Step*
-Import it on every file that you will use this framework.
+
+      Import it on every file that you will use this framework.
 
 ```swift
 import JLChatViewController
 ```
 ##### *Second Step*
-Call this method on AppDelegate for you load the `JLChat.storyboard`, but you can call it where you prefer.
+      Call this method on AppDelegate for you load the `JLChat.storyboard`, but you can call it where you prefer.
 ```swift
 JLBundleController.loadJLChatStoryboard()
 ```
 ##### *Third Step*
-Your ViewController that will have the chat must inherit from `JLChatViewController` and implement all these protocols: 
-`ChatDataSource`,`ChatToolBarDelegate`,`JLChatMessagesMenuDelegate`,`ChatDelegate`.
-
+      Your ViewController that will have the chat must inherit from `JLChatViewController` and implement all these protocols: 
+        `ChatDataSource`,`ChatToolBarDelegate`,`JLChatMessagesMenuDelegate`,`ChatDelegate`.
+        
 ##### *Fourth Step*
-Find `JLChat.storyboard` open it, choose the ViewController and put your ViewController that inherits from `JLChatViewController` as the class of this one.
-
+      Find `JLChat.storyboard` open it, choose the ViewController and put your ViewController that inherits from `JLChatViewController` as the class of this one.
+      
 ## Quick Tips
 ##### *Configuring your messages*
-Change the parameters values as you prefer
+      Change the parameters values as you prefer
 ```swift
 JLChatAppearence.configIncomingMessages(nil, showIncomingSenderImage: true, incomingTextColor: nil)
 
 JLChatAppearence.configOutgoingMessages(nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
-
+  
 JLChatAppearence.configChatFont(nil) { (indexPath) -> Bool in
-
-if indexPath.row % 3 == 0{
-return true
-}
-return false
+            
+      if indexPath.row % 3 == 0{
+            return true
+      }
+      return false
 }
 ```
 
@@ -81,17 +82,17 @@ self.chatTableView.updateMessageStatusOfCellAtIndexPath(/* the indexPath of the 
 ##### *Open your chat ViewController*
 ```swift
 if let vc = JLBundleController.instantiateJLChatVC() as? /*Name of your ViewController that inherits from            JLChatViewController*/{
-
-vc.view.frame = self.view.frame
-
-let chatSegue = UIStoryboardSegue(identifier: "identifier name", source: self, destination: vc, performHandler: { () -> Void in
-
-self.navigationController?.pushViewController(vc, animated: true)
-})
-
-self.prepareForSegue(chatSegue, sender: nil)
-
-chatSegue.perform()
+            
+      vc.view.frame = self.view.frame
+            
+      let chatSegue = UIStoryboardSegue(identifier: "identifier name", source: self, destination: vc, performHandler: { () -> Void in
+                
+            self.navigationController?.pushViewController(vc, animated: true)
+      })
+            
+      self.prepareForSegue(chatSegue, sender: nil)
+            
+      chatSegue.perform()
 }
 ```
 
@@ -99,38 +100,38 @@ chatSegue.perform()
 
 ##### *First Step*
 
-Create a class that inherits from `JLChatMessageCell` and implement all necessary methods , more details on example project
-
+      Create a class that inherits from `JLChatMessageCell` and implement all necessary methods , more details on example project
+      
 ##### *Second Step*
-
-Create a .xib file that have a `UITableViewCell` and add all necessary views, more details on example project.
-Attention! there are some constraints of errorButton and senderImageView that must have to exist, for everything works well , more details take a look on custom cell of the example project.
-
+      
+      Create a .xib file that have a `UITableViewCell` and add all necessary views, more details on example project.
+      Attention! there are some constraints of errorButton and senderImageView that must have to exist, for everything works well , more details take a look on custom cell of the example project.
+      
 ##### *Third Step*
-
-Register them on your chat tableView
-
+      
+      Register them on your chat tableView
+      
 ```swift
 self.chatTableView.registerNib(UINib(nibName: "nib name", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "identifier")
 ```
 ##### *Fourth Step*
-implement the method of `ChatDataSource` that is for custom cells
-
+      implement the method of `ChatDataSource` that is for custom cells
+  
 ```swift
 func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell {                ...
+        
+      var cell:JLChatMessageCell!
+      if message.senderID == self.chatTableView.myID{
+            cell = self.chatTableView.dequeueReusableCellWithIdentifier("your identifier for outgoing message") as! CellName
+      }
+      else{
+            cell = self.chatTableView.dequeueReusableCellWithIdentifier("your identifier for incoming message") as! CellName
 
-var cell:JLChatMessageCell!
-if message.senderID == self.chatTableView.myID{
-cell = self.chatTableView.dequeueReusableCellWithIdentifier("your identifier for outgoing message") as! CellName
-}
-else{
-cell = self.chatTableView.dequeueReusableCellWithIdentifier("your identifier for incoming message") as! CellName
-
-}
-
-
-return cell
-
+      }
+        
+        
+      return cell
+        
 }
 ```
 

@@ -285,6 +285,10 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         toolBar.toolBarFrameDelegate = self.chatTableView
         
+        toolBar.configLeftButton("files", image: nil)
+        toolBar.configRightButton("send", image: nil)
+
+        
     }
     
     func didTapLeftButton() {
