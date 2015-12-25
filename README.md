@@ -24,7 +24,7 @@ pod "JLChatViewController"
 
 ## Initial Configurations
 ##### *First Step*
-      Import it on every file that you will you this framework.
+      Import it on every file that you will use this framework.
 
 ```swift
 import JLChatViewController
