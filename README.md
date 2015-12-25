@@ -22,21 +22,81 @@ it, simply add the following line to your Podfile:
 pod "JLChatViewController"
 ```
 
-## Configurations
+## Initial Configurations
   
   -> First Step:
       Import it on every file that you will you this framework
-      
+      ```swift
       import JLChatViewController
+      ```
   -> Second Step:
-      Call this method on AppDelegate for you load the JLChat.storyboard
+      Call this method on AppDelegate for you load the `JLChat.storyboard`, but you can call it where you prefer.
+      ```swift
       JLBundleController.loadJLChatStoryboard()
+      ```
+  -> Third Step:
+      Your ViewController that will have the chat must inherit from `JLChatViewController` and implement all these protocols: 
+        `ChatDataSource`,`ChatToolBarDelegate`,`JLChatMessagesMenuDelegate`,`ChatDelegate`.
+        
+  -> Fourth Step:
+      Find `JLChat.storyboard` open it choose the ViewController and put your ViewController that inherits from `JLChatViewController` as the class of this one.
+      
+## Quick Tips
+##### *Configuring your messages*
 
+```swift
+JLChatAppearence.configIncomingMessages(nil, showIncomingSenderImage: true, incomingTextColor: nil)
+        
+JLChatAppearence.configOutgoingMessages(nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
   
+JLChatAppearence.configChatFont(nil) { (indexPath) -> Bool in
+            
+    if indexPath.row % 3 == 0{
+       return true
+    }
+    return false
+}
 
-Comming soon do not worry , I am making some adjustments.
+```
 
-Thanks for your patience.
+##### *Adding new message*
+
+```swift
+  self.chatTableView.addNewMessage()
+```
+
+##### *Adding old messages*
+```swift
+  self.chatTableView.addOldMessages(20/*the number of old messages that will be added*/)
+```
+
+##### *Removing a message*
+```swift
+  self.chatTableView.removeMessage(indexPath/* the position of the cell in chat tableView*/)
+```
+
+##### *Updating a message cell send status*
+```swift
+  self.chatTableView.updateMessageStatusOfCellAtIndexPath(indexPath, message: message/*the message related to the cell at indexPath*/)
+```
+##### *Open your chat ViewController*
+```swift
+if let vc = JLBundleController.instantiateJLChatVC() as? /*Name of your ViewController that inherits from JLChatViewController*/{
+            
+    vc.view.frame = self.view.frame
+            
+    let chatSegue = UIStoryboardSegue(identifier: "ChatListVCToChatVC", source: self, destination: vc, performHandler: { () -> Void in
+                
+        self.navigationController?.pushViewController(vc, animated: true)
+    })
+            
+    self.prepareForSegue(chatSegue, sender: nil)
+            
+    chatSegue.perform()
+}
+```
+
+
 
 ## Author
 
