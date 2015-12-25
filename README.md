@@ -24,10 +24,11 @@ pod "JLChatViewController"
 
 ## Initial Configurations
 ##### *First Step*
-      
-      ```swift
-      import JLChatViewController
-      ```
+      Import it on every file that you will you this framework.
+
+```swift
+import JLChatViewController
+```
 ##### *Second Step*
       Call this method on AppDelegate for you load the `JLChat.storyboard`, but you can call it where you prefer.
       ```swift
