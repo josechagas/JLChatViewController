@@ -125,31 +125,29 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         
     }
     
+    /**
+     Use this method for you set left button title and or image
+     - parameter title: title of the button
+     - parameter image: the image of the button
+    */
     public func configLeftButton(title:String?,image:UIImage?){
+        
         self.leftButton.setTitle(title, forState: UIControlState.Normal)
-        self.leftButton.setTitle(title, forState: UIControlState.Selected)
-        self.leftButton.setTitle(title, forState: UIControlState.Disabled)
-        self.leftButton.setTitle(title, forState: UIControlState.Highlighted)
-
         
         self.leftButton.setImage(image, forState: UIControlState.Normal)
-        self.leftButton.setImage(image, forState: UIControlState.Selected)
-        self.leftButton.setImage(image, forState: UIControlState.Disabled)
-        self.leftButton.setImage(image, forState: UIControlState.Highlighted)
-    }
     
+    }
+    /**
+     Use this method for you set right button title and or image
+     - parameter title: title of the button
+     - parameter image: the image of the button
+     */
     public func configRightButton(title:String?,image:UIImage?){
         
         self.rightButton.setTitle(title, forState: UIControlState.Normal)
-        self.rightButton.setTitle(title, forState: UIControlState.Selected)
-        self.rightButton.setTitle(title, forState: UIControlState.Disabled)
-        self.rightButton.setTitle(title, forState: UIControlState.Highlighted)
         
         self.rightButton.setImage(image, forState: UIControlState.Normal)
-        self.rightButton.setImage(image, forState: UIControlState.Selected)
-        self.rightButton.setImage(image, forState: UIControlState.Disabled)
-        self.rightButton.setImage(image, forState: UIControlState.Highlighted)
-
+       
     }
     
     private func addButtonsActions(){

@@ -285,8 +285,8 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         toolBar.toolBarFrameDelegate = self.chatTableView
         
-        toolBar.configLeftButton("files", image: nil)
-        toolBar.configRightButton("send", image: nil)
+        toolBar.configLeftButton(nil, image: UIImage(named: "paperclip-icon"))
+        toolBar.configRightButton("send", image:nil)
 
         
     }
