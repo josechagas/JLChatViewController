@@ -23,6 +23,16 @@ pod "JLChatViewController"
 ```
 
 ## Configurations
+  
+  -> First Step:
+      Import it on every file that you will you this framework
+      
+      import JLChatViewController
+  -> Second Step:
+      Call this method on AppDelegate for you load the JLChat.storyboard
+      JLBundleController.loadJLChatStoryboard()
+
+  
 
 Comming soon do not worry , I am making some adjustments.
 
