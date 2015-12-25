@@ -23,22 +23,21 @@ pod "JLChatViewController"
 ```
 
 ## Initial Configurations
-  
-  -> First Step:
+##### *First Step*
       Import it on every file that you will you this framework
       ```swift
       import JLChatViewController
       ```
-  -> Second Step:
+##### *Second Step*
       Call this method on AppDelegate for you load the `JLChat.storyboard`, but you can call it where you prefer.
       ```swift
       JLBundleController.loadJLChatStoryboard()
       ```
-  -> Third Step:
+##### *Third Step*
       Your ViewController that will have the chat must inherit from `JLChatViewController` and implement all these protocols: 
         `ChatDataSource`,`ChatToolBarDelegate`,`JLChatMessagesMenuDelegate`,`ChatDelegate`.
         
-  -> Fourth Step:
+##### *Fourth Step*
       Find `JLChat.storyboard` open it choose the ViewController and put your ViewController that inherits from `JLChatViewController` as the class of this one.
       
 ## Quick Tips
