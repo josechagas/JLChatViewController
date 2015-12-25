@@ -10,7 +10,15 @@ import UIKit
 
 public class JLChatMessageCell: UITableViewCell {
     
-    
+    /**
+     This variable indicates if this cell is being reused.
+     
+     
+     If value is true so you don't have to configure it again as outgoing or incoming message.
+     
+     If value is false so you have to configure it again as outgoing or incoming message.
+
+    */
     public var cellAlreadyUsed:Bool = false
 
 
@@ -79,7 +87,12 @@ public class JLChatMessageCell: UITableViewCell {
     
     
     
-    
+    /**
+     The implementation of this method have to contain every code that is necessary to initialize the message cell.
+     
+     You must override this method.
+
+    */
     public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
        
         self.isOutgoingMessage = isOutgoingMessage
@@ -88,15 +101,32 @@ public class JLChatMessageCell: UITableViewCell {
 
     
     //MARK: Status methods
+    /**
+    The implementation of this method have to contain every code that is necessary to update the message cell status accordingly to the message related to this cell.
     
+    
+    You must override this method.
+
+    
+    - parameter message: The 'JLMessage' instance related to its cell with its 'messageStatus' updated.
+    */
     public func updateMessageStatus(message:JLMessage){
         
     }
-    
+    /**
+     
+     Present the 'errorButton'.
+     
+     You must override this method.
+     */
     public func showErrorButton(animated:Bool){
         
     }
-    
+    /**
+     Hide the 'errorButton'.
+     
+     You must override this method.
+     */
     public func hideErrorButton(animated:Bool){
        
     }
@@ -109,7 +139,14 @@ public class JLChatMessageCell: UITableViewCell {
         
     }
     
+    /**
+     Use this method to configure the menu items of this cell 'UIMenuController'
+     - parameter deleteTitle: the title of the menu item that indicates the delete action.
+     - parameter senTitle: the title of menu item that indicates the try to send again action.
+     - parameter deleteBlock: action that is executed when delete menu item is clicked.
+     - parameter sendBlock: action that is executed when send menu item is clicked.
 
+     */
     public func configMenu(deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
         
         var menus:[UIMenuItem] = [UIMenuItem]()
@@ -154,14 +191,22 @@ public class JLChatMessageCell: UITableViewCell {
     }
     
     //MARK: Config methods
-
+    /**
+    The implementation of this method have to contain every code that is necessary to configure the message cell as a outgoing message.
     
+    You must override this method.
+    */
     public func configAsOutgoingMessage(){
         
         
         
     }
-    
+    /**
+     The implementation of this method have to contain every code that is necessary to configure the message cell as a incoming message.
+     
+     You must override this method.
+
+     */
     public func configAsIncomingMessage(){
         
     }

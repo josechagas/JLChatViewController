@@ -25,22 +25,50 @@ public enum MessageSendStatus:Int{
     case ErrorToSend = 3
 }
 
+
 public class JLMessage: NSObject {
 
+    /**
+     The id of the one that sent the message.
+    */
     public var senderID:String!
     
+    /**
+     The image of the one that sent the message.
+     */
     public var senderImage:UIImage?
     
+    /**
+     The text of the message.
+     
+     */
     public var text:String?
     
+    /**
+     The image of the message.
+    */
     public var relatedImage:UIImage?
     
+    /**
+     The date that the message were sent.
+    */
     public var messageDate:NSDate!
     
+    
+    /**
+     The Message kind accordingly to the enum MessageKind
+     */
     public var messageKind:MessageKind = MessageKind.AllZeros
     
+    /**
+     The message status accordingly to the enum MessageSendStatus
+     Ex some error happend when trying to send the message so messageStatus = MessageSendStatus.ErrorToSend
+    */
     public private(set) var messageStatus:MessageSendStatus = MessageSendStatus.Sending
     
+    /**
+     This is the initializer for the messages of messageKind = MessageKind.Text
+     */
     public init(text:String,senderID:String,messageDate:NSDate,senderImage:UIImage?){
         
         super.init()
@@ -57,6 +85,9 @@ public class JLMessage: NSObject {
         
     }
     
+    /**
+     This is the initializer for the messages of messageKind = MessageKind.Image
+     */
     public init(senderID:String,messageDate:NSDate,senderImage:UIImage?,relatedImage:UIImage?){
         
         super.init()
@@ -71,11 +102,16 @@ public class JLMessage: NSObject {
         
     }
     
+    /**
+     Use this method to update messageStatus.
+    */
     public func updateMessageSendStatus(newStatus:MessageSendStatus){
         self.messageStatus = newStatus
     }
     
-    
+    /**
+     this method gives you the formatted string to be shown on the top of the messageCell, almost never you will need to call this method.
+    */
     public func generateStringFromDate()->String{
         
         let dateFormatter = NSDateFormatter()

@@ -10,7 +10,7 @@ import UIKit
 
 public class JLFile: NSObject {
 
-    var title:String = "arquivo"
+    var title:String = "file"
     
     var image:UIImage?
     

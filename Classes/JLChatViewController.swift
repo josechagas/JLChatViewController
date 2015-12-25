@@ -8,13 +8,27 @@
 
 import UIKit
 
-
+/**
+This is the class that contains all basic methods and outlets that you need to work with JLChatVC file from JLChat.storyboard
+*/
 public class JLChatViewController: UIViewController {
 
+    /**
+     * This is your tableView with all changes that you need to work with it as chat.
+     */
     @IBOutlet public weak var chatTableView: JLChatTableView!
     
+    
+    /**
+     * use this to access the UI elements that you need to write and send your message.
+     */
     @IBOutlet public weak var toolBar: JLChatToolBar!
     
+    /**
+     * Do not change this value if you do not know exactly what you are doing!
+     *
+     * Its used to control the toolBar position accordingly to changes on UI.
+     */
     @IBOutlet public weak var toolBarDistToBottom: NSLayoutConstraint!
         
     
@@ -24,8 +38,6 @@ public class JLChatViewController: UIViewController {
         
         self.registerKeyBoardNotifications()
         
-        
-
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -101,8 +113,6 @@ public class JLChatViewController: UIViewController {
         }
     }
     
-    
-    //MARK: Class func methods
     
        
 

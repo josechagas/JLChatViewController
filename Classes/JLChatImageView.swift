@@ -21,7 +21,7 @@ public class JLChatImageView: UIImageView {
     }
     */
     
-    @IBInspectable public var useBubbleForm:Bool = false
+    @IBInspectable public var useBubbleForm:Bool = true
     
     override public var image:UIImage?{
         didSet{
@@ -84,7 +84,7 @@ public class JLChatImageView: UIImageView {
     
     public func addImage(image:UIImage,mask:UIImage?){
         
-        if let mask = mask{
+        if useBubbleForm,let mask = mask{
             let imageReference = cutImage(image).CGImage
 
             

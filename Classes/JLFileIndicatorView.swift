@@ -85,7 +85,10 @@ public class JLFileIndicatorView: UIView {
         
     }
     
-    
+    /**
+     Use this method for you add the informations on JLFileIndicatorView
+     - parameter file: The JLFile instance with its informations.
+    */
     func addFileInformations(file:JLFile){
         
         if let image = file.image{

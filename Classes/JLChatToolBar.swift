@@ -8,11 +8,21 @@
 
 import UIKit
 
+/**
+ Implement this protocol for you can respond to touch events on ChatToolBar buttons
+*/
 public protocol ChatToolBarDelegate{
     
+    /**
+    Called always when the user taps the left side button
+    */
     func didTapLeftButton()
+    /**
+     * Called always when the user taps the right side button
+     */
     func didTapRightButton()
 }
+
 
 public protocol ToolBarFrameDelegate{
     func haveToUpdateInsetsBottom(bottom:CGFloat,scrollToBottom:Bool)
@@ -29,6 +39,9 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         }
     }
     
+    /**
+     The instance of the textView where you write your message and add an indicator of file
+     */
     public private(set) var inputText:JLCustomTextView!
     
     
@@ -67,7 +80,7 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
 
     }
     
-       //MARK: - Frame change delegate
+    //MARK: - Frame change delegate
     
     override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
@@ -84,7 +97,6 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     }
     
     
-    
     private func addObserver(){
         
         self.addObserver(self, forKeyPath: "center", options: NSKeyValueObservingOptions.New, context: nil)
@@ -94,7 +106,13 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     //MARK: - Config subViews
     
-    //config textview text appearence
+    /**
+    Use this method for you configure the textView of your chat
+    - parameter font: The font of the 'JLCustomTextView'
+    - parameter textColor: The color of the text of the 'JLCustomTextView'
+    - parameter placeHolder: The text that will be shown when there is nothing on 'JLCustomTextView'
+
+    */
     public func configToolInputText(font:UIFont,textColor:UIColor?,placeHolder:String?){
         
         self.inputText.textColor = textColor
@@ -169,6 +187,10 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         self.rightButton.enabled = self.inputText.thereIsSomeText() || false
     }
     
+    /**
+     Use this method for you know if there is some file added to be sent
+     - returns : True if there is a file added and False if there is not.
+    */
     public func thereIsSomeFileAdded()->Bool{
         return self.inputText.fileAddedState
     }
@@ -215,8 +237,8 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         initLeftButton()
         initRightButton()
         initTextView()
-        
         self.layoutIfNeeded()
+        
     }
     
     

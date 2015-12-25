@@ -9,6 +9,7 @@
 import UIKit
 //import QuartzCore
 
+
 protocol FileDelegate{
     
     func fileAdded()
@@ -104,7 +105,10 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
     
     
     
-
+    /**
+    Use this method for you know if there is some text
+    - returns : true if there is some text and false if there is not text
+    */
     public func thereIsSomeText()->Bool{
         
         for char in self.text.characters{
@@ -116,6 +120,9 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
         return false
     }
     
+    /**
+     Reset the textView for its default state.
+    */
     func resetTextView(){
         self.scrollEnabled = false
         self.text = nil
@@ -140,8 +147,10 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
     //MARK: - File added view
     
     
-    
-    //adiciona um indicador de que algum arquivo foi adicionado para ser enviado
+    /**
+    Add a indicator of file added with 'JLFile' informations
+    - parameter file: The 'JLFile' containing the informations
+    */
     public func addFile(file:JLFile){
         //caso o valor antigo de fileAddedState for true quer dizer que ja havia algo adicionado entao nao precisa ajeitar o textinsets
         let correctEdges:Bool = !fileAddedState
@@ -190,8 +199,9 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
         
     }
     
-    //remove o indicador de que algum arquivo foi adicionado para ser enviado
-
+    /**
+    Remove the indicator of file added
+    */
     public func removeFile(){
         
         if fileAddedState{

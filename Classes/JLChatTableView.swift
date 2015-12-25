@@ -8,24 +8,52 @@
 
 import UIKit
 
-
+/**
+Implement this protocol for you define the UIMenuController items of the messages
+*/
 public protocol JLChatMessagesMenuDelegate{
     
+    /**
+    executed to discover if the UIMenuItem with title can be shown
+    */
     func shouldShowMenuItemForCellAtIndexPath(title:String,indexPath:NSIndexPath)->Bool
     
+    /**
+    Define the title of the UIMenuItem that excutes the delete action.
+    
+    The default title is Delete.
+     
+    Return nil if you want to use the default title.
+    */
     func titleForDeleteMenuItem()->String?
     
+    /**
+     Define the title of the UIMenuItem that excutes the send action.
+     
+     The default title is Try Again.
+     
+     Return nil if you want to use the default title.
+     */
     func titleForSendMenuItem()->String?
     
+    /**
+     The action that delete message.
+     */
     func performDeleteActionForCellAtIndexPath(indexPath:NSIndexPath)
-    
+    /**
+     The action that tries to send again the message.
+     */
     func performSendActionForCellAtIndexPath(indexPath:NSIndexPath)
     
 }
 
 
 /**
-This is a public protocol that inherits from UITableViewDataSource
+ * This is a public protocol that inherits from UITableViewDataSource
+ *
+ * You really have to implement it if you want to show the messages of your chat.
+ *
+ * Its function is really similar to UITableViewDataSource protocol function.
 */
 public protocol ChatDataSource:UITableViewDataSource{
     
@@ -34,13 +62,27 @@ public protocol ChatDataSource:UITableViewDataSource{
     */
     func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell
     
+    /**
+     * This method defines the title of the Loading View that appears on the top of the scroll of the chat.
+     *
+     * return nil when you want to use the default value , that is Messages.
+    */
     func titleforChatLoadingHeaderView()->String?
 }
 
-
+/**
+ Implement this protocol for you respond to touch events and for load events.
+*/
 public protocol ChatDelegate{
     
+    /**
+     Executed when it is necessary to load older messages.
+     */
     func loadOlderMessages()
+    /**
+     Executed when there is a tap on any message.
+     */
+
     func didTapMessageAtIndexPath(indexPath:NSIndexPath)
     
 }
@@ -49,16 +91,30 @@ public protocol ChatDelegate{
 
 public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate {
     
+    /**
+     The id of the current user
+     */
     public var myID:String!
+    /**
+     The 'JLChatMessagesMenuDelegate' instance.
+     */
     public var messagesMenuDelegate:JLChatMessagesMenuDelegate?
+    /**
+     The 'ChatDelegate' instance.
+     */
     public var chatDelegate:ChatDelegate?
+    /**
+     The 'ChatDataSource' instance.
+     */
     public var chatDataSource:ChatDataSource?{
         didSet{
             self.dataSource = chatDataSource 
         }
     }
     
+
     private var addedNewMessage:Bool = true
+    
     private var updatingRowsForNewInsets:Bool = false
     private var blockLoadOldMessages:Bool = false//avoid to do multiples requesitions for old messages
     
@@ -119,17 +175,18 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         self.estimatedSectionHeaderHeight = 50
         self.delegate = self
         
-        //self.transform = CGAffineTransformMakeScale(1, -1)//CGAffineTransformInvert(self.transform)
-        
         self.registerNib(UINib(nibName: "JLChatLoadingView", bundle: JLBundleController.getBundle()), forHeaderFooterViewReuseIdentifier: "LoadingView")
         
         self.addObserver()
     }
     
     
-    
-    //Use it to add messages that you sent and that you received
-    //Never use it to add old messages inside chat tableView
+    /**
+     Use it to add messages that you sent and that you received.
+     
+     Never use it to add old messages inside chat tableView.
+    */
+
     public func addNewMessage(){
         
         addedNewMessage = true
@@ -138,11 +195,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
     }
     
-    private func updateRowsForNewInsets(){
-        updatingRowsForNewInsets = true
-        self.reloadData()
-    }
-    
+    /**
+     Use it to add old messages inside chat tableView.
+     
+     - parameter quant: the number of messages that will be added.
+     */
     public func addOldMessages(quant:Int){
         
         self.quant = quant
@@ -175,13 +232,17 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     */
     public func forceToFinishLoadingAnimation(){
         blockLoadOldMessages = false
+        loadedOldMessagesButNotShowing = false
         if let header = self.headerViewForSection(0) as? JLChatLoadingView{
             header.activityIndicator.stopAnimating()
         }
         isLoadingOldMessages = false
     }
     
-    
+    /**
+     Use this method to remove from 'ChatTableView' the message at indexPath
+     - parameter indexPath: the indexPath of the message that you want to remove from 'ChatTableView'.
+    */
     public func removeMessage(indexPath:NSIndexPath){
         
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
@@ -196,6 +257,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
 
     }
     
+    /**
+     Use this method when you want to update the message cell of 'ChatTableView' status
+     - parameter indexPath: the indexPath of the cell that you want to update the status.
+     
+     - parameter message: The message that corresponds to the cell at indexPath 'indexPath'
+        with its status already updated.
+    */
     public func updateMessageStatusOfCellAtIndexPath(indexPath:NSIndexPath,message:JLMessage){
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
@@ -293,7 +361,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     //MARK: -  Datasource
     
+    /**
+    Call this method to make all basic configuration and creation of your message cell
     
+    - parameter indexPath: The indexPath of the cell on chat tableView.
+    - parameter message: The message related to the messageCell that will be created.
+    - returns: The created message cell.
+    */
     public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath,message:JLMessage)->JLChatMessageCell{
         
         let thisIsNewMessage:Bool = (addedNewMessage && indexPath.row == self.numberOfRowsInSection(0) - 1)

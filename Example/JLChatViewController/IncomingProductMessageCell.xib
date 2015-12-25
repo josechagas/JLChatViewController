@@ -8,115 +8,115 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="FhR-kv-6aX" customClass="ProductMessageCell" customModule="JLChatViewController_Example" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingProductCell" id="xem-AQ-Kpm" customClass="ProductMessageCell" customModule="JLChatViewController_Example" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BK-WF-QmU">
-                    <rect key="frame" x="284" y="8" width="31" height="13"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaV-e3-myk">
-                    <rect key="frame" x="35" y="26" width="259.5" height="68.5"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sadasdasdasdasdasdas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzK-av-2Mh">
-                            <rect key="frame" x="15" y="5" width="172" height="18.5"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JeK-by-VSM">
-                            <rect key="frame" x="192" y="1" width="66.5" height="66.5"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="66.5" id="Cp8-2E-qfj"/>
-                                <constraint firstAttribute="height" constant="66.5" id="Tsp-9u-6I2"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                                    <integer key="value" value="20"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </imageView>
-                    </subviews>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="JeK-by-VSM" secondAttribute="trailing" constant="1" id="0MK-So-DJg"/>
-                        <constraint firstItem="JeK-by-VSM" firstAttribute="leading" secondItem="HzK-av-2Mh" secondAttribute="trailing" constant="5" id="HhL-1A-HXi"/>
-                        <constraint firstItem="HzK-av-2Mh" firstAttribute="top" secondItem="TaV-e3-myk" secondAttribute="top" constant="5" id="SSm-rc-ub4"/>
-                        <constraint firstItem="HzK-av-2Mh" firstAttribute="leading" secondItem="TaV-e3-myk" secondAttribute="leading" constant="15" id="UCz-af-SQt"/>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HzK-av-2Mh" secondAttribute="bottom" constant="5" id="cxs-Jc-N9c"/>
-                        <constraint firstItem="JeK-by-VSM" firstAttribute="top" secondItem="TaV-e3-myk" secondAttribute="top" constant="1" id="oyt-hO-qd3"/>
-                        <constraint firstAttribute="bottom" secondItem="JeK-by-VSM" secondAttribute="bottom" constant="1" id="vJI-zZ-IrH"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                            <integer key="value" value="15"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vk2-xh-hml">
-                    <rect key="frame" x="5" y="65" width="30" height="30"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="P0Z-kN-a1a"/>
-                        <constraint firstAttribute="height" constant="30" id="SlG-5F-ovz"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
-                            <integer key="value" value="15"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </imageView>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-Aq-bMq">
-                    <rect key="frame" x="259.5" y="46" width="30" height="30"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="W8u-N2-524"/>
-                        <constraint firstAttribute="width" constant="30" id="ovW-KY-E8z"/>
-                    </constraints>
-                    <state key="normal" title="!"/>
-                    <connections>
-                        <action selector="errorButtonAction:" destination="FhR-kv-6aX" eventType="touchUpInside" id="qAN-5T-Ayu"/>
-                    </connections>
-                </button>
-            </subviews>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xem-AQ-Kpm" id="WkG-2v-ejc">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ava-kq-v7P">
+                        <rect key="frame" x="259" y="46" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="TCy-wl-bez"/>
+                            <constraint firstAttribute="width" constant="30" id="cn4-5a-iqB"/>
+                        </constraints>
+                        <state key="normal" title="!"/>
+                        <connections>
+                            <action selector="errorButtonAction:" destination="xem-AQ-Kpm" eventType="touchUpInside" id="Kvz-Hj-LCq"/>
+                        </connections>
+                    </button>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTH-Qe-vvC">
+                        <rect key="frame" x="35" y="26" width="259.5" height="68.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sadasdasdasdasdasdas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whx-Id-Ky4">
+                                <rect key="frame" x="15" y="5" width="172" height="18.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo2-0v-FZT">
+                                <rect key="frame" x="192" y="1" width="66.5" height="66.5"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66.5" id="LqY-Zf-vMf"/>
+                                    <constraint firstAttribute="width" constant="66.5" id="hiK-bT-SUO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="Whx-Id-Ky4" firstAttribute="top" secondItem="kTH-Qe-vvC" secondAttribute="top" constant="5" id="AYd-dk-Inh"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Whx-Id-Ky4" secondAttribute="bottom" constant="5" id="EIr-GN-YlG"/>
+                            <constraint firstItem="Wo2-0v-FZT" firstAttribute="leading" secondItem="Whx-Id-Ky4" secondAttribute="trailing" constant="5" id="b4k-H9-Lcb"/>
+                            <constraint firstItem="Wo2-0v-FZT" firstAttribute="top" secondItem="kTH-Qe-vvC" secondAttribute="top" constant="1" id="fQF-a2-f2H"/>
+                            <constraint firstItem="Whx-Id-Ky4" firstAttribute="leading" secondItem="kTH-Qe-vvC" secondAttribute="leading" constant="15" id="gpp-In-DKh"/>
+                            <constraint firstAttribute="bottom" secondItem="Wo2-0v-FZT" secondAttribute="bottom" constant="1" id="r8f-YS-s9o"/>
+                            <constraint firstAttribute="trailing" secondItem="Wo2-0v-FZT" secondAttribute="trailing" constant="1" id="wIr-Wl-tdZ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-lE-Q2L">
+                        <rect key="frame" x="284.5" y="8" width="31" height="13.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eUS-4L-8i3">
+                        <rect key="frame" x="5" y="64.5" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Ij2-WE-pld"/>
+                            <constraint firstAttribute="height" constant="30" id="qvx-J6-AdV"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="ava-kq-v7P" firstAttribute="leading" secondItem="kTH-Qe-vvC" secondAttribute="trailing" constant="-35" id="BVD-NG-NVb"/>
+                    <constraint firstItem="eUS-4L-8i3" firstAttribute="leading" secondItem="WkG-2v-ejc" secondAttribute="leading" constant="5" id="H8r-ux-r5v"/>
+                    <constraint firstItem="kTH-Qe-vvC" firstAttribute="leading" secondItem="eUS-4L-8i3" secondAttribute="trailing" id="NlG-Cu-JIh"/>
+                    <constraint firstAttribute="bottom" secondItem="eUS-4L-8i3" secondAttribute="bottom" constant="5" id="Ohy-yr-oev"/>
+                    <constraint firstItem="eUS-4L-8i3" firstAttribute="bottom" secondItem="kTH-Qe-vvC" secondAttribute="bottom" id="XOf-xc-Svi"/>
+                    <constraint firstItem="gZF-lE-Q2L" firstAttribute="centerX" secondItem="WkG-2v-ejc" secondAttribute="centerX" id="Xwe-3i-rs2"/>
+                    <constraint firstItem="kTH-Qe-vvC" firstAttribute="top" secondItem="gZF-lE-Q2L" secondAttribute="bottom" constant="5" id="Y4S-0A-0tU"/>
+                    <constraint firstItem="gZF-lE-Q2L" firstAttribute="top" secondItem="WkG-2v-ejc" secondAttribute="topMargin" id="jVW-F5-xh5"/>
+                    <constraint firstItem="ava-kq-v7P" firstAttribute="centerY" secondItem="kTH-Qe-vvC" secondAttribute="centerY" id="lmj-In-aH2"/>
+                </constraints>
+            </tableViewCellContentView>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="1BK-WF-QmU" firstAttribute="top" secondItem="FhR-kv-6aX" secondAttribute="topMargin" id="10N-J2-os6"/>
-                <constraint firstAttribute="bottom" secondItem="Vk2-xh-hml" secondAttribute="bottom" constant="5" id="DSO-7y-LuS"/>
-                <constraint firstItem="Vk2-xh-hml" firstAttribute="leading" secondItem="FhR-kv-6aX" secondAttribute="leading" constant="5" id="Fbd-sD-xaa"/>
-                <constraint firstItem="1BK-WF-QmU" firstAttribute="centerX" secondItem="FhR-kv-6aX" secondAttribute="centerX" id="JlO-dV-cn9"/>
-                <constraint firstItem="Vk2-xh-hml" firstAttribute="bottom" secondItem="TaV-e3-myk" secondAttribute="bottom" id="PnZ-8O-HZa"/>
-                <constraint firstItem="cJZ-Aq-bMq" firstAttribute="centerY" secondItem="TaV-e3-myk" secondAttribute="centerY" id="RP8-1k-Zoa"/>
-                <constraint firstItem="TaV-e3-myk" firstAttribute="leading" secondItem="Vk2-xh-hml" secondAttribute="trailing" id="a41-3t-SGR"/>
-                <constraint firstItem="cJZ-Aq-bMq" firstAttribute="leading" secondItem="TaV-e3-myk" secondAttribute="trailing" constant="-35" id="dON-ff-rxA"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cJZ-Aq-bMq" secondAttribute="trailing" constant="5" id="hw8-If-FM3"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TaV-e3-myk" secondAttribute="trailing" constant="30" id="lXt-06-SRx"/>
-                <constraint firstItem="TaV-e3-myk" firstAttribute="top" secondItem="1BK-WF-QmU" secondAttribute="bottom" constant="5" id="le9-g3-3N8"/>
-            </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="delimiterView" destination="TaV-e3-myk" id="Q4k-Uf-Ux3"/>
-                <outlet property="errorToSendButton" destination="cJZ-Aq-bMq" id="5lq-Sb-BHE"/>
-                <outlet property="errorToSendLeadingDist" destination="dON-ff-rxA" id="jIc-oy-YUQ"/>
-                <outlet property="messageDateLabel" destination="1BK-WF-QmU" id="GUb-1L-Zml"/>
-                <outlet property="nameLabel" destination="HzK-av-2Mh" id="xYE-N9-BG8"/>
-                <outlet property="productImageView" destination="JeK-by-VSM" id="Nad-px-1UA"/>
-                <outlet property="senderImageHeight" destination="SlG-5F-ovz" id="AY5-6Q-QxB"/>
-                <outlet property="senderImageView" destination="Vk2-xh-hml" id="VkH-5g-glz"/>
-                <outlet property="senderImageWidth" destination="P0Z-kN-a1a" id="ZCp-Ww-UPI"/>
+                <outlet property="delimiterView" destination="kTH-Qe-vvC" id="0QC-4O-vT3"/>
+                <outlet property="errorToSendButton" destination="ava-kq-v7P" id="FnE-a0-1dx"/>
+                <outlet property="errorToSendLeadingDist" destination="BVD-NG-NVb" id="vvV-iU-haN"/>
+                <outlet property="messageDateLabel" destination="gZF-lE-Q2L" id="Pme-E0-igD"/>
+                <outlet property="nameLabel" destination="Whx-Id-Ky4" id="kKN-8S-JmJ"/>
+                <outlet property="productImageView" destination="Wo2-0v-FZT" id="GpG-GC-eTp"/>
+                <outlet property="senderImageHeight" destination="qvx-J6-AdV" id="D3N-L7-spq"/>
+                <outlet property="senderImageView" destination="eUS-4L-8i3" id="UUp-EK-Vlf"/>
+                <outlet property="senderImageWidth" destination="Ij2-WE-pld" id="P4t-T3-7ua"/>
             </connections>
-            <point key="canvasLocation" x="361" y="68"/>
-        </view>
+            <point key="canvasLocation" x="361" y="256"/>
+        </tableViewCell>
     </objects>
 </document>

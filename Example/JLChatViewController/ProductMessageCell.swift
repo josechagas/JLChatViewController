@@ -203,7 +203,7 @@ class ProductMessageCell: JLChatMessageCell {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
         
-        self.addGestureRecognizer(longPress)
+        self.delimiterView.addGestureRecognizer(longPress)
         
         
     }
@@ -215,7 +215,7 @@ class ProductMessageCell: JLChatMessageCell {
             
             self.delimiterView.alpha = 0.5
             
-        }
+        }   
         else if longPress.state == UIGestureRecognizerState.Ended{
             
             self.showMenu()

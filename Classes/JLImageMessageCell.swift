@@ -11,32 +11,48 @@ import UIKit
 
 public class JLImageMessageCell: JLChatMessageCell {
 
+    /**
+     Image that is related with the message
+    */
     @IBOutlet public weak var messageImageView: JLChatImageView!
-    
+    /**
+     Image of the one that sent the message
+    */
     @IBOutlet public weak var senderImageView: UIImageView!
     
     @IBOutlet public weak var messageDateLabel: UILabel!
-    
-    
+
+    /**
+     The button that indicates that the message status is 'MessageSendStatus.ErrorToSend'
+     */
     @IBOutlet weak var errorButton: UIButton!
-    
+    /**
+     This is a constraint of 'errorButton' do not change its value if you do not know what exactly you are doing.
+     
+     This constraint represents the dist between 'errorButton' and 'messageImageView'.
+     */
     @IBOutlet weak var errorButtonDist: NSLayoutConstraint!
     
     
     // sender image constraints
+    /**
+    This is a constraint of 'senderImageView' do not change its value manually.
     
+    Changes on it are made by 'JLChatAppearance'
+    */
     @IBOutlet weak var senderImageViewheight: NSLayoutConstraint!
     
-    
+    /**
+     This is a constraint of 'senderImageView' do not change its value manually.
+     
+     Changes on it are made by 'JLChatAppearance'
+     */
     @IBOutlet weak var senderImageViewWidth: NSLayoutConstraint!
     
     
     
     
-    //private var cellAlreadyUsed:Bool = false
-
-    //private(set) var isMenuConfigured:Bool = false
-
+    
     override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -98,7 +114,9 @@ public class JLImageMessageCell: JLChatMessageCell {
         }
         
     }
-    
+    /**
+     Use this method to add the image into 'messageImageView'
+    */
     public func addImage(image:UIImage){
         
         
@@ -109,7 +127,9 @@ public class JLImageMessageCell: JLChatMessageCell {
         self.messageImageView.loadActivity.stopAnimating()
         
     }
-    
+    /**
+     If the related image is not loaded and you are downloading it you can call this method for the user see that its been loaded, but by default if the 'JLMessage' parameter of method 'initCell' have its image  equal to nil this method is called.
+    */
     public func achiveLoadingMode(){
         self.messageImageView.image = isOutgoingMessage ? JLChatAppearence.outgoingBubbleImage : JLChatAppearence.incomingBubbleImage
         

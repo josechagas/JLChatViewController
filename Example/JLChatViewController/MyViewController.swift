@@ -37,7 +37,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
+    //used only for the example
     func loadMessages(){
         
         for i in 0..<19{
@@ -57,6 +57,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         self.messages.insert(newerMessage, atIndex: 0)
     }
     
+    //used only for the example
     func loadOldMessages(){
         
         
@@ -163,6 +164,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
 
         if mess is JLImageMessageCell{
             
+            //Its here just to simulate the interval of loading the image
             let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
                 
