@@ -1,0 +1,1 @@
+ const unsigned char Pods_JLChatViewController_TestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_JLChatViewController_Tests  PROJECT:Pods-1" "\n"; const double Pods_JLChatViewController_TestsVersionNumber __attribute__ ((used)) = (double)1.;

@@ -1,0 +1,413 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "MessageKind"
+- "MessageSendStatus"
+- "JLMessage"
+provides-nominal:
+- "O20JLChatViewController11MessageKind"
+- "O20JLChatViewController17MessageSendStatus"
+- "C20JLChatViewController9JLMessage"
+provides-member:
+- ["O20JLChatViewController11MessageKind", ""]
+- ["O20JLChatViewController17MessageSendStatus", ""]
+- ["C20JLChatViewController9JLMessage", ""]
+provides-dynamic-lookup:
+- "senderID"
+- "messageDate"
+- "relatedImage"
+- "generateStringFromDate"
+- "senderImage"
+- "text"
+depends-top-level:
+- !private "NSDateFormatter"
+- !private "~="
+- "=="
+- "JLMessage"
+- !private "StringLiteralType"
+- "NSObject"
+- !private "NSDateFormatterStyle"
+- "NSDate"
+- "MessageSendStatus"
+- "Int"
+- "MessageKind"
+- "UIImage"
+- !private "BooleanLiteralType"
+- "String"
+depends-member:
+- ["PSs9AnyObject", "MessageKind"]
+- ["PSs9AnyObject", "MessageSendStatus"]
+- !private ["PSs9AnyObject", "NSDateFormatter"]
+- !private ["PSs9AnyObject", "NSDateFormatterStyle"]
+- !private ["PSs9AnyObject", "dateStyle"]
+- !private ["PSs9AnyObject", "doesRelativeDateFormatting"]
+- ["PSs9AnyObject", "generateStringFromDate"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "messageDate"]
+- ["PSs9AnyObject", "messageKind"]
+- ["PSs9AnyObject", "messageStatus"]
+- ["PSs9AnyObject", "relatedImage"]
+- ["PSs9AnyObject", "senderID"]
+- ["PSs9AnyObject", "senderImage"]
+- !private ["PSs9AnyObject", "stringFromDate"]
+- ["PSs9AnyObject", "text"]
+- !private ["PSs9AnyObject", "timeStyle"]
+- ["PSs9AnyObject", "updateMessageSendStatus"]
+- ["PSs9AnyObject", ""]
+- !private ["PSs22BidirectionalIndexType", "Distance"]
+- !private ["PSs22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["PSs22BidirectionalIndexType", "hashValue"]
+- !private ["PSs21BitwiseOperationsType", "Distance"]
+- !private ["PSs21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["PSs21BitwiseOperationsType", "hashValue"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSs11CVarArgType", "Distance"]
+- !private ["PSs11CVarArgType", "IntegerLiteralType"]
+- ["PSs11CVarArgType", "MessageKind"]
+- ["PSs11CVarArgType", "MessageSendStatus"]
+- !private ["PSs11CVarArgType", "NSDateFormatter"]
+- !private ["PSs11CVarArgType", "NSDateFormatterStyle"]
+- !private ["PSs11CVarArgType", "dateStyle"]
+- !private ["PSs11CVarArgType", "doesRelativeDateFormatting"]
+- ["PSs11CVarArgType", "generateStringFromDate"]
+- !private ["PSs11CVarArgType", "hashValue"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "messageDate"]
+- ["PSs11CVarArgType", "messageKind"]
+- ["PSs11CVarArgType", "messageStatus"]
+- ["PSs11CVarArgType", "relatedImage"]
+- ["PSs11CVarArgType", "senderID"]
+- ["PSs11CVarArgType", "senderImage"]
+- !private ["PSs11CVarArgType", "stringFromDate"]
+- ["PSs11CVarArgType", "text"]
+- !private ["PSs11CVarArgType", "timeStyle"]
+- ["PSs11CVarArgType", "updateMessageSendStatus"]
+- ["PSs11CVarArgType", ""]
+- !private ["PSs10Comparable", "Distance"]
+- !private ["PSs10Comparable", "IntegerLiteralType"]
+- !private ["PSs10Comparable", "hashValue"]
+- !private ["PSs23CustomStringConvertible", "Distance"]
+- !private ["PSs23CustomStringConvertible", "IntegerLiteralType"]
+- ["PSs23CustomStringConvertible", "MessageKind"]
+- ["PSs23CustomStringConvertible", "MessageSendStatus"]
+- !private ["PSs23CustomStringConvertible", "NSDateFormatter"]
+- !private ["PSs23CustomStringConvertible", "NSDateFormatterStyle"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "dateStyle"]
+- !private ["PSs23CustomStringConvertible", "doesRelativeDateFormatting"]
+- ["PSs23CustomStringConvertible", "generateStringFromDate"]
+- !private ["PSs23CustomStringConvertible", "hashValue"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "messageDate"]
+- ["PSs23CustomStringConvertible", "messageKind"]
+- ["PSs23CustomStringConvertible", "messageStatus"]
+- ["PSs23CustomStringConvertible", "relatedImage"]
+- ["PSs23CustomStringConvertible", "senderID"]
+- ["PSs23CustomStringConvertible", "senderImage"]
+- !private ["PSs23CustomStringConvertible", "stringFromDate"]
+- ["PSs23CustomStringConvertible", "text"]
+- !private ["PSs23CustomStringConvertible", "timeStyle"]
+- ["PSs23CustomStringConvertible", "updateMessageSendStatus"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["Sd", "deinit"]
+- ["PSs9Equatable", "AllZeros"]
+- !private ["PSs9Equatable", "Distance"]
+- !private ["PSs9Equatable", "Image"]
+- !private ["PSs9Equatable", "IntegerLiteralType"]
+- !private ["PSs9Equatable", "MediumStyle"]
+- ["PSs9Equatable", "MessageKind"]
+- ["PSs9Equatable", "MessageSendStatus"]
+- !private ["PSs9Equatable", "NSDateFormatter"]
+- !private ["PSs9Equatable", "NSDateFormatterStyle"]
+- ["PSs9Equatable", "RawValue"]
+- ["PSs9Equatable", "Sending"]
+- !private ["PSs9Equatable", "ShortStyle"]
+- !private ["PSs9Equatable", "Text"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "dateStyle"]
+- !private ["PSs9Equatable", "doesRelativeDateFormatting"]
+- ["PSs9Equatable", "generateStringFromDate"]
+- ["PSs9Equatable", "hashValue"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "messageDate"]
+- ["PSs9Equatable", "messageKind"]
+- ["PSs9Equatable", "messageStatus"]
+- ["PSs9Equatable", "rawValue"]
+- ["PSs9Equatable", "relatedImage"]
+- ["PSs9Equatable", "senderID"]
+- ["PSs9Equatable", "senderImage"]
+- !private ["PSs9Equatable", "stringFromDate"]
+- ["PSs9Equatable", "text"]
+- !private ["PSs9Equatable", "timeStyle"]
+- ["PSs9Equatable", "updateMessageSendStatus"]
+- ["PSs9Equatable", ""]
+- !private ["PSs16ForwardIndexType", "Distance"]
+- !private ["PSs16ForwardIndexType", "IntegerLiteralType"]
+- !private ["PSs16ForwardIndexType", "hashValue"]
+- ["PSs8Hashable", "AllZeros"]
+- !private ["PSs8Hashable", "Distance"]
+- !private ["PSs8Hashable", "Image"]
+- !private ["PSs8Hashable", "IntegerLiteralType"]
+- !private ["PSs8Hashable", "MediumStyle"]
+- ["PSs8Hashable", "MessageKind"]
+- ["PSs8Hashable", "MessageSendStatus"]
+- !private ["PSs8Hashable", "NSDateFormatter"]
+- !private ["PSs8Hashable", "NSDateFormatterStyle"]
+- ["PSs8Hashable", "RawValue"]
+- ["PSs8Hashable", "Sending"]
+- !private ["PSs8Hashable", "ShortStyle"]
+- !private ["PSs8Hashable", "Text"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "dateStyle"]
+- !private ["PSs8Hashable", "doesRelativeDateFormatting"]
+- ["PSs8Hashable", "generateStringFromDate"]
+- ["PSs8Hashable", "hashValue"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "messageDate"]
+- ["PSs8Hashable", "messageKind"]
+- ["PSs8Hashable", "messageStatus"]
+- ["PSs8Hashable", "rawValue"]
+- ["PSs8Hashable", "relatedImage"]
+- ["PSs8Hashable", "senderID"]
+- ["PSs8Hashable", "senderImage"]
+- !private ["PSs8Hashable", "stringFromDate"]
+- ["PSs8Hashable", "text"]
+- !private ["PSs8Hashable", "timeStyle"]
+- ["PSs8Hashable", "updateMessageSendStatus"]
+- ["PSs8Hashable", ""]
+- !private ["Si", "Distance"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "deinit"]
+- !private ["Si", "hashValue"]
+- !private ["PSs21IntegerArithmeticType", "Distance"]
+- !private ["PSs21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs21IntegerArithmeticType", "hashValue"]
+- !private ["PSs25IntegerLiteralConvertible", "Distance"]
+- !private ["PSs25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs25IntegerLiteralConvertible", "hashValue"]
+- !private ["PSs11IntegerType", "Distance"]
+- !private ["PSs11IntegerType", "IntegerLiteralType"]
+- !private ["PSs11IntegerType", "hashValue"]
+- ["C20JLChatViewController9JLMessage", "MessageKind"]
+- ["C20JLChatViewController9JLMessage", "MessageSendStatus"]
+- ["C20JLChatViewController9JLMessage", "NSDate"]
+- !private ["C20JLChatViewController9JLMessage", "NSDateFormatter"]
+- !private ["C20JLChatViewController9JLMessage", "NSDateFormatterStyle"]
+- ["C20JLChatViewController9JLMessage", "String"]
+- ["C20JLChatViewController9JLMessage", "UIImage"]
+- ["C20JLChatViewController9JLMessage", "deinit"]
+- ["C20JLChatViewController9JLMessage", "generateStringFromDate"]
+- ["C20JLChatViewController9JLMessage", "init"]
+- ["C20JLChatViewController9JLMessage", "messageDate"]
+- ["C20JLChatViewController9JLMessage", "messageKind"]
+- ["C20JLChatViewController9JLMessage", "messageStatus"]
+- ["C20JLChatViewController9JLMessage", "relatedImage"]
+- ["C20JLChatViewController9JLMessage", "senderID"]
+- ["C20JLChatViewController9JLMessage", "senderImage"]
+- ["C20JLChatViewController9JLMessage", "text"]
+- ["C20JLChatViewController9JLMessage", "updateMessageSendStatus"]
+- ["O20JLChatViewController11MessageKind", "AllZeros"]
+- ["O20JLChatViewController11MessageKind", "Custom"]
+- ["O20JLChatViewController11MessageKind", "Image"]
+- ["O20JLChatViewController11MessageKind", "RawValue"]
+- ["O20JLChatViewController11MessageKind", "Text"]
+- ["O20JLChatViewController11MessageKind", "deinit"]
+- ["O20JLChatViewController11MessageKind", "hashValue"]
+- ["O20JLChatViewController11MessageKind", "init"]
+- ["O20JLChatViewController11MessageKind", "rawValue"]
+- ["O20JLChatViewController17MessageSendStatus", "ErrorToSend"]
+- ["O20JLChatViewController17MessageSendStatus", "RawValue"]
+- ["O20JLChatViewController17MessageSendStatus", "Sending"]
+- ["O20JLChatViewController17MessageSendStatus", "Sent"]
+- ["O20JLChatViewController17MessageSendStatus", "deinit"]
+- ["O20JLChatViewController17MessageSendStatus", "hashValue"]
+- ["O20JLChatViewController17MessageSendStatus", "init"]
+- ["O20JLChatViewController17MessageSendStatus", "rawValue"]
+- !private ["PSs14MirrorPathType", "Distance"]
+- !private ["PSs14MirrorPathType", "IntegerLiteralType"]
+- !private ["PSs14MirrorPathType", "hashValue"]
+- !private ["PSo8NSCoding", "dateStyle"]
+- !private ["PSo8NSCoding", "doesRelativeDateFormatting"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "stringFromDate"]
+- !private ["PSo8NSCoding", "timeStyle"]
+- !private ["PSo9NSCopying", "dateStyle"]
+- !private ["PSo9NSCopying", "doesRelativeDateFormatting"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "stringFromDate"]
+- !private ["PSo9NSCopying", "timeStyle"]
+- !private ["CSo15NSDateFormatter", "dateStyle"]
+- !private ["CSo15NSDateFormatter", "doesRelativeDateFormatting"]
+- !private ["CSo15NSDateFormatter", "init"]
+- !private ["CSo15NSDateFormatter", "stringFromDate"]
+- !private ["CSo15NSDateFormatter", "timeStyle"]
+- !private ["OSC20NSDateFormatterStyle", "MediumStyle"]
+- !private ["OSC20NSDateFormatterStyle", "ShortStyle"]
+- !private ["CSo11NSFormatter", "dateStyle"]
+- !private ["CSo11NSFormatter", "doesRelativeDateFormatting"]
+- !private ["CSo11NSFormatter", "init"]
+- !private ["CSo11NSFormatter", "stringFromDate"]
+- !private ["CSo11NSFormatter", "timeStyle"]
+- !private ["CSo8NSNumber", "deinit"]
+- ["CSo8NSObject", "MessageKind"]
+- ["CSo8NSObject", "MessageSendStatus"]
+- ["CSo8NSObject", "NSDate"]
+- !private ["CSo8NSObject", "NSDateFormatter"]
+- !private ["CSo8NSObject", "NSDateFormatterStyle"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIImage"]
+- !private ["CSo8NSObject", "dateStyle"]
+- !private ["CSo8NSObject", "deinit"]
+- !private ["CSo8NSObject", "doesRelativeDateFormatting"]
+- ["CSo8NSObject", "generateStringFromDate"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "messageDate"]
+- ["CSo8NSObject", "messageKind"]
+- ["CSo8NSObject", "messageStatus"]
+- ["CSo8NSObject", "relatedImage"]
+- ["CSo8NSObject", "senderID"]
+- ["CSo8NSObject", "senderImage"]
+- !private ["CSo8NSObject", "stringFromDate"]
+- ["CSo8NSObject", "text"]
+- !private ["CSo8NSObject", "timeStyle"]
+- ["CSo8NSObject", "updateMessageSendStatus"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "MessageKind"]
+- ["PSo16NSObjectProtocol", "MessageSendStatus"]
+- !private ["PSo16NSObjectProtocol", "NSDateFormatter"]
+- !private ["PSo16NSObjectProtocol", "NSDateFormatterStyle"]
+- !private ["PSo16NSObjectProtocol", "dateStyle"]
+- !private ["PSo16NSObjectProtocol", "doesRelativeDateFormatting"]
+- ["PSo16NSObjectProtocol", "generateStringFromDate"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "messageDate"]
+- ["PSo16NSObjectProtocol", "messageKind"]
+- ["PSo16NSObjectProtocol", "messageStatus"]
+- ["PSo16NSObjectProtocol", "relatedImage"]
+- ["PSo16NSObjectProtocol", "senderID"]
+- ["PSo16NSObjectProtocol", "senderImage"]
+- !private ["PSo16NSObjectProtocol", "stringFromDate"]
+- ["PSo16NSObjectProtocol", "text"]
+- !private ["PSo16NSObjectProtocol", "timeStyle"]
+- ["PSo16NSObjectProtocol", "updateMessageSendStatus"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["CSo7NSValue", "deinit"]
+- !private ["PSs21RandomAccessIndexType", "Distance"]
+- !private ["PSs21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["PSs21RandomAccessIndexType", "hashValue"]
+- !private ["VSs5Range", "deinit"]
+- ["PSs16RawRepresentable", "AllZeros"]
+- !private ["PSs16RawRepresentable", "Image"]
+- !private ["PSs16RawRepresentable", "MediumStyle"]
+- ["PSs16RawRepresentable", "RawValue"]
+- ["PSs16RawRepresentable", "Sending"]
+- !private ["PSs16RawRepresentable", "ShortStyle"]
+- !private ["PSs16RawRepresentable", "Text"]
+- ["PSs16RawRepresentable", "hashValue"]
+- ["PSs16RawRepresentable", "init"]
+- ["PSs16RawRepresentable", "rawValue"]
+- ["PSs16RawRepresentable", ""]
+- !private ["PSs17SignedIntegerType", "Distance"]
+- !private ["PSs17SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs17SignedIntegerType", "hashValue"]
+- !private ["PSs16SignedNumberType", "Distance"]
+- !private ["PSs16SignedNumberType", "IntegerLiteralType"]
+- !private ["PSs16SignedNumberType", "hashValue"]
+- !private ["VSs12StaticString", "deinit"]
+- !private ["PSs10Strideable", "Distance"]
+- !private ["PSs10Strideable", "IntegerLiteralType"]
+- !private ["PSs10Strideable", "hashValue"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "Distance"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "hashValue"]
+- !private ["PSs14_Incrementable", "Distance"]
+- !private ["PSs14_Incrementable", "IntegerLiteralType"]
+- !private ["PSs14_Incrementable", "hashValue"]
+- !private ["PSs22_IntegerArithmeticType", "Distance"]
+- !private ["PSs22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs22_IntegerArithmeticType", "hashValue"]
+- !private ["PSs12_IntegerType", "Distance"]
+- !private ["PSs12_IntegerType", "IntegerLiteralType"]
+- !private ["PSs12_IntegerType", "hashValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "Distance"]
+- !private ["PSs21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "hashValue"]
+- !private ["VSs26_OptionalNilComparisonType", "deinit"]
+- !private ["PSs22_RandomAccessAmbiguity", "Distance"]
+- !private ["PSs22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["PSs22_RandomAccessAmbiguity", "hashValue"]
+- !private ["PSs12_Reflectable", "Distance"]
+- !private ["PSs12_Reflectable", "IntegerLiteralType"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "hashValue"]
+- !private ["PSs18_SignedIntegerType", "Distance"]
+- !private ["PSs18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs18_SignedIntegerType", "hashValue"]
+- !private ["PSs11_Strideable", "Distance"]
+- !private ["PSs11_Strideable", "IntegerLiteralType"]
+- !private ["PSs11_Strideable", "hashValue"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "PSs22BidirectionalIndexType"
+- !private "PSs21BitwiseOperationsType"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- "PSs11CVarArgType"
+- !private "PSs10Comparable"
+- "PSs23CustomStringConvertible"
+- !private "Sd"
+- "PSs9Equatable"
+- !private "PSs16ForwardIndexType"
+- "PSs8Hashable"
+- !private "Si"
+- !private "PSs21IntegerArithmeticType"
+- !private "PSs25IntegerLiteralConvertible"
+- !private "PSs11IntegerType"
+- "C20JLChatViewController9JLMessage"
+- "O20JLChatViewController11MessageKind"
+- "O20JLChatViewController17MessageSendStatus"
+- !private "PSs14MirrorPathType"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo15NSDateFormatter"
+- !private "OSC20NSDateFormatterStyle"
+- !private "CSo11NSFormatter"
+- !private "CSo8NSNumber"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "CSo7NSValue"
+- !private "PSs21RandomAccessIndexType"
+- !private "VSs5Range"
+- "PSs16RawRepresentable"
+- !private "PSs17SignedIntegerType"
+- !private "PSs16SignedNumberType"
+- !private "VSs12StaticString"
+- !private "PSs10Strideable"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs33_BuiltinIntegerLiteralConvertible"
+- !private "PSs14_Incrementable"
+- !private "PSs22_IntegerArithmeticType"
+- !private "PSs12_IntegerType"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "VSs26_OptionalNilComparisonType"
+- !private "PSs22_RandomAccessAmbiguity"
+- !private "PSs12_Reflectable"
+- !private "PSs18_SignedIntegerType"
+- !private "PSs11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/Pods/Target Support Files/JLChatViewController/JLChatViewController-umbrella.h"
+- "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Pods.build/Debug-iphonesimulator/JLChatViewController.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "eb5c898522b3ec9c6ffed4dd36f244de"

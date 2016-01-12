@@ -1,0 +1,149 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "JLChatLoadingView"
+provides-nominal:
+- "C20JLChatViewController17JLChatLoadingView"
+provides-member:
+- ["C20JLChatViewController17JLChatLoadingView", ""]
+provides-dynamic-lookup:
+- "loadingTextLabel"
+- "activityIndicator"
+depends-top-level:
+- "NSCoder"
+- "JLChatLoadingView"
+- "UITableViewHeaderFooterView"
+- "String"
+- "UILabel"
+- "UIActivityIndicatorView"
+depends-member:
+- ["PSs9AnyObject", "activityIndicator"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "loadingTextLabel"]
+- ["PSs9AnyObject", ""]
+- ["PSs11CVarArgType", "activityIndicator"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "loadingTextLabel"]
+- ["PSs11CVarArgType", ""]
+- ["PSs23CustomStringConvertible", "activityIndicator"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "loadingTextLabel"]
+- ["PSs23CustomStringConvertible", ""]
+- ["PSs9Equatable", "activityIndicator"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "loadingTextLabel"]
+- ["PSs9Equatable", ""]
+- ["PSs8Hashable", "activityIndicator"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "loadingTextLabel"]
+- ["PSs8Hashable", ""]
+- ["C20JLChatViewController17JLChatLoadingView", "NSCoder"]
+- ["C20JLChatViewController17JLChatLoadingView", "String"]
+- ["C20JLChatViewController17JLChatLoadingView", "UIActivityIndicatorView"]
+- ["C20JLChatViewController17JLChatLoadingView", "UILabel"]
+- ["C20JLChatViewController17JLChatLoadingView", "activityIndicator"]
+- ["C20JLChatViewController17JLChatLoadingView", "deinit"]
+- ["C20JLChatViewController17JLChatLoadingView", "init"]
+- ["C20JLChatViewController17JLChatLoadingView", "loadingTextLabel"]
+- ["PSo8NSCoding", "activityIndicator"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "loadingTextLabel"]
+- ["PSo8NSCoding", ""]
+- ["CSo8NSObject", "NSCoder"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "UIActivityIndicatorView"]
+- ["CSo8NSObject", "UILabel"]
+- ["CSo8NSObject", "activityIndicator"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "loadingTextLabel"]
+- ["PSo16NSObjectProtocol", "activityIndicator"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "loadingTextLabel"]
+- ["PSo16NSObjectProtocol", ""]
+- ["PSo29UIAccessibilityIdentification", "activityIndicator"]
+- ["PSo29UIAccessibilityIdentification", "init"]
+- ["PSo29UIAccessibilityIdentification", "loadingTextLabel"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- ["PSo12UIAppearance", "activityIndicator"]
+- ["PSo12UIAppearance", "init"]
+- ["PSo12UIAppearance", "loadingTextLabel"]
+- ["PSo12UIAppearance", ""]
+- ["PSo21UIAppearanceContainer", "activityIndicator"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "loadingTextLabel"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["PSo17UICoordinateSpace", "activityIndicator"]
+- ["PSo17UICoordinateSpace", "init"]
+- ["PSo17UICoordinateSpace", "loadingTextLabel"]
+- ["PSo17UICoordinateSpace", ""]
+- ["PSo13UIDynamicItem", "activityIndicator"]
+- ["PSo13UIDynamicItem", "init"]
+- ["PSo13UIDynamicItem", "loadingTextLabel"]
+- ["PSo13UIDynamicItem", ""]
+- ["PSo18UIFocusEnvironment", "activityIndicator"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "loadingTextLabel"]
+- ["PSo18UIFocusEnvironment", ""]
+- ["CSo11UIResponder", "NSCoder"]
+- ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "UIActivityIndicatorView"]
+- ["CSo11UIResponder", "UILabel"]
+- ["CSo11UIResponder", "activityIndicator"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "loadingTextLabel"]
+- ["CSo27UITableViewHeaderFooterView", "NSCoder"]
+- ["CSo27UITableViewHeaderFooterView", "String"]
+- ["CSo27UITableViewHeaderFooterView", "UIActivityIndicatorView"]
+- ["CSo27UITableViewHeaderFooterView", "UILabel"]
+- ["CSo27UITableViewHeaderFooterView", "activityIndicator"]
+- ["CSo27UITableViewHeaderFooterView", "init"]
+- ["CSo27UITableViewHeaderFooterView", "loadingTextLabel"]
+- ["CSo27UITableViewHeaderFooterView", ""]
+- ["PSo18UITraitEnvironment", "activityIndicator"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "loadingTextLabel"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "NSCoder"]
+- ["CSo6UIView", "String"]
+- ["CSo6UIView", "UIActivityIndicatorView"]
+- ["CSo6UIView", "UILabel"]
+- ["CSo6UIView", "activityIndicator"]
+- ["CSo6UIView", "init"]
+- ["CSo6UIView", "loadingTextLabel"]
+- ["PSs12_Reflectable", "activityIndicator"]
+- ["PSs12_Reflectable", "init"]
+- ["PSs12_Reflectable", "loadingTextLabel"]
+- ["PSs12_Reflectable", ""]
+depends-nominal:
+- "PSs9AnyObject"
+- "PSs11CVarArgType"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- "PSs8Hashable"
+- "C20JLChatViewController17JLChatLoadingView"
+- "PSo8NSCoding"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- "CSo11UIResponder"
+- "CSo27UITableViewHeaderFooterView"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/Pods/Target Support Files/JLChatViewController/JLChatViewController-umbrella.h"
+- "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Pods.build/Debug-iphonesimulator/JLChatViewController.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "44d8f5d35f8610d6b8374ac06043fae5"

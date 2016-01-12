@@ -1,0 +1,1 @@
+ const unsigned char JLChatViewControllerVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:JLChatViewController  PROJECT:Pods-1" "\n"; const double JLChatViewControllerVersionNumber __attribute__ ((used)) = (double)1.;

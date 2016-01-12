@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Debug-iphonesimulator/JLChatViewController.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "JLChatViewController-Swift.h",
+          'external-contents': "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Debug-iphonesimulator/JLChatViewController.framework/Headers/JLChatViewController-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "JLChatViewController-umbrella.h",
+          'external-contents': "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/Pods/Target Support Files/JLChatViewController/JLChatViewController-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Debug-iphonesimulator/JLChatViewController.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Pods.build/Debug-iphonesimulator/JLChatViewController.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

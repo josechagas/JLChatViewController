@@ -1,0 +1,422 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "JLChatAppearence"
+provides-nominal:
+- "C20JLChatViewController16JLChatAppearence"
+provides-member:
+- ["C20JLChatViewController16JLChatAppearence", ""]
+provides-dynamic-lookup:
+- "incomingBubbleColor"
+- "outgoingBubbleColor"
+- "outgoingBubbleImage"
+- "configChatFont"
+- "showOutgoingSenderImage"
+- "showIncomingSenderImage"
+- "outGoingTextColor"
+- "chatFont"
+- "senderImageBackgroundColor"
+- "incomingBubbleImageMask"
+- "senderImageSize"
+- "outgoingBubbleImageMask"
+- "shouldShowMessageDateAtIndexPath"
+- "incomingTextColor"
+- "senderImageCornerRadius"
+- "incomingBubbleImage"
+depends-top-level:
+- "Bool"
+- "UIFont"
+- !private "JLBundleController"
+- "UIImage"
+- "BooleanLiteralType"
+- "NSIndexPath"
+- "JLChatAppearence"
+- "CGSize"
+- "%"
+- "StringLiteralType"
+- "NSObject"
+- !private "UIImageRenderingMode"
+- "CGFloat"
+- "UIColor"
+- !private "UIEdgeInsets"
+- "=="
+depends-member:
+- ["PSs9AnyObject", "CGSize"]
+- !private ["PSs9AnyObject", "JLBundleController"]
+- ["PSs9AnyObject", "UIColor"]
+- !private ["PSs9AnyObject", "UIEdgeInsets"]
+- ["PSs9AnyObject", "UIFont"]
+- !private ["PSs9AnyObject", "UIImage"]
+- !private ["PSs9AnyObject", "UIImageRenderingMode"]
+- ["PSs9AnyObject", "blackColor"]
+- ["PSs9AnyObject", "chatFont"]
+- ["PSs9AnyObject", "configChatFont"]
+- ["PSs9AnyObject", "configIncomingMessages"]
+- ["PSs9AnyObject", "configOutgoingMessages"]
+- ["PSs9AnyObject", "configSenderImage"]
+- !private ["PSs9AnyObject", "getBundle"]
+- !private ["PSs9AnyObject", "imageWithRenderingMode"]
+- ["PSs9AnyObject", "incomingBubbleColor"]
+- ["PSs9AnyObject", "incomingBubbleImage"]
+- ["PSs9AnyObject", "incomingBubbleImageMask"]
+- ["PSs9AnyObject", "incomingTextColor"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "lightGrayColor"]
+- ["PSs9AnyObject", "outGoingTextColor"]
+- ["PSs9AnyObject", "outgoingBubbleColor"]
+- ["PSs9AnyObject", "outgoingBubbleImage"]
+- ["PSs9AnyObject", "outgoingBubbleImageMask"]
+- !private ["PSs9AnyObject", "resizableImageWithCapInsets"]
+- ["PSs9AnyObject", "row"]
+- ["PSs9AnyObject", "senderImageBackgroundColor"]
+- ["PSs9AnyObject", "senderImageCornerRadius"]
+- ["PSs9AnyObject", "senderImageSize"]
+- ["PSs9AnyObject", "shouldShowMessageDateAtIndexPath"]
+- ["PSs9AnyObject", "showIncomingSenderImage"]
+- ["PSs9AnyObject", "showOutgoingSenderImage"]
+- ["PSs9AnyObject", "whiteColor"]
+- ["PSs9AnyObject", ""]
+- ["Sb", "_getBuiltinLogicValue"]
+- ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- ["V12CoreGraphics7CGFloat", "deinit"]
+- ["VSC6CGSize", "init"]
+- ["PSs11CVarArgType", "CGSize"]
+- !private ["PSs11CVarArgType", "JLBundleController"]
+- ["PSs11CVarArgType", "UIColor"]
+- !private ["PSs11CVarArgType", "UIEdgeInsets"]
+- ["PSs11CVarArgType", "UIFont"]
+- !private ["PSs11CVarArgType", "UIImage"]
+- !private ["PSs11CVarArgType", "UIImageRenderingMode"]
+- ["PSs11CVarArgType", "blackColor"]
+- ["PSs11CVarArgType", "chatFont"]
+- ["PSs11CVarArgType", "configChatFont"]
+- ["PSs11CVarArgType", "configIncomingMessages"]
+- ["PSs11CVarArgType", "configOutgoingMessages"]
+- ["PSs11CVarArgType", "configSenderImage"]
+- !private ["PSs11CVarArgType", "imageWithRenderingMode"]
+- ["PSs11CVarArgType", "incomingBubbleColor"]
+- ["PSs11CVarArgType", "incomingBubbleImage"]
+- ["PSs11CVarArgType", "incomingBubbleImageMask"]
+- ["PSs11CVarArgType", "incomingTextColor"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "lightGrayColor"]
+- ["PSs11CVarArgType", "outGoingTextColor"]
+- ["PSs11CVarArgType", "outgoingBubbleColor"]
+- ["PSs11CVarArgType", "outgoingBubbleImage"]
+- ["PSs11CVarArgType", "outgoingBubbleImageMask"]
+- !private ["PSs11CVarArgType", "resizableImageWithCapInsets"]
+- ["PSs11CVarArgType", "row"]
+- ["PSs11CVarArgType", "senderImageBackgroundColor"]
+- ["PSs11CVarArgType", "senderImageCornerRadius"]
+- ["PSs11CVarArgType", "senderImageSize"]
+- ["PSs11CVarArgType", "shouldShowMessageDateAtIndexPath"]
+- ["PSs11CVarArgType", "showIncomingSenderImage"]
+- ["PSs11CVarArgType", "showOutgoingSenderImage"]
+- ["PSs11CVarArgType", "whiteColor"]
+- ["PSs11CVarArgType", ""]
+- ["PSs28CustomDebugStringConvertible", "Some"]
+- ["PSs23CustomStringConvertible", "CGSize"]
+- !private ["PSs23CustomStringConvertible", "JLBundleController"]
+- ["PSs23CustomStringConvertible", "UIColor"]
+- !private ["PSs23CustomStringConvertible", "UIEdgeInsets"]
+- ["PSs23CustomStringConvertible", "UIFont"]
+- !private ["PSs23CustomStringConvertible", "UIImage"]
+- !private ["PSs23CustomStringConvertible", "UIImageRenderingMode"]
+- ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["PSs23CustomStringConvertible", "blackColor"]
+- ["PSs23CustomStringConvertible", "chatFont"]
+- ["PSs23CustomStringConvertible", "configChatFont"]
+- ["PSs23CustomStringConvertible", "configIncomingMessages"]
+- ["PSs23CustomStringConvertible", "configOutgoingMessages"]
+- ["PSs23CustomStringConvertible", "configSenderImage"]
+- !private ["PSs23CustomStringConvertible", "imageWithRenderingMode"]
+- ["PSs23CustomStringConvertible", "incomingBubbleColor"]
+- ["PSs23CustomStringConvertible", "incomingBubbleImage"]
+- ["PSs23CustomStringConvertible", "incomingBubbleImageMask"]
+- ["PSs23CustomStringConvertible", "incomingTextColor"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "lightGrayColor"]
+- ["PSs23CustomStringConvertible", "outGoingTextColor"]
+- ["PSs23CustomStringConvertible", "outgoingBubbleColor"]
+- ["PSs23CustomStringConvertible", "outgoingBubbleImage"]
+- ["PSs23CustomStringConvertible", "outgoingBubbleImageMask"]
+- !private ["PSs23CustomStringConvertible", "resizableImageWithCapInsets"]
+- ["PSs23CustomStringConvertible", "row"]
+- ["PSs23CustomStringConvertible", "senderImageBackgroundColor"]
+- ["PSs23CustomStringConvertible", "senderImageCornerRadius"]
+- ["PSs23CustomStringConvertible", "senderImageSize"]
+- ["PSs23CustomStringConvertible", "shouldShowMessageDateAtIndexPath"]
+- ["PSs23CustomStringConvertible", "showIncomingSenderImage"]
+- ["PSs23CustomStringConvertible", "showOutgoingSenderImage"]
+- ["PSs23CustomStringConvertible", "whiteColor"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["PSs9Equatable", "AlwaysTemplate"]
+- ["PSs9Equatable", "CGSize"]
+- !private ["PSs9Equatable", "JLBundleController"]
+- ["PSs9Equatable", "UIColor"]
+- !private ["PSs9Equatable", "UIEdgeInsets"]
+- ["PSs9Equatable", "UIFont"]
+- !private ["PSs9Equatable", "UIImage"]
+- !private ["PSs9Equatable", "UIImageRenderingMode"]
+- ["PSs9Equatable", "_getBuiltinLogicValue"]
+- ["PSs9Equatable", "blackColor"]
+- ["PSs9Equatable", "chatFont"]
+- ["PSs9Equatable", "configChatFont"]
+- ["PSs9Equatable", "configIncomingMessages"]
+- ["PSs9Equatable", "configOutgoingMessages"]
+- ["PSs9Equatable", "configSenderImage"]
+- !private ["PSs9Equatable", "imageWithRenderingMode"]
+- ["PSs9Equatable", "incomingBubbleColor"]
+- ["PSs9Equatable", "incomingBubbleImage"]
+- ["PSs9Equatable", "incomingBubbleImageMask"]
+- ["PSs9Equatable", "incomingTextColor"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "lightGrayColor"]
+- ["PSs9Equatable", "outGoingTextColor"]
+- ["PSs9Equatable", "outgoingBubbleColor"]
+- ["PSs9Equatable", "outgoingBubbleImage"]
+- ["PSs9Equatable", "outgoingBubbleImageMask"]
+- !private ["PSs9Equatable", "resizableImageWithCapInsets"]
+- ["PSs9Equatable", "row"]
+- ["PSs9Equatable", "senderImageBackgroundColor"]
+- ["PSs9Equatable", "senderImageCornerRadius"]
+- ["PSs9Equatable", "senderImageSize"]
+- ["PSs9Equatable", "shouldShowMessageDateAtIndexPath"]
+- ["PSs9Equatable", "showIncomingSenderImage"]
+- ["PSs9Equatable", "showOutgoingSenderImage"]
+- ["PSs9Equatable", "whiteColor"]
+- ["PSs9Equatable", ""]
+- !private ["PSs8Hashable", "AlwaysTemplate"]
+- ["PSs8Hashable", "CGSize"]
+- !private ["PSs8Hashable", "JLBundleController"]
+- ["PSs8Hashable", "UIColor"]
+- !private ["PSs8Hashable", "UIEdgeInsets"]
+- ["PSs8Hashable", "UIFont"]
+- !private ["PSs8Hashable", "UIImage"]
+- !private ["PSs8Hashable", "UIImageRenderingMode"]
+- ["PSs8Hashable", "_getBuiltinLogicValue"]
+- ["PSs8Hashable", "blackColor"]
+- ["PSs8Hashable", "chatFont"]
+- ["PSs8Hashable", "configChatFont"]
+- ["PSs8Hashable", "configIncomingMessages"]
+- ["PSs8Hashable", "configOutgoingMessages"]
+- ["PSs8Hashable", "configSenderImage"]
+- !private ["PSs8Hashable", "imageWithRenderingMode"]
+- ["PSs8Hashable", "incomingBubbleColor"]
+- ["PSs8Hashable", "incomingBubbleImage"]
+- ["PSs8Hashable", "incomingBubbleImageMask"]
+- ["PSs8Hashable", "incomingTextColor"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "lightGrayColor"]
+- ["PSs8Hashable", "outGoingTextColor"]
+- ["PSs8Hashable", "outgoingBubbleColor"]
+- ["PSs8Hashable", "outgoingBubbleImage"]
+- ["PSs8Hashable", "outgoingBubbleImageMask"]
+- !private ["PSs8Hashable", "resizableImageWithCapInsets"]
+- ["PSs8Hashable", "row"]
+- ["PSs8Hashable", "senderImageBackgroundColor"]
+- ["PSs8Hashable", "senderImageCornerRadius"]
+- ["PSs8Hashable", "senderImageSize"]
+- ["PSs8Hashable", "shouldShowMessageDateAtIndexPath"]
+- ["PSs8Hashable", "showIncomingSenderImage"]
+- ["PSs8Hashable", "showOutgoingSenderImage"]
+- ["PSs8Hashable", "whiteColor"]
+- ["PSs8Hashable", ""]
+- !private ["C20JLChatViewController18JLBundleController", "getBundle"]
+- ["C20JLChatViewController16JLChatAppearence", "Bool"]
+- ["C20JLChatViewController16JLChatAppearence", "CGFloat"]
+- ["C20JLChatViewController16JLChatAppearence", "CGSize"]
+- !private ["C20JLChatViewController16JLChatAppearence", "JLBundleController"]
+- ["C20JLChatViewController16JLChatAppearence", "NSIndexPath"]
+- ["C20JLChatViewController16JLChatAppearence", "UIColor"]
+- !private ["C20JLChatViewController16JLChatAppearence", "UIEdgeInsets"]
+- ["C20JLChatViewController16JLChatAppearence", "UIFont"]
+- ["C20JLChatViewController16JLChatAppearence", "UIImage"]
+- !private ["C20JLChatViewController16JLChatAppearence", "UIImageRenderingMode"]
+- ["C20JLChatViewController16JLChatAppearence", "chatFont"]
+- ["C20JLChatViewController16JLChatAppearence", "configChatFont"]
+- ["C20JLChatViewController16JLChatAppearence", "configIncomingMessages"]
+- ["C20JLChatViewController16JLChatAppearence", "configOutgoingMessages"]
+- ["C20JLChatViewController16JLChatAppearence", "configSenderImage"]
+- ["C20JLChatViewController16JLChatAppearence", "deinit"]
+- ["C20JLChatViewController16JLChatAppearence", "incomingBubbleColor"]
+- ["C20JLChatViewController16JLChatAppearence", "incomingBubbleImage"]
+- ["C20JLChatViewController16JLChatAppearence", "incomingBubbleImageMask"]
+- ["C20JLChatViewController16JLChatAppearence", "incomingTextColor"]
+- ["C20JLChatViewController16JLChatAppearence", "init"]
+- ["C20JLChatViewController16JLChatAppearence", "outGoingTextColor"]
+- ["C20JLChatViewController16JLChatAppearence", "outgoingBubbleColor"]
+- ["C20JLChatViewController16JLChatAppearence", "outgoingBubbleImage"]
+- ["C20JLChatViewController16JLChatAppearence", "outgoingBubbleImageMask"]
+- ["C20JLChatViewController16JLChatAppearence", "senderImageBackgroundColor"]
+- ["C20JLChatViewController16JLChatAppearence", "senderImageCornerRadius"]
+- ["C20JLChatViewController16JLChatAppearence", "senderImageSize"]
+- ["C20JLChatViewController16JLChatAppearence", "shouldShowMessageDateAtIndexPath"]
+- ["C20JLChatViewController16JLChatAppearence", "showIncomingSenderImage"]
+- ["C20JLChatViewController16JLChatAppearence", "showOutgoingSenderImage"]
+- ["PSo8NSCoding", "blackColor"]
+- !private ["PSo8NSCoding", "imageWithRenderingMode"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "lightGrayColor"]
+- !private ["PSo8NSCoding", "resizableImageWithCapInsets"]
+- ["PSo8NSCoding", "row"]
+- ["PSo8NSCoding", "whiteColor"]
+- ["PSo9NSCopying", "blackColor"]
+- ["PSo9NSCopying", "init"]
+- ["PSo9NSCopying", "lightGrayColor"]
+- ["PSo9NSCopying", "row"]
+- ["PSo9NSCopying", "whiteColor"]
+- ["CSo11NSIndexPath", "row"]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "CGFloat"]
+- ["CSo8NSObject", "CGSize"]
+- !private ["CSo8NSObject", "JLBundleController"]
+- ["CSo8NSObject", "NSIndexPath"]
+- ["CSo8NSObject", "UIColor"]
+- !private ["CSo8NSObject", "UIEdgeInsets"]
+- ["CSo8NSObject", "UIFont"]
+- ["CSo8NSObject", "UIImage"]
+- !private ["CSo8NSObject", "UIImageRenderingMode"]
+- ["CSo8NSObject", "blackColor"]
+- ["CSo8NSObject", "chatFont"]
+- ["CSo8NSObject", "configChatFont"]
+- ["CSo8NSObject", "configIncomingMessages"]
+- ["CSo8NSObject", "configOutgoingMessages"]
+- ["CSo8NSObject", "configSenderImage"]
+- !private ["CSo8NSObject", "imageWithRenderingMode"]
+- ["CSo8NSObject", "incomingBubbleColor"]
+- ["CSo8NSObject", "incomingBubbleImage"]
+- ["CSo8NSObject", "incomingBubbleImageMask"]
+- ["CSo8NSObject", "incomingTextColor"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "lightGrayColor"]
+- ["CSo8NSObject", "outGoingTextColor"]
+- ["CSo8NSObject", "outgoingBubbleColor"]
+- ["CSo8NSObject", "outgoingBubbleImage"]
+- ["CSo8NSObject", "outgoingBubbleImageMask"]
+- !private ["CSo8NSObject", "resizableImageWithCapInsets"]
+- ["CSo8NSObject", "row"]
+- ["CSo8NSObject", "senderImageBackgroundColor"]
+- ["CSo8NSObject", "senderImageCornerRadius"]
+- ["CSo8NSObject", "senderImageSize"]
+- ["CSo8NSObject", "shouldShowMessageDateAtIndexPath"]
+- ["CSo8NSObject", "showIncomingSenderImage"]
+- ["CSo8NSObject", "showOutgoingSenderImage"]
+- ["CSo8NSObject", "whiteColor"]
+- ["CSo8NSObject", ""]
+- ["PSo16NSObjectProtocol", "CGSize"]
+- !private ["PSo16NSObjectProtocol", "JLBundleController"]
+- ["PSo16NSObjectProtocol", "UIColor"]
+- !private ["PSo16NSObjectProtocol", "UIEdgeInsets"]
+- ["PSo16NSObjectProtocol", "UIFont"]
+- !private ["PSo16NSObjectProtocol", "UIImage"]
+- !private ["PSo16NSObjectProtocol", "UIImageRenderingMode"]
+- ["PSo16NSObjectProtocol", "blackColor"]
+- ["PSo16NSObjectProtocol", "chatFont"]
+- ["PSo16NSObjectProtocol", "configChatFont"]
+- ["PSo16NSObjectProtocol", "configIncomingMessages"]
+- ["PSo16NSObjectProtocol", "configOutgoingMessages"]
+- ["PSo16NSObjectProtocol", "configSenderImage"]
+- !private ["PSo16NSObjectProtocol", "imageWithRenderingMode"]
+- ["PSo16NSObjectProtocol", "incomingBubbleColor"]
+- ["PSo16NSObjectProtocol", "incomingBubbleImage"]
+- ["PSo16NSObjectProtocol", "incomingBubbleImageMask"]
+- ["PSo16NSObjectProtocol", "incomingTextColor"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "lightGrayColor"]
+- ["PSo16NSObjectProtocol", "outGoingTextColor"]
+- ["PSo16NSObjectProtocol", "outgoingBubbleColor"]
+- ["PSo16NSObjectProtocol", "outgoingBubbleImage"]
+- ["PSo16NSObjectProtocol", "outgoingBubbleImageMask"]
+- !private ["PSo16NSObjectProtocol", "resizableImageWithCapInsets"]
+- ["PSo16NSObjectProtocol", "row"]
+- ["PSo16NSObjectProtocol", "senderImageBackgroundColor"]
+- ["PSo16NSObjectProtocol", "senderImageCornerRadius"]
+- ["PSo16NSObjectProtocol", "senderImageSize"]
+- ["PSo16NSObjectProtocol", "shouldShowMessageDateAtIndexPath"]
+- ["PSo16NSObjectProtocol", "showIncomingSenderImage"]
+- ["PSo16NSObjectProtocol", "showOutgoingSenderImage"]
+- ["PSo16NSObjectProtocol", "whiteColor"]
+- ["PSo16NSObjectProtocol", ""]
+- ["PSo14NSSecureCoding", "blackColor"]
+- !private ["PSo14NSSecureCoding", "imageWithRenderingMode"]
+- ["PSo14NSSecureCoding", "init"]
+- ["PSo14NSSecureCoding", "lightGrayColor"]
+- !private ["PSo14NSSecureCoding", "resizableImageWithCapInsets"]
+- ["PSo14NSSecureCoding", "row"]
+- ["PSo14NSSecureCoding", "whiteColor"]
+- ["PSs21NilLiteralConvertible", "Some"]
+- ["Sq", "Some"]
+- !private ["PSs16RawRepresentable", "AlwaysTemplate"]
+- !private ["PSo29UIAccessibilityIdentification", "imageWithRenderingMode"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "resizableImageWithCapInsets"]
+- ["CSo7UIColor", "blackColor"]
+- ["CSo7UIColor", "init"]
+- ["CSo7UIColor", "lightGrayColor"]
+- ["CSo7UIColor", "whiteColor"]
+- !private ["VSC12UIEdgeInsets", "init"]
+- ["CSo6UIFont", "init"]
+- !private ["CSo7UIImage", "imageWithRenderingMode"]
+- !private ["CSo7UIImage", "init"]
+- !private ["CSo7UIImage", "resizableImageWithCapInsets"]
+- !private ["OSC20UIImageRenderingMode", "AlwaysTemplate"]
+- ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- ["PSs24_ColorLiteralConvertible", "blackColor"]
+- ["PSs24_ColorLiteralConvertible", "init"]
+- ["PSs24_ColorLiteralConvertible", "lightGrayColor"]
+- ["PSs24_ColorLiteralConvertible", "whiteColor"]
+- !private ["PSs24_ImageLiteralConvertible", "imageWithRenderingMode"]
+- !private ["PSs24_ImageLiteralConvertible", "init"]
+- !private ["PSs24_ImageLiteralConvertible", "resizableImageWithCapInsets"]
+- ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- ["PSs12_Reflectable", "Some"]
+- ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- ["PSs12_Reflectable", "init"]
+depends-nominal:
+- "PSs9AnyObject"
+- "Sb"
+- "PSs25BooleanLiteralConvertible"
+- "PSs11BooleanType"
+- "V12CoreGraphics7CGFloat"
+- "VSC6CGSize"
+- "PSs11CVarArgType"
+- "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- "PSs8Hashable"
+- !private "C20JLChatViewController18JLBundleController"
+- "C20JLChatViewController16JLChatAppearence"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "CSo11NSIndexPath"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "PSs21NilLiteralConvertible"
+- "Sq"
+- !private "PSs16RawRepresentable"
+- !private "PSo29UIAccessibilityIdentification"
+- "CSo7UIColor"
+- !private "VSC12UIEdgeInsets"
+- "CSo6UIFont"
+- !private "CSo7UIImage"
+- !private "OSC20UIImageRenderingMode"
+- "PSs33_BuiltinBooleanLiteralConvertible"
+- "PSs24_ColorLiteralConvertible"
+- !private "PSs24_ImageLiteralConvertible"
+- "PSs21_ObjectiveCBridgeable"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/Pods/Target Support Files/JLChatViewController/JLChatViewController-umbrella.h"
+- "/Users/joseLucas/Documents/Libraries/JLChatViewController/Example/build/Pods.build/Debug-iphonesimulator/JLChatViewController.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+interface-hash: "0a473f1fea6be4e5467b7df109ffa15c"

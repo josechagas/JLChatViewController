@@ -1,0 +1,19 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "c086dc9fda6e334a45e4104df9d98f95"
+build_time: [505872885, 554887000]
+inputs:
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLTextMessageCell.swift": [504357926, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatLoadingView.swift": [503947260, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatImageView.swift": [504273333, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatAppearence.swift": [504014360, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatViewController.swift": [504307960, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLBundleController.swift": [504274441, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatToolBar.swift": [504395384, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLCustomTextView.swift": [504357937, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTextView.swift": [503973552, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLFile.swift": [504356920, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift": [504306708, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLFileIndicatorView.swift": [504357200, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatMessageCell.swift": [504360573, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLImageMessageCell.swift": [504358575, 0]
+  "/Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLMessage.swift": [504304231, 0]

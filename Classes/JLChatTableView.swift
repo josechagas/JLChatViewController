@@ -198,7 +198,10 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      Use it to add old messages inside chat tableView.
      
+     ATTENTION: Do not call this method if you won't add messages.
+     
      - parameter quant: the number of messages that will be added.
+     
      */
     public func addOldMessages(quant:Int){
         
@@ -212,7 +215,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             
             self.loadedOldMessagesButNotShowing = false
             
-            self.scrollToRowAtIndexPath(NSIndexPath(forRow: quant, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+            if self.numberOfRowsInSection(0) > 0{
+                self.scrollToRowAtIndexPath(NSIndexPath(forRow: quant, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+            }
             
         }
         else{

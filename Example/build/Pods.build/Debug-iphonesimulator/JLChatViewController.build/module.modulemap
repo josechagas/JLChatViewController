@@ -1,0 +1,10 @@
+framework module JLChatViewController {
+  umbrella header "JLChatViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module JLChatViewController.Swift {
+    header "JLChatViewController-Swift.h"
+}
