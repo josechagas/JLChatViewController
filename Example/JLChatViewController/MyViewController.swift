@@ -94,7 +94,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     
     func answerMeAction(sender:AnyObject){
         
-        self.hideUserTypingView()
+        
         let text = "asdas sadas eee f fs fsf4 af aeee vamos la carai"
         
         let sort = arc4random()%3
@@ -111,8 +111,10 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             
         }
         
+        self.hideUserTypingView { () -> () in
+            self.chatTableView.addNewMessage()
+        }
         
-        self.chatTableView.addNewMessage()
         
     }
     
@@ -302,15 +304,14 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         
         //se ainda nao tiver um arquivo adicionado adiciona um
                 
-        self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
+        /*self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
         
         self.toolBar.inputText.addFile(JLFile(title: "Produto", image: UIImage(named: "imagem")))
-
-        
+*/
+        self.showUserTypingView()
     }
     
     func didTapRightButton() {
-        self.showUserTypingView()
 
         //ver se existe algum arquivo adicionado e se tiver envia
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = addedFile{
