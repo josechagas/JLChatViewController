@@ -128,7 +128,8 @@ public class JLChatViewController: UIViewController {
         let rightDist = NSLayoutConstraint(item: self.userTypingView, attribute: NSLayoutAttribute.Trailing, relatedBy: .Equal, toItem: view, attribute:NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         
         self.userTypingView.addConstraint(rightDist)
-
+        
+        
 
     }
     
@@ -142,12 +143,14 @@ public class JLChatViewController: UIViewController {
         
         self.userTypingDistToToolBar.constant = 0
         self.chatTableViewDistToBottom.constant = self.userTypingView.frame.height
-        
         UIView.animateWithDuration(0.1, animations: { () -> Void in
 
             self.view.layoutIfNeeded()
-
+            
             }) { (finished) -> Void in
+                self.chatTableView.scrollChatToBottom(true)
+                
+                
                 UIView.animateWithDuration(0.4) { () -> Void in
                     self.userTypingView.alpha = 0.7
                 }
@@ -156,21 +159,24 @@ public class JLChatViewController: UIViewController {
         
     }
     
-    public func hideUserTypingView(){
+    public func hideUserTypingView(completion:(()->())?){
         if let block = animationBlock{
             block(startAnimation: false)
             
         }
+        self.userTypingDistToToolBar.constant = -self.userTypingView.frame.height
         
+        self.chatTableViewDistToBottom.constant = 0
         UIView.animateWithDuration(0.4, animations: { () -> Void in
+
             self.userTypingView.alpha = 0
+            self.view.layoutIfNeeded()
+
             }) { (finished) -> Void in
                 
-                self.userTypingDistToToolBar.constant = -self.userTypingView.frame.height
-                
-                self.chatTableViewDistToBottom.constant = 0
-                
-                self.view.layoutIfNeeded()
+                if let completion = completion{
+                    completion()
+                }
         }
         
     }

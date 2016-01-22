@@ -114,8 +114,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
 
     private var addedNewMessage:Bool = true
-    
+
     private var updatingRowsForNewInsets:Bool = false
+    
     private var blockLoadOldMessages:Bool = false//avoid to do multiples requesitions for old messages
     
     
@@ -149,8 +150,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                     return
                 }
                 else{
+
                     let chatContentheight = self.contentSize.height
                     self.scrollRectToVisible(CGRect(x: 0, y: chatContentheight - 1, width: 1, height: 1), animated: false)
+                   
+                    
                 }
               
             }
@@ -171,7 +175,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     private func initChatTableView(){
             
         self.rowHeight = UITableViewAutomaticDimension
-        self.estimatedRowHeight = 50
+        self.estimatedRowHeight = 60
         self.estimatedSectionHeaderHeight = 50
         self.delegate = self
         
@@ -375,7 +379,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     */
     public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath,message:JLMessage)->JLChatMessageCell{
         
-        let thisIsNewMessage:Bool = (addedNewMessage && indexPath.row == self.numberOfRowsInSection(0) - 1)
+        let thisIsTheNewMessage:Bool = (addedNewMessage && indexPath.row == self.numberOfRowsInSection(0) - 1)
+        
+        
         
         let isOutgoingMessage = message.senderID == self.myID
         
@@ -403,7 +409,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
         
         
-        cellToReturn.initCell(message, thisIsNewMessage: thisIsNewMessage,showDate: JLChatAppearence.shouldShowMessageDateAtIndexPath(indexPath: indexPath),isOutgoingMessage: isOutgoingMessage)
+        cellToReturn.initCell(message, thisIsNewMessage: thisIsTheNewMessage,showDate: JLChatAppearence.shouldShowMessageDateAtIndexPath(indexPath: indexPath),isOutgoingMessage: isOutgoingMessage)
         
         
         
@@ -443,18 +449,20 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
 
                 
-        if thisIsNewMessage {
+        if thisIsTheNewMessage {
             
             print(" antes de animar\(indexPath.row)")
 
-            cellToReturn.alpha = 0
+            //cellToReturn.alpha = 0
+            
+            
             
             UIView.animateWithDuration(0.5, delay: 0.3, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                 
-                cellToReturn.alpha = 1
+                //cellToReturn.alpha = 1
                 
                 }) { (finished) -> Void in
-                    print(" apos animar\(indexPath.row)")
+                    //print(" apos animar\(indexPath.row)")
                     self.scrollChatToBottom(true)
                     self.addedNewMessage = false
                     
@@ -472,7 +480,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
     }
     
-    private func scrollChatToBottom(animated:Bool){
+    func scrollChatToBottom(animated:Bool){
         
         if self.numberOfSections == 0 || self.numberOfRowsInSection(0) == 0{
             return
