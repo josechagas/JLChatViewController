@@ -356,6 +356,7 @@
                     <size key="freeformSize" width="600" height="1700"/>
                     <connections>
                         <outlet property="chatTableView" destination="o8S-YK-lnp" id="CkM-UR-P6G"/>
+                        <outlet property="chatTableViewDistToBottom" destination="byO-mF-akP" id="udI-sW-bm4"/>
                         <outlet property="toolBar" destination="xOK-WS-EGp" id="68z-Bs-nYM"/>
                         <outlet property="toolBarDistToBottom" destination="l3J-XB-ROa" id="1hH-j6-zJA"/>
                         <outlet property="userTypingDistToToolBar" destination="Xqm-OP-JyJ" id="03g-7D-SEL"/>

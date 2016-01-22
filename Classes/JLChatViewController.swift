@@ -18,6 +18,7 @@ public class JLChatViewController: UIViewController {
      */
     @IBOutlet public weak var chatTableView: JLChatTableView!
     
+    @IBOutlet weak var chatTableViewDistToBottom: NSLayoutConstraint!
     
     /**
      * use this to access the UI elements that you need to write and send your message.
@@ -140,13 +141,15 @@ public class JLChatViewController: UIViewController {
         }
         
         self.userTypingDistToToolBar.constant = 0
+        self.chatTableViewDistToBottom.constant = self.userTypingView.frame.height
+        
         UIView.animateWithDuration(0.1, animations: { () -> Void in
 
             self.view.layoutIfNeeded()
 
             }) { (finished) -> Void in
                 UIView.animateWithDuration(0.4) { () -> Void in
-                    self.userTypingView.alpha = 1
+                    self.userTypingView.alpha = 0.7
                 }
 
         }
@@ -162,7 +165,11 @@ public class JLChatViewController: UIViewController {
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.userTypingView.alpha = 0
             }) { (finished) -> Void in
+                
                 self.userTypingDistToToolBar.constant = -self.userTypingView.frame.height
+                
+                self.chatTableViewDistToBottom.constant = 0
+                
                 self.view.layoutIfNeeded()
         }
         

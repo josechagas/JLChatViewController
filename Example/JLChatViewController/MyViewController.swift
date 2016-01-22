@@ -93,6 +93,8 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     }
     
     func answerMeAction(sender:AnyObject){
+        
+        self.hideUserTypingView()
         let text = "asdas sadas eee f fs fsf4 af aeee vamos la carai"
         
         let sort = arc4random()%3
@@ -308,7 +310,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     }
     
     func didTapRightButton() {
-        
+        self.showUserTypingView()
 
         //ver se existe algum arquivo adicionado e se tiver envia
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = addedFile{
