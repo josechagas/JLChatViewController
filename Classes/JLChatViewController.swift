@@ -30,12 +30,21 @@ public class JLChatViewController: UIViewController {
      * Its used to control the toolBar position accordingly to changes on UI.
      */
     @IBOutlet public weak var toolBarDistToBottom: NSLayoutConstraint!
-        
+    
+    
+    @IBOutlet weak var userTypingView: UIView!
+    
+    @IBOutlet weak var userTypingDistToToolBar: NSLayoutConstraint!
     
     override public func viewDidLoad() {
                 
         super.viewDidLoad()
         
+        self.userTypingView.alpha = 0
+        
+        self.userTypingDistToToolBar.constant -= self.userTypingView.frame.height
+        self.view.layoutIfNeeded()
+    
         self.registerKeyBoardNotifications()
         
     }
@@ -74,7 +83,70 @@ public class JLChatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Back button methods
+    //MARK: - UserTypingView methods
+    
+    public func loadTypingViewWithCustomView(customView:UIView?){
+        
+        var view:UIView!
+        
+        if let customView = customView{
+            view = customView
+        }
+        else{
+            view = JLUserTypingView.loadViewFromNib()
+        }
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.userTypingView.addSubview(view)
+        
+        let topDist = NSLayoutConstraint(item: self.userTypingView, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: view, attribute:NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        self.userTypingView.addConstraint(topDist)
+        
+        let bottomDist = NSLayoutConstraint(item: self.userTypingView, attribute: NSLayoutAttribute.Bottom, relatedBy: .Equal, toItem: view, attribute:NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        
+        self.userTypingView.addConstraint(bottomDist)
+        
+        let leftDist = NSLayoutConstraint(item: self.userTypingView, attribute: NSLayoutAttribute.Leading, relatedBy: .Equal, toItem: view, attribute:NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
+        
+        self.userTypingView.addConstraint(leftDist)
+        
+        let rightDist = NSLayoutConstraint(item: self.userTypingView, attribute: NSLayoutAttribute.Trailing, relatedBy: .Equal, toItem: view, attribute:NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        
+        self.userTypingView.addConstraint(rightDist)
+
+
+    }
+    
+    
+    public func showUserTypingView(){
+        
+        self.userTypingDistToToolBar.constant = 0
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+
+            self.view.layoutIfNeeded()
+
+            }) { (finished) -> Void in
+                UIView.animateWithDuration(0.4) { () -> Void in
+                    self.userTypingView.alpha = 1
+                }
+
+        }
+        
+    }
+    
+    public func hideUserTypingView(){
+        
+        
+        UIView.animateWithDuration(0.4, animations: { () -> Void in
+            self.userTypingView.alpha = 0
+            }) { (finished) -> Void in
+                self.userTypingDistToToolBar.constant = -self.userTypingView.frame.height
+                self.view.layoutIfNeeded()
+        }
+        
+    }
     
     
     //MARK: - KeyBoard notifications

@@ -44,6 +44,7 @@ public class JLTextMessageCell: JLChatMessageCell {
        
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -255,6 +256,8 @@ public class JLTextMessageCell: JLChatMessageCell {
         if JLChatAppearence.showOutgoingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
+            self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
+            
             self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             
             self.senderImageWidth.constant = JLChatAppearence.senderImageSize.width
@@ -275,6 +278,8 @@ public class JLTextMessageCell: JLChatMessageCell {
     public override func configAsIncomingMessage(){
         if JLChatAppearence.showIncomingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
+            
+            self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
             
             self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             

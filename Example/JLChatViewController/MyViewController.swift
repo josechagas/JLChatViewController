@@ -16,7 +16,7 @@ enum ID:String{//used only for the example
 }
 
 
-class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,JLChatMessagesMenuDelegate,ChatDelegate {
+class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,JLChatMessagesMenuDelegate,ChatDelegate {
 
     
    
@@ -27,10 +27,13 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         loadMessages()
         configChat()
+        loadTypingViewWithCustomView(nil)
         configToolBar()
-        
+
         addAnswerMeBarButton()
         
 
@@ -110,6 +113,8 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         self.chatTableView.addNewMessage()
         
     }
+    
+    
 
     
     //MARK: - ChatTableView methods
@@ -128,6 +133,7 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
         
         JLChatAppearence.configOutgoingMessages(nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
         
+        JLChatAppearence.configSenderImage(nil, senderImageCornerRadius: nil, senderImageBackgroundColor: nil, senderImageDefaultImage: nil)
         
         JLChatAppearence.configChatFont(nil) { (indexPath) -> Bool in
             
@@ -136,7 +142,6 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
             }
             return false
         }
-        
         
     }
     
@@ -303,6 +308,8 @@ class MyViewController: JLChatViewController,ChatDataSource,ChatToolBarDelegate,
     
     func didTapRightButton() {
         
+        self.showUserTypingView()
+
         //ver se existe algum arquivo adicionado e se tiver envia
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = addedFile{
             

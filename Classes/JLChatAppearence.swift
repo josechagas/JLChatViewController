@@ -10,12 +10,8 @@ import UIKit
 
 public class JLChatAppearence: NSObject {
     
-    
-    
-    
-    
    
-    //Incoming messages
+    //MARK: - Incoming messages
     static public private(set) var incomingBubbleImage:UIImage?
     
     static public private(set) var incomingBubbleImageMask:UIImage?
@@ -60,7 +56,7 @@ public class JLChatAppearence: NSObject {
     
     //
     
-    //Outgoing messages
+    //MARK: - Outgoing messages
     static public private(set) var outgoingBubbleImage:UIImage?
     
     static public private(set) var outgoingBubbleImageMask:UIImage?
@@ -109,9 +105,7 @@ public class JLChatAppearence: NSObject {
 
     
     
-    // sender image
-    
-    
+    //MARK: - sender image
     
     static public private(set) var senderImageSize:CGSize = CGSize(width: 30, height: 30)
     
@@ -119,7 +113,9 @@ public class JLChatAppearence: NSObject {
     
     static public private(set) var senderImageBackgroundColor:UIColor = UIColor.lightGrayColor()
     
-    public class func configSenderImage(senderImageSize:CGSize?,senderImageCornerRadius:CGFloat?,senderImageBackgroundColor:UIColor?){
+    static public private(set) var senderImageDefaultImage:UIImage?
+    
+    public class func configSenderImage(senderImageSize:CGSize?,senderImageCornerRadius:CGFloat?,senderImageBackgroundColor:UIColor?,senderImageDefaultImage:UIImage?){
         
         if let senderImageSize = senderImageSize{
             self.senderImageSize = senderImageSize
@@ -132,10 +128,11 @@ public class JLChatAppearence: NSObject {
         if let senderImageBackgroundColor = senderImageBackgroundColor{
             self.senderImageBackgroundColor = senderImageBackgroundColor
         }
+        
+        self.senderImageDefaultImage = senderImageDefaultImage
     }
     
-    // message date label
-    
+    //MARK: - message date label
     static public private(set) var shouldShowMessageDateAtIndexPath:(indexPath:NSIndexPath)->Bool = { (indexPath) -> Bool in
         
         if indexPath.row % 3 == 0{
@@ -158,4 +155,6 @@ public class JLChatAppearence: NSObject {
         }
         
     }
+    
+    //MARK: - AlertButton Image
 }

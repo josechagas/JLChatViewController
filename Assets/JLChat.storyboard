@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,7 +21,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="156" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="o8S-YK-lnp" customClass="JLChatTableView" customModule="JLChatViewController" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="1700"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingTextCell" rowHeight="186" id="1GK-Ad-wOe" customClass="JLTextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
@@ -33,7 +32,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-yZ-VFU">
                                                     <rect key="frame" x="565" y="151" width="30" height="30"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="7Rt-K9-V4P"/>
                                                         <constraint firstAttribute="width" constant="30" id="tct-qi-euV"/>
@@ -47,7 +45,6 @@
                                                 </imageView>
                                                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-cS-rvB">
                                                     <rect key="frame" x="39" y="82" width="30" height="30"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6UC-Xd-ERa"/>
                                                         <constraint firstAttribute="width" constant="30" id="NDX-ga-9P7"/>
@@ -62,7 +59,6 @@
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-Ua-FXr" customClass="JLChatTextView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="34" y="13" width="531" height="167.5"/>
-                                                    <animations/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -70,13 +66,11 @@
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-6t-aRi">
                                                     <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="NgC-cS-rvB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bWl-tr-iZs" secondAttribute="leading" constant="5" id="0RR-Tz-ckh"/>
                                                 <constraint firstItem="x4e-Ua-FXr" firstAttribute="bottom" secondItem="hv4-yZ-VFU" secondAttribute="bottom" id="1yl-rm-uGq"/>
@@ -92,7 +86,6 @@
                                                 <constraint firstItem="NgC-cS-rvB" firstAttribute="centerY" secondItem="x4e-Ua-FXr" secondAttribute="centerY" id="xht-kP-isn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="chatTextView" destination="x4e-Ua-FXr" id="ZlY-rN-aJY"/>
                                             <outlet property="errorToSendButton" destination="NgC-cS-rvB" id="dT2-YS-Tux"/>
@@ -112,7 +105,6 @@
                                             <subviews>
                                                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZI-eG-fZ4">
                                                     <rect key="frame" x="531" y="82" width="30" height="30"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="bVW-Mg-U0N"/>
                                                         <constraint firstAttribute="height" constant="30" id="mET-mI-TCX"/>
@@ -127,7 +119,6 @@
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rM-jb-mjO" customClass="JLChatTextView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="35" y="13" width="531" height="168.5"/>
-                                                    <animations/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -135,7 +126,6 @@
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZF-Bu-IIb">
                                                     <rect key="frame" x="5" y="151" width="30" height="30"/>
-                                                    <animations/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="dmQ-i0-zsA"/>
@@ -150,13 +140,11 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLE-cS-279">
                                                     <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="topMargin" secondItem="SLE-cS-279" secondAttribute="top" id="0qs-1q-OCQ"/>
                                                 <constraint firstItem="mZF-Bu-IIb" firstAttribute="leading" secondItem="nAZ-Kw-1xL" secondAttribute="leading" constant="5" id="BQn-FU-9Ua"/>
@@ -172,7 +160,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="mZF-Bu-IIb" secondAttribute="bottom" constant="5" id="zHI-5v-mK9"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="chatTextView" destination="1rM-jb-mjO" id="iC2-sn-UWM"/>
                                             <outlet property="errorToSendButton" destination="OZI-eG-fZ4" id="0wX-mY-bW2"/>
@@ -191,8 +178,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22E-e3-JIN">
-                                                    <rect key="frame" x="505" y="285.5" width="30" height="30"/>
-                                                    <animations/>
+                                                    <rect key="frame" x="505" y="285" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6h6-y2-8rL"/>
                                                         <constraint firstAttribute="width" constant="30" id="dQr-sY-GCC"/>
@@ -207,7 +193,6 @@
                                                 </button>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fz-Me-D77" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="35" y="48" width="505" height="505"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="3Fz-Me-D77" secondAttribute="height" id="44Q-Hw-10c"/>
                                                     </constraints>
@@ -218,7 +203,6 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CJJ-xu-V1N">
                                                     <rect key="frame" x="5" y="523" width="30" height="30"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="LI1-rZ-LOJ"/>
                                                         <constraint firstAttribute="height" constant="30" id="SWb-cI-6Ri"/>
@@ -232,13 +216,11 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-Y1-2eC">
                                                     <rect key="frame" x="300" y="8" width="0.0" height="35"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="CJJ-xu-V1N" firstAttribute="leading" secondItem="avK-cS-LiH" secondAttribute="leading" constant="5" id="1d2-B1-oNP"/>
                                                 <constraint firstAttribute="bottom" secondItem="CJJ-xu-V1N" secondAttribute="bottom" constant="5" id="6Cl-Yf-Lrd"/>
@@ -254,7 +236,6 @@
                                                 <constraint firstItem="3Fz-Me-D77" firstAttribute="top" secondItem="sdS-Y1-2eC" secondAttribute="bottom" constant="5" id="pYk-Vy-SLb"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="errorButton" destination="22E-e3-JIN" id="d7F-0X-jQ7"/>
                                             <outlet property="errorButtonDist" destination="cPL-3C-roO" id="iye-Zq-J20"/>
@@ -273,8 +254,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVi-B0-WP0">
-                                                    <rect key="frame" x="65" y="285.5" width="30" height="30"/>
-                                                    <animations/>
+                                                    <rect key="frame" x="65" y="285" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Pne-Mo-hZz"/>
                                                         <constraint firstAttribute="height" constant="30" id="gav-4z-d6X"/>
@@ -289,7 +269,6 @@
                                                 </button>
                                                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="izH-iH-shk" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="60" y="48" width="505" height="505"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="izH-iH-shk" secondAttribute="height" id="SKS-3O-I3a"/>
                                                     </constraints>
@@ -300,7 +279,6 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4aN-Gh-kRF">
                                                     <rect key="frame" x="565" y="523" width="30" height="30"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="KkI-YT-ZGi"/>
                                                         <constraint firstAttribute="height" constant="30" id="MQe-aA-2sF"/>
@@ -314,13 +292,11 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UH-rR-gUD">
                                                     <rect key="frame" x="300" y="8" width="0.0" height="35"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="4aN-Gh-kRF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fm0-fR-UZ9" secondAttribute="topMargin" constant="5" id="0ox-Is-nfL"/>
                                                 <constraint firstItem="izH-iH-shk" firstAttribute="top" secondItem="3UH-rR-gUD" secondAttribute="bottom" constant="5" id="Eq6-U9-Mmn"/>
@@ -336,7 +312,6 @@
                                                 <constraint firstItem="aVi-B0-WP0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fm0-fR-UZ9" secondAttribute="leading" constant="5" id="yUL-6h-Cjt"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="errorButton" destination="aVi-B0-WP0" id="NOQ-00-ooa"/>
                                             <outlet property="errorButtonDist" destination="i9B-Wr-sFt" id="OGF-nd-Ktr"/>
@@ -349,17 +324,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arL-hu-qvd">
+                                <rect key="frame" x="0.0" y="1616" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="67f-fB-4Ou"/>
+                                    <constraint firstAttribute="width" constant="70" id="QZw-iK-Cu1"/>
+                                </constraints>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOK-WS-EGp" customClass="JLChatToolBar" customModule="JLChatViewController" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1656" width="600" height="44"/>
-                                <animations/>
                                 <items/>
                             </toolbar>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="arL-hu-qvd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0tM-No-NAG"/>
                             <constraint firstItem="o8S-YK-lnp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BAR-O9-eDp"/>
                             <constraint firstItem="o8S-YK-lnp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NxK-cf-kAT"/>
+                            <constraint firstItem="xOK-WS-EGp" firstAttribute="top" secondItem="arL-hu-qvd" secondAttribute="bottom" id="Xqm-OP-JyJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o8S-YK-lnp" secondAttribute="bottom" id="byO-mF-akP"/>
                             <constraint firstAttribute="trailing" secondItem="o8S-YK-lnp" secondAttribute="trailing" id="dOq-or-WDD"/>
                             <constraint firstItem="xOK-WS-EGp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kOF-Ic-0Ua"/>
@@ -376,6 +358,8 @@
                         <outlet property="chatTableView" destination="o8S-YK-lnp" id="CkM-UR-P6G"/>
                         <outlet property="toolBar" destination="xOK-WS-EGp" id="68z-Bs-nYM"/>
                         <outlet property="toolBarDistToBottom" destination="l3J-XB-ROa" id="1hH-j6-zJA"/>
+                        <outlet property="userTypingDistToToolBar" destination="Xqm-OP-JyJ" id="03g-7D-SEL"/>
+                        <outlet property="userTypingView" destination="arL-hu-qvd" id="XJR-aL-GVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

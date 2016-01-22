@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JLChatViewController/MyViewController.swift"
-            timestampString = "472744659.014222"
+            timestampString = "475092924.08743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "loadOlderMessages()"
             landmarkType = "5">
          </BreakpointContent>
@@ -175,8 +175,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "235"
             endingLineNumber = "235"
-            landmarkName = "forceToFinishLoadingAnimation()"
-            landmarkType = "5">
+            landmarkName = "JLChatTableView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,8 +207,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
             endingLineNumber = "261"
-            landmarkName = "JLChatTableView"
-            landmarkType = "3">
+            landmarkName = "removeMessage(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JLChatViewController.JLChatTableView.removeMessage (JLChatViewController.JLChatTableView)(__ObjC.NSIndexPath) -&gt; ()"
+                  moduleName = "JLChatViewController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
+                  timestampString = "475092925.130436"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
+                  offsetFromSymbolStart = "510">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JLChatViewController.JLChatTableView.(removeMessage (JLChatViewController.JLChatTableView) -&gt; (__ObjC.NSIndexPath) -&gt; ()).(closure #2)"
+                  moduleName = "JLChatViewController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
+                  timestampString = "475092925.130558"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
+                  offsetFromSymbolStart = "70">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JLChatViewController/MyViewController.swift"
-            timestampString = "472744659.014222"
+            timestampString = "475092924.08743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "didTapMessageAtIndexPath(_:)"
             landmarkType = "5">
          </BreakpointContent>
