@@ -9,7 +9,7 @@
 import UIKit
 
 
-class JLUserTypingView: UIView {
+public class JLUserTypingView: UIView {
     
     @IBOutlet weak var ballonImageView: UIImageView!
 
@@ -24,7 +24,7 @@ class JLUserTypingView: UIView {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         //config()
@@ -55,7 +55,6 @@ class JLUserTypingView: UIView {
 
         addAnimationImages()
         
-        self.startAnimation(0.7)
     }
     
     /**
@@ -79,15 +78,17 @@ class JLUserTypingView: UIView {
     /**
      Start the animation of animationImageView
      */
-    func startAnimation(speed:Double){
+    public func startAnimation(speed:Double){
+        
         animationImageView.animationDuration = speed
         animationImageView.animationRepeatCount = Int.max
         animationImageView.startAnimating()
+
     }
     /**
      Stop the animation of animationImageView
      */
-    func stopAnimation(){
+    public func stopAnimation(){
         animationImageView.stopAnimating()
     }
     

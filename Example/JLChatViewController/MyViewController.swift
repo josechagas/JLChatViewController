@@ -31,7 +31,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         
         loadMessages()
         configChat()
-        loadTypingViewWithCustomView(nil)
+        loadTypingViewWithCustomView(nil, animationBlock: nil)
         configToolBar()
 
         addAnswerMeBarButton()
@@ -303,12 +303,12 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
         
         self.toolBar.inputText.addFile(JLFile(title: "Produto", image: UIImage(named: "imagem")))
+
         
     }
     
     func didTapRightButton() {
         
-        self.showUserTypingView()
 
         //ver se existe algum arquivo adicionado e se tiver envia
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = addedFile{
@@ -334,6 +334,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         
         self.chatTableView.addNewMessage()
         
+
     }
 
     

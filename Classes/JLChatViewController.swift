@@ -36,6 +36,8 @@ public class JLChatViewController: UIViewController {
     
     @IBOutlet weak var userTypingDistToToolBar: NSLayoutConstraint!
     
+    var animationBlock:((startAnimation:Bool)->())?
+    
     override public func viewDidLoad() {
                 
         super.viewDidLoad()
@@ -85,15 +87,25 @@ public class JLChatViewController: UIViewController {
     
     //MARK: - UserTypingView methods
     
-    public func loadTypingViewWithCustomView(customView:UIView?){
+    public func loadTypingViewWithCustomView(customView:UIView?,animationBlock:((startAnimation:Bool)->())?){
         
         var view:UIView!
         
         if let customView = customView{
             view = customView
+            self.animationBlock = animationBlock
         }
         else{
             view = JLUserTypingView.loadViewFromNib()
+            
+            self.animationBlock = { (startAnimation) -> () in
+                if startAnimation{
+                    (view as! JLUserTypingView).startAnimation(0.8)
+                }
+                else{
+                    (view as! JLUserTypingView).stopAnimation()
+                }
+            }
         }
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +134,11 @@ public class JLChatViewController: UIViewController {
     
     public func showUserTypingView(){
         
+        if let block = animationBlock{
+            block(startAnimation: true)
+
+        }
+        
         self.userTypingDistToToolBar.constant = 0
         UIView.animateWithDuration(0.1, animations: { () -> Void in
 
@@ -137,7 +154,10 @@ public class JLChatViewController: UIViewController {
     }
     
     public func hideUserTypingView(){
-        
+        if let block = animationBlock{
+            block(startAnimation: false)
+            
+        }
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             self.userTypingView.alpha = 0
@@ -160,6 +180,8 @@ public class JLChatViewController: UIViewController {
     
     
     func showkeyBoardTarget(notification:NSNotification){
+        
+        
         
         let info = notification.userInfo as! [String:AnyObject]
         
