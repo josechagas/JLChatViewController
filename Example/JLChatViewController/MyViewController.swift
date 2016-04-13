@@ -94,26 +94,34 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     
     func answerMeAction(sender:AnyObject){
         
+        self.showUserTypingView()
         
-        let text = "asdas sadas eee f fs fsf4 af aeee vamos la carai"
-        
-        let sort = arc4random()%3
-        
-        if sort == 0{
-            self.messages.insert(JLMessage(text: text, senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage: nil) , atIndex: 0)
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+       
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            let text = "asdas sadas eee f fs fsf4 af aeee vamos la carai"
             
-        }
-        else if sort == 1{
-            self.messages.insert(ProductMessage(senderID: ID.otherID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "Produto", relatedImage: UIImage(named: "imagem")!, productPrice: nil), atIndex: 0)
-        }
-        else{
-            self.messages.insert(JLMessage(senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage:UIImage(named: "imagem")!, relatedImage: nil), atIndex: 0)
+            let sort = arc4random()%3
             
+            
+            
+            if sort == 0{
+                self.messages.insert(JLMessage(text: text, senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage: nil) , atIndex: 0)
+                
+            }
+            else if sort == 1{
+                self.messages.insert(ProductMessage(senderID: ID.otherID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "Produto", relatedImage: UIImage(named: "imagem")!, productPrice: nil), atIndex: 0)
+            }
+            else{
+                self.messages.insert(JLMessage(senderID: ID.otherID.rawValue,messageDate: NSDate(), senderImage:UIImage(named: "imagem")!, relatedImage: nil), atIndex: 0)
+                
+            }
+            
+            self.hideUserTypingView { () -> () in
+                self.chatTableView.addNewMessage()
+            }
         }
         
-        self.hideUserTypingView { () -> () in
-            self.chatTableView.addNewMessage()
-        }
         
         
     }
@@ -308,8 +316,6 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         
         self.toolBar.inputText.addFile(JLFile(title: "Produto", image: UIImage(named: "imagem")))
 
-        /*This is here just to show the appearance of it*/
-        //self.showUserTypingView()
     }
     
     func didTapRightButton() {
