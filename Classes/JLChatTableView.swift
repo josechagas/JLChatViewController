@@ -259,9 +259,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                 cell.alpha = 0
             }
             
-            }) { (finished) -> Void in
-                self.reloadData()
-                
+        }) { (finished) -> Void in
+            self.reloadData()
+            
         }
 
     }
@@ -455,18 +455,15 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
 
             //cellToReturn.alpha = 0
             
-            
-            
             UIView.animateWithDuration(0.5, delay: 0.3, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
                 
-                //cellToReturn.alpha = 1
+            }) { (finished) -> Void in
+                //print(" apos animar\(indexPath.row)")
+                self.scrollChatToBottom(true)
+                self.addedNewMessage = false
                 
-                }) { (finished) -> Void in
-                    //print(" apos animar\(indexPath.row)")
-                    self.scrollChatToBottom(true)
-                    self.addedNewMessage = false
-                    
             }
+            
             
         }
         else if updatingRowsForNewInsets{

@@ -37,7 +37,12 @@ public class JLChatViewController: UIViewController {
     
     @IBOutlet weak var userTypingDistToToolBar: NSLayoutConstraint!
     
-    var animationBlock:((startAnimation:Bool)->())?
+    /**
+     The block that contains the code necessary to start and stop the animation of the typing view
+     */
+    private var animationBlock:((startAnimation:Bool)->())?
+    
+    private var reloadAddedMessages:Bool = false
     
     override public func viewDidLoad() {
                 
@@ -64,10 +69,12 @@ public class JLChatViewController: UIViewController {
 
         super.viewDidAppear(animated)
         
-        if self.chatTableView.numberOfRowsInSection(0) > 0{
+        if self.chatTableView.numberOfRowsInSection(0) > 0 && reloadAddedMessages{
             let indexPath = NSIndexPath(forRow: self.chatTableView.numberOfRowsInSection(0) - 1, inSection: 0)
             
             self.chatTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: false)
+            
+            reloadAddedMessages = false
         }
     
     }
@@ -80,6 +87,11 @@ public class JLChatViewController: UIViewController {
         }
 
     }
+    
+    public override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        reloadAddedMessages = true
+    }
 
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,7 +99,14 @@ public class JLChatViewController: UIViewController {
     }
     
     //MARK: - UserTypingView methods
+    /**
+    Call this method for you configure the UserTypingView 
     
+    - parameter customView: The custom View that will represents that the user is typing a message. Value nil if you want to use the default view.
+    
+    - parameter animationBlock: The block that contains the code necessary to start and stop the animation that belongs to your customView
+    
+    */
     public func loadTypingViewWithCustomView(customView:UIView?,animationBlock:((startAnimation:Bool)->())?){
         
         var view:UIView!
@@ -133,7 +152,9 @@ public class JLChatViewController: UIViewController {
 
     }
     
-    
+    /**
+     This method show the UserTypingView and start the animation
+     */
     public func showUserTypingView(){
         
         if let block = animationBlock{
@@ -158,7 +179,9 @@ public class JLChatViewController: UIViewController {
         }
         
     }
-    
+    /**
+     This method hide the UserTypingView and stop the animation
+     */
     public func hideUserTypingView(completion:(()->())?){
         if let block = animationBlock{
             block(startAnimation: false)

@@ -85,8 +85,7 @@ class ProductMessageCell: JLChatMessageCell {
         else{
             messageDateLabel.text = nil
         }
-        
-        //se a celula estiver sendo reutilizada nao configura essas coisas novamente
+        //If the cell is being reused do not config these things again
         if cellAlreadyUsed == false{
             
             self.nameLabel.font = JLChatAppearence.chatFont
@@ -146,7 +145,6 @@ class ProductMessageCell: JLChatMessageCell {
                 self.errorToSendButton.alpha = 1
                 
                 }, completion: nil)
-            
         }
         else{
             self.errorToSendButton.alpha = 1
@@ -163,6 +161,7 @@ class ProductMessageCell: JLChatMessageCell {
         self.errorToSendLeadingDist.constant = -35
         
         if animated{
+            
             UIView.animateWithDuration(0.4) { () -> Void in
                 self.layoutIfNeeded()
             }
@@ -170,6 +169,7 @@ class ProductMessageCell: JLChatMessageCell {
                 self.errorToSendButton.alpha = 0
                 
                 }, completion: nil)
+            
             
         }
         else{
@@ -201,7 +201,7 @@ class ProductMessageCell: JLChatMessageCell {
 
     private func addLongPress(){
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ProductMessageCell.longPressAction(_:)))
         
         self.delimiterView.addGestureRecognizer(longPress)
         

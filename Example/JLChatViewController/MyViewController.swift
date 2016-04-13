@@ -87,7 +87,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     //MARK: Simulating receiving message methods
     
     func addAnswerMeBarButton(){
-        let button = UIBarButtonItem(title: "answer me", style: UIBarButtonItemStyle.Plain, target: self, action: "answerMeAction:")
+        let button = UIBarButtonItem(title: "answer me", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MyViewController.answerMeAction(_:)))
         
         self.navigationItem.rightBarButtonItem = button
     }
@@ -304,11 +304,12 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         
         //se ainda nao tiver um arquivo adicionado adiciona um
                 
-        /*self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
+        self.addedFile = ProductMessage(senderID: self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"), text: "belo batom rosa!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
         
         self.toolBar.inputText.addFile(JLFile(title: "Produto", image: UIImage(named: "imagem")))
-*/
-        self.showUserTypingView()
+
+        /*This is here just to show the appearance of it*/
+        //self.showUserTypingView()
     }
     
     func didTapRightButton() {
