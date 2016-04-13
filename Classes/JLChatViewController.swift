@@ -209,8 +209,8 @@ public class JLChatViewController: UIViewController {
     
     func registerKeyBoardNotifications(){
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showkeyBoardTarget:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideKeyBoardTarget:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatViewController.showkeyBoardTarget(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatViewController.hideKeyBoardTarget(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
     }
     

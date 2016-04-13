@@ -59,8 +59,8 @@ public class JLChatMessageCell: UITableViewCell {
     }
     
     public override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-        
-        if (action == "deleteAction:" && deleteMenuEnabled()) || (action == "sendAction:" && sendMenuEnabled()){
+
+        if (action == #selector(JLChatMessageCell.deleteAction(_:)) && deleteMenuEnabled()) || (action == #selector(JLChatMessageCell.sendAction(_:)) && sendMenuEnabled()){
             return true
         }
         
@@ -71,7 +71,7 @@ public class JLChatMessageCell: UITableViewCell {
     
     public override func becomeFirstResponder() -> Bool {
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "menuDismissed:", name: UIMenuControllerDidHideMenuNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatMessageCell.menuDismissed(_:)), name: UIMenuControllerDidHideMenuNotification, object: nil)
         
         return super.becomeFirstResponder()
         
@@ -154,17 +154,17 @@ public class JLChatMessageCell: UITableViewCell {
         isMenuConfigured = true
         
         if let deleteTitle = deleteTitle{
-            menus.append(UIMenuItem(title: deleteTitle, action: "deleteAction:"))
+            menus.append(UIMenuItem(title: deleteTitle, action: #selector(JLChatMessageCell.deleteAction(_:))))
         }
         else{
-            menus.append(UIMenuItem(title: "Delete", action: "deleteAction:"))
+            menus.append(UIMenuItem(title: "Delete", action:#selector(JLChatMessageCell.deleteAction(_:))))
         }
         
         if let sendTitle = sendTitle{
-            menus.append(UIMenuItem(title: sendTitle, action: "sendAction:"))
+            menus.append(UIMenuItem(title: sendTitle, action: #selector(JLChatMessageCell.sendAction(_:))))
         }
         else{
-            menus.append(UIMenuItem(title: "Try Again", action: "sendAction:"))
+            menus.append(UIMenuItem(title: "Try Again", action: #selector(JLChatMessageCell.sendAction(_:))))
         }
         
         UIMenuController.sharedMenuController().menuItems = menus

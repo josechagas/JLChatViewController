@@ -228,7 +228,7 @@ public class JLImageMessageCell: JLChatMessageCell {
     
     private func addLongPress(){
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
+        let longPress = UILongPressGestureRecognizer(target: self, action:#selector(JLImageMessageCell.longPressAction(_:)))
         
         self.messageImageView.addGestureRecognizer(longPress)
         

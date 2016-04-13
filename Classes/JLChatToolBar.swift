@@ -152,8 +152,8 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     private func addButtonsActions(){
     
-        leftButton.addTarget(self, action: "leftButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        rightButton.addTarget(self, action: "rightButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        leftButton.addTarget(self, action:#selector(JLChatToolBar.leftButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton.addTarget(self, action:#selector(JLChatToolBar.rightButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     
@@ -223,9 +223,9 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     func registerKeyBoardNotifications(){
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showkeyBoardTarget:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatToolBar.showkeyBoardTarget(_:)), name: UIKeyboardWillShowNotification, object: nil)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "hideKeyBoardTarget:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatToolBar.hideKeyBoardTarget(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func showkeyBoardTarget(notification:NSNotification){

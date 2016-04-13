@@ -320,7 +320,7 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
     private func registerTextViewNotifications(){
         
         //UITextViewTextDidChangeNotification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didChangeText:", name: UITextViewTextDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLCustomTextView.didChangeText(_:)), name: UITextViewTextDidChangeNotification, object: nil)
         
     }
     

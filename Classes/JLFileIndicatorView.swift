@@ -106,7 +106,7 @@ public class JLFileIndicatorView: UIView {
     
     private func addGestures(){
         
-        let tap = UITapGestureRecognizer(target: self, action: "target:")
+        let tap = UITapGestureRecognizer(target: self, action:#selector(JLFileIndicatorView.target(_:)))
         self.addGestureRecognizer(tap)
     }
     
@@ -217,7 +217,7 @@ public class JLFileIndicatorView: UIView {
         
         
         
-        removeFileButton.addTarget(self, action: "removeFileButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        removeFileButton.addTarget(self, action:#selector(JLFileIndicatorView.removeFileButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(removeFileButton)
         

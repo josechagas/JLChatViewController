@@ -201,7 +201,7 @@ class ProductMessageCell: JLChatMessageCell {
 
     private func addLongPress(){
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(ProductMessageCell.longPressAction(_:)))
+        let longPress = UILongPressGestureRecognizer(target: self, action:#selector(ProductMessageCell.longPressAction(_:)))
         
         self.delimiterView.addGestureRecognizer(longPress)
         

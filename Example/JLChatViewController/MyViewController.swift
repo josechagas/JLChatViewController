@@ -87,7 +87,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     //MARK: Simulating receiving message methods
     
     func addAnswerMeBarButton(){
-        let button = UIBarButtonItem(title: "answer me", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MyViewController.answerMeAction(_:)))
+        let button = UIBarButtonItem(title: "answer me", style: UIBarButtonItemStyle.Plain, target: self, action:#selector(MyViewController.answerMeAction(_:)))
         
         self.navigationItem.rightBarButtonItem = button
     }

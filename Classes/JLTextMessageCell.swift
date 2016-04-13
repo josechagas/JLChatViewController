@@ -209,7 +209,7 @@ public class JLTextMessageCell: JLChatMessageCell {
     
     private func addLongPress(){
         
-        let longPress = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
+        let longPress = UILongPressGestureRecognizer(target: self, action:#selector(JLTextMessageCell.longPressAction(_:)))
             
         self.chatTextView.addGestureRecognizer(longPress)
     
