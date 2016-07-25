@@ -130,9 +130,7 @@ public class JLTextMessageCell: JLChatMessageCell {
         self.chatMessageLabel.text = message.text
         //self.chatMessageLabel.settAttributedText(message.text)
 
-        if let img = message.senderImage{
-            senderImageView.image = message.senderImage
-        }
+        senderImageView.image = message.senderImage
         
         if message.messageStatus == MessageSendStatus.ErrorToSend{
             showErrorButton(false)

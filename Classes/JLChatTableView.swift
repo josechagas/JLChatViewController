@@ -648,11 +648,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
         
         //stop the activity because ended the load
-        if let header = self.tableHeaderView!.subviews[0] as? JLChatLoadingView/*self.headerViewForSection(0) as? JLChatLoadingView*/{
-            header.activityIndicator.stopAnimating()
-        }
-        
-        isLoadingOldMessages = false
+        forceToFinishLoadingAnimation()
         
         runNextJob(2.0)
     }
@@ -661,7 +657,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      Use this method when some kind of error when trying to load old messages happend and you just want to stop the animation
     */
     public func forceToFinishLoadingAnimation(){
-        if let header = self.headerViewForSection(0) as? JLChatLoadingView{
+        if let header = self.tableHeaderView!.subviews[0] as? JLChatLoadingView{
             header.activityIndicator.stopAnimating()
         }
         isLoadingOldMessages = false
@@ -951,7 +947,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             var beforeCellMoveBy = CGFloat(0)
             var afterCellMoveBy = CGFloat(0)
             
-            var yPosition:CGFloat = frame.origin.y
+            let yPosition:CGFloat = frame.origin.y
             
             if self.contentSize.height > self.bounds.height{
                 if self.contentOffset.y < frame.height/2{
@@ -1227,17 +1223,14 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                         abort()
                     }
                     
-                case JLChatSectionHeaderViewKind.DefaultDateView:
-                    
+                //case JLChatSectionHeaderViewKind.DefaultDateView:
+                default:
                     if let view = self.dequeueReusableHeaderFooterViewWithIdentifier("DateView") as? JLChatDateView{
                         if let firstMessageOfSection = self.chatDataSource!.jlChatMessageAtIndexPath(NSIndexPath(forRow: 0, inSection: section)){
                             view.dateLabel.text = firstMessageOfSection.generateStringFromDate()
                         }
                         return view
                     }
-                    
-                default:
-                    break
                 }
                 
             }

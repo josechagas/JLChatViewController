@@ -164,14 +164,12 @@ public class JLChatAppearence: NSObject {
             self.incomingTextColor = incomingTextColor
         }
         
-        if let bundle = JLBundleController.getBundle(){
-            
-            incomingBubbleImage = generateBubbleImage(WithImage: customBubble,Color: self.incomingBubbleColor, AndInsets: customBubbleInsets)
-            //mask
-            incomingBubbleImageMask = bubbleImageMask.resizableImageWithCapInsets(bubbleMaskInsets)
+        incomingBubbleImage = generateBubbleImage(WithImage: customBubble,Color: self.incomingBubbleColor, AndInsets: customBubbleInsets)
+        //mask
+        incomingBubbleImageMask = bubbleImageMask.resizableImageWithCapInsets(bubbleMaskInsets)
+        
+        incomingBubbleLoadingImage = generateBubbleLoadingImage(WithBubleImage: customBubble, edges: customBubbleInsets)
 
-            incomingBubbleLoadingImage = generateBubbleLoadingImage(WithBubleImage: customBubble, edges: customBubbleInsets)
-        }
         
     }
     //

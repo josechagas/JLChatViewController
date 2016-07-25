@@ -40,31 +40,21 @@
                                 <state key="normal" title="Open chat">
                                     <color key="titleColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="258" y="134" width="85" height="33"/>
+                                </variation>
                                 <connections>
                                     <action selector="showChatButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RXh-RX-bm4"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnM-yV-gdk">
-                                <rect key="frame" x="275" y="499.5" width="50" height="50.5"/>
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="24H-mY-UON"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wcS-WY-foF" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="6KC-kN-TYC"/>
                             <constraint firstItem="wcS-WY-foF" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Asj-Qt-w5f"/>
-                            <constraint firstItem="RnM-yV-gdk" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="CLm-tD-pvM"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="RnM-yV-gdk" secondAttribute="bottom" constant="50" id="Nbz-1K-lBF"/>
-                            <constraint firstItem="RnM-yV-gdk" firstAttribute="top" secondItem="wcS-WY-foF" secondAttribute="bottom" constant="183" id="bfW-MC-GOS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iIO-yD-gzA"/>
-                    <connections>
-                        <outlet property="someView" destination="RnM-yV-gdk" id="VPd-9u-qFF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

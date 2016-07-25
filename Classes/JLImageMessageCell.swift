@@ -105,9 +105,7 @@ public class JLImageMessageCell: JLChatMessageCell {
         }
         
         
-        if let img = message.senderImage{
-            senderImageView.image = message.senderImage
-        }
+        senderImageView.image = message.senderImage
         
         if let image = message.relatedImage{
             //put it on bubble form and add

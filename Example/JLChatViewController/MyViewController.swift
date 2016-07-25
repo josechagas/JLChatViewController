@@ -664,22 +664,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
   
     func didTapMessageAtIndexPath(indexPath: NSIndexPath) {
         print("tocou na mensagem")
-        //let messages = self.messagesBySection.removeAtIndex(0)
-
-        //self.chatTableView.removeChatSection(0, messagesOfSection: messages)
         
-        let newMessage = JLMessage(text: "tocou na mensagem", senderID:self.chatTableView.myID, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
-        
-       // let indexPath = self.addOnMessagesBySectionNewMessage(newMessage)
-
-        /*
-        self.chatTableView.addNewMessages(OnIndexPaths: [indexPath],completionHandler: {
-            
-            /*if let section = self.removeUnreadHeaderIfNecessary(){
-                self.chatTableView.removeChatSection(section,messagesOfSection: [])
-            }*/
-            
-        })*/
     }
     
     //MARK: - Messages menu delegate methods
@@ -710,8 +695,6 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     }
     
     func performDeleteActionForCellAtIndexPath(indexPath: NSIndexPath) {
-        let removedMessage = self.messageRelatedToIndexPath(indexPath)
-        
         self.removeMessageRelatedToIndexPath(indexPath)
 
     }
@@ -778,7 +761,6 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
  
     
     func didTapRightButton() {
-        //var indexPathsOfNewOnes:[NSIndexPath] = [NSIndexPath]()
         var newMessages:[JLMessage] = [JLMessage]()
         var quant:Int = 0
         //ver se existe algum arquivo adicionado e se tiver envia
@@ -819,21 +801,6 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
                 }
         })
         
-        /*
-        for i in 0..<10{
-            
-            self.chatTableView.addNewMessages(1, changesHandler: {
-                let message = JLMessage(text:"Teste de adicionando varias seguidas \(i)", senderID:ID.otherID.rawValue/*self.chatTableView.myID*/,messageDate:NSDate(), senderImage: nil)
-                self.addOnMessagesBySectionNewMessage(message)
-                }, completionHandler: {
-                    if let section = self.removeUnreadHeaderIfNecessary(){
-                        self.chatTableView.removeChatSection(section,messagesOfSection: [])
-                    }
-            })
-            
-            
-        }
-        */
     }
     
     //MARK: - PickerImage methods

@@ -63,7 +63,7 @@ public class JLChatLabel: UILabel {
     
     override public func intrinsicContentSize() -> CGSize {
         let edges = isOutgoingMessage ? outgoingEdges : incomingEdges
-        var intrinsicSize = super.intrinsicContentSize()
+        //let intrinsicSize = super.intrinsicContentSize()
         
         
         /*
@@ -71,13 +71,13 @@ public class JLChatLabel: UILabel {
          */
         let subtractBy = 50 + (isOutgoingMessage ? (JLChatAppearence.showOutgoingSenderImage ? JLChatAppearence.senderImageSize.width : 0) : (JLChatAppearence.showIncomingSenderImage ? JLChatAppearence.senderImageSize.width : 0))
         
-        var sizeOfText = self.sizeToFitText(LimitedToMaxSize: CGSize(width: self.superview!.frame.width - subtractBy - edges.right - edges.left, height: CGFloat(FLT_MAX)))
+        let sizeOfText = self.sizeToFitText(LimitedToMaxSize: CGSize(width: self.superview!.frame.width - subtractBy - edges.right - edges.left, height: CGFloat(FLT_MAX)))
 
         var size:CGSize = CGSizeZero
 
         size.width = edges.right + edges.left + sizeOfText.width + 1//(intrinsicSize.width + sizeOfText.width)/2.0//+ (intrinsicSize.width > sizeOfText.width ? intrinsicSize.width: sizeOfText.width)
         
-        size.height = edges.bottom + edges.top + (intrinsicSize.height > sizeOfText.height ? intrinsicSize.height: sizeOfText.height) + 1
+        size.height = edges.bottom + edges.top + sizeOfText.height/*(intrinsicSize.height > sizeOfText.height ? intrinsicSize.height: sizeOfText.height)*/ + 1
         return size
         
     }
@@ -93,15 +93,14 @@ public class JLChatLabel: UILabel {
     private func sizeToFitText(LimitedToMaxSize maxSize:CGSize)->CGSize{
         
         if let attributedText = attributedText{
-            let edges = isOutgoingMessage ? outgoingEdges : incomingEdges
             
             let maximumSize = maxSize
             
-            let options : NSStringDrawingOptions = NSStringDrawingOptions(rawValue: NSStringDrawingOptions.UsesLineFragmentOrigin.rawValue | NSStringDrawingOptions.UsesFontLeading.rawValue)
+            //let options : NSStringDrawingOptions = NSStringDrawingOptions(rawValue: NSStringDrawingOptions.UsesLineFragmentOrigin.rawValue | NSStringDrawingOptions.UsesFontLeading.rawValue)
 
             let rect = attributedText.boundingRectWithSize(maximumSize, options:NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
             
-            let rectLine = attributedText.boundingRectWithSize(maximumSize, options:NSStringDrawingOptions.UsesFontLeading, context: nil)
+            //let rectLine = attributedText.boundingRectWithSize(maximumSize, options:NSStringDrawingOptions.UsesFontLeading, context: nil)
             
             
             //let height = rect.height + (rect.width < rectLine.width ? rectLine.height/2 : 0)
@@ -237,15 +236,15 @@ public class JLChatLabel: UILabel {
     private func performActionForDataTapped(dataText:NSTextCheckingResult){
         switch dataText.resultType {
         case NSTextCheckingType.Link:
-            if let url = NSURL(string: (self.text as! NSString).substringWithRange(dataText.range))  where UIApplication.sharedApplication().canOpenURL(url){
+            if let url = NSURL(string: NSString(string: self.text!).substringWithRange(dataText.range))  where UIApplication.sharedApplication().canOpenURL(url){
                 UIApplication.sharedApplication().openURL(url)
             }
-            else if let url = NSURL(string: "https://\((self.text as! NSString).substringWithRange(dataText.range))") where UIApplication.sharedApplication().canOpenURL(url){
+            else if let url = NSURL(string: "https://\(NSString(string: self.text!).substringWithRange(dataText.range))") where UIApplication.sharedApplication().canOpenURL(url){
                 UIApplication.sharedApplication().openURL(url)
 
             }
         case NSTextCheckingType.PhoneNumber:
-            let number = (self.text as! NSString).substringWithRange(dataText.range)
+            let number = NSString(string: self.text!).substringWithRange(dataText.range)
         
             if let phoneURl = NSURL(string: "tel://\(number)"){
                 UIApplication.sharedApplication().openURL(phoneURl)

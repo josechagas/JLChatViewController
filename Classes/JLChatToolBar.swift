@@ -31,7 +31,7 @@ public protocol ToolBarFrameDelegate{
 
 
 
-public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate,JLCustomTextViewSizeDelegate {
+public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     override public var frame:CGRect{
         didSet{
@@ -45,7 +45,7 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate,JLCustomTe
     private var maxAllowedHeight:CGFloat{
         get{
             let screenRect = UIScreen.mainScreen().bounds
-            let actualAspectRatio = screenRect.size.height/screenRect.size.width
+            //let actualAspectRatio = screenRect.size.height/screenRect.size.width
             let value = (screenRect.size.height - self.keyBoadHeight)/4
             return value
         }
@@ -217,8 +217,8 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate,JLCustomTe
         
     }
     
-    //MARK: - JLCustomSizeDelegate
-    func haveToUpdateSize(customTextView: JLCustomTextView, suggestedSize: CGSize) -> CGSize {
+    //MARK: - JLCustomTextViewSizeDelegate
+    /*func haveToUpdateSize(customTextView: JLCustomTextView, suggestedSize: CGSize) -> CGSize {
         var newSize:CGSize! = suggestedSize
         
         if customTextView.scrollEnabled{
@@ -235,7 +235,7 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate,JLCustomTe
 
         }
         return suggestedSize
-    }
+    }*/
     
     
     //MARK: - File Delegate methods
@@ -393,7 +393,6 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate,JLCustomTe
         inputText.font = JLChatAppearence.chatFont
         inputText.scrollEnabled = false
         inputText.fileDelegate = self
-        inputText.sizeDelegate = self
         inputText.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(inputText)

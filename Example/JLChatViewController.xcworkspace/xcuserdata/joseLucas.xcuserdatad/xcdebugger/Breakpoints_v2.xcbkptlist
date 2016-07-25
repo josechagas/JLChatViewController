@@ -140,11 +140,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JLChatViewController/MyViewController.swift"
-            timestampString = "491132887.500889"
+            timestampString = "491134851.949571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "721"
-            endingLineNumber = "721"
+            startingLineNumber = "704"
+            endingLineNumber = "704"
             landmarkName = "performSendActionForCellAtIndexPath(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -203,28 +203,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/JLChatLabel.swift"
-            timestampString = "490839378.093373"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "tapAction(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "490874513.428634"
+            timestampString = "491134851.949571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "681"
-            endingLineNumber = "681"
+            startingLineNumber = "677"
+            endingLineNumber = "677"
             landmarkName = "updateMessageStatusOfCellAtIndexPath(_:message:)"
             landmarkType = "5">
             <Locations>
@@ -236,12 +220,12 @@
                   moduleName = "JLChatViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "490874335.812276"
+                  timestampString = "491137750.531568"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "679"
-                  endingLineNumber = "679"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "677"
+                  endingLineNumber = "677"
+                  offsetFromSymbolStart = "33">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -251,12 +235,12 @@
                   moduleName = "JLChatViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "490874335.812391"
+                  timestampString = "491137750.531683"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "679"
-                  endingLineNumber = "679"
-                  offsetFromSymbolStart = "380">
+                  startingLineNumber = "677"
+                  endingLineNumber = "677"
+                  offsetFromSymbolStart = "228">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -274,118 +258,6 @@
             startingLineNumber = "161"
             endingLineNumber = "161"
             landmarkName = "updateMessageStatus(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/JLImageMessageCell.swift"
-            timestampString = "490841195.616653"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "initCell(_:thisIsNewMessage:isOutgoingMessage:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/JLChatAppearence.swift"
-            timestampString = "490841350.765443"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
-            landmarkName = "configErrorButton(_:selectedStateImage:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/JLChatAppearence.swift"
-            timestampString = "490841352.837469"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
-            landmarkName = "configErrorButton(_:selectedStateImage:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "490874513.428634"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1300"
-            endingLineNumber = "1300"
-            landmarkName = "tableView(_:willDisplayCell:forRowAtIndexPath:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JLChatViewController.JLChatTableView.tableView (__ObjC.UITableView, willDisplayCell : __ObjC.UITableViewCell, forRowAtIndexPath : __ObjC.NSIndexPath) -&gt; ()"
-                  moduleName = "JLChatViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "490874335.815109"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1300"
-                  endingLineNumber = "1300"
-                  offsetFromSymbolStart = "476">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JLChatViewController.JLChatTableView.(tableView (__ObjC.UITableView, willDisplayCell : __ObjC.UITableViewCell, forRowAtIndexPath : __ObjC.NSIndexPath) -&gt; ()).(closure #1)"
-                  moduleName = "JLChatViewController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "490874335.815207"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1300"
-                  endingLineNumber = "1300"
-                  offsetFromSymbolStart = "0">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "490874513.428634"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1283"
-            endingLineNumber = "1283"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

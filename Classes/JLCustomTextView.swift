@@ -20,9 +20,6 @@ protocol FileDelegate{
 }
 
 
-protocol JLCustomTextViewSizeDelegate{
-    func haveToUpdateSize(customTextView:JLCustomTextView,suggestedSize:CGSize)->CGSize
-}
 
 public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
 
@@ -48,7 +45,6 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
 
    
     var fileDelegate:FileDelegate? //a delegate to notify when some file is added to it
-    var sizeDelegate:JLCustomTextViewSizeDelegate?
     
     override public var text:String!{
         didSet{
@@ -99,9 +95,6 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
     
     public override func intrinsicContentSize() -> CGSize {
         
-        //if let sizeDelegate = sizeDelegate{
-        //    return sizeDelegate.haveToUpdateSize(self,suggestedSize: super.intrinsicContentSize())
-        //}
         return super.intrinsicContentSize()
         
     }
