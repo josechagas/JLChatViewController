@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,16 +15,16 @@
                     <rect key="frame" x="5" y="5" width="390" height="90"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s7P-A9-TXW">
-                    <rect key="frame" x="25" y="20" width="360" height="60"/>
+                    <rect key="frame" x="9" y="9" width="382" height="82"/>
                 </imageView>
             </subviews>
             <constraints>
-                <constraint firstItem="s7P-A9-TXW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="5ZB-Ko-CeJ"/>
+                <constraint firstItem="s7P-A9-TXW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="5ZB-Ko-CeJ"/>
                 <constraint firstItem="9eL-FT-xrl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="82h-aO-Jeb"/>
-                <constraint firstAttribute="bottom" secondItem="s7P-A9-TXW" secondAttribute="bottom" constant="20" id="Dtw-CU-lNU"/>
+                <constraint firstAttribute="bottom" secondItem="s7P-A9-TXW" secondAttribute="bottom" constant="9" id="Dtw-CU-lNU"/>
                 <constraint firstAttribute="trailing" secondItem="9eL-FT-xrl" secondAttribute="trailing" constant="5" id="Vq6-cb-32B"/>
-                <constraint firstItem="s7P-A9-TXW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="nlh-v7-V2S"/>
-                <constraint firstAttribute="trailing" secondItem="s7P-A9-TXW" secondAttribute="trailing" constant="15" id="p9c-tR-IlM"/>
+                <constraint firstItem="s7P-A9-TXW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="nlh-v7-V2S"/>
+                <constraint firstAttribute="trailing" secondItem="s7P-A9-TXW" secondAttribute="trailing" constant="9" id="p9c-tR-IlM"/>
                 <constraint firstAttribute="bottom" secondItem="9eL-FT-xrl" secondAttribute="bottom" constant="5" id="rF7-XK-Eau"/>
                 <constraint firstItem="9eL-FT-xrl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="vPg-JA-maB"/>
             </constraints>
@@ -33,6 +33,10 @@
             <connections>
                 <outlet property="animationImageView" destination="s7P-A9-TXW" id="ytg-B7-L0I"/>
                 <outlet property="ballonImageView" destination="9eL-FT-xrl" id="nru-7k-8jl"/>
+                <outlet property="bottomDist" destination="Dtw-CU-lNU" id="kj4-dW-sUz"/>
+                <outlet property="leftDist" destination="nlh-v7-V2S" id="w8E-Lm-uKT"/>
+                <outlet property="rightDist" destination="p9c-tR-IlM" id="fEI-3d-Ee8"/>
+                <outlet property="topDist" destination="5ZB-Ko-CeJ" id="Cg2-rD-2Jm"/>
             </connections>
             <point key="canvasLocation" x="245" y="128"/>
         </view>

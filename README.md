@@ -19,8 +19,29 @@ JLChatViewController is available through [CocoaPods](http://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "JLChatViewController"
+    pod "JLChatViewController"
 ```
+## News on version 2.0.0
+
+##### *CPU usage improvements*
+
+    IMPORTANT =  These and other improvements made necessary some changes on implementations of delegates, some methods were deprecated , so its important you take a look again on example project to make the right corrections.
+
+
+##### *Customization improvements*
+    
+    - Now you can use your own bubble form images with simple and fast configuration
+    
+    - Now you can add custom header views for example use your own Date Header View, use one for indicating the number of unread messages
+
+
+##### *Animations improvements*
+
+##### *New component added*
+    `JLChatLabel` was added to substitute the `JLChatTextView` on `JLTextMessageCell` specially for performance.I advice you to use `JLChatLabel` instead of `JLChatTextView` when possible .
+
+##### *Some methods were deprecated*
+
 
 ## Initial Configurations
 ##### *First Step*
@@ -42,44 +63,92 @@ JLBundleController.loadJLChatStoryboard()
 ##### *Fourth Step*
       Find `JLChat.storyboard` open it, choose the ViewController and put your ViewController that inherits from `JLChatViewController` as the class of this one.
       
+
+##### *Fith Step*(Added on version 2.0.0)
+
+    You will need some way to know the correctly number of sections(Date sections and/or custom sections), the number of messages by section on your chat. 
+    If you have some doubt about it take a look on Mark `Chat messages by section methods` of MyViewController
+    
+    
+
+
 ## Quick Tips
 ##### *Configuring your messages*
-      Change the parameters values as you prefer
+    Change the parameters values as you prefer
+    The example project has some ways of customization implemented
+
+-If you want to use custom bubbles images
+    I advise you to use images with 32x32 pixels for @1x
+```swift
+JLChatAppearence.configIncomingMessages(WithCustomBubbleImage: UIImage(named: "custom-incomingBubble"), customBubbleInsets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14), bubbleImageMask: UIImage(named: "custom-incomingBubbleMask"), bubbleMaskInsets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14), incomingBubbleColor: nil, showIncomingSenderImage: true, incomingTextColor: nil)
+
+JLChatAppearence.configOutgoingMessages(WithCustomBubbleImage: UIImage(named: "custom-outgoingBubble"), customBubbleInsets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14), bubbleImageMask: UIImage(named: "custom-outgoingBubbleMask"), bubbleMaskInsets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14), outgoingBubbleColor: nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
+
+```
+-If you want to use default bubbles images
 ```swift
 JLChatAppearence.configIncomingMessages(nil, showIncomingSenderImage: true, incomingTextColor: nil)
 
 JLChatAppearence.configOutgoingMessages(nil, showOutgoingSenderImage: true, outgoingTextColor: nil)
-  
-JLChatAppearence.configChatFont(nil) { (indexPath) -> Bool in
-            
-      if indexPath.row % 3 == 0{
-            return true
-      }
-      return false
-}
+```
+
+-This method is optional, it is normally used when you are using 
+custom bubbles images, but fell free to use it when ever you want.
+```swift
+JLChatAppearence.configAligment(5, vertivalDistBetweenImgBottom_And_BubbleBottom: 10)
+```
+
+-This method is optional, it is normally used when you are using 
+custom bubbles images, but fell free to use it when ever you want.
+```swift
+JLChatAppearence.configTextAlignmentOnBubble(IncomingMessTextAlig: UIEdgeInsets(top: 8, left: 10, bottom: 13, right: 8), AndOutgoingMessTextAlig: UIEdgeInsets(top: 8, left: 8, bottom: 13, right: 10))
+```
+
+
+```swift
+JLChatAppearence.configSenderImage(nil, senderImageCornerRadius: nil, senderImageBackgroundColor: nil, senderImageDefaultImage: nil)
+
+
+JLChatAppearence.configErrorButton(nil, selectedStateImage: nil)
+
 ```
 
 ##### *Adding new message*
-
+    More information take a look on documentation
 ```swift
-self.chatTableView.addNewMessage()
+public func addNewMessages(quant:Int,changesHandler:()->(),completionHandler:(()->())?)
 ```
+
 
 ##### *Adding old messages*
 ```swift
-self.chatTableView.addOldMessages(/*the number of old messages that will be added*/)
+public func addOldMessages(quant:Int,changesHandler:()->())
 ```
 
-##### *Removing a message*
+
+##### *Removing one message cell*
 ```swift
-self.chatTableView.removeMessage(/* the indexPath of the cell in chat tableView*/)
+public func removeMessageCellAtIndexPath(indexPath:NSIndexPath,relatedMessage:JLMessage!)
 ```
+
+##### *Removing one section(Date section or custom section)*
+```swift
+public func removeChatSection(section:Int,messagesOfSection:[JLMessage]?)
+```
+
+##### *Removing more than one message cell and or more than one section*
+```swift
+public func removeMessagesCells(rowsIndexPath:[NSIndexPath]?,AndSections sections:[Int]?,WithRelatedMessages relatedMessages:[JLMessage]?)
+```
+
 
 ##### *Updating a message cell send status*
 ```swift
-self.chatTableView.updateMessageStatusOfCellAtIndexPath(/* the indexPath of the cell in chat tableView*/,             message:/*the message(JLMessage) related to the cell at indexPath*/)
+public func updateMessageStatusOfCellAtIndexPath(indexPath:NSIndexPath,message:JLMessage)
 ```
 ##### *Open your chat ViewController*
+
+ Use it to open your Chat ViewController
 ```swift
 if let vc = JLBundleController.instantiateJLChatVC() as? /*Name of your ViewController that inherits from            JLChatViewController*/{
             
@@ -118,7 +187,10 @@ self.chatTableView.registerNib(UINib(nibName: "nib name", bundle: NSBundle.mainB
       implement the method of `ChatDataSource` that is for custom cells
   
 ```swift
-func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell {                ...
+func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell {
+
+
+      ...
         
       var cell:JLChatMessageCell!
       if message.senderID == self.chatTableView.myID{
@@ -135,10 +207,33 @@ func chat(chat: JLChatTableView, customMessageCellForRowAtIndexPath indexPath: N
 }
 ```
 
+## Creating a custom Header View
+
+##### *First Step*
+
+Create a .xib file that have a `UIView` and add all necessary views, more details on example project.
+
+##### *Second Step*
+
+Register it on your chat tableView
+
+```swift
+self.chatTableView.registerNib(UINib(nibName: "nib name", bundle: NSBundle.mainBundle()), forHeaderFooterViewReuseIdentifier: "identifier")
+```
+##### *Third Step*
+implement the methods of `ChatDataSource` that is for custom cells
+
+```swift
+func jlChatCustomHeaderInSection(section:Int)->UIView?
+
+
+func jlChatHeightForCustomHeaderInSection(section:Int)->CGFloat
+```
+
 
 ## Author
 
-José Lucas, joselucas1994@yahoo.com.br
+José Lucas, chagasjoselucas@gmail.com
 
 ## License
 

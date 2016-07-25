@@ -38,7 +38,6 @@ public class JLBundleController {
      * Load the JLChat.storyboard from the bundle of this framework and save its instance on jLChatSb
      */
     public class func loadJLChatStoryboard(){
-        
         let podBundle = NSBundle(forClass: JLChatViewController.classForCoder())
         
         if let bundleURL = podBundle.URLForResource("JLChatViewController", withExtension: "bundle") {

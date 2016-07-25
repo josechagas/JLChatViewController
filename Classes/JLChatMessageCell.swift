@@ -46,6 +46,10 @@ public class JLChatMessageCell: UITableViewCell {
         // Initialization code
     }
     
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        self.alpha = 1
+    }
     
 
     override public func setSelected(selected: Bool, animated: Bool) {
@@ -90,15 +94,28 @@ public class JLChatMessageCell: UITableViewCell {
     /**
      The implementation of this method have to contain every code that is necessary to initialize the message cell.
      
-     You must override this method.
-
+        DEPRECATED
     */
+
+    @available(*,deprecated,renamed="initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool)",message="This method is deprecated use initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool)")
     public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
        
         self.isOutgoingMessage = isOutgoingMessage
         
     }
-
+    
+    /**
+     The implementation of this method have to contain every code that is necessary to initialize the message cell.
+     
+     You must override this method.
+     
+     */
+    public func initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool){
+        
+        self.isOutgoingMessage = isOutgoingMessage
+        
+    }
+    
     
     //MARK: Status methods
     /**
@@ -190,6 +207,7 @@ public class JLChatMessageCell: UITableViewCell {
         
     }
     
+    
     //MARK: Config methods
     /**
     The implementation of this method have to contain every code that is necessary to configure the message cell as a outgoing message.
@@ -210,5 +228,5 @@ public class JLChatMessageCell: UITableViewCell {
     public func configAsIncomingMessage(){
         
     }
-
+    
 }

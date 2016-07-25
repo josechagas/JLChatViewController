@@ -1,956 +1,2707 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		01D9582AEBF3568B651022242AA56521 /* bubble_min_mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BFA3F3EB2BF847C8D5A4834AFF64E18 /* bubble_min_mask@3x.png */; };
-		020440D179BA3121478A6DE4ACE3B896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		043149660B27ABFD88933140AA54A34B /* bubble_min_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE62D4447ECEA06B8A9E581355F26EC3 /* bubble_min_incoming@2x.png */; };
-		1580AEA33D2D535E0D8D5B3075F648FA /* bubble_min_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 6716F1C4F6D9DB830E0983C1E64BDC11 /* bubble_min_mask.png */; };
-		1D05125645D56D08DE8A0559E75F2D24 /* UserWriting__001.png in Resources */ = {isa = PBXBuildFile; fileRef = DEEB915E3EA1BEE0B17F6104B11E2AA5 /* UserWriting__001.png */; };
-		1D47220762FC4F979B7E43D56145E987 /* UserWriting__002.png in Resources */ = {isa = PBXBuildFile; fileRef = 510DAE5EADD4253ED1FE13330A6E334D /* UserWriting__002.png */; };
-		1DC1D3035E2B0379B8B7500FB9835A71 /* UserWriting__004.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FC23C1A251C6AD8FB2E6B8E3E10FC65 /* UserWriting__004.png */; };
-		2C95B3FBA7A56946DA72AEF013E7A2DA /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = F07801DBE1080BF46AF7722B7DF6DD1F /* bubble_min.png */; };
-		3D62319D57B25E35C632678B48B19FED /* JLFileIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942FA84CC12DFD6DD6CA3F3F157BB451 /* JLFileIndicatorView.swift */; };
-		45278143DD9C4CC012E19EC0F685FBB4 /* JLChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5837B0ECD0C2B9988D00FA2EE9C9F976 /* JLChatTableView.swift */; };
-		497E24A682327922678D35328F5C08A6 /* bubble_min_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB908B95EF6FA5784835F44A0698530 /* bubble_min_incoming@3x.png */; };
-		4B68ADCC965DB1FFDDE8763018E617B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		4CB9CF482F2B8AA2C849CBA2DAA9FF7C /* JLUserTypingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CCA89C1AD4610846D6038FACE50A2CE /* JLUserTypingView.xib */; };
-		55F958CAEFEFD9633CD80E1C08CA9B40 /* Pods-JLChatViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C3CFBD27EF5CF74EF08E56F29D7516C /* JLChatViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */; };
-		687835CC16392DA68C1481E3E57B60E5 /* UserWriting__008.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C26BC52D768F5C93B3448A292EF2A /* UserWriting__008.png */; };
-		6CA6BFF029C23CA83E274B74D6C98613 /* bubble_min_mask_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 534F530AB800A60F798E4B92DFAAC33B /* bubble_min_mask_incoming@2x.png */; };
-		75591300525113B80C4A1B50050CF7EB /* Pods-JLChatViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */; };
-		7573C07666E3B428C1C28CFC90DBC28B /* JLChatLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E467E9B1F2395212498102556D41BD1 /* JLChatLoadingView.xib */; };
-		76D244328B902649E99075AF148C065B /* UserWriting__005.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C973A36EFA52E401D83461B7DC93E1 /* UserWriting__005.png */; };
-		77572C357579CB18CDE030E3A30A1A7C /* UserWriting__009.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5ACB8E69B3613A16897FA6599B46 /* UserWriting__009.png */; };
-		7E8125168CC7987AB0E71B3BAEC2EA52 /* Pods-JLChatViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F648059B4F8155B757FB23DFD7865F9 /* alert9Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B516D9A65B282A6E91B2D133F4B1859 /* alert9Normal.png */; };
-		820EEC32E94D47FE43E7F5E60B514470 /* JLImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D71FB700966A5F304E466EC3E5E325 /* JLImageMessageCell.swift */; };
-		853D48B2F6E6225F47EF2FCD27BD2A32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		90C58B23949CE7D1128E3BD493818D99 /* JLChatViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9DA7E0DDF6E560070A2B9B6687956CA /* JLChatViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94EE706E065663BE3AFE2932C9403D9B /* JLChatViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A13965C3BA4042D0DBC2263941006FAC /* JLChatViewController-dummy.m */; };
-		97BCE8F1F607414C1AD2982044A40BAA /* JLMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3D0D9F6514FE94EEA80C01D6B8493 /* JLMessage.swift */; };
-		9B91FDE7DD23EC76315594C622829D4E /* UserWriting__000.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D0D5563E663563B7C872F1AF60C6B37 /* UserWriting__000.png */; };
-		9C6569148937FB24DE050B52CD0ADB9B /* JLChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B96ED76C917E7AD8DB9762D00FB89A1 /* JLChat.storyboard */; };
-		9CD4AB53B3C07C8B536650D751CF3850 /* bubble_min@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F942067DD49106992A090DB6C07955D0 /* bubble_min@3x.png */; };
-		B318D1B695BC5246D8DC4DCD803A163B /* Pods-JLChatViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */; };
-		B67E4BF8FF1F041CF02B37DC6D918A1F /* UserWriting__007.png in Resources */ = {isa = PBXBuildFile; fileRef = 034DB5555B4121912996275CD2CAEDAF /* UserWriting__007.png */; };
-		B6E088FC1720943F9E0338752E37EB2F /* bubble_min_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83F9935C7AE05340E4D2D37A373DE49F /* bubble_min_mask@2x.png */; };
-		B9EC209B7BD28C911802D36CDC7D2988 /* JLTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF82BFB3ADF30E07A83E3003729EE4D1 /* JLTextMessageCell.swift */; };
-		BDB815C4F2D7F7EA9479FE97A4AFFF95 /* alert9Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 228362CE27BF5C8AED5720E77A4DBE24 /* alert9Selected.png */; };
-		C48BA0666B7020B1C62FCD8E03967AC0 /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1A7C9C9CEE27CE53A3D5184AE919465 /* bubble_min@2x.png */; };
-		C8FB3F597D31B03D44480BBB38354210 /* bubble_min_mask_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = F3314E9D868620BFA6824C0742C8A245 /* bubble_min_mask_incoming.png */; };
-		CDCFDE7FDCFF52B67C08E80D1F6BC698 /* JLChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164073CB5E5DFD3B65EB5E1D5A71DFE5 /* JLChatTextView.swift */; };
-		D5CD5CB0903C463B9CFDA4866CEB15E7 /* JLChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A8BCD75BE141295A487C7B5921BF1 /* JLChatMessageCell.swift */; };
-		D75DB9C1BB5B57540468ECEAE0D612DB /* JLCustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ED827149D1E739BC3BAE454D8BC19B /* JLCustomTextView.swift */; };
-		DB561532CB05886CC1B0040D6DF5097E /* bubble_min_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDBCB712313259188AFE79E77CCC62E /* bubble_min_incoming.png */; };
-		DC4313FCA9D903F0D290CF898D118D8A /* JLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E0A0CA3870308560119D31D5D10FBC /* JLFile.swift */; };
-		DE3B74818228EA3FBA1A243F7E3704C7 /* JLChatToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D1733415EEAD897C7D0771B56DB43 /* JLChatToolBar.swift */; };
-		DEDB408E28E21392E00CC042598E9428 /* JLChatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D79F9DA3A98F0A62B69AFE258E0BCA4 /* JLChatImageView.swift */; };
-		E59AF7FD0189CC39C871495539BE459E /* JLChatAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84D04D3B7F777C23A4A8C6E44B371BB /* JLChatAppearence.swift */; };
-		E9C60114CBA58EE24D25AEE4AAB26A2E /* JLUserTypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2A2B984B439FB3E22A1F4B55A41817 /* JLUserTypingView.swift */; };
-		F2C5B095763C4EF12AF7B126288531CA /* JLBundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CBED4BA7901638557A9EEAD5059375 /* JLBundleController.swift */; };
-		F3902672CC6B01FB0B344367FDB11F57 /* JLChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C70A81ECDDB776DC055BD8AAB9F125 /* JLChatViewController.swift */; };
-		F5AB23726F5C8C6FC3AADC6BB1048F53 /* bubble_min_mask_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E29183573EF8294319474504C20A90 /* bubble_min_mask_incoming@3x.png */; };
-		F633598B082FFC892AD296FFE23650FD /* UserWriting__003.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B81A05DED6F61DEECF87A9DB4B3D837 /* UserWriting__003.png */; };
-		FB694EB71E57E19663524737622AA4B9 /* JLChatLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AC1F6D131EA4FCF0F1F89263D7C032 /* JLChatLoadingView.swift */; };
-		FD3013E40B0B804508AAD05D4712D6D1 /* UserWriting__006.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C812B7A9572A0B8F71BB16EBBFE03D6 /* UserWriting__006.png */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A98D48312D38067334E3159AAF18B7B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 85BFC294D5143D1A381F3846D19F25DD;
-			remoteInfo = "JLChatViewController-JLChatViewController";
-		};
-		D5E7497EFE0AF1809562764641E6D114 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0977A46150A83BFB0DAF82EF53D72C62;
-			remoteInfo = JLChatViewController;
-		};
-		DB11130AD6DBCD9E61DAB5C558711F7A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0977A46150A83BFB0DAF82EF53D72C62;
-			remoteInfo = JLChatViewController;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		034DB5555B4121912996275CD2CAEDAF /* UserWriting__007.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__007.png; sourceTree = "<group>"; };
-		0847DCE12255A6424F740C3402FB17EC /* Pods-JLChatViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		0A772C5E5E299E6FBACDA48CED7FC3AD /* Pods-JLChatViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0BDBCB712313259188AFE79E77CCC62E /* bubble_min_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_incoming.png; sourceTree = "<group>"; };
-		0CCA89C1AD4610846D6038FACE50A2CE /* JLUserTypingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLUserTypingView.xib; sourceTree = "<group>"; };
-		12E0A0CA3870308560119D31D5D10FBC /* JLFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFile.swift; sourceTree = "<group>"; };
-		164073CB5E5DFD3B65EB5E1D5A71DFE5 /* JLChatTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTextView.swift; sourceTree = "<group>"; };
-		1A8358694C2F6D26B92FB7758C2C3247 /* JLChatViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-prefix.pch"; sourceTree = "<group>"; };
-		1B81A05DED6F61DEECF87A9DB4B3D837 /* UserWriting__003.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__003.png; sourceTree = "<group>"; };
-		1BFA3F3EB2BF847C8D5A4834AFF64E18 /* bubble_min_mask@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@3x.png"; sourceTree = "<group>"; };
-		226D1733415EEAD897C7D0771B56DB43 /* JLChatToolBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatToolBar.swift; sourceTree = "<group>"; };
-		228362CE27BF5C8AED5720E77A4DBE24 /* alert9Selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Selected.png; sourceTree = "<group>"; };
-		2876F00EA45936FB624F02E388EC78CD /* JLChatViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLChatViewController.xcconfig; sourceTree = "<group>"; };
-		2FBE367B2D05F5C50E5084DC2EF73170 /* Pods-JLChatViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		2FE3D0D9F6514FE94EEA80C01D6B8493 /* JLMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLMessage.swift; sourceTree = "<group>"; };
-		35504E0157D35ACD2B7922AC6D1DDDEB /* Pods-JLChatViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		39BC80F05B69354B1F2A2B717733C193 /* Pods-JLChatViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3A21714F23DE9B63718CA38FACB574DC /* Pods-JLChatViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		3B2A2B984B439FB3E22A1F4B55A41817 /* JLUserTypingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLUserTypingView.swift; sourceTree = "<group>"; };
-		3DB908B95EF6FA5784835F44A0698530 /* bubble_min_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@3x.png"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		43842E4D63C047E762FB8F9EC17963D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Tests-dummy.m"; sourceTree = "<group>"; };
-		49CA5ACB8E69B3613A16897FA6599B46 /* UserWriting__009.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__009.png; sourceTree = "<group>"; };
-		4FC23C1A251C6AD8FB2E6B8E3E10FC65 /* UserWriting__004.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__004.png; sourceTree = "<group>"; };
-		510DAE5EADD4253ED1FE13330A6E334D /* UserWriting__002.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__002.png; sourceTree = "<group>"; };
-		534F530AB800A60F798E4B92DFAAC33B /* bubble_min_mask_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@2x.png"; sourceTree = "<group>"; };
-		5837B0ECD0C2B9988D00FA2EE9C9F976 /* JLChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTableView.swift; sourceTree = "<group>"; };
-		58ED827149D1E739BC3BAE454D8BC19B /* JLCustomTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLCustomTextView.swift; sourceTree = "<group>"; };
-		59AC1F6D131EA4FCF0F1F89263D7C032 /* JLChatLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLoadingView.swift; sourceTree = "<group>"; };
-		5B96ED76C917E7AD8DB9762D00FB89A1 /* JLChat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = JLChat.storyboard; sourceTree = "<group>"; };
-		5C2A8BCD75BE141295A487C7B5921BF1 /* JLChatMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatMessageCell.swift; sourceTree = "<group>"; };
-		5D79F9DA3A98F0A62B69AFE258E0BCA4 /* JLChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatImageView.swift; sourceTree = "<group>"; };
-		641C1BE7F3B2653991B7DCB4104CC6FE /* Pods-JLChatViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6716F1C4F6D9DB830E0983C1E64BDC11 /* bubble_min_mask.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask.png; sourceTree = "<group>"; };
-		69D71FB700966A5F304E466EC3E5E325 /* JLImageMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLImageMessageCell.swift; sourceTree = "<group>"; };
-		6C812B7A9572A0B8F71BB16EBBFE03D6 /* UserWriting__006.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__006.png; sourceTree = "<group>"; };
-		6F71E83F345459312DCBA731D8209CFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7696A6625C035B2B2AE75A82863B6FCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79C70A81ECDDB776DC055BD8AAB9F125 /* JLChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatViewController.swift; sourceTree = "<group>"; };
-		7A8341FD4D388BD6F21C498B5A4A3C60 /* Pods_JLChatViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B5C26BC52D768F5C93B3448A292EF2A /* UserWriting__008.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__008.png; sourceTree = "<group>"; };
-		7ED26B7335D02E09A758CD3DABD75FC5 /* Pods-JLChatViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		83E29183573EF8294319474504C20A90 /* bubble_min_mask_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@3x.png"; sourceTree = "<group>"; };
-		83F9935C7AE05340E4D2D37A373DE49F /* bubble_min_mask@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@2x.png"; sourceTree = "<group>"; };
-		84746E033736AD06D32F2E385FC53DDF /* Pods-JLChatViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		86EDB6C3AB2F49059CEE4EF53634F7C3 /* Pods-JLChatViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8B516D9A65B282A6E91B2D133F4B1859 /* alert9Normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Normal.png; sourceTree = "<group>"; };
-		8CB45A011B98D7613ADDD80A6893F805 /* Pods-JLChatViewController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-resources.sh"; sourceTree = "<group>"; };
-		8D0D5563E663563B7C872F1AF60C6B37 /* UserWriting__000.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__000.png; sourceTree = "<group>"; };
-		8E467E9B1F2395212498102556D41BD1 /* JLChatLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatLoadingView.xib; sourceTree = "<group>"; };
-		9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLChatViewController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		942FA84CC12DFD6DD6CA3F3F157BB451 /* JLFileIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFileIndicatorView.swift; sourceTree = "<group>"; };
-		95C6ECEFB2174A32E71E7266B2BFA525 /* JLChatViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLChatViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		A13965C3BA4042D0DBC2263941006FAC /* JLChatViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLChatViewController-dummy.m"; sourceTree = "<group>"; };
-		A250AE2C157E072BD5622AC60D51C0C6 /* JLChatViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JLChatViewController.modulemap; sourceTree = "<group>"; };
-		A9DA7E0DDF6E560070A2B9B6687956CA /* JLChatViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-umbrella.h"; sourceTree = "<group>"; };
-		AE62D4447ECEA06B8A9E581355F26EC3 /* bubble_min_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@2x.png"; sourceTree = "<group>"; };
-		B04A36A0DD8D04758674C07FE14E885E /* Pods-JLChatViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Tests.modulemap"; sourceTree = "<group>"; };
-		B3CBED4BA7901638557A9EEAD5059375 /* JLBundleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLBundleController.swift; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C84D04D3B7F777C23A4A8C6E44B371BB /* JLChatAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatAppearence.swift; sourceTree = "<group>"; };
-		D1A7C9C9CEE27CE53A3D5184AE919465 /* bubble_min@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
-		D5209C24BDEE577269CA37A04847EFE6 /* Pods-JLChatViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Example.modulemap"; sourceTree = "<group>"; };
-		D6C973A36EFA52E401D83461B7DC93E1 /* UserWriting__005.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__005.png; sourceTree = "<group>"; };
-		DA68CAAA8521FAE8021081261B8C8C5B /* Pods-JLChatViewController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-resources.sh"; sourceTree = "<group>"; };
-		DEEB915E3EA1BEE0B17F6104B11E2AA5 /* UserWriting__001.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__001.png; sourceTree = "<group>"; };
-		DF82BFB3ADF30E07A83E3003729EE4D1 /* JLTextMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLTextMessageCell.swift; sourceTree = "<group>"; };
-		ED35FBB557E61AF6D7452FBC89D4EFF0 /* Pods_JLChatViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F07801DBE1080BF46AF7722B7DF6DD1F /* bubble_min.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min.png; sourceTree = "<group>"; };
-		F3314E9D868620BFA6824C0742C8A245 /* bubble_min_mask_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask_incoming.png; sourceTree = "<group>"; };
-		F942067DD49106992A090DB6C07955D0 /* bubble_min@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@3x.png"; sourceTree = "<group>"; };
-		F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Example-umbrella.h"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		5D7E701466CA68F9C1417E253A12B2A5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4B68ADCC965DB1FFDDE8763018E617B0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7998095AA1A0C658D32626F6BBCFBC47 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A19AC4140F59AF445B0EB3D27DFA24D4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				020440D179BA3121478A6DE4ACE3B896 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C615BCE77D56371F91C6A230E66DA9F3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				853D48B2F6E6225F47EF2FCD27BD2A32 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		0B475647A1C7290F2AE75CD96941ADE2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				43842E4D63C047E762FB8F9EC17963D1 /* Info.plist */,
-				A250AE2C157E072BD5622AC60D51C0C6 /* JLChatViewController.modulemap */,
-				2876F00EA45936FB624F02E388EC78CD /* JLChatViewController.xcconfig */,
-				A13965C3BA4042D0DBC2263941006FAC /* JLChatViewController-dummy.m */,
-				1A8358694C2F6D26B92FB7758C2C3247 /* JLChatViewController-prefix.pch */,
-				A9DA7E0DDF6E560070A2B9B6687956CA /* JLChatViewController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/JLChatViewController";
-			sourceTree = "<group>";
-		};
-		0FD5F73966DF4881B777F2D96892DB95 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				B3CBED4BA7901638557A9EEAD5059375 /* JLBundleController.swift */,
-				C84D04D3B7F777C23A4A8C6E44B371BB /* JLChatAppearence.swift */,
-				5D79F9DA3A98F0A62B69AFE258E0BCA4 /* JLChatImageView.swift */,
-				59AC1F6D131EA4FCF0F1F89263D7C032 /* JLChatLoadingView.swift */,
-				5C2A8BCD75BE141295A487C7B5921BF1 /* JLChatMessageCell.swift */,
-				5837B0ECD0C2B9988D00FA2EE9C9F976 /* JLChatTableView.swift */,
-				164073CB5E5DFD3B65EB5E1D5A71DFE5 /* JLChatTextView.swift */,
-				226D1733415EEAD897C7D0771B56DB43 /* JLChatToolBar.swift */,
-				79C70A81ECDDB776DC055BD8AAB9F125 /* JLChatViewController.swift */,
-				58ED827149D1E739BC3BAE454D8BC19B /* JLCustomTextView.swift */,
-				12E0A0CA3870308560119D31D5D10FBC /* JLFile.swift */,
-				942FA84CC12DFD6DD6CA3F3F157BB451 /* JLFileIndicatorView.swift */,
-				69D71FB700966A5F304E466EC3E5E325 /* JLImageMessageCell.swift */,
-				2FE3D0D9F6514FE94EEA80C01D6B8493 /* JLMessage.swift */,
-				DF82BFB3ADF30E07A83E3003729EE4D1 /* JLTextMessageCell.swift */,
-				3B2A2B984B439FB3E22A1F4B55A41817 /* JLUserTypingView.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		1DDD02E01907CC2B385D9976913A2403 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8CDBE59DEA965FCBE535307214A99C30 /* Pods-JLChatViewController_Example */,
-				F7D10027BD23F00FF17B31B85280947D /* Pods-JLChatViewController_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		2A9C997DEC7098378BDE9B9F4F8CA946 /* JLChatViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0FD5F73966DF4881B777F2D96892DB95 /* Classes */,
-				37A57AEC2E583023D8A038B546EB8C0B /* Resources */,
-				0B475647A1C7290F2AE75CD96941ADE2 /* Support Files */,
-			);
-			name = JLChatViewController;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		37A57AEC2E583023D8A038B546EB8C0B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				37E11A04F2C6BC9F45F5DFBAA107B9DA /* Assets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		37E11A04F2C6BC9F45F5DFBAA107B9DA /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				8B516D9A65B282A6E91B2D133F4B1859 /* alert9Normal.png */,
-				228362CE27BF5C8AED5720E77A4DBE24 /* alert9Selected.png */,
-				F07801DBE1080BF46AF7722B7DF6DD1F /* bubble_min.png */,
-				D1A7C9C9CEE27CE53A3D5184AE919465 /* bubble_min@2x.png */,
-				F942067DD49106992A090DB6C07955D0 /* bubble_min@3x.png */,
-				0BDBCB712313259188AFE79E77CCC62E /* bubble_min_incoming.png */,
-				AE62D4447ECEA06B8A9E581355F26EC3 /* bubble_min_incoming@2x.png */,
-				3DB908B95EF6FA5784835F44A0698530 /* bubble_min_incoming@3x.png */,
-				6716F1C4F6D9DB830E0983C1E64BDC11 /* bubble_min_mask.png */,
-				83F9935C7AE05340E4D2D37A373DE49F /* bubble_min_mask@2x.png */,
-				1BFA3F3EB2BF847C8D5A4834AFF64E18 /* bubble_min_mask@3x.png */,
-				F3314E9D868620BFA6824C0742C8A245 /* bubble_min_mask_incoming.png */,
-				534F530AB800A60F798E4B92DFAAC33B /* bubble_min_mask_incoming@2x.png */,
-				83E29183573EF8294319474504C20A90 /* bubble_min_mask_incoming@3x.png */,
-				5B96ED76C917E7AD8DB9762D00FB89A1 /* JLChat.storyboard */,
-				8E467E9B1F2395212498102556D41BD1 /* JLChatLoadingView.xib */,
-				0CCA89C1AD4610846D6038FACE50A2CE /* JLUserTypingView.xib */,
-				8D0D5563E663563B7C872F1AF60C6B37 /* UserWriting__000.png */,
-				DEEB915E3EA1BEE0B17F6104B11E2AA5 /* UserWriting__001.png */,
-				510DAE5EADD4253ED1FE13330A6E334D /* UserWriting__002.png */,
-				1B81A05DED6F61DEECF87A9DB4B3D837 /* UserWriting__003.png */,
-				4FC23C1A251C6AD8FB2E6B8E3E10FC65 /* UserWriting__004.png */,
-				D6C973A36EFA52E401D83461B7DC93E1 /* UserWriting__005.png */,
-				6C812B7A9572A0B8F71BB16EBBFE03D6 /* UserWriting__006.png */,
-				034DB5555B4121912996275CD2CAEDAF /* UserWriting__007.png */,
-				7B5C26BC52D768F5C93B3448A292EF2A /* UserWriting__008.png */,
-				49CA5ACB8E69B3613A16897FA6599B46 /* UserWriting__009.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		59C05721527441C9AB8B98CE2C3A0CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */,
-				95C6ECEFB2174A32E71E7266B2BFA525 /* JLChatViewController.framework */,
-				ED35FBB557E61AF6D7452FBC89D4EFF0 /* Pods_JLChatViewController_Example.framework */,
-				7A8341FD4D388BD6F21C498B5A4A3C60 /* Pods_JLChatViewController_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				9657A465F987466C618585D37A8C9412 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				59C05721527441C9AB8B98CE2C3A0CBB /* Products */,
-				1DDD02E01907CC2B385D9976913A2403 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8CDBE59DEA965FCBE535307214A99C30 /* Pods-JLChatViewController_Example */ = {
-			isa = PBXGroup;
-			children = (
-				6F71E83F345459312DCBA731D8209CFA /* Info.plist */,
-				D5209C24BDEE577269CA37A04847EFE6 /* Pods-JLChatViewController_Example.modulemap */,
-				39BC80F05B69354B1F2A2B717733C193 /* Pods-JLChatViewController_Example-acknowledgements.markdown */,
-				2FBE367B2D05F5C50E5084DC2EF73170 /* Pods-JLChatViewController_Example-acknowledgements.plist */,
-				9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */,
-				0847DCE12255A6424F740C3402FB17EC /* Pods-JLChatViewController_Example-frameworks.sh */,
-				DA68CAAA8521FAE8021081261B8C8C5B /* Pods-JLChatViewController_Example-resources.sh */,
-				F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */,
-				3A21714F23DE9B63718CA38FACB574DC /* Pods-JLChatViewController_Example.debug.xcconfig */,
-				641C1BE7F3B2653991B7DCB4104CC6FE /* Pods-JLChatViewController_Example.release.xcconfig */,
-			);
-			name = "Pods-JLChatViewController_Example";
-			path = "Target Support Files/Pods-JLChatViewController_Example";
-			sourceTree = "<group>";
-		};
-		9657A465F987466C618585D37A8C9412 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2A9C997DEC7098378BDE9B9F4F8CA946 /* JLChatViewController */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F7D10027BD23F00FF17B31B85280947D /* Pods-JLChatViewController_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				7696A6625C035B2B2AE75A82863B6FCE /* Info.plist */,
-				B04A36A0DD8D04758674C07FE14E885E /* Pods-JLChatViewController_Tests.modulemap */,
-				84746E033736AD06D32F2E385FC53DDF /* Pods-JLChatViewController_Tests-acknowledgements.markdown */,
-				0A772C5E5E299E6FBACDA48CED7FC3AD /* Pods-JLChatViewController_Tests-acknowledgements.plist */,
-				47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */,
-				35504E0157D35ACD2B7922AC6D1DDDEB /* Pods-JLChatViewController_Tests-frameworks.sh */,
-				8CB45A011B98D7613ADDD80A6893F805 /* Pods-JLChatViewController_Tests-resources.sh */,
-				85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */,
-				7ED26B7335D02E09A758CD3DABD75FC5 /* Pods-JLChatViewController_Tests.debug.xcconfig */,
-				86EDB6C3AB2F49059CEE4EF53634F7C3 /* Pods-JLChatViewController_Tests.release.xcconfig */,
-			);
-			name = "Pods-JLChatViewController_Tests";
-			path = "Target Support Files/Pods-JLChatViewController_Tests";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		89DB406718A7FBB9A8FF5F748F3ACF4E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7E8125168CC7987AB0E71B3BAEC2EA52 /* Pods-JLChatViewController_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B50E7CED8B818149E807BE76A1E5D03 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55F958CAEFEFD9633CD80E1C08CA9B40 /* Pods-JLChatViewController_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBB728FD643E248D52DFEB8CE3B0C058 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90C58B23949CE7D1128E3BD493818D99 /* JLChatViewController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		0977A46150A83BFB0DAF82EF53D72C62 /* JLChatViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 268E32C93200FDC5270D835870B0ABE2 /* Build configuration list for PBXNativeTarget "JLChatViewController" */;
-			buildPhases = (
-				8361EA9AA3DB796A04F90B108CE7FEB8 /* Sources */,
-				C615BCE77D56371F91C6A230E66DA9F3 /* Frameworks */,
-				D98A6DC51053A8089C26464CC911A139 /* Resources */,
-				DBB728FD643E248D52DFEB8CE3B0C058 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				945419EF129FFF9A3703D3E0F6B84D43 /* PBXTargetDependency */,
-			);
-			name = JLChatViewController;
-			productName = JLChatViewController;
-			productReference = 95C6ECEFB2174A32E71E7266B2BFA525 /* JLChatViewController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3FCCB5AE3AEB278FBCFE458E9DC822DA /* Pods-JLChatViewController_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3BA481A42BE5CD42DCA7376381E8C1E1 /* Build configuration list for PBXNativeTarget "Pods-JLChatViewController_Example" */;
-			buildPhases = (
-				FFF376971D0AAD13CE211D2BAF380645 /* Sources */,
-				5D7E701466CA68F9C1417E253A12B2A5 /* Frameworks */,
-				89DB406718A7FBB9A8FF5F748F3ACF4E /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B2C2758ECAF0239905DB35F3D263C506 /* PBXTargetDependency */,
-			);
-			name = "Pods-JLChatViewController_Example";
-			productName = "Pods-JLChatViewController_Example";
-			productReference = ED35FBB557E61AF6D7452FBC89D4EFF0 /* Pods_JLChatViewController_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		85BFC294D5143D1A381F3846D19F25DD /* JLChatViewController-JLChatViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5F06B18B448E80957CFA045C1BC3A53B /* Build configuration list for PBXNativeTarget "JLChatViewController-JLChatViewController" */;
-			buildPhases = (
-				00795EF4145736807D5993C0ED8940DB /* Sources */,
-				7998095AA1A0C658D32626F6BBCFBC47 /* Frameworks */,
-				9BF8FBDB7FB09D43992150ED1849F765 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "JLChatViewController-JLChatViewController";
-			productName = "JLChatViewController-JLChatViewController";
-			productReference = 9263CCFC016B0C1574CBE5A1CAEB3215 /* JLChatViewController.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		A1FB2B1A7C651EEC5EDCF8F974061A9E /* Pods-JLChatViewController_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 407B6E2D0D4B315879DC5A6A20E94552 /* Build configuration list for PBXNativeTarget "Pods-JLChatViewController_Tests" */;
-			buildPhases = (
-				8436EA95B1C96D6D2AB607E3FF085BAF /* Sources */,
-				A19AC4140F59AF445B0EB3D27DFA24D4 /* Frameworks */,
-				8B50E7CED8B818149E807BE76A1E5D03 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F89CED165EAEA88211CACD5F639DDEA3 /* PBXTargetDependency */,
-			);
-			name = "Pods-JLChatViewController_Tests";
-			productName = "Pods-JLChatViewController_Tests";
-			productReference = 7A8341FD4D388BD6F21C498B5A4A3C60 /* Pods_JLChatViewController_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 59C05721527441C9AB8B98CE2C3A0CBB /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				0977A46150A83BFB0DAF82EF53D72C62 /* JLChatViewController */,
-				85BFC294D5143D1A381F3846D19F25DD /* JLChatViewController-JLChatViewController */,
-				3FCCB5AE3AEB278FBCFE458E9DC822DA /* Pods-JLChatViewController_Example */,
-				A1FB2B1A7C651EEC5EDCF8F974061A9E /* Pods-JLChatViewController_Tests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		9BF8FBDB7FB09D43992150ED1849F765 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7F648059B4F8155B757FB23DFD7865F9 /* alert9Normal.png in Resources */,
-				BDB815C4F2D7F7EA9479FE97A4AFFF95 /* alert9Selected.png in Resources */,
-				2C95B3FBA7A56946DA72AEF013E7A2DA /* bubble_min.png in Resources */,
-				C48BA0666B7020B1C62FCD8E03967AC0 /* bubble_min@2x.png in Resources */,
-				9CD4AB53B3C07C8B536650D751CF3850 /* bubble_min@3x.png in Resources */,
-				DB561532CB05886CC1B0040D6DF5097E /* bubble_min_incoming.png in Resources */,
-				043149660B27ABFD88933140AA54A34B /* bubble_min_incoming@2x.png in Resources */,
-				497E24A682327922678D35328F5C08A6 /* bubble_min_incoming@3x.png in Resources */,
-				1580AEA33D2D535E0D8D5B3075F648FA /* bubble_min_mask.png in Resources */,
-				B6E088FC1720943F9E0338752E37EB2F /* bubble_min_mask@2x.png in Resources */,
-				01D9582AEBF3568B651022242AA56521 /* bubble_min_mask@3x.png in Resources */,
-				C8FB3F597D31B03D44480BBB38354210 /* bubble_min_mask_incoming.png in Resources */,
-				6CA6BFF029C23CA83E274B74D6C98613 /* bubble_min_mask_incoming@2x.png in Resources */,
-				F5AB23726F5C8C6FC3AADC6BB1048F53 /* bubble_min_mask_incoming@3x.png in Resources */,
-				9C6569148937FB24DE050B52CD0ADB9B /* JLChat.storyboard in Resources */,
-				7573C07666E3B428C1C28CFC90DBC28B /* JLChatLoadingView.xib in Resources */,
-				4CB9CF482F2B8AA2C849CBA2DAA9FF7C /* JLUserTypingView.xib in Resources */,
-				9B91FDE7DD23EC76315594C622829D4E /* UserWriting__000.png in Resources */,
-				1D05125645D56D08DE8A0559E75F2D24 /* UserWriting__001.png in Resources */,
-				1D47220762FC4F979B7E43D56145E987 /* UserWriting__002.png in Resources */,
-				F633598B082FFC892AD296FFE23650FD /* UserWriting__003.png in Resources */,
-				1DC1D3035E2B0379B8B7500FB9835A71 /* UserWriting__004.png in Resources */,
-				76D244328B902649E99075AF148C065B /* UserWriting__005.png in Resources */,
-				FD3013E40B0B804508AAD05D4712D6D1 /* UserWriting__006.png in Resources */,
-				B67E4BF8FF1F041CF02B37DC6D918A1F /* UserWriting__007.png in Resources */,
-				687835CC16392DA68C1481E3E57B60E5 /* UserWriting__008.png in Resources */,
-				77572C357579CB18CDE030E3A30A1A7C /* UserWriting__009.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98A6DC51053A8089C26464CC911A139 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C3CFBD27EF5CF74EF08E56F29D7516C /* JLChatViewController.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		00795EF4145736807D5993C0ED8940DB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8361EA9AA3DB796A04F90B108CE7FEB8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2C5B095763C4EF12AF7B126288531CA /* JLBundleController.swift in Sources */,
-				E59AF7FD0189CC39C871495539BE459E /* JLChatAppearence.swift in Sources */,
-				DEDB408E28E21392E00CC042598E9428 /* JLChatImageView.swift in Sources */,
-				FB694EB71E57E19663524737622AA4B9 /* JLChatLoadingView.swift in Sources */,
-				D5CD5CB0903C463B9CFDA4866CEB15E7 /* JLChatMessageCell.swift in Sources */,
-				45278143DD9C4CC012E19EC0F685FBB4 /* JLChatTableView.swift in Sources */,
-				CDCFDE7FDCFF52B67C08E80D1F6BC698 /* JLChatTextView.swift in Sources */,
-				DE3B74818228EA3FBA1A243F7E3704C7 /* JLChatToolBar.swift in Sources */,
-				94EE706E065663BE3AFE2932C9403D9B /* JLChatViewController-dummy.m in Sources */,
-				F3902672CC6B01FB0B344367FDB11F57 /* JLChatViewController.swift in Sources */,
-				D75DB9C1BB5B57540468ECEAE0D612DB /* JLCustomTextView.swift in Sources */,
-				DC4313FCA9D903F0D290CF898D118D8A /* JLFile.swift in Sources */,
-				3D62319D57B25E35C632678B48B19FED /* JLFileIndicatorView.swift in Sources */,
-				820EEC32E94D47FE43E7F5E60B514470 /* JLImageMessageCell.swift in Sources */,
-				97BCE8F1F607414C1AD2982044A40BAA /* JLMessage.swift in Sources */,
-				B9EC209B7BD28C911802D36CDC7D2988 /* JLTextMessageCell.swift in Sources */,
-				E9C60114CBA58EE24D25AEE4AAB26A2E /* JLUserTypingView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8436EA95B1C96D6D2AB607E3FF085BAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B318D1B695BC5246D8DC4DCD803A163B /* Pods-JLChatViewController_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FFF376971D0AAD13CE211D2BAF380645 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				75591300525113B80C4A1B50050CF7EB /* Pods-JLChatViewController_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		945419EF129FFF9A3703D3E0F6B84D43 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "JLChatViewController-JLChatViewController";
-			target = 85BFC294D5143D1A381F3846D19F25DD /* JLChatViewController-JLChatViewController */;
-			targetProxy = A98D48312D38067334E3159AAF18B7B1 /* PBXContainerItemProxy */;
-		};
-		B2C2758ECAF0239905DB35F3D263C506 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JLChatViewController;
-			target = 0977A46150A83BFB0DAF82EF53D72C62 /* JLChatViewController */;
-			targetProxy = DB11130AD6DBCD9E61DAB5C558711F7A /* PBXContainerItemProxy */;
-		};
-		F89CED165EAEA88211CACD5F639DDEA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JLChatViewController;
-			target = 0977A46150A83BFB0DAF82EF53D72C62 /* JLChatViewController */;
-			targetProxy = D5E7497EFE0AF1809562764641E6D114 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		074A6F260A0B0ED69FD17C1978332F96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2876F00EA45936FB624F02E388EC78CD /* JLChatViewController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JLChatViewController/JLChatViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JLChatViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JLChatViewController/JLChatViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = JLChatViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		292F09885708B7ABDEBAA01F791CEFA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ED26B7335D02E09A758CD3DABD75FC5 /* Pods-JLChatViewController_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JLChatViewController_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_JLChatViewController_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4A496F586936C27A890811545894D7BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A21714F23DE9B63718CA38FACB574DC /* Pods-JLChatViewController_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JLChatViewController_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_JLChatViewController_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		510F2A0EC2DFB6225B8C73F7BE5DD607 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2876F00EA45936FB624F02E388EC78CD /* JLChatViewController.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = JLChatViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		571754646F28D9B84951B6066ACA5EF4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2876F00EA45936FB624F02E388EC78CD /* JLChatViewController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JLChatViewController/JLChatViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JLChatViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JLChatViewController/JLChatViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = JLChatViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		AED99D127078DED6E3F02FB9ADFD7621 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 641C1BE7F3B2653991B7DCB4104CC6FE /* Pods-JLChatViewController_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JLChatViewController_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_JLChatViewController_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		E6C42F065242082CF1271F077E83535D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2876F00EA45936FB624F02E388EC78CD /* JLChatViewController.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = JLChatViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		FBB53C97AC01E36DB2EF531A28D0BE33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86EDB6C3AB2F49059CEE4EF53634F7C3 /* Pods-JLChatViewController_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JLChatViewController_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_JLChatViewController_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		268E32C93200FDC5270D835870B0ABE2 /* Build configuration list for PBXNativeTarget "JLChatViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				571754646F28D9B84951B6066ACA5EF4 /* Debug */,
-				074A6F260A0B0ED69FD17C1978332F96 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				552D02D5BA751AC2E8790D2811D496CA /* Debug */,
-				10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3BA481A42BE5CD42DCA7376381E8C1E1 /* Build configuration list for PBXNativeTarget "Pods-JLChatViewController_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A496F586936C27A890811545894D7BF /* Debug */,
-				AED99D127078DED6E3F02FB9ADFD7621 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		407B6E2D0D4B315879DC5A6A20E94552 /* Build configuration list for PBXNativeTarget "Pods-JLChatViewController_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				292F09885708B7ABDEBAA01F791CEFA4 /* Debug */,
-				FBB53C97AC01E36DB2EF531A28D0BE33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5F06B18B448E80957CFA045C1BC3A53B /* Build configuration list for PBXNativeTarget "JLChatViewController-JLChatViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E6C42F065242082CF1271F077E83535D /* Debug */,
-				510F2A0EC2DFB6225B8C73F7BE5DD607 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>020440D179BA3121478A6DE4ACE3B896</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0356EC65DE98583CA985196FBCD0940D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D992CCEEBC47C7E5243CCC90A7C5DDC7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>069D20125E76D3ED17091B2AE1A7E4F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AB3945088AE91BD56884878A5C3AE2D4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0847DCE12255A6424F740C3402FB17EC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>09435C9F981AA592C71DE0B0F6BAC3FE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_mask@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>09BBA4E6F1C8510E23195E080702F8F8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JLChatViewController-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0A772C5E5E299E6FBACDA48CED7FC3AD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>10DE1947DAC0ED28F6C0A9F9BD75D546</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>155EB9E93E1D9E78F2AE169C381866A0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__007.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>16EF092CFA6C1C8F17CDF5E610EFCE1D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_mask_incoming@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1944728E0CE38C2B3A2647BBD9FC405D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>JLChatViewController.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A3502CBD18838C52B6E3E8C483A81EF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatDateView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1DDD02E01907CC2B385D9976913A2403</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8CDBE59DEA965FCBE535307214A99C30</string>
+				<string>F7D10027BD23F00FF17B31B85280947D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>21182D9E8DF0B2AFC0CDD4CFB774E9BB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLUserTypingView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>238303C626934D302D4B42ECF07B13BE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_mask_incoming.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24AC4190827AC05399FF0A5057644E4A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1944728E0CE38C2B3A2647BBD9FC405D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>JLChatViewController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>25D7A9BDB860403C7CE7D972AD040280</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>507BA5FF24CD1206F7B7ABCDC011D027</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>292F09885708B7ABDEBAA01F791CEFA4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7ED26B7335D02E09A758CD3DABD75FC5</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Tests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JLChatViewController_Tests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>29EB8AA956B57616178DB7D102E3D815</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3D6FA808813ED80235481E01D7674AE0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2AD822F5CD07C40304F4F38BA8FEA165</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatLabel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C2ED9C9C61630B94333B5F695BB9068</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>JLChat.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2CEE2A7CADCD46E19110E26DA2806A6B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatToolBar.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>552D02D5BA751AC2E8790D2811D496CA</string>
+				<string>10DE1947DAC0ED28F6C0A9F9BD75D546</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2F86F8202AA6217547DFFCE987C2A91B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__001.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2FBE367B2D05F5C50E5084DC2EF73170</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>330E49A21CEF3BF70A6A6555BAD60033</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3373E388BED87DA3A91FA3D482900FCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7AB55C5B80D1B1159BEB125B6A651F36</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>33AC491C5E67BC2BFCA71CC036FA3A7E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__000.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>33E7715B9D8637DA6E67488920EA8255</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_mask.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>35504E0157D35ACD2B7922AC6D1DDDEB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3810F1DA76CDAF3B06F86C69A3DFE9B6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8FC110E03F01B4FDC01B6FDC24F05022</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>39BC80F05B69354B1F2A2B717733C193</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3A21714F23DE9B63718CA38FACB574DC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B50379DC92960E28DD2EF7DFCE6A9FF</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1944728E0CE38C2B3A2647BBD9FC405D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JLChatViewController/JLChatViewController-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/JLChatViewController/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/JLChatViewController/JLChatViewController.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>JLChatViewController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3BA481A42BE5CD42DCA7376381E8C1E1</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4A496F586936C27A890811545894D7BF</string>
+				<string>AED99D127078DED6E3F02FB9ADFD7621</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3C98CB20FF7AC296DA401938E6183518</key>
+		<dict>
+			<key>fileRef</key>
+			<string>33E7715B9D8637DA6E67488920EA8255</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3D6FA808813ED80235481E01D7674AE0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLCustomTextView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D9A811C7FB4B349C644D65C0A430602</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C5FEF432E55CACCF65494BBCAA941499</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3E4E89230EF59BC255123B67864ACF77</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>3E93AC95926E22FBCDA3121D194BA689</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4F131C7654CA2DCDD3F567F635276BAA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3FCCB5AE3AEB278FBCFE458E9DC822DA</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3BA481A42BE5CD42DCA7376381E8C1E1</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FFF376971D0AAD13CE211D2BAF380645</string>
+				<string>5D7E701466CA68F9C1417E253A12B2A5</string>
+				<string>89DB406718A7FBB9A8FF5F748F3ACF4E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>B2C2758ECAF0239905DB35F3D263C506</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-JLChatViewController_Example</string>
+			<key>productName</key>
+			<string>Pods-JLChatViewController_Example</string>
+			<key>productReference</key>
+			<string>ED35FBB557E61AF6D7452FBC89D4EFF0</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>407B6E2D0D4B315879DC5A6A20E94552</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>292F09885708B7ABDEBAA01F791CEFA4</string>
+				<string>FBB53C97AC01E36DB2EF531A28D0BE33</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>40852DC12B36C309C472C18595FB11D5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AB3945088AE91BD56884878A5C3AE2D4</string>
+				<string>ADB8B9090AA52B81D4AE1303E35114B5</string>
+				<string>1A3502CBD18838C52B6E3E8C483A81EF</string>
+				<string>D992CCEEBC47C7E5243CCC90A7C5DDC7</string>
+				<string>2AD822F5CD07C40304F4F38BA8FEA165</string>
+				<string>871F5085BB735A27EC8EBEAB84E68E17</string>
+				<string>4F131C7654CA2DCDD3F567F635276BAA</string>
+				<string>8FC110E03F01B4FDC01B6FDC24F05022</string>
+				<string>73A0676EDDA2CD2DF05CF1B297CD4403</string>
+				<string>2CEE2A7CADCD46E19110E26DA2806A6B</string>
+				<string>C5FEF432E55CACCF65494BBCAA941499</string>
+				<string>3D6FA808813ED80235481E01D7674AE0</string>
+				<string>8B703CC0B4B19798E424E8AE27482A35</string>
+				<string>E6B4911CE98781C746A026E9557E63D0</string>
+				<string>7AB55C5B80D1B1159BEB125B6A651F36</string>
+				<string>772F35CE68FFE79A2471FB6264CBF29C</string>
+				<string>E3A117E97665B73C4844FC644F4FA63D</string>
+				<string>21182D9E8DF0B2AFC0CDD4CFB774E9BB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Classes</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4380BBAD185AA5D2EBD07DAAE8B83B9E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__004.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>45332088A67186D4008E2F9CA47ABAAE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2CEE2A7CADCD46E19110E26DA2806A6B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>461C42450E30C558D7DC645D1895D688</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EA97D5E3FA3874537892A87ED17CE85D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>47E00999B3A9BCC9BEE8E539E117F2EA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>47ED0C4535EC7BD18EB859270C63509D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E6B4911CE98781C746A026E9557E63D0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A496F586936C27A890811545894D7BF</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3A21714F23DE9B63718CA38FACB574DC</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Example/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JLChatViewController_Example</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4A67D937C778ECFB2A84E6B8F7B48303</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_incoming@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B68ADCC965DB1FFDDE8763018E617B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4BBA088D05166AE799F693FB692141CB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>543D2314E92A8008D3F6875861DA7A21</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4F131C7654CA2DCDD3F567F635276BAA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatMessageCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>507BA5FF24CD1206F7B7ABCDC011D027</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9263CCFC016B0C1574CBE5A1CAEB3215</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>543D2314E92A8008D3F6875861DA7A21</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__006.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>552D02D5BA751AC2E8790D2811D496CA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>55F958CAEFEFD9633CD80E1C08CA9B40</key>
+		<dict>
+			<key>fileRef</key>
+			<string>85717E15975005146A5B387BCE0E5876</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>565DAADD5BF933FB6A967D69B59ED565</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4380BBAD185AA5D2EBD07DAAE8B83B9E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59C05721527441C9AB8B98CE2C3A0CBB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9263CCFC016B0C1574CBE5A1CAEB3215</string>
+				<string>95C6ECEFB2174A32E71E7266B2BFA525</string>
+				<string>ED35FBB557E61AF6D7452FBC89D4EFF0</string>
+				<string>7A8341FD4D388BD6F21C498B5A4A3C60</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5C7696010CADD673D733293FA23EEDC8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__009.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5D7E701466CA68F9C1417E253A12B2A5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4B68ADCC965DB1FFDDE8763018E617B0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5FC140ECC88C92DF198977B51F15A079</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>85FDEA6AEFF37578AB31FFCB1754345E</string>
+				<string>61BD4E0ADD424099956119FEF23889CE</string>
+				<string>1944728E0CE38C2B3A2647BBD9FC405D</string>
+				<string>BA1B891E7A00840B584CD058EEE69A73</string>
+				<string>6FB3F4637DF55651AE25167551DF3DCE</string>
+				<string>09BBA4E6F1C8510E23195E080702F8F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Example/Pods/Target Support Files/JLChatViewController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>61BD4E0ADD424099956119FEF23889CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>JLChatViewController.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>62468DD9CD592FEC91FA4DF8ACC5BD5A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>24AC4190827AC05399FF0A5057644E4A</string>
+				<string>C90BFB52A6330FC7428DE48268C4C15A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>641C1BE7F3B2653991B7DCB4104CC6FE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>648890801B88E8FA72A172F2B63584B4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D841D26CE82311CDCD07E8DBB758EEFA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>65B98AF7973EE483C97AF27987D3E371</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B703CC0B4B19798E424E8AE27482A35</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>662A5F8F3B7981D6622AD7EC85233BEF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>238303C626934D302D4B42ECF07B13BE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6756643F8CD4760C904620B1DEE3A400</key>
+		<dict>
+			<key>fileRef</key>
+			<string>33AC491C5E67BC2BFCA71CC036FA3A7E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>678615622BFFF6375EF3EAA28343B2D5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3B50379DC92960E28DD2EF7DFCE6A9FF</string>
+				<string>D52123E116EE5ED170908F4962E26AA6</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>67A20E57B88AD656160516FAE24ADE4D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>21182D9E8DF0B2AFC0CDD4CFB774E9BB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>68C45CD5E16B207A896F720C1DA3CB33</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__008.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6F71E83F345459312DCBA731D8209CFA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6FB3F4637DF55651AE25167551DF3DCE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>JLChatViewController-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>704754FAF09B03ADC7496253E4ED253B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>772F35CE68FFE79A2471FB6264CBF29C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>71AD85EC43A0980525CCB8E8BF1B7334</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>725892BF9C8D3D2E6AEEB933D8DB42F1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>330E49A21CEF3BF70A6A6555BAD60033</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>72AFB1EC3ECB9471F47500CE478FFFE3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>40852DC12B36C309C472C18595FB11D5</string>
+				<string>E8413697285ADF3E860E7E149CEB5E60</string>
+				<string>5FC140ECC88C92DF198977B51F15A079</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JLChatViewController</string>
+			<key>path</key>
+			<string>../..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>73A0676EDDA2CD2DF05CF1B297CD4403</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatTextView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74B99A9B4150470239F33F115F6EA847</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__002.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>75591300525113B80C4A1B50050CF7EB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9A7D28DC30BBD1D1BF9E0E5058F87FC1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>75857152D407B4AA98EDB3BC7065A3C2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C2ED9C9C61630B94333B5F695BB9068</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7696A6625C035B2B2AE75A82863B6FCE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>76980AE040ED57A0C8798424E881574E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ADB8B9090AA52B81D4AE1303E35114B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>772F35CE68FFE79A2471FB6264CBF29C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLMessage.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>77F4589687871706A3F59698C35989AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F6534D01DD65CDD4DB934F196E29E5DC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>79DD6F1B82B53F18C23156580FB20398</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_incoming.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7A8341FD4D388BD6F21C498B5A4A3C60</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_JLChatViewController_Tests.framework</string>
+			<key>path</key>
+			<string>Pods_JLChatViewController_Tests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>7AB55C5B80D1B1159BEB125B6A651F36</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLImageMessageCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7C5EA615DFA63CA2ED770E23CEB9C6E6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__003.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>9657A465F987466C618585D37A8C9412</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>59C05721527441C9AB8B98CE2C3A0CBB</string>
+				<string>1DDD02E01907CC2B385D9976913A2403</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E7F5CA069050CABF6D96BCC4F393945</key>
+		<dict>
+			<key>fileRef</key>
+			<string>79DD6F1B82B53F18C23156580FB20398</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7E8125168CC7987AB0E71B3BAEC2EA52</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F9B04873A4BF170B812E91A2ED77F051</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>7ED26B7335D02E09A758CD3DABD75FC5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7F1B5D8AF13DD61CA9B11A1B4C5D4BB5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A9D1DF0FD1FA82E2D2BCCF8ADCE77546</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8130C9CB7EAEDBB78AFEC2B27FAED1E4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2F86F8202AA6217547DFFCE987C2A91B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>839742F97CE7A3C0FBF0B54BEC664694</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9576D63A24F514CB5479C1B7A41EC6FD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8436EA95B1C96D6D2AB607E3FF085BAF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B318D1B695BC5246D8DC4DCD803A163B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>84746E033736AD06D32F2E385FC53DDF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85717E15975005146A5B387BCE0E5876</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85FDEA6AEFF37578AB31FFCB1754345E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86EDB6C3AB2F49059CEE4EF53634F7C3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>87069D48E9D928D5674966A0420EE139</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90194DF004D7BF2014356A887CA8E4E2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>871F5085BB735A27EC8EBEAB84E68E17</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatLoadingView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>89DB406718A7FBB9A8FF5F748F3ACF4E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7E8125168CC7987AB0E71B3BAEC2EA52</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8AA0B0DE82BFB24BFDB31F6F71ED96D4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BA1B891E7A00840B584CD058EEE69A73</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8B50E7CED8B818149E807BE76A1E5D03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>55F958CAEFEFD9633CD80E1C08CA9B40</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8B703CC0B4B19798E424E8AE27482A35</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLFile.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8CB45A011B98D7613ADDD80A6893F805</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8CDBE59DEA965FCBE535307214A99C30</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6F71E83F345459312DCBA731D8209CFA</string>
+				<string>D5209C24BDEE577269CA37A04847EFE6</string>
+				<string>39BC80F05B69354B1F2A2B717733C193</string>
+				<string>2FBE367B2D05F5C50E5084DC2EF73170</string>
+				<string>9A7D28DC30BBD1D1BF9E0E5058F87FC1</string>
+				<string>0847DCE12255A6424F740C3402FB17EC</string>
+				<string>DA68CAAA8521FAE8021081261B8C8C5B</string>
+				<string>F9B04873A4BF170B812E91A2ED77F051</string>
+				<string>3A21714F23DE9B63718CA38FACB574DC</string>
+				<string>641C1BE7F3B2653991B7DCB4104CC6FE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-JLChatViewController_Example</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-JLChatViewController_Example</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8FC110E03F01B4FDC01B6FDC24F05022</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatTableView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8FDE4E0CEFD55D76A947B8C1C1C2B7E4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>74B99A9B4150470239F33F115F6EA847</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>90194DF004D7BF2014356A887CA8E4E2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>UserWriting__005.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9263CCFC016B0C1574CBE5A1CAEB3215</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JLChatViewController.bundle</string>
+			<key>path</key>
+			<string>JLChatViewController.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>9576D63A24F514CB5479C1B7A41EC6FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>JLUserTypingView.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>95C6ECEFB2174A32E71E7266B2BFA525</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>JLChatViewController.framework</string>
+			<key>path</key>
+			<string>JLChatViewController.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>9657A465F987466C618585D37A8C9412</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>72AFB1EC3ECB9471F47500CE478FFFE3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>983946B2D7A7FE2767B5251C40C52CC2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>alert9Selected.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9A7D28DC30BBD1D1BF9E0E5058F87FC1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9BA51D2C3533A3D552F29F5F24A8AEB3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>871F5085BB735A27EC8EBEAB84E68E17</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9EED3646CCAEE885EE947FAFFD4DF4A6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F0199E3BD30860BCFD05428F98AA843</key>
+		<dict>
+			<key>fileRef</key>
+			<string>983946B2D7A7FE2767B5251C40C52CC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F7351771DA5FD2E02798459977AB2B4</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>BC92DD7B57CB69F78A66A29AAD472140</string>
+			<key>remoteInfo</key>
+			<string>JLChatViewController-JLChatViewController</string>
+		</dict>
+		<key>A19AC4140F59AF445B0EB3D27DFA24D4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>020440D179BA3121478A6DE4ACE3B896</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A1FB2B1A7C651EEC5EDCF8F974061A9E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>407B6E2D0D4B315879DC5A6A20E94552</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8436EA95B1C96D6D2AB607E3FF085BAF</string>
+				<string>A19AC4140F59AF445B0EB3D27DFA24D4</string>
+				<string>8B50E7CED8B818149E807BE76A1E5D03</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>F89CED165EAEA88211CACD5F639DDEA3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-JLChatViewController_Tests</string>
+			<key>productName</key>
+			<string>Pods-JLChatViewController_Tests</string>
+			<key>productReference</key>
+			<string>7A8341FD4D388BD6F21C498B5A4A3C60</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>A3BC74880AD1EAC1EAF38AB25228F3D1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>68C45CD5E16B207A896F720C1DA3CB33</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A5285C88BFF7E0687107C5397E02C6F7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A967A7DFEB198E6DCCDE315D99B47064</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E3A117E97665B73C4844FC644F4FA63D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A9D1DF0FD1FA82E2D2BCCF8ADCE77546</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>JLChatDateView.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AB3945088AE91BD56884878A5C3AE2D4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLBundleController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AC7AC6857D98594B1B2C059CD4D41C1F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A5285C88BFF7E0687107C5397E02C6F7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ADAE4499227307DECD9FEE9ADDF2C7EB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CDFF35C31FDA71B00648AE197F8E655B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ADB8B9090AA52B81D4AE1303E35114B5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatAppearence.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>AED99D127078DED6E3F02FB9ADFD7621</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>641C1BE7F3B2653991B7DCB4104CC6FE</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Example/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JLChatViewController_Example</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>AEF64434F3FA45CFBCD10B045B16FB3A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFADB2E4F879702A370EE5DFF7425E25</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AF241D79E598DD0D55E5FCA0EEA55309</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JLChatViewController-JLChatViewController</string>
+			<key>target</key>
+			<string>BC92DD7B57CB69F78A66A29AAD472140</string>
+			<key>targetProxy</key>
+			<string>9F7351771DA5FD2E02798459977AB2B4</string>
+		</dict>
+		<key>AFF1DA29768E8CC622A75E3B25F4A3E4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>155EB9E93E1D9E78F2AE169C381866A0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B04A36A0DD8D04758674C07FE14E885E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Tests.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B0584B378373C772E16B3DC469CDE37A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_mask@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B06241B9300E08CBF76342C2B9DDAE57</key>
+		<dict>
+			<key>fileRef</key>
+			<string>73A0676EDDA2CD2DF05CF1B297CD4403</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B2C2758ECAF0239905DB35F3D263C506</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JLChatViewController</string>
+			<key>target</key>
+			<string>CB9D8D920ECB5603C761F6346B1412CE</string>
+			<key>targetProxy</key>
+			<string>DB11130AD6DBCD9E61DAB5C558711F7A</string>
+		</dict>
+		<key>B318D1B695BC5246D8DC4DCD803A163B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>47E00999B3A9BCC9BEE8E539E117F2EA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B639A9B9793929BFF055C5BC74B7CDD1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>16EF092CFA6C1C8F17CDF5E610EFCE1D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B866B2B2987EF07273CB4B34990956F1</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F6534D01DD65CDD4DB934F196E29E5DC</string>
+				<string>983946B2D7A7FE2767B5251C40C52CC2</string>
+				<string>9EED3646CCAEE885EE947FAFFD4DF4A6</string>
+				<string>CDFF35C31FDA71B00648AE197F8E655B</string>
+				<string>A5285C88BFF7E0687107C5397E02C6F7</string>
+				<string>79DD6F1B82B53F18C23156580FB20398</string>
+				<string>4A67D937C778ECFB2A84E6B8F7B48303</string>
+				<string>EA97D5E3FA3874537892A87ED17CE85D</string>
+				<string>33E7715B9D8637DA6E67488920EA8255</string>
+				<string>09435C9F981AA592C71DE0B0F6BAC3FE</string>
+				<string>B0584B378373C772E16B3DC469CDE37A</string>
+				<string>238303C626934D302D4B42ECF07B13BE</string>
+				<string>FFADB2E4F879702A370EE5DFF7425E25</string>
+				<string>16EF092CFA6C1C8F17CDF5E610EFCE1D</string>
+				<string>2C2ED9C9C61630B94333B5F695BB9068</string>
+				<string>A9D1DF0FD1FA82E2D2BCCF8ADCE77546</string>
+				<string>D841D26CE82311CDCD07E8DBB758EEFA</string>
+				<string>9576D63A24F514CB5479C1B7A41EC6FD</string>
+				<string>33AC491C5E67BC2BFCA71CC036FA3A7E</string>
+				<string>2F86F8202AA6217547DFFCE987C2A91B</string>
+				<string>74B99A9B4150470239F33F115F6EA847</string>
+				<string>7C5EA615DFA63CA2ED770E23CEB9C6E6</string>
+				<string>4380BBAD185AA5D2EBD07DAAE8B83B9E</string>
+				<string>90194DF004D7BF2014356A887CA8E4E2</string>
+				<string>543D2314E92A8008D3F6875861DA7A21</string>
+				<string>155EB9E93E1D9E78F2AE169C381866A0</string>
+				<string>68C45CD5E16B207A896F720C1DA3CB33</string>
+				<string>5C7696010CADD673D733293FA23EEDC8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Assets</string>
+			<key>path</key>
+			<string>Assets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA1B891E7A00840B584CD058EEE69A73</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>JLChatViewController-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BC92DD7B57CB69F78A66A29AAD472140</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>62468DD9CD592FEC91FA4DF8ACC5BD5A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>71AD85EC43A0980525CCB8E8BF1B7334</string>
+				<string>EFF2957B8BF87C3EADE081EDD7894937</string>
+				<string>F78C58001785C17CB272079A895829C5</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JLChatViewController-JLChatViewController</string>
+			<key>productName</key>
+			<string>JLChatViewController-JLChatViewController</string>
+			<key>productReference</key>
+			<string>9263CCFC016B0C1574CBE5A1CAEB3215</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>BF54063117B7B8CBDB6A62912D51E4DC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>09BBA4E6F1C8510E23195E080702F8F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3E4E89230EF59BC255123B67864ACF77</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C5FEF432E55CACCF65494BBCAA941499</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C90BFB52A6330FC7428DE48268C4C15A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1944728E0CE38C2B3A2647BBD9FC405D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>JLChatViewController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CB9D8D920ECB5603C761F6346B1412CE</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>678615622BFFF6375EF3EAA28343B2D5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FB2895C0B8D4BF5F9E46D30103587D62</string>
+				<string>725892BF9C8D3D2E6AEEB933D8DB42F1</string>
+				<string>25D7A9BDB860403C7CE7D972AD040280</string>
+				<string>F8D7C4A43EABEE1B3BE24F22C0C2C273</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>AF241D79E598DD0D55E5FCA0EEA55309</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>JLChatViewController</string>
+			<key>productName</key>
+			<string>JLChatViewController</string>
+			<key>productReference</key>
+			<string>95C6ECEFB2174A32E71E7266B2BFA525</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>CDC891A6815E4A9DE84DE6DBD59EA277</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7C5EA615DFA63CA2ED770E23CEB9C6E6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CDFF35C31FDA71B00648AE197F8E655B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>59C05721527441C9AB8B98CE2C3A0CBB</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>CB9D8D920ECB5603C761F6346B1412CE</string>
+				<string>BC92DD7B57CB69F78A66A29AAD472140</string>
+				<string>3FCCB5AE3AEB278FBCFE458E9DC822DA</string>
+				<string>A1FB2B1A7C651EEC5EDCF8F974061A9E</string>
+			</array>
+		</dict>
+		<key>D5209C24BDEE577269CA37A04847EFE6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D52123E116EE5ED170908F4962E26AA6</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>1944728E0CE38C2B3A2647BBD9FC405D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/JLChatViewController/JLChatViewController-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/JLChatViewController/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/JLChatViewController/JLChatViewController.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>JLChatViewController</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D5E7497EFE0AF1809562764641E6D114</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>CB9D8D920ECB5603C761F6346B1412CE</string>
+			<key>remoteInfo</key>
+			<string>JLChatViewController</string>
+		</dict>
+		<key>D71D40821DE41F53EDA8D3CD592EA5C9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1A3502CBD18838C52B6E3E8C483A81EF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D841D26CE82311CDCD07E8DBB758EEFA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>path</key>
+			<string>JLChatLoadingView.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D992CCEEBC47C7E5243CCC90A7C5DDC7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLChatImageView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA68CAAA8521FAE8021081261B8C8C5B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB11130AD6DBCD9E61DAB5C558711F7A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>CB9D8D920ECB5603C761F6346B1412CE</string>
+			<key>remoteInfo</key>
+			<string>JLChatViewController</string>
+		</dict>
+		<key>E0F302FDE9C481FC44A213940C21B76A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>09435C9F981AA592C71DE0B0F6BAC3FE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E3A117E97665B73C4844FC644F4FA63D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLTextMessageCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E422D965E04538E1AFCC9F1F36C852DE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2AD822F5CD07C40304F4F38BA8FEA165</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E61009226DD8B1DF1B30F7BBB12D09B8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EED3646CCAEE885EE947FAFFD4DF4A6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E6B4911CE98781C746A026E9557E63D0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>JLFileIndicatorView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E7353CED27A56CE7263EB6C04DD67EC9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5C7696010CADD673D733293FA23EEDC8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E8413697285ADF3E860E7E149CEB5E60</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B866B2B2987EF07273CB4B34990956F1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EA97D5E3FA3874537892A87ED17CE85D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_incoming@3x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EC321197D3DE1B8ACC1888750F797618</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4A67D937C778ECFB2A84E6B8F7B48303</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ED35FBB557E61AF6D7452FBC89D4EFF0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_JLChatViewController_Example.framework</string>
+			<key>path</key>
+			<string>Pods_JLChatViewController_Example.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>EFF2957B8BF87C3EADE081EDD7894937</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F00E97C8A57F655BB1FB357A07E344A7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B0584B378373C772E16B3DC469CDE37A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6534D01DD65CDD4DB934F196E29E5DC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>alert9Normal.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F78C58001785C17CB272079A895829C5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>77F4589687871706A3F59698C35989AE</string>
+				<string>9F0199E3BD30860BCFD05428F98AA843</string>
+				<string>E61009226DD8B1DF1B30F7BBB12D09B8</string>
+				<string>ADAE4499227307DECD9FEE9ADDF2C7EB</string>
+				<string>AC7AC6857D98594B1B2C059CD4D41C1F</string>
+				<string>7E7F5CA069050CABF6D96BCC4F393945</string>
+				<string>EC321197D3DE1B8ACC1888750F797618</string>
+				<string>461C42450E30C558D7DC645D1895D688</string>
+				<string>3C98CB20FF7AC296DA401938E6183518</string>
+				<string>E0F302FDE9C481FC44A213940C21B76A</string>
+				<string>F00E97C8A57F655BB1FB357A07E344A7</string>
+				<string>662A5F8F3B7981D6622AD7EC85233BEF</string>
+				<string>AEF64434F3FA45CFBCD10B045B16FB3A</string>
+				<string>B639A9B9793929BFF055C5BC74B7CDD1</string>
+				<string>75857152D407B4AA98EDB3BC7065A3C2</string>
+				<string>7F1B5D8AF13DD61CA9B11A1B4C5D4BB5</string>
+				<string>648890801B88E8FA72A172F2B63584B4</string>
+				<string>839742F97CE7A3C0FBF0B54BEC664694</string>
+				<string>6756643F8CD4760C904620B1DEE3A400</string>
+				<string>8130C9CB7EAEDBB78AFEC2B27FAED1E4</string>
+				<string>8FDE4E0CEFD55D76A947B8C1C1C2B7E4</string>
+				<string>CDC891A6815E4A9DE84DE6DBD59EA277</string>
+				<string>565DAADD5BF933FB6A967D69B59ED565</string>
+				<string>87069D48E9D928D5674966A0420EE139</string>
+				<string>4BBA088D05166AE799F693FB692141CB</string>
+				<string>AFF1DA29768E8CC622A75E3B25F4A3E4</string>
+				<string>A3BC74880AD1EAC1EAF38AB25228F3D1</string>
+				<string>E7353CED27A56CE7263EB6C04DD67EC9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7D10027BD23F00FF17B31B85280947D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7696A6625C035B2B2AE75A82863B6FCE</string>
+				<string>B04A36A0DD8D04758674C07FE14E885E</string>
+				<string>84746E033736AD06D32F2E385FC53DDF</string>
+				<string>0A772C5E5E299E6FBACDA48CED7FC3AD</string>
+				<string>47E00999B3A9BCC9BEE8E539E117F2EA</string>
+				<string>35504E0157D35ACD2B7922AC6D1DDDEB</string>
+				<string>8CB45A011B98D7613ADDD80A6893F805</string>
+				<string>85717E15975005146A5B387BCE0E5876</string>
+				<string>7ED26B7335D02E09A758CD3DABD75FC5</string>
+				<string>86EDB6C3AB2F49059CEE4EF53634F7C3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-JLChatViewController_Tests</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-JLChatViewController_Tests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F89CED165EAEA88211CACD5F639DDEA3</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>JLChatViewController</string>
+			<key>target</key>
+			<string>CB9D8D920ECB5603C761F6346B1412CE</string>
+			<key>targetProxy</key>
+			<string>D5E7497EFE0AF1809562764641E6D114</string>
+		</dict>
+		<key>F8D7C4A43EABEE1B3BE24F22C0C2C273</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BF54063117B7B8CBDB6A62912D51E4DC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F9B04873A4BF170B812E91A2ED77F051</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-JLChatViewController_Example-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FB2895C0B8D4BF5F9E46D30103587D62</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>069D20125E76D3ED17091B2AE1A7E4F8</string>
+				<string>76980AE040ED57A0C8798424E881574E</string>
+				<string>D71D40821DE41F53EDA8D3CD592EA5C9</string>
+				<string>0356EC65DE98583CA985196FBCD0940D</string>
+				<string>E422D965E04538E1AFCC9F1F36C852DE</string>
+				<string>9BA51D2C3533A3D552F29F5F24A8AEB3</string>
+				<string>3E93AC95926E22FBCDA3121D194BA689</string>
+				<string>3810F1DA76CDAF3B06F86C69A3DFE9B6</string>
+				<string>B06241B9300E08CBF76342C2B9DDAE57</string>
+				<string>45332088A67186D4008E2F9CA47ABAAE</string>
+				<string>8AA0B0DE82BFB24BFDB31F6F71ED96D4</string>
+				<string>3D9A811C7FB4B349C644D65C0A430602</string>
+				<string>29EB8AA956B57616178DB7D102E3D815</string>
+				<string>65B98AF7973EE483C97AF27987D3E371</string>
+				<string>47ED0C4535EC7BD18EB859270C63509D</string>
+				<string>3373E388BED87DA3A91FA3D482900FCF</string>
+				<string>704754FAF09B03ADC7496253E4ED253B</string>
+				<string>A967A7DFEB198E6DCCDE315D99B47064</string>
+				<string>67A20E57B88AD656160516FAE24ADE4D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FBB53C97AC01E36DB2EF531A28D0BE33</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>86EDB6C3AB2F49059CEE4EF53634F7C3</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Tests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_JLChatViewController_Tests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FFADB2E4F879702A370EE5DFF7425E25</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>bubble_min_mask_incoming@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFF376971D0AAD13CE211D2BAF380645</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>75591300525113B80C4A1B50050CF7EB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>

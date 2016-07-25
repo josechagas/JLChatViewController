@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JLChatLoadingView: UITableViewHeaderFooterView {
+class JLChatLoadingView: UIView {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -21,14 +21,5 @@ class JLChatLoadingView: UITableViewHeaderFooterView {
         // Drawing code
     }
     */
-    
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
+
 }

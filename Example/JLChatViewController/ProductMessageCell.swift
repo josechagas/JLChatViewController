@@ -21,8 +21,6 @@ class ProductMessageCell: JLChatMessageCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     
-    @IBOutlet weak var messageDateLabel: UILabel!
-    
     @IBOutlet weak var senderImageView: UIImageView!
     
     @IBOutlet weak var errorToSendButton: UIButton!
@@ -56,54 +54,54 @@ class ProductMessageCell: JLChatMessageCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.senderImageView.image = nil
+        //self.senderImageView.image = nil
         self.productImageView.image = nil
         self.nameLabel.text = nil
-        self.messageDateLabel.text = nil
     }
    
-    override internal func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
-        
-        super.initCell(message, thisIsNewMessage: thisIsNewMessage, showDate: showDate, isOutgoingMessage: isOutgoingMessage)
+    override func initCell(message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
+        super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         
         self.selectionStyle = UITableViewCellSelectionStyle.None
         
         configView()
-     
-        //let productMessage = message as! ProductMessage
-        self.nameLabel.text = message.text
-        self.productImageView.image = message.relatedImage
-        self.senderImageView.image = message.senderImage
         
-        if message.messageStatus == MessageSendStatus.ErrorToSend{
-            showErrorButton(false)
-        }
         
-        if showDate{
-            self.messageDateLabel.text = message.generateStringFromDate()//"terca - 12/12/2015"
-        }
-        else{
-            messageDateLabel.text = nil
-        }
         //If the cell is being reused do not config these things again
         if cellAlreadyUsed == false{
             
             self.nameLabel.font = JLChatAppearence.chatFont
+            
+            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, forState: UIControlState.Normal)
+            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, forState: UIControlState.Selected)
             
             if isOutgoingMessage{
                 
                 configAsOutgoingMessage()
             }
             else{
-                                
+                
                 configAsIncomingMessage()
             }
             cellAlreadyUsed = true
             
         }
+        
+        
+        //let productMessage = message as! ProductMessage
+        self.nameLabel.text = message.text
+        self.productImageView.image = message.relatedImage
+        
+        if let img = message.senderImage{
+            self.senderImageView.image = img
+        }
+        
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
+            showErrorButton(false)
+        }
 
     }
-
+    
     
     private func  configView(){
         delimiterView.layer.masksToBounds = true
@@ -252,6 +250,8 @@ class ProductMessageCell: JLChatMessageCell {
         if JLChatAppearence.showOutgoingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
+            self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
+            
             self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             
             self.senderImageWidth.constant = JLChatAppearence.senderImageSize.width
@@ -278,6 +278,8 @@ class ProductMessageCell: JLChatMessageCell {
         
         if JLChatAppearence.showIncomingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
+            
+            self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
             
             self.senderImageHeight.constant = JLChatAppearence.senderImageSize.height
             

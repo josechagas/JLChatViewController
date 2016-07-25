@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ODc-L3-nWc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -10,7 +10,7 @@
         <!--My View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="JLChatVC" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MyViewController" customModule="JLChatViewController_Example" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JLChatVC1" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MyViewController" customModule="JLChatViewController_Example" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -59,12 +59,13 @@
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-Ua-FXr" customClass="JLChatTextView" customModule="JLChatViewController" customModuleProvider="target">
                                                     <rect key="frame" x="34" y="13" width="531" height="167.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-6t-aRi">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK9-6t-aRi">
                                                     <rect key="frame" x="300" y="8" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,6 +87,7 @@
                                                 <constraint firstItem="NgC-cS-rvB" firstAttribute="centerY" secondItem="x4e-Ua-FXr" secondAttribute="centerY" id="xht-kP-isn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="chatTextView" destination="x4e-Ua-FXr" id="ZlY-rN-aJY"/>
                                             <outlet property="errorToSendButton" destination="NgC-cS-rvB" id="dT2-YS-Tux"/>
@@ -366,6 +368,357 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1224" y="85"/>
+        </scene>
+        <!--My View Controller-->
+        <scene sceneID="an8-oo-wqQ">
+            <objects>
+                <viewController storyboardIdentifier="JLChatVC" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ODc-L3-nWc" customClass="MyViewController" customModule="JLChatViewController_Example" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wmG-I8-crR"/>
+                        <viewControllerLayoutGuide type="bottom" id="HFQ-pb-X7W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SuC-3o-SFD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1700"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="156" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ClK-45-d4b" customClass="JLChatTableView" customModule="JLChatViewController" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1700"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingTextCell" rowHeight="186" id="dzJ-7w-xBp" customClass="JLTextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="186"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dzJ-7w-xBp" id="Lhk-18-Izm">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="186"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x6-gO-po2">
+                                                    <rect key="frame" x="565" y="154" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="1LS-Yh-yA9"/>
+                                                        <constraint firstAttribute="width" constant="30" id="tlp-Pv-YXw"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oq-5b-cgY">
+                                                    <rect key="frame" x="535.5" y="79.5" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="VX1-Xo-HcT"/>
+                                                        <constraint firstAttribute="height" constant="30" id="uOX-Wz-E7h"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="dzJ-7w-xBp" eventType="touchUpInside" id="m6v-yV-sdE"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" clipsSubviews="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wu-vj-0PF" customClass="JLChatLabel" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="530.5" y="5" width="34.5" height="178.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutgoingMessage" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="5x6-gO-po2" secondAttribute="bottom" constant="2" id="0S2-BN-O03"/>
+                                                <constraint firstItem="8wu-vj-0PF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lhk-18-Izm" secondAttribute="leading" constant="45" id="2AJ-T7-nLn"/>
+                                                <constraint firstItem="8wu-vj-0PF" firstAttribute="leading" secondItem="5Oq-5b-cgY" secondAttribute="trailing" constant="-35" id="5Xw-2L-Z1g"/>
+                                                <constraint firstItem="5x6-gO-po2" firstAttribute="bottom" secondItem="8wu-vj-0PF" secondAttribute="bottom" id="CG3-Im-j6l"/>
+                                                <constraint firstItem="5Oq-5b-cgY" firstAttribute="centerY" secondItem="8wu-vj-0PF" secondAttribute="centerY" id="UqQ-Q8-gn2"/>
+                                                <constraint firstItem="5x6-gO-po2" firstAttribute="leading" secondItem="8wu-vj-0PF" secondAttribute="trailing" id="X3o-bh-bjV"/>
+                                                <constraint firstItem="8wu-vj-0PF" firstAttribute="top" secondItem="Lhk-18-Izm" secondAttribute="top" constant="5" id="Y0i-uq-MvJ"/>
+                                                <constraint firstItem="5x6-gO-po2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Lhk-18-Izm" secondAttribute="topMargin" constant="5" id="r7b-BB-H7h"/>
+                                                <constraint firstAttribute="trailing" secondItem="5x6-gO-po2" secondAttribute="trailing" constant="5" id="wrZ-ni-XTA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="chatMessageLabel" destination="8wu-vj-0PF" id="DfW-vA-ATs"/>
+                                            <outlet property="errorToSendButton" destination="5Oq-5b-cgY" id="3g7-Bp-pqG"/>
+                                            <outlet property="errorToSendLeadingDist" destination="5Xw-2L-Z1g" id="3uE-79-cHb"/>
+                                            <outlet property="imageDistToSide" destination="wrZ-ni-XTA" id="Kma-us-zym"/>
+                                            <outlet property="senderImageBottomToBubbleBottom" destination="CG3-Im-j6l" id="Dlq-fe-DI1"/>
+                                            <outlet property="senderImageHeight" destination="1LS-Yh-yA9" id="iMS-d4-xvd"/>
+                                            <outlet property="senderImageToBubble" destination="X3o-bh-bjV" id="5iP-xg-Yyq"/>
+                                            <outlet property="senderImageView" destination="5x6-gO-po2" id="meM-8U-xhn"/>
+                                            <outlet property="senderImageWidth" destination="tlp-Pv-YXw" id="au4-H4-DS6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingTextCell" rowHeight="186" id="fe2-eu-75s" customClass="JLTextMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="299.5" width="600" height="186"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fe2-eu-75s" id="2AG-Ld-io1">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="186"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r9-Ap-XAM">
+                                                    <rect key="frame" x="34" y="80" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="eOq-rp-lKf"/>
+                                                        <constraint firstAttribute="width" constant="30" id="fOB-UG-bFp"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="fe2-eu-75s" eventType="touchUpInside" id="iwh-1w-PiP"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-Ia-VY3">
+                                                    <rect key="frame" x="5" y="154" width="30" height="30"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="7e5-47-oPQ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="giO-Qd-bNa"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxZ-o8-C2m" customClass="JLChatLabel" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="5" width="34.5" height="178.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isOutgoingMessage" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jxZ-o8-C2m" secondAttribute="trailing" constant="45" id="3tb-5Q-9U6"/>
+                                                <constraint firstItem="jxZ-o8-C2m" firstAttribute="leading" secondItem="q1g-Ia-VY3" secondAttribute="trailing" id="42d-IC-PYV"/>
+                                                <constraint firstItem="6r9-Ap-XAM" firstAttribute="centerY" secondItem="jxZ-o8-C2m" secondAttribute="centerY" id="9Vs-ad-4o2"/>
+                                                <constraint firstItem="q1g-Ia-VY3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2AG-Ld-io1" secondAttribute="topMargin" constant="5" id="I9w-7v-cpn"/>
+                                                <constraint firstItem="q1g-Ia-VY3" firstAttribute="bottom" secondItem="jxZ-o8-C2m" secondAttribute="bottom" id="P42-6r-mmC"/>
+                                                <constraint firstItem="jxZ-o8-C2m" firstAttribute="top" secondItem="2AG-Ld-io1" secondAttribute="top" constant="5" id="Viv-no-zF3"/>
+                                                <constraint firstItem="q1g-Ia-VY3" firstAttribute="leading" secondItem="2AG-Ld-io1" secondAttribute="leading" constant="5" id="kX4-yD-ASc"/>
+                                                <constraint firstAttribute="bottom" secondItem="q1g-Ia-VY3" secondAttribute="bottom" constant="2" id="oap-F1-xaL"/>
+                                                <constraint firstItem="6r9-Ap-XAM" firstAttribute="leading" secondItem="jxZ-o8-C2m" secondAttribute="trailing" constant="-35" id="vUk-z9-r2b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="chatMessageLabel" destination="jxZ-o8-C2m" id="AAb-xy-QLu"/>
+                                            <outlet property="errorToSendButton" destination="6r9-Ap-XAM" id="Aqp-ek-tpc"/>
+                                            <outlet property="errorToSendLeadingDist" destination="vUk-z9-r2b" id="WZW-ny-tAz"/>
+                                            <outlet property="imageDistToSide" destination="kX4-yD-ASc" id="OWQ-fa-nuQ"/>
+                                            <outlet property="senderImageBottomToBubbleBottom" destination="P42-6r-mmC" id="kH2-st-SVV"/>
+                                            <outlet property="senderImageHeight" destination="giO-Qd-bNa" id="dFb-8G-Uf5"/>
+                                            <outlet property="senderImageToBubble" destination="42d-IC-PYV" id="C02-6u-a8l"/>
+                                            <outlet property="senderImageView" destination="q1g-Ia-VY3" id="Iqr-Zq-byS"/>
+                                            <outlet property="senderImageWidth" destination="7e5-47-oPQ" id="I6d-T4-991"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="incomingImageCell" rowHeight="207" id="UQb-4e-Bg7" customClass="JLImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="485.5" width="600" height="207"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UQb-4e-Bg7" id="cKz-Jc-9VV">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtG-j8-8UR">
+                                                    <rect key="frame" x="200" y="90" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="3xu-hj-9mD"/>
+                                                        <constraint firstAttribute="width" constant="30" id="TY4-N4-Ab7"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="UQb-4e-Bg7" eventType="touchUpInside" id="CbX-gv-Ee7"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-4L-X7r" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="5" width="200" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="d1v-Qh-Nqs"/>
+                                                        <constraint firstAttribute="width" constant="200" id="xDk-p1-xNl"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="useBubbleForm" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LH-Ia-hZc">
+                                                    <rect key="frame" x="5" y="175" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="RXh-8t-sy2"/>
+                                                        <constraint firstAttribute="width" constant="30" id="uuG-6g-7Zd"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FtG-j8-8UR" firstAttribute="leading" secondItem="Rfe-4L-X7r" secondAttribute="trailing" constant="-35" id="1Mb-LK-MoH"/>
+                                                <constraint firstItem="Rfe-4L-X7r" firstAttribute="leading" secondItem="0LH-Ia-hZc" secondAttribute="trailing" id="QbJ-T8-7sj"/>
+                                                <constraint firstAttribute="bottom" secondItem="0LH-Ia-hZc" secondAttribute="bottom" constant="2" id="ZIO-1c-OeD"/>
+                                                <constraint firstItem="0LH-Ia-hZc" firstAttribute="bottom" secondItem="Rfe-4L-X7r" secondAttribute="bottom" id="be7-jf-Ozh"/>
+                                                <constraint firstItem="FtG-j8-8UR" firstAttribute="centerY" secondItem="Rfe-4L-X7r" secondAttribute="centerY" id="r27-iy-hlv"/>
+                                                <constraint firstItem="0LH-Ia-hZc" firstAttribute="leading" secondItem="cKz-Jc-9VV" secondAttribute="leading" constant="5" id="rOb-oK-gU7"/>
+                                                <constraint firstItem="Rfe-4L-X7r" firstAttribute="top" secondItem="cKz-Jc-9VV" secondAttribute="top" constant="5" id="uBu-76-RAo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="errorButton" destination="FtG-j8-8UR" id="cda-ri-a3Z"/>
+                                            <outlet property="errorButtonDist" destination="1Mb-LK-MoH" id="EBQ-eQ-uOk"/>
+                                            <outlet property="imageDistToSide" destination="rOb-oK-gU7" id="rl5-Uv-srP"/>
+                                            <outlet property="messageImageView" destination="Rfe-4L-X7r" id="sQ6-h6-KbH"/>
+                                            <outlet property="senderImageBottomToBubbleBottom" destination="be7-jf-Ozh" id="AeX-Nl-Dnb"/>
+                                            <outlet property="senderImageToBubble" destination="QbJ-T8-7sj" id="Sre-EB-mqH"/>
+                                            <outlet property="senderImageView" destination="0LH-Ia-hZc" id="2Zi-wt-skC"/>
+                                            <outlet property="senderImageViewWidth" destination="uuG-6g-7Zd" id="fD1-zN-uQL"/>
+                                            <outlet property="senderImageViewheight" destination="RXh-8t-sy2" id="0VH-x4-45g"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="outgoingImageCell" rowHeight="207" id="fiT-Z0-mhZ" customClass="JLImageMessageCell" customModule="JLChatViewController" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="692.5" width="600" height="207"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fiT-Z0-mhZ" id="Ts3-4O-FKN">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="207"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ArP-0h-SnW">
+                                                    <rect key="frame" x="370" y="90" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Ye7-v4-OvH"/>
+                                                        <constraint firstAttribute="width" constant="30" id="znJ-YZ-mGu"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="alert9Normal.png"/>
+                                                    <state key="selected" image="alert9Selected.png"/>
+                                                    <state key="highlighted" image="alert9Selected.png"/>
+                                                    <connections>
+                                                        <action selector="errorButtonAction:" destination="fiT-Z0-mhZ" eventType="touchUpInside" id="hqE-C9-Qfc"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8D-Zd-qlH" customClass="JLChatImageView" customModule="JLChatViewController" customModuleProvider="target">
+                                                    <rect key="frame" x="365" y="5" width="200" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="A6g-x4-9gK"/>
+                                                        <constraint firstAttribute="width" constant="200" id="iRQ-sO-bFx"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="NO"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="useBubbleForm" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoN-dW-mw5">
+                                                    <rect key="frame" x="565" y="175" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="KFt-Cj-MC5"/>
+                                                        <constraint firstAttribute="height" constant="30" id="xEU-AS-6T0"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i8D-Zd-qlH" firstAttribute="leading" secondItem="ArP-0h-SnW" secondAttribute="trailing" constant="-35" id="8De-09-vNW"/>
+                                                <constraint firstItem="i8D-Zd-qlH" firstAttribute="top" secondItem="Ts3-4O-FKN" secondAttribute="top" constant="5" id="FCW-PY-k7w"/>
+                                                <constraint firstAttribute="trailing" secondItem="PoN-dW-mw5" secondAttribute="trailing" constant="5" id="NFE-4s-DkJ"/>
+                                                <constraint firstItem="PoN-dW-mw5" firstAttribute="bottom" secondItem="i8D-Zd-qlH" secondAttribute="bottom" id="Qso-vQ-kxn"/>
+                                                <constraint firstAttribute="bottom" secondItem="PoN-dW-mw5" secondAttribute="bottom" constant="2" id="TSz-hj-amm"/>
+                                                <constraint firstItem="PoN-dW-mw5" firstAttribute="leading" secondItem="i8D-Zd-qlH" secondAttribute="trailing" id="fn7-Fk-qaQ"/>
+                                                <constraint firstItem="ArP-0h-SnW" firstAttribute="centerY" secondItem="i8D-Zd-qlH" secondAttribute="centerY" id="qLF-W6-1Hi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="errorButton" destination="ArP-0h-SnW" id="56B-U6-CoF"/>
+                                            <outlet property="errorButtonDist" destination="8De-09-vNW" id="iYR-rG-1Fr"/>
+                                            <outlet property="imageDistToSide" destination="NFE-4s-DkJ" id="bRe-gj-UH8"/>
+                                            <outlet property="messageImageView" destination="i8D-Zd-qlH" id="HF8-p3-XWd"/>
+                                            <outlet property="senderImageBottomToBubbleBottom" destination="Qso-vQ-kxn" id="7uB-tD-mWg"/>
+                                            <outlet property="senderImageToBubble" destination="fn7-Fk-qaQ" id="dub-oj-xV2"/>
+                                            <outlet property="senderImageView" destination="PoN-dW-mw5" id="yPn-g0-CUJ"/>
+                                            <outlet property="senderImageViewWidth" destination="KFt-Cj-MC5" id="7BC-M5-xIW"/>
+                                            <outlet property="senderImageViewheight" destination="xEU-AS-6T0" id="SVb-A6-Rzx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmD-8n-R1D">
+                                <rect key="frame" x="0.0" y="1616" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="FBY-ZW-t6a"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ohk-a9-kUi"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="az4-8o-DuR" customClass="JLChatToolBar" customModule="JLChatViewController" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1656" width="600" height="44"/>
+                                <items/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="az4-8o-DuR" secondAttribute="trailing" id="0Ki-3m-cpJ"/>
+                            <constraint firstItem="ClK-45-d4b" firstAttribute="top" secondItem="SuC-3o-SFD" secondAttribute="top" id="1j6-Mh-Q8h"/>
+                            <constraint firstItem="HFQ-pb-X7W" firstAttribute="top" secondItem="az4-8o-DuR" secondAttribute="bottom" id="MwG-dL-tq8"/>
+                            <constraint firstItem="az4-8o-DuR" firstAttribute="top" secondItem="bmD-8n-R1D" secondAttribute="bottom" id="Ozp-Mt-Wef"/>
+                            <constraint firstItem="ClK-45-d4b" firstAttribute="leading" secondItem="SuC-3o-SFD" secondAttribute="leading" id="RZS-mC-VgT"/>
+                            <constraint firstItem="az4-8o-DuR" firstAttribute="leading" secondItem="SuC-3o-SFD" secondAttribute="leading" id="cPt-w4-Kmj"/>
+                            <constraint firstAttribute="trailing" secondItem="ClK-45-d4b" secondAttribute="trailing" id="i8C-0n-Gbo"/>
+                            <constraint firstItem="bmD-8n-R1D" firstAttribute="leading" secondItem="SuC-3o-SFD" secondAttribute="leading" id="ifp-91-P6P"/>
+                            <constraint firstItem="HFQ-pb-X7W" firstAttribute="top" secondItem="ClK-45-d4b" secondAttribute="bottom" id="nSs-OF-IcO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="U4x-G5-qJF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1700"/>
+                    <connections>
+                        <outlet property="chatTableView" destination="ClK-45-d4b" id="5Pl-6q-aUx"/>
+                        <outlet property="chatTableViewDistToBottom" destination="nSs-OF-IcO" id="BoN-hA-7Pe"/>
+                        <outlet property="toolBar" destination="az4-8o-DuR" id="ztP-w7-yRW"/>
+                        <outlet property="toolBarDistToBottom" destination="MwG-dL-tq8" id="ip3-Tc-vgx"/>
+                        <outlet property="userTypingDistToToolBar" destination="Ozp-Mt-Wef" id="r3y-PH-7vM"/>
+                        <outlet property="userTypingView" destination="bmD-8n-R1D" id="kAM-Hu-6VE"/>
+                        <outlet property="userTypingViewHeight" destination="Ohk-a9-kUi" id="9ap-3P-LEb"/>
+                        <outlet property="userTypingViewWidth" destination="FBY-ZW-t6a" id="cdL-93-HKt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="020-fu-fym" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458" y="85"/>
         </scene>
     </scenes>
     <resources>

@@ -9,13 +9,13 @@
 import UIKit
 
 
+//https://www.captechconsulting.com/blogs/performance-tuning-on-older-ios-devices
 
+//https://yalantis.com/blog/mastering-uikit-performance/
 
 
 public class JLTextMessageCell: JLChatMessageCell {
     
-    
-    @IBOutlet public weak var messageDateLabel: UILabel!
     
     @IBOutlet public weak var chatTextView: JLChatTextView!
     
@@ -24,6 +24,7 @@ public class JLTextMessageCell: JLChatMessageCell {
     @IBOutlet weak var errorToSendButton: UIButton!
     
 
+    @IBOutlet public weak var chatMessageLabel: JLChatLabel!
     // --- ---- ----- constraints
     
     
@@ -31,17 +32,39 @@ public class JLTextMessageCell: JLChatMessageCell {
     
     
     
-    //senderImage contraints
-    
+    //senderImage contraints - start
+    /**
+     This is a constraint of 'senderImageView' do not change its value manually.
+     
+     Changes on it are made by 'JLChatAppearance'
+     */
+
     @IBOutlet weak var senderImageHeight: NSLayoutConstraint!
-    
+    /**
+     This is a constraint of 'senderImageView' do not change its value manually.
+     
+     Changes on it are made by 'JLChatAppearance'
+     */
     @IBOutlet weak var senderImageWidth: NSLayoutConstraint!
+        
+    @IBOutlet weak var imageDistToSide: NSLayoutConstraint!
+    //senderImage contraints - end
     
+    //for know its being used because its seems that some last bug is resolved using a better way
+    @IBOutlet weak var bubbleMinWidth: NSLayoutConstraint!
+    @IBOutlet weak var bubbleMinHeight: NSLayoutConstraint!
     
+    /**
+     This a constraint used for aligment between sender`s image and bubble
+     */
+    @IBOutlet weak var senderImageBottomToBubbleBottom: NSLayoutConstraint!
+    /**
+     This a constraint used for aligment between sender`s image and bubble
+     */
+    @IBOutlet weak var senderImageToBubble: NSLayoutConstraint!
     
-    //some properties
+
     
-       
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -49,18 +72,18 @@ public class JLTextMessageCell: JLChatMessageCell {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    
     }
     
 
     override public func awakeFromNib() {
         super.awakeFromNib()
+        self.layoutIfNeeded()
         // Initialization code
     }
     
     override public func prepareForReuse() {
-        chatTextView.text = ""
-        senderImageView.image = nil
-        messageDateLabel.text = nil
+        //senderImageView.image = nil
         hideErrorButton(false)
 
     }
@@ -71,51 +94,53 @@ public class JLTextMessageCell: JLChatMessageCell {
         // Configure the view for the selected state
     }
     
-    override public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
-    
-        self.chatTextView.text = message.text
+    public override func initCell(message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
+        super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         
-        senderImageView.image = message.senderImage
-        
-        if message.messageStatus == MessageSendStatus.ErrorToSend{
-            showErrorButton(false)
-        }
-        
-        
-        
-        if showDate{
-            self.messageDateLabel.text = message.generateStringFromDate()//"terca - 12/12/2015"
-        }
-        else{
-            messageDateLabel.text = nil
-        }
-        
-        //se a celula estiver sendo reutilizada nao configura essas coisas novamente
+        //If it is being reused do not configure these things again
         if cellAlreadyUsed == false{
             
             //self.transform = CGAffineTransformMakeScale(1, -1)//CGAffineTransformInvert(self.transform)
             
-            self.chatTextView.font = JLChatAppearence.chatFont
+            self.chatMessageLabel.font = JLChatAppearence.chatFont
+            
+            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, forState: UIControlState.Normal)
+            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, forState: UIControlState.Selected)
+            
             
             if isOutgoingMessage{
-                
-                self.chatTextView.createBallonForOugoingMessage(true)
+               //bubbleMinWidth.constant = JLChatAppearence.outgoingBubbleImage!.size.width
+                //bubbleMinHeight.constant = JLChatAppearence.outgoingBubbleImage!.size.height
                 
                 configAsOutgoingMessage()
             }
             else{
-                
-                self.chatTextView.createBallonForOugoingMessage(false)
+                //bubbleMinWidth.constant = JLChatAppearence.incomingBubbleImage!.size.width
+                //bubbleMinHeight.constant = JLChatAppearence.incomingBubbleImage!.size.height
                 
                 configAsIncomingMessage()
             }
+            
             cellAlreadyUsed = true
-
+            
         }
         
         
+        
+        self.chatMessageLabel.text = message.text
+        //self.chatMessageLabel.settAttributedText(message.text)
+
+        if let img = message.senderImage{
+            senderImageView.image = message.senderImage
+        }
+        
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
+            showErrorButton(false)
+        }
+
     }
     
+      
     
     override public func updateMessageStatus(message:JLMessage){
         
@@ -211,8 +236,7 @@ public class JLTextMessageCell: JLChatMessageCell {
         
         let longPress = UILongPressGestureRecognizer(target: self, action:#selector(JLTextMessageCell.longPressAction(_:)))
             
-        self.chatTextView.addGestureRecognizer(longPress)
-    
+        self.chatMessageLabel.addGestureRecognizer(longPress)
     }
     
     
@@ -220,8 +244,7 @@ public class JLTextMessageCell: JLChatMessageCell {
         
         if longPress.state == UIGestureRecognizerState.Began{
             
-            self.chatTextView.alpha = 0.5
-            
+            self.chatMessageLabel.alpha = 0.5
         }
         else if longPress.state == UIGestureRecognizerState.Ended{
             
@@ -229,7 +252,7 @@ public class JLTextMessageCell: JLChatMessageCell {
             
         }
         else if longPress.state == UIGestureRecognizerState.Cancelled || longPress.state == UIGestureRecognizerState.Failed{
-            self.chatTextView.alpha = 1
+            self.chatMessageLabel.alpha = 1
         }
         
     }
@@ -238,9 +261,9 @@ public class JLTextMessageCell: JLChatMessageCell {
     func showMenu(){
         self.becomeFirstResponder()
         
-        self.chatTextView.alpha = 1
+        self.chatMessageLabel.alpha = 1
         
-        let targetRectangle = self.chatTextView.frame
+        let targetRectangle = self.chatMessageLabel.frame
         
         UIMenuController.sharedMenuController().setTargetRect(targetRectangle, inView: self)
                 
@@ -264,19 +287,27 @@ public class JLTextMessageCell: JLChatMessageCell {
             
             self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
+            
+            //config the changes only if needs to show the sender image
+            senderImageBottomToBubbleBottom.constant = JLChatAppearence.vertivalDistBetweenImgBottom_And_BubbleBottom
+            senderImageToBubble.constant = JLChatAppearence.horizontalDistBetweenImg_And_Bubble
+            
         }
         else{
-            self.senderImageHeight.constant = 0
+            senderImageToBubble.constant = 5
+            imageDistToSide.constant = -30
             
-            self.senderImageWidth.constant = 0
+            //self.senderImageHeight.constant = 0
+            
+            //self.senderImageWidth.constant = 0
         }
         
-        self.chatTextView.textColor = JLChatAppearence.outGoingTextColor
-
+        self.chatMessageLabel.textColor = JLChatAppearence.outGoingTextColor
     }
     
     public override func configAsIncomingMessage(){
         if JLChatAppearence.showIncomingSenderImage{
+            
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
             self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
@@ -287,18 +318,24 @@ public class JLTextMessageCell: JLChatMessageCell {
             
             self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
+            //config the changes only if needs to show the sender image
+
+            senderImageBottomToBubbleBottom.constant = JLChatAppearence.vertivalDistBetweenImgBottom_And_BubbleBottom
+            senderImageToBubble.constant = JLChatAppearence.horizontalDistBetweenImg_And_Bubble
+
         }
         else{
-            self.senderImageHeight.constant = 0
+            //self.senderImageHeight.constant = 0
             
-            self.senderImageWidth.constant = 0
+            //self.senderImageWidth.constant = 0
+            senderImageToBubble.constant = 5
+            imageDistToSide.constant = -30
         }
         
         
-        self.chatTextView.textColor = JLChatAppearence.incomingTextColor
+        self.chatMessageLabel.textColor = JLChatAppearence.incomingTextColor
 
     }
-    
-    
+       
     
 }

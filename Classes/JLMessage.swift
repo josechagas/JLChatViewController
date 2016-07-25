@@ -67,6 +67,11 @@ public class JLMessage: NSObject {
     public private(set) var messageStatus:MessageSendStatus = MessageSendStatus.Sending
     
     /**
+     The message read status 
+     */
+    public var messageRead:Bool = true
+    
+    /**
      This is the initializer for the messages of messageKind = MessageKind.Text
      */
     public init(text:String,senderID:String,messageDate:NSDate,senderImage:UIImage?){

@@ -16,6 +16,11 @@
 		885FCC851C1C3E0D00896797 /* ProductMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885FCC841C1C3E0D00896797 /* ProductMessageCell.swift */; };
 		885FCC871C1C4E6B00896797 /* ProductMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885FCC861C1C4E6B00896797 /* ProductMessage.swift */; };
 		885FCC8C1C1C597900896797 /* IncomingProductMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 885FCC8B1C1C597900896797 /* IncomingProductMessageCell.xib */; };
+		8875AEE11D10D1DE00E230CC /* CustomChatDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8875AEE01D10D1DE00E230CC /* CustomChatDateView.xib */; };
+		8875AEE31D10D2DE00E230CC /* CustomChatDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875AEE21D10D2DE00E230CC /* CustomChatDateView.swift */; };
+		8884574E1D46128000544DDE /* CustomImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8884574D1D46128000544DDE /* CustomImagePickerController.swift */; };
+		88A423B91D1B62ED00A1E5FF /* UnreadMessHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A423B81D1B62ED00A1E5FF /* UnreadMessHeaderView.xib */; };
+		88A423BB1D1B63B700A1E5FF /* UnreadMessHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A423BA1D1B63B700A1E5FF /* UnreadMessHeaderView.swift */; };
 		88A6EA301C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A6EA2F1C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib */; };
 		88BEA0A31C15CF74003FCFAE /* ShowChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEA0A21C15CF74003FCFAE /* ShowChatViewController.swift */; };
 		9C34320A8FD37C8AE03B63C4 /* Pods_JLChatViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F21A60791F16912C74FBF19 /* Pods_JLChatViewController_Example.framework */; };
@@ -51,6 +56,11 @@
 		885FCC841C1C3E0D00896797 /* ProductMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMessageCell.swift; sourceTree = "<group>"; };
 		885FCC861C1C4E6B00896797 /* ProductMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMessage.swift; sourceTree = "<group>"; };
 		885FCC8B1C1C597900896797 /* IncomingProductMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomingProductMessageCell.xib; sourceTree = "<group>"; };
+		8875AEE01D10D1DE00E230CC /* CustomChatDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomChatDateView.xib; sourceTree = "<group>"; };
+		8875AEE21D10D2DE00E230CC /* CustomChatDateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomChatDateView.swift; sourceTree = "<group>"; };
+		8884574D1D46128000544DDE /* CustomImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImagePickerController.swift; sourceTree = "<group>"; };
+		88A423B81D1B62ED00A1E5FF /* UnreadMessHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnreadMessHeaderView.xib; sourceTree = "<group>"; };
+		88A423BA1D1B63B700A1E5FF /* UnreadMessHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadMessHeaderView.swift; sourceTree = "<group>"; };
 		88A6EA2F1C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutgoingProductMessageCell.xib; sourceTree = "<group>"; };
 		88BEA0951C15B1E3003FCFAE /* JLChatViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JLChatViewController.framework; path = "Pods/../build/Debug-iphoneos/JLChatViewController.framework"; sourceTree = "<group>"; };
 		88BEA0971C15B26E003FCFAE /* JLChatViewController_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController_Example-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -112,6 +122,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				88BEA0A21C15CF74003FCFAE /* ShowChatViewController.swift */,
 				607FACD71AFB9204008FA782 /* MyViewController.swift */,
+				8884574D1D46128000544DDE /* CustomImagePickerController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -175,6 +186,10 @@
 				88A6EA2F1C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib */,
 				885FCC841C1C3E0D00896797 /* ProductMessageCell.swift */,
 				885FCC8B1C1C597900896797 /* IncomingProductMessageCell.xib */,
+				8875AEE01D10D1DE00E230CC /* CustomChatDateView.xib */,
+				8875AEE21D10D2DE00E230CC /* CustomChatDateView.swift */,
+				88A423B81D1B62ED00A1E5FF /* UnreadMessHeaderView.xib */,
+				88A423BA1D1B63B700A1E5FF /* UnreadMessHeaderView.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -286,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				88A423B91D1B62ED00A1E5FF /* UnreadMessHeaderView.xib in Resources */,
+				8875AEE11D10D1DE00E230CC /* CustomChatDateView.xib in Resources */,
 				88A6EA301C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib in Resources */,
 				885FCC8C1C1C597900896797 /* IncomingProductMessageCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
@@ -401,7 +418,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* MyViewController.swift in Sources */,
+				8875AEE31D10D2DE00E230CC /* CustomChatDateView.swift in Sources */,
 				885FCC871C1C4E6B00896797 /* ProductMessage.swift in Sources */,
+				88A423BB1D1B63B700A1E5FF /* UnreadMessHeaderView.swift in Sources */,
+				8884574E1D46128000544DDE /* CustomImagePickerController.swift in Sources */,
 				885FCC851C1C3E0D00896797 /* ProductMessageCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				88BEA0A31C15CF74003FCFAE /* ShowChatViewController.swift in Sources */,

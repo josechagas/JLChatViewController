@@ -31,11 +31,23 @@ public protocol ToolBarFrameDelegate{
 
 
 
-public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
+public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate,JLCustomTextViewSizeDelegate {
     
     override public var frame:CGRect{
         didSet{
             toolBarFrameDelegate?.haveToUpdateInsetsBottom(keyBoadHeight + self.frame.height,scrollToBottom: false)
+        }
+    }
+
+    /**
+     This is used to control the max possible height the tool bar based on device dimensions, its to avoid the toolbar to get all screen
+     */
+    private var maxAllowedHeight:CGFloat{
+        get{
+            let screenRect = UIScreen.mainScreen().bounds
+            let actualAspectRatio = screenRect.size.height/screenRect.size.width
+            let value = (screenRect.size.height - self.keyBoadHeight)/4
+            return value
         }
     }
     
@@ -52,7 +64,11 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     public var toolBarDelegate:ChatToolBarDelegate?
     
-    public var toolBarFrameDelegate:ToolBarFrameDelegate?
+    public var toolBarFrameDelegate:ToolBarFrameDelegate?{
+        didSet{
+            toolBarFrameDelegate?.haveToUpdateInsetsBottom(keyBoadHeight + self.frame.height,scrollToBottom: false)
+        }
+    }
     
     private var lastToolBarHeight:CGFloat = 0
     
@@ -60,6 +76,7 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         self.addSubViews()//add subview into toolbar
         self.addButtonsActions()//add buttons action to call delegate
         
@@ -68,7 +85,6 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         addObserver()
     }
 
-    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addSubViews()//add subview into toolbar
@@ -83,9 +99,6 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     //MARK: - Frame change delegate
     
     override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        
-        
-        
         
         if keyPath == "center"{
             
@@ -178,26 +191,51 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     //MARK: - TextView delegate
     
     public func textViewDidBeginEditing(textView: UITextView) {
-        self.rightButton.enabled = self.inputText.thereIsSomeText()
+        self.rightButton.enabled = self.inputText.thereIsSomeText() || self.inputText.fileAddedState
     }
     
     public func textViewDidChange(textView: UITextView) {
         
-        self.rightButton.enabled = self.inputText.thereIsSomeText()
+        self.rightButton.enabled = self.inputText.thereIsSomeText() || self.inputText.fileAddedState
         
+        if !self.inputText.thereIsSomeChar(){
+            self.inputText.resetTextView()
+        }
     }
     
     public func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        
-        if self.frame.height >= 196 && !self.inputText.scrollEnabled{
-            
-            self.inputText.scrollEnabled = true
-            
+        if inputText.contentSize.height >= maxAllowedHeight{
+            inputText.scrollEnabled = true
+            inputText.frame.size = CGSize(width: inputText.frame.width, height: inputText.frame.height)
         }
+        else{
+            inputText.frame.size = CGSize(width: inputText.frame.width, height: inputText.contentSize.height)
+            inputText.scrollEnabled = false
+        }
+        
         return true
         
     }
     
+    //MARK: - JLCustomSizeDelegate
+    func haveToUpdateSize(customTextView: JLCustomTextView, suggestedSize: CGSize) -> CGSize {
+        var newSize:CGSize! = suggestedSize
+        
+        if customTextView.scrollEnabled{
+            newSize = CGSize(width: suggestedSize.width, height: self.inputText.frame.height)
+        }
+        else{
+            if suggestedSize.height >= maxAllowedHeight{
+                customTextView.scrollEnabled = true
+                newSize = CGSize(width: suggestedSize.width, height: self.inputText.contentSize.height)
+            }
+            else{
+                self.inputText.scrollEnabled = false
+            }
+
+        }
+        return suggestedSize
+    }
     
     
     //MARK: - File Delegate methods
@@ -355,8 +393,8 @@ public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         inputText.font = JLChatAppearence.chatFont
         inputText.scrollEnabled = false
         inputText.fileDelegate = self
+        inputText.sizeDelegate = self
         inputText.translatesAutoresizingMaskIntoConstraints = false
-        
         
         self.addSubview(inputText)
         

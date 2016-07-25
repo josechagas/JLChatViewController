@@ -26,8 +26,7 @@ public class JLChatTextView: UITextView {
         // Drawing code
     }
     */
-        
-        
+    
     override public var text:String!{
         didSet{
             configInsets()
@@ -35,27 +34,27 @@ public class JLChatTextView: UITextView {
     }
     
     
-    private var longPress:UILongPressGestureRecognizer?
+    private var bubbleDrawed:Bool = false
 
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         initBallon()
-        self.layoutIfNeeded()
 
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //configInsets()
+        
         initBallon()
-        self.layoutIfNeeded()
-
+       
 
     }
     
-    
+       
     private func configInsets(){
+        
         self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
@@ -67,6 +66,7 @@ public class JLChatTextView: UITextView {
         
         bubbleImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:self.frame.size))
         bubbleImageView.translatesAutoresizingMaskIntoConstraints = false
+                
         self.addSubview(bubbleImageView)
         
         self.bubbleImageView.layer.zPosition = -1
@@ -89,21 +89,49 @@ public class JLChatTextView: UITextView {
         
     }
     
-    
-    
-    
-    func createBallonForOugoingMessage(isOutgoingMessage:Bool){
+    /**
+     Creates the ballon image for the corresponding textView
+     
+     - parameter isOutgoingMessage: true this is a out going message, false this is a incoming message
+     */
+    public func createBallonForMessage(IsThisOutGoingMessage isOutgoingMessage:Bool){
         
         if isOutgoingMessage{
             
             self.bubbleImageView.image = JLChatAppearence.outgoingBubbleImage
             
-            self.bubbleImageView.tintColor = JLChatAppearence.outgoingBubbleColor
+            //it was used when the BubbleImage used to have rendering mode imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            //self.bubbleImageView.tintColor = JLChatAppearence.outgoingBubbleColor
         }
         else{
             self.bubbleImageView.image = JLChatAppearence.incomingBubbleImage
             
-            self.bubbleImageView.tintColor = JLChatAppearence.incomingBubbleColor
+            //it was used when the BubbleImage used to have rendering mode imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            //self.bubbleImageView.tintColor = JLChatAppearence.incomingBubbleColor
+        }
+        
+    }
+
+    
+    /**
+     THIS IS NOT BEING USED
+     
+     Creates the ballon image for the corresponding textView
+     - parameter isOutgoingMessage: true this is a out going message, false this is a incoming message
+     */
+    public func createBallonForOugoingMessage(isOutgoingMessage:Bool){
+        
+        if isOutgoingMessage{
+            
+            self.bubbleImageView.image = JLChatAppearence.outgoingBubbleImage
+            //it was used when the BubbleImage used to have rendering mode imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            //self.bubbleImageView.tintColor = JLChatAppearence.outgoingBubbleColor
+        }
+        else{
+            self.bubbleImageView.image = JLChatAppearence.incomingBubbleImage
+            
+            //it was used when the BubbleImage used to have rendering mode imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            //self.bubbleImageView.tintColor = JLChatAppearence.incomingBubbleColor
         }
         
     }

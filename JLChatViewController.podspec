@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JLChatViewController"
-  s.version          = "1.2.3"
+  s.version          = "2.0.0"
   s.summary          = "JLChatViewController is a messages UI library that makes easy a creation of a chat."
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Classes/*.swift'
   s.resource_bundles = {
-'JLChatViewController' => ['Assets/**/*.{png,storyboard,xib}']
+'JLChatViewController' => ['Assets/**/*.{png,storyboard,xib}',]
 }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

@@ -81,40 +81,48 @@ public class JLChatImageView: UIImageView {
 
         return newImage
     }
-    
-    public func addImage(image:UIImage,mask:UIImage?){
+    /**
+     This method add an image on a JLChatImageView instance applying some mask on it
+     
+     - parameter image: the image you want to add.
+     - parameter mask: The image that you want to use like a mask, pass nil if you do not want to apply any mask on it.
+     */
+    public func addImage(image:UIImage,ApplyingMask mask:UIImage?){
         
         if useBubbleForm,let mask = mask{
-            let imageReference = cutImage(image).CGImage
-
             
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
+                let imageReference = self.cutImage(image).CGImage
+                //---- resizing the bubble mask
+                let hasAlpha = true
+                let scale: CGFloat = 0.0
+                
+                UIGraphicsBeginImageContextWithOptions(self.frame.size, !hasAlpha, scale)
+                mask.drawInRect(CGRect(origin: CGPointZero, size: self.frame.size))
+                
+                let resizedMask = UIGraphicsGetImageFromCurrentImageContext()
+                
+                let maskReference = resizedMask.CGImage
+                //-----
+                
+                
+                let imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
+                                                  CGImageGetHeight(maskReference),
+                                                  CGImageGetBitsPerComponent(maskReference),
+                                                  CGImageGetBitsPerPixel(maskReference),
+                                                  CGImageGetBytesPerRow(maskReference),
+                                                  CGImageGetDataProvider(maskReference), nil, true)
+                
+                let maskedReference = CGImageCreateWithMask(imageReference, imageMask)
+                UIGraphicsEndImageContext()
+                
+                let maskedImage = UIImage(CGImage:maskedReference!)
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.image = maskedImage
+                }
+            }
             
-            //---- resizing the bubble mask
-            let hasAlpha = true
-            let scale: CGFloat = 0.0
-            
-            UIGraphicsBeginImageContextWithOptions(self.frame.size, !hasAlpha, scale)
-            mask.drawInRect(CGRect(origin: CGPointZero, size: self.frame.size))
-            
-            let resizedMask = UIGraphicsGetImageFromCurrentImageContext()
-            
-            let maskReference = resizedMask.CGImage
-            //-----
-            
-            
-            let imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
-                CGImageGetHeight(maskReference),
-                CGImageGetBitsPerComponent(maskReference),
-                CGImageGetBitsPerPixel(maskReference),
-                CGImageGetBytesPerRow(maskReference),
-                CGImageGetDataProvider(maskReference), nil, true)
-            
-            let maskedReference = CGImageCreateWithMask(imageReference, imageMask)
-            
-            let maskedImage = UIImage(CGImage:maskedReference!)
-            
-            self.image = maskedImage
-
         }
         else{
             self.image = image

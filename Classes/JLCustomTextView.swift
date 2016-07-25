@@ -9,7 +9,9 @@
 import UIKit
 //import QuartzCore
 
-
+/**
+ A delegate that notifies when a file is added or removed
+ */
 protocol FileDelegate{
     
     func fileAdded()
@@ -17,6 +19,10 @@ protocol FileDelegate{
     func fileRemoved()
 }
 
+
+protocol JLCustomTextViewSizeDelegate{
+    func haveToUpdateSize(customTextView:JLCustomTextView,suggestedSize:CGSize)->CGSize
+}
 
 public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
 
@@ -42,7 +48,7 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
 
    
     var fileDelegate:FileDelegate? //a delegate to notify when some file is added to it
-    
+    var sizeDelegate:JLCustomTextViewSizeDelegate?
     
     override public var text:String!{
         didSet{
@@ -69,7 +75,6 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
         
         self.initFileIndicator()
 
-        
         self.registerTextViewNotifications()
         
         self.layoutIfNeeded()
@@ -92,6 +97,14 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
 
     }
     
+    public override func intrinsicContentSize() -> CGSize {
+        
+        //if let sizeDelegate = sizeDelegate{
+        //    return sizeDelegate.haveToUpdateSize(self,suggestedSize: super.intrinsicContentSize())
+        //}
+        return super.intrinsicContentSize()
+        
+    }
     
     private func configCornerRadius(){
         
@@ -106,7 +119,10 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
     
     
     /**
-    Use this method for you know if there is some text
+    Use this method for you know if there is some text.
+    
+    If you want to see if there is some character including \n for example use thereIsSomeChar() instead
+     
     - returns : true if there is some text and false if there is not text
     */
     public func thereIsSomeText()->Bool{
@@ -118,6 +134,14 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
         }
         
         return false
+    }
+    
+    /**
+     Use this method for you know if there is some character.
+     - returns : true if there is some character and false if there is not
+     */
+    public func thereIsSomeChar()->Bool{
+        return self.text.characters.count > 0
     }
     
     /**
@@ -326,7 +350,7 @@ public class JLCustomTextView: UITextView,FileIndicatorViewDelegate {
     
     func didChangeText(notification:NSNotification){
                         
-        if thereIsSomeText(){
+        if thereIsSomeChar(){
             showPlaceHolder(false)
         }
         else{

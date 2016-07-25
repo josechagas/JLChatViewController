@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UnreadMessHeaderView" customModule="JLChatViewController_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yrs-oy-gta">
+                    <rect key="frame" x="10" y="0.0" width="580" height="30"/>
+                    <color key="backgroundColor" red="0.93915353060471973" green="0.93915353060471973" blue="0.93915353060471973" alpha="1" colorSpace="calibratedRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.MasksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Message not read" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vXu-Bd-fQb">
+                    <rect key="frame" x="237.5" y="4" width="126" height="21"/>
+                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Yrs-oy-gta" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="5L2-Dc-XWm"/>
+                <constraint firstAttribute="bottom" secondItem="Yrs-oy-gta" secondAttribute="bottom" id="D7P-NO-rIG"/>
+                <constraint firstItem="Yrs-oy-gta" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Eou-k6-uCa"/>
+                <constraint firstAttribute="trailing" secondItem="Yrs-oy-gta" secondAttribute="trailing" constant="10" id="IWL-eb-e7Z"/>
+                <constraint firstAttribute="bottom" secondItem="vXu-Bd-fQb" secondAttribute="bottom" constant="5" id="fTi-LU-cdd"/>
+                <constraint firstItem="vXu-Bd-fQb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="gwq-9I-x9C"/>
+                <constraint firstItem="vXu-Bd-fQb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mEl-W0-HiG"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="numberOfMessLabel" destination="vXu-Bd-fQb" id="76I-0E-eGm"/>
+            </connections>
+            <point key="canvasLocation" x="190" y="262"/>
+        </view>
+    </objects>
+</document>

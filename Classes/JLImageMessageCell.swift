@@ -20,7 +20,6 @@ public class JLImageMessageCell: JLChatMessageCell {
     */
     @IBOutlet public weak var senderImageView: UIImageView!
     
-    @IBOutlet public weak var messageDateLabel: UILabel!
 
     /**
      The button that indicates that the message status is 'MessageSendStatus.ErrorToSend'
@@ -49,9 +48,19 @@ public class JLImageMessageCell: JLChatMessageCell {
      */
     @IBOutlet weak var senderImageViewWidth: NSLayoutConstraint!
     
+    /**
+     Image dist to right or left side of superview do not change its value manually
+     Changes on it are made on config methods of this class
+     */
+    @IBOutlet weak var imageDistToSide: NSLayoutConstraint!
     
     
+    @IBOutlet weak var senderImageBottomToBubbleBottom: NSLayoutConstraint!
+    @IBOutlet weak var senderImageToBubble: NSLayoutConstraint!
     
+    
+    //This is a value to garantee that we will not mask the same image twice for the same cell
+    private var usedImageIdentifier:Int = 0
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -59,9 +68,8 @@ public class JLImageMessageCell: JLChatMessageCell {
     }
     
     override public func prepareForReuse() {
-        messageImageView.image = nil
-        senderImageView.image = nil
-        messageDateLabel.text = nil
+        //messageImageView.image = nil
+        //senderImageView.image = nil
         self.hideErrorButton(false)
 
     }
@@ -72,17 +80,41 @@ public class JLImageMessageCell: JLChatMessageCell {
         // Configure the view for the selected state
     }
     
-      
     
-    override public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
+    public override func initCell(message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         
-        super.initCell(message, thisIsNewMessage: thisIsNewMessage, showDate: showDate, isOutgoingMessage: isOutgoingMessage)
+        super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         
-        senderImageView.image = message.senderImage
+        //If it is being reused do not configure these things again
+        if cellAlreadyUsed == false{
+            
+            
+            
+            self.errorButton.setImage(JLChatAppearence.normalStateErrorButtonImage, forState: UIControlState.Normal)
+            self.errorButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, forState: UIControlState.Selected)
+            
+            if isOutgoingMessage{
+                configAsOutgoingMessage()
+            }
+            else{
+                configAsIncomingMessage()
+            }
+            
+            cellAlreadyUsed = true
+            
+        }
         
+        
+        if let img = message.senderImage{
+            senderImageView.image = message.senderImage
+        }
         
         if let image = message.relatedImage{
-            self.addImage(image)
+            //put it on bubble form and add
+            if !self.cellAlreadyUsed || usedImageIdentifier != image.hashValue{
+                usedImageIdentifier = image.hashValue
+                self.addImage(image)
+            }
         }
         else{
             self.achiveLoadingMode()
@@ -90,30 +122,14 @@ public class JLImageMessageCell: JLChatMessageCell {
         
         
         
-
+        
         if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(false)
         }
-               
-        if showDate{
-            self.messageDateLabel.text = message.generateStringFromDate()
-        }
-        else{
-            messageDateLabel.text = nil
-        }
-        
-        if cellAlreadyUsed == false{
-            if isOutgoingMessage{
-                configAsOutgoingMessage()
-            }
-            else{
-                configAsIncomingMessage()
-            }
-            cellAlreadyUsed = true
 
-        }
-        
     }
+    
+ 
     /**
      Use this method to add the image into 'messageImageView'
     */
@@ -122,7 +138,7 @@ public class JLImageMessageCell: JLChatMessageCell {
         
         let mask = self.isOutgoingMessage ? JLChatAppearence.outgoingBubbleImageMask : JLChatAppearence.incomingBubbleImageMask
         
-        self.messageImageView.addImage(image, mask: mask)
+        self.messageImageView.addImage(image, ApplyingMask: mask)
         
         self.messageImageView.loadActivity.stopAnimating()
         
@@ -131,9 +147,10 @@ public class JLImageMessageCell: JLChatMessageCell {
      If the related image is not loaded and you are downloading it you can call this method for the user see that its been loaded, but by default if the 'JLMessage' parameter of method 'initCell' have its image  equal to nil this method is called.
     */
     public func achiveLoadingMode(){
-        self.messageImageView.image = isOutgoingMessage ? JLChatAppearence.outgoingBubbleImage : JLChatAppearence.incomingBubbleImage
+        self.messageImageView.image = isOutgoingMessage ? JLChatAppearence.outgoingBubbleLoadingImage : JLChatAppearence.incomingBubbleLoadingImage
         
-        self.messageImageView.tintColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
+        
+        //self.messageImageView.tintColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
         
         self.messageImageView.loadActivity.startAnimating()
     }
@@ -149,7 +166,6 @@ public class JLImageMessageCell: JLChatMessageCell {
         }
         else{
             self.hideErrorButton(true)
-
         }
         
     }
@@ -272,17 +288,24 @@ public class JLImageMessageCell: JLChatMessageCell {
         if JLChatAppearence.showIncomingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
+            self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
+            
             self.senderImageViewheight.constant = JLChatAppearence.senderImageSize.height
             
             self.senderImageViewWidth.constant = JLChatAppearence.senderImageSize.width
             
             self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
+            senderImageBottomToBubbleBottom.constant = JLChatAppearence.vertivalDistBetweenImgBottom_And_BubbleBottom
+            senderImageToBubble.constant = JLChatAppearence.horizontalDistBetweenImg_And_Bubble
+            
         }
         else{
-            self.senderImageViewWidth.constant = 0
+            //self.senderImageViewWidth.constant = 0
             
-            self.senderImageViewWidth.constant = 0
+            //self.senderImageViewWidth.constant = 0
+            senderImageToBubble.constant = 5
+            imageDistToSide.constant = -30
         }
 
     }
@@ -291,17 +314,24 @@ public class JLImageMessageCell: JLChatMessageCell {
         if JLChatAppearence.showOutgoingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
+            self.senderImageView.image = JLChatAppearence.senderImageDefaultImage
+            
             self.senderImageViewheight.constant = JLChatAppearence.senderImageSize.height
             
             self.senderImageViewWidth.constant = JLChatAppearence.senderImageSize.width
             
             self.senderImageView.layer.cornerRadius = JLChatAppearence.senderImageCornerRadius
             
+            senderImageBottomToBubbleBottom.constant = JLChatAppearence.vertivalDistBetweenImgBottom_And_BubbleBottom
+            senderImageToBubble.constant = JLChatAppearence.horizontalDistBetweenImg_And_Bubble
+            
         }
         else{
-            self.senderImageViewWidth.constant = 0
+            //self.senderImageViewWidth.constant = 0
             
-            self.senderImageViewWidth.constant = 0
+            //self.senderImageViewWidth.constant = 0
+            senderImageToBubble.constant = 5
+            imageDistToSide.constant = -30
         }
 
     }
