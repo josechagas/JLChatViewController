@@ -76,9 +76,15 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             }
             
             for i in 0..<20{
-                
-                let oldMessage = JLMessage(text: "teste velhas\(i)", senderID: ID.myID.rawValue, messageDate: NSDate(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 3*3600), senderImage: UIImage(named: "imagem"))
-                
+                let currentOldMessageDate = NSDate(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 3*3600)
+                let oldMessage = JLMessage(text: "teste velhas\(i)", senderID: ID.myID.rawValue, messageDate: currentOldMessageDate, senderImage: UIImage(named: "imagem"))
+                if i > 15{
+                    lastOlderDate = NSDate(timeIntervalSince1970: currentOldMessageDate.timeIntervalSince1970 - 1*3600)
+
+                }
+                else{
+                    lastOlderDate = NSDate(timeIntervalSince1970: currentOldMessageDate.timeIntervalSince1970 - 0.5*3600)
+                }
                 self.addOnMessagesBySectionOldMessage(oldMessage)
             }
             
@@ -790,7 +796,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             quant += 1
             
         }
-
+        
         self.chatTableView.addNewMessages(quant, changesHandler: {
             for message in newMessages{
                 self.addOnMessagesBySectionNewMessage(message)

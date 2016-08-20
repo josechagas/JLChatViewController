@@ -452,6 +452,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                 */
                 if let function = changesOnDataSourceHandler{
                     runBlockSinchronized({
+                        
                         function()
                         self.changesOnDataSourceHandler = nil
                         
@@ -460,7 +461,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                         
                         for section in (0..<newNumberOfSections).reverse(){
                             for row in (0..<self.dataSource!.tableView(self, numberOfRowsInSection: section)).reverse(){
-                                
+                         
                                 if newIndexPaths.count == self.quantOfNewMess{
                                     break
                                 }
@@ -490,6 +491,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                  */
                 self.reloadData()
                 
+                runAddNewMessagesCompletion(AfterDelay: 0.8)
+                
             }
             else{
                 //its on bottom and its scrolling in some way
@@ -512,11 +515,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                         
                         self.runNextJob(0.5)
                     }
-
+                    
                     self.reloadData()
                     
                 }
-
+                runAddNewMessagesCompletion(AfterDelay: 0.8)
             }
            
         }
@@ -539,13 +542,31 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
     }
     
+    
+    /**
+     This method executes the add new messages completion block
+     - parameter delay: a time interval to wait for execute the corresponding block
+     */
+    private func runAddNewMessagesCompletion(AfterDelay delay:Double){
+        let popTime = dispatch_time(DISPATCH_TIME_NOW,
+                                    Int64(delay * Double(NSEC_PER_SEC)))
+        dispatch_after(popTime, dispatch_get_main_queue()) {
+            if let completion = self.addNewMessageCompletion{
+                self.runBlockSinchronized({
+                    completion()
+                    self.addNewMessageCompletion = nil
+                })
+            }
+        }
+    }
+    
     /**
      Call this method to reload added messages when changes that might cause error on contentSize, cell height, for example : change orientation, app return from background
      */
     func reloadAddedMessages(){
         invalidateheightsForCells()
         self.enableFirstScrollToBottom = true
-        self.checkForUnreadMessages = true
+        //self.checkForUnreadMessages = true
         self.reloadData()
     }
     /**
@@ -594,12 +615,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      */
     private func tryToAddOldMessages(quant:Int,changesHandler:()->()){
         
-        
+        let lastOlderMess = self.chatDataSource?.jlChatMessageAtIndexPath(NSIndexPath(forRow: 0, inSection: 0))
         
         //contabiliza as novas mensagens
         runBlockSinchronized({
             self.isExecutingSomeOperation = true
             changesHandler()
+            
         })
 
         
@@ -609,11 +631,19 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         let lastNumberOfSections = self.numberOfSections
         
         if let visibleIndexPaths = self.indexPathsForVisibleRows where visibleIndexPaths.count > 0{
-            lastTopVisibleCellIndexPath = visibleIndexPaths[0]
+            lastTopVisibleCellIndexPath = visibleIndexPaths[2]
         }
         
-        self.reloadData()
+        let cell = self.cellForRowAtIndexPath(lastTopVisibleCellIndexPath!)
         
+        //cell?.setSelected(true, animated: false)
+        //self.selectRowAtIndexPath(lastTopVisibleCellIndexPath!, animated: false, scrollPosition: UITableViewScrollPosition.None)
+        
+        self.reloadData()
+        let newIndexPath = self.indexPathForCell(cell!)
+
+        self.scrollToRowAtIndexPath(newIndexPath!, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+        /*
         if let indexPath = lastTopVisibleCellIndexPath{
             
             var addedNewSection = false
@@ -628,6 +658,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                 if indexPath.section == 0 && indexPath.row == 0{
                     //its really on top waiting to end the load
                     let newSection = 0
+                
                     self.scrollToRowAtIndexPath(NSIndexPath(forRow: quant - 1, inSection: newSection), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
                 }
                 else{
@@ -646,7 +677,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                 }
             }
         }
-        
+        */
         //stop the activity because ended the load
         forceToFinishLoadingAnimation()
         
@@ -1149,9 +1180,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                     self.chatDelegate?.loadOlderMessages()
                 }
             }
-            
         }
-        
     }
     
     //MARK: - Delegate
@@ -1331,25 +1360,6 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
         let cell = self.chatDataSource!.jlChat(self, MessageCellForRowAtIndexPath: indexPath)
         
-        let lastSectionNumber = self.numberOfSections - 1
-
-        if (indexPath.row == self.numberOfRowsInSection(lastSectionNumber) - 1 && indexPath.section == lastSectionNumber){//last message
-            
-            if let completion = self.addNewMessageCompletion{
-                
-                //PROBLEMA
-                /**
-                 O erro e provocado aqui quando se muda a quantidade de sectons nesse metodo e ainda nao foi feito o reload completo da tabela, porque ele ainda nao carregou a mensagem nova
-                 */
-                dispatch_async(dispatch_get_main_queue(), {
-                    completion()
-                })
-                self.addNewMessageCompletion = nil
-                
-            }
-            
-        }
-
         return cell
     }
     
@@ -1473,33 +1483,35 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      */
     func scrollChatToBottom(animated:Bool,basedOnLastRow:Bool?){
         
-            scrollingToBottom = true
-            let chatContentheight = self.contentSize.height
-            let lastSectionNumber = numberOfSections - 1
-            if let basedOnLastRow = basedOnLastRow{
-                if basedOnLastRow{
-                    print("to bottom with scrollToRow")
-                    let indexPath = NSIndexPath(forRow:self.numberOfRowsInSection(lastSectionNumber) - 1, inSection:lastSectionNumber)
-                    self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
-                }
-                else{
-                    print("to bottom with scrollToRect")
-                    self.scrollRectToVisible(CGRect(x: 0, y: chatContentheight - 1, width: 1, height: 1), animated: animated)
-                }
+        //when scrolling with animated false, it should not be changed to true because this kind of scroll only hanpen on configuration moment.
+        scrollingToBottom = animated
+        
+        let chatContentheight = self.contentSize.height
+        let lastSectionNumber = numberOfSections - 1
+        if let basedOnLastRow = basedOnLastRow{
+            if basedOnLastRow{
+                print("to bottom with scrollToRow")
+                let indexPath = NSIndexPath(forRow:self.numberOfRowsInSection(lastSectionNumber) - 1, inSection:lastSectionNumber)
+                self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
             }
             else{
-                if chatContentheight - self.contentOffset.y <= self.bounds.size.height + 100{//se estiver no bottom ou a uma distancia de no maximo 100 do bottom
-                    print("to bottom with scrollToRect")
-                    self.scrollRectToVisible(CGRect(x: 0, y: chatContentheight - 1, width: 1, height: 1), animated: animated)
-                }
-                else{
-                    print("to bottom with scrollToRow")
-                    let indexPath = NSIndexPath(forRow:self.numberOfRowsInSection(lastSectionNumber) - 1, inSection: lastSectionNumber)
-                    self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
-                }
-                
+                print("to bottom with scrollToRect")
+                self.scrollRectToVisible(CGRect(x: 0, y: chatContentheight - 1, width: 1, height: 1), animated: animated)
             }
-
+        }
+        else{
+            if chatContentheight - self.contentOffset.y <= self.bounds.size.height + 100{//se estiver no bottom ou a uma distancia de no maximo 100 do bottom
+                print("to bottom with scrollToRect")
+                self.scrollRectToVisible(CGRect(x: 0, y: chatContentheight - 1, width: 1, height: 1), animated: animated)
+            }
+            else{
+                print("to bottom with scrollToRow")
+                let indexPath = NSIndexPath(forRow:self.numberOfRowsInSection(lastSectionNumber) - 1, inSection: lastSectionNumber)
+                self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+            }
+            
+        }
+        
         //}
         
     }
