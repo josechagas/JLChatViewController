@@ -94,6 +94,7 @@ public protocol JLChatMessagesMenuDelegate{
      */
     
     func jlChatMessageAtIndexPath(indexPath:NSIndexPath)->JLMessage?
+    
     /**
      Implement this method if your chat needs more than one section, the default section is the one for loading old messages indication
      
@@ -615,7 +616,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      */
     private func tryToAddOldMessages(quant:Int,changesHandler:()->()){
         
-        let lastOlderMess = self.chatDataSource?.jlChatMessageAtIndexPath(NSIndexPath(forRow: 0, inSection: 0))
+        
+        
+        var lastNumbOfSections:Int = 0
+        let sectionZeroQuant:Int = self.chatDataSource!.jlChatNumberOfMessagesInSection(0)
+        if let function = self.chatDataSource!.numberOfDateAndCustomSectionsInJLChat{
+            lastNumbOfSections = function(self)
+        }
         
         //contabiliza as novas mensagens
         runBlockSinchronized({
@@ -623,61 +630,34 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             changesHandler()
             
         })
+        
+        var actualNumbOfSections:Int = 0
+        if let function = self.chatDataSource!.numberOfDateAndCustomSectionsInJLChat{
+            actualNumbOfSections = function(self)
+        }
+        //this is the older section 0, before adding old messages
+        let lastSectionZeroQuant:Int = self.chatDataSource!.jlChatNumberOfMessagesInSection(actualNumbOfSections - lastNumbOfSections)
 
         
         enableFirstScrollToBottom = false// putting it to false because it will be true when you try to add old messages for the first time when you started the chat with zero messages
         
+    
         var lastTopVisibleCellIndexPath:NSIndexPath?
-        let lastNumberOfSections = self.numberOfSections
-        
         if let visibleIndexPaths = self.indexPathsForVisibleRows where visibleIndexPaths.count > 0{
-            lastTopVisibleCellIndexPath = visibleIndexPaths[2]
+            lastTopVisibleCellIndexPath = visibleIndexPaths[0]
         }
         
-        let cell = self.cellForRowAtIndexPath(lastTopVisibleCellIndexPath!)
-        
-        //cell?.setSelected(true, animated: false)
-        //self.selectRowAtIndexPath(lastTopVisibleCellIndexPath!, animated: false, scrollPosition: UITableViewScrollPosition.None)
         
         self.reloadData()
-        let newIndexPath = self.indexPathForCell(cell!)
 
-        self.scrollToRowAtIndexPath(newIndexPath!, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-        /*
         if let indexPath = lastTopVisibleCellIndexPath{
-            
-            var addedNewSection = false
-            var addedSectionsValue = 0
-            
-            if let numbOfSectionsFunc = self.chatDataSource!.numberOfDateAndCustomSectionsInJLChat{
-                addedSectionsValue = (numbOfSectionsFunc(self) - lastNumberOfSections)
-                addedNewSection = addedSectionsValue > 0
-            }
-            
-            if addedNewSection{
-                if indexPath.section == 0 && indexPath.row == 0{
-                    //its really on top waiting to end the load
-                    let newSection = 0
-                
-                    self.scrollToRowAtIndexPath(NSIndexPath(forRow: quant - 1, inSection: newSection), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-                }
-                else{
-                    let newSection = indexPath.section + addedSectionsValue
-                    self.scrollToRowAtIndexPath(NSIndexPath(forRow: indexPath.row, inSection: newSection), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-                }
-                
-            }
-            else{
-                if indexPath.section == 0{
-                    let newRow = indexPath.row + quant - 1/*the last added row*/
-                    self.scrollToRowAtIndexPath(NSIndexPath(forRow: newRow, inSection: indexPath.section), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-                }
-                else{
-                    self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-                }
-            }
+            let newSection = indexPath.section + (actualNumbOfSections - lastNumbOfSections)
+            let newRow = indexPath.section > 0 ? indexPath.row : indexPath.row + (lastSectionZeroQuant - sectionZeroQuant)
+
+            let lastTopCellNewIndexPath = NSIndexPath(forRow: newRow, inSection: newSection)
+
+            self.scrollToRowAtIndexPath(lastTopCellNewIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
         }
-        */
         //stop the activity because ended the load
         forceToFinishLoadingAnimation()
         

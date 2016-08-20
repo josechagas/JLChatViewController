@@ -124,11 +124,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "490147663.612052"
+            timestampString = "493386831.279667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "runNextJob(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -204,11 +204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "493384823.69013"
+            timestampString = "493386831.279667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "711"
-            endingLineNumber = "711"
+            startingLineNumber = "736"
+            endingLineNumber = "736"
             landmarkName = "JLChatTableView"
             landmarkType = "3">
          </BreakpointContent>
@@ -268,29 +268,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "493384823.69013"
+            timestampString = "493387131.55114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1166"
-            endingLineNumber = "1166"
-            landmarkName = "scrollViewDidEndDecelerating(_:)"
+            startingLineNumber = "654"
+            endingLineNumber = "654"
+            landmarkName = "tryToAddOldMessages(_:changesHandler:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "493384823.69013"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1173"
-            endingLineNumber = "1173"
-            landmarkName = "scrollViewDidEndDecelerating(_:)"
-            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JLChatViewController.JLChatTableView.(tryToAddOldMessages in _275935509D2B1155680CAEACC00C70A1) (Swift.Int, changesHandler : () -&gt; ()) -&gt; ()"
+                  moduleName = "JLChatViewController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
+                  timestampString = "493387134.798039"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "654"
+                  endingLineNumber = "654"
+                  offsetFromSymbolStart = "2736">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JLChatViewController.JLChatTableView.(tryToAddOldMessages in _275935509D2B1155680CAEACC00C70A1) (Swift.Int, changesHandler : () -&gt; ()) -&gt; ()"
+                  moduleName = "JLChatViewController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
+                  timestampString = "493387134.798137"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "654"
+                  endingLineNumber = "654"
+                  offsetFromSymbolStart = "2784">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
