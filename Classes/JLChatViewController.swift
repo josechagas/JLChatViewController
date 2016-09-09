@@ -110,6 +110,7 @@ public class JLChatViewController: UIViewController {
     
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        print("JLChatViewController received memory warning")
         // Dispose of any resources that can be recreated.
     }
     

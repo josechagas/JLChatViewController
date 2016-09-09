@@ -42,11 +42,19 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     
     //used only for the example
     func loadMessages(){
-        
+        var id = ID.myID.rawValue
+
         for i in 0..<20{
             
-            let newMessage = JLMessage(text: "teste \(i)", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
+            id = arc4random()%2 == 0 ? ID.myID.rawValue : ID.otherID.rawValue
             
+            let newMessage:JLMessage
+            if arc4random()%4 == 0{
+                newMessage = JLMessage(senderID: id, messageDate: NSDate(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil, relatedImage: UIImage(named: "imagem2"))
+            }
+            else{
+                newMessage = JLMessage(text: "teste \(i)", senderID: id, messageDate: NSDate(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil)
+            }
             if i > 17{
                 newMessage.messageRead = false
             }
@@ -54,7 +62,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             addOnMessagesBySectionNewMessage(newMessage)
         }
         
-        let newMessage = JLMessage(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: ID.myID.rawValue, messageDate: NSDate(), senderImage: UIImage(named: "imagem"))
+        let newMessage = JLMessage(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: id, messageDate: NSDate(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil)
         newMessage.messageRead = false
 
         addOnMessagesBySectionNewMessage(newMessage)
@@ -64,6 +72,8 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     func loadOldMessages(){
         
         self.chatTableView.addOldMessages(21) { 
+            
+            var id = ID.myID.rawValue
             
             var lastOlderDate:NSDate! = NSDate()
             if self.messagesBySection.count > 0{
@@ -76,8 +86,11 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             }
             
             for i in 0..<20{
+                
+                id = arc4random()%2 == 0 ? ID.myID.rawValue : ID.otherID.rawValue
+                
                 let currentOldMessageDate = NSDate(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 0.01*3600)
-                let oldMessage = JLMessage(text: "teste velhas\(i)", senderID: ID.myID.rawValue, messageDate: currentOldMessageDate, senderImage: UIImage(named: "imagem"))
+                let oldMessage = JLMessage(text: "teste velhas\(i)", senderID: id, messageDate: currentOldMessageDate, senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil)
                 if i > 15{
                     lastOlderDate = NSDate(timeIntervalSince1970: currentOldMessageDate.timeIntervalSince1970 - 1*3600)
 
@@ -88,7 +101,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
                 self.addOnMessagesBySectionOldMessage(oldMessage)
             }
             
-            let oldMessage = JLMessage(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: ID.myID.rawValue, messageDate: NSDate(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 3*3600), senderImage: UIImage(named: "imagem"))
+            let oldMessage = JLMessage(text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: id, messageDate: NSDate(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 3*3600), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil)
             
             self.addOnMessagesBySectionOldMessage(oldMessage)
             

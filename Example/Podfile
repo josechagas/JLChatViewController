@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'JLChatViewController_Example', :exclusive => true do
+target 'JLChatViewController_Example' do
   pod "JLChatViewController", :path => "../"
 end
 
-target 'JLChatViewController_Tests', :exclusive => true do
+target 'JLChatViewController_Tests' do
   pod "JLChatViewController", :path => "../"
 
   

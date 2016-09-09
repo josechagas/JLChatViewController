@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3F80CCB78C660A3A759AA3 /* Pods_JLChatViewController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0716F635DA9553B9FE56909 /* Pods_JLChatViewController_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* MyViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -23,8 +24,7 @@
 		88A423BB1D1B63B700A1E5FF /* UnreadMessHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A423BA1D1B63B700A1E5FF /* UnreadMessHeaderView.swift */; };
 		88A6EA301C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88A6EA2F1C1BB8F900A5CCDC /* OutgoingProductMessageCell.xib */; };
 		88BEA0A31C15CF74003FCFAE /* ShowChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEA0A21C15CF74003FCFAE /* ShowChatViewController.swift */; };
-		9C34320A8FD37C8AE03B63C4 /* Pods_JLChatViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F21A60791F16912C74FBF19 /* Pods_JLChatViewController_Example.framework */; };
-		CB965950BB7F5760E9F5913B /* Pods_JLChatViewController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3C2F04CF21F12CF5FFE7A1 /* Pods_JLChatViewController_Tests.framework */; };
+		C539FE3EF6848492768634B0 /* Pods_JLChatViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BCEFE411FF3198BE299346 /* Pods_JLChatViewController_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +39,11 @@
 
 /* Begin PBXFileReference section */
 		1681832145316BA46ECD4B37 /* JLChatViewController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JLChatViewController.podspec; path = ../JLChatViewController.podspec; sourceTree = "<group>"; };
-		178BE43CE6E3BC73FEA7DB58 /* Pods-JLChatViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		30189AD175C8A977EF2C24D5 /* Pods-JLChatViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4F21A60791F16912C74FBF19 /* Pods_JLChatViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B6364C5E2B911D21BD70135 /* Pods-JLChatViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		21B50CD16CB059B53919AA8F /* Pods-JLChatViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		242449AF1D131A8EFCA40253 /* Pods-JLChatViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		29120F05D419797D4F2F5FDC /* Pods-JLChatViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3276631E214AD391B6EF117D /* Pods-JLChatViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		44BCEFE411FF3198BE299346 /* Pods_JLChatViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* JLChatViewController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLChatViewController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +69,8 @@
 		88BEA09D1C15C16B003FCFAE /* JLChatViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JLChatViewController.framework; path = "Pods/../build/Debug-iphoneos/JLChatViewController.framework"; sourceTree = "<group>"; };
 		88BEA0A21C15CF74003FCFAE /* ShowChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowChatViewController.swift; sourceTree = "<group>"; };
 		96117721490FF23F6EE76C39 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D0716F635DA9553B9FE56909 /* Pods_JLChatViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E839DCBAA50769B9CB3DE20C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		EF3C2F04CF21F12CF5FFE7A1 /* Pods_JLChatViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EF907A4B315886C9BE176770 /* Pods-JLChatViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLChatViewController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C34320A8FD37C8AE03B63C4 /* Pods_JLChatViewController_Example.framework in Frameworks */,
+				C539FE3EF6848492768634B0 /* Pods_JLChatViewController_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,13 +86,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB965950BB7F5760E9F5913B /* Pods_JLChatViewController_Tests.framework in Frameworks */,
+				1F3F80CCB78C660A3A759AA3 /* Pods_JLChatViewController_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4040CAC61F5C56C9210C8EE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3276631E214AD391B6EF117D /* Pods-JLChatViewController_Example.debug.xcconfig */,
+				242449AF1D131A8EFCA40253 /* Pods-JLChatViewController_Example.release.xcconfig */,
+				29120F05D419797D4F2F5FDC /* Pods-JLChatViewController_Tests.debug.xcconfig */,
+				21B50CD16CB059B53919AA8F /* Pods-JLChatViewController_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +111,8 @@
 				607FACD21AFB9204008FA782 /* Example for JLChatViewController */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				8B0A3957FACF841E33689A75 /* Pods */,
 				71EDAC31ADEB04EE1A4C7DA2 /* Frameworks */,
+				4040CAC61F5C56C9210C8EE3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,8 +185,8 @@
 				88BEA09D1C15C16B003FCFAE /* JLChatViewController.framework */,
 				88BEA09B1C15B616003FCFAE /* JLChatViewController.framework */,
 				88BEA0951C15B1E3003FCFAE /* JLChatViewController.framework */,
-				4F21A60791F16912C74FBF19 /* Pods_JLChatViewController_Example.framework */,
-				EF3C2F04CF21F12CF5FFE7A1 /* Pods_JLChatViewController_Tests.framework */,
+				44BCEFE411FF3198BE299346 /* Pods_JLChatViewController_Example.framework */,
+				D0716F635DA9553B9FE56909 /* Pods_JLChatViewController_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,17 +213,6 @@
 			name = CustomMessages;
 			sourceTree = "<group>";
 		};
-		8B0A3957FACF841E33689A75 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				178BE43CE6E3BC73FEA7DB58 /* Pods-JLChatViewController_Example.debug.xcconfig */,
-				5B6364C5E2B911D21BD70135 /* Pods-JLChatViewController_Example.release.xcconfig */,
-				EF907A4B315886C9BE176770 /* Pods-JLChatViewController_Tests.debug.xcconfig */,
-				30189AD175C8A977EF2C24D5 /* Pods-JLChatViewController_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,12 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JLChatViewController_Example" */;
 			buildPhases = (
-				9081EBA914CC3B9C41459A8A /* Check Pods Manifest.lock */,
+				B7F475D0EB9765401FB3526D /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				0240A0162F6A6A9DDF39EABE /* Embed Pods Frameworks */,
-				F61857B433664EC56A158444 /* Copy Pods Resources */,
+				FC8A4528B955366151368A0B /* [CP] Embed Pods Frameworks */,
+				8580CF589EB66CDE659FF6CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,12 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JLChatViewController_Tests" */;
 			buildPhases = (
-				E07F8E12F379401E67B83C96 /* Check Pods Manifest.lock */,
+				38F7B8E0C49A4A98027797D6 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				08CC4CF0520D6E512F931EA5 /* Embed Pods Frameworks */,
-				84C5E9BFA4A0B262DB7358BC /* Copy Pods Resources */,
+				8EC28DF40DBC1BC6C8E0D099 /* [CP] Embed Pods Frameworks */,
+				44BBDFE69BD74ECD91E5AEE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,44 +320,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0240A0162F6A6A9DDF39EABE /* Embed Pods Frameworks */ = {
+		38F7B8E0C49A4A98027797D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		08CC4CF0520D6E512F931EA5 /* Embed Pods Frameworks */ = {
+		44BBDFE69BD74ECD91E5AEE1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84C5E9BFA4A0B262DB7358BC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,49 +350,64 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9081EBA914CC3B9C41459A8A /* Check Pods Manifest.lock */ = {
+		8580CF589EB66CDE659FF6CD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E07F8E12F379401E67B83C96 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F61857B433664EC56A158444 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EC28DF40DBC1BC6C8E0D099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLChatViewController_Tests/Pods-JLChatViewController_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7F475D0EB9765401FB3526D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC8A4528B955366151368A0B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLChatViewController_Example/Pods-JLChatViewController_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -550,7 +550,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 178BE43CE6E3BC73FEA7DB58 /* Pods-JLChatViewController_Example.debug.xcconfig */;
+			baseConfigurationReference = 3276631E214AD391B6EF117D /* Pods-JLChatViewController_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -567,7 +567,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B6364C5E2B911D21BD70135 /* Pods-JLChatViewController_Example.release.xcconfig */;
+			baseConfigurationReference = 242449AF1D131A8EFCA40253 /* Pods-JLChatViewController_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -583,7 +583,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF907A4B315886C9BE176770 /* Pods-JLChatViewController_Tests.debug.xcconfig */;
+			baseConfigurationReference = 29120F05D419797D4F2F5FDC /* Pods-JLChatViewController_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -601,7 +601,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30189AD175C8A977EF2C24D5 /* Pods-JLChatViewController_Tests.release.xcconfig */;
+			baseConfigurationReference = 21B50CD16CB059B53919AA8F /* Pods-JLChatViewController_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
