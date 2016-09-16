@@ -43,7 +43,6 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     //used only for the example
     func loadMessages(){
         var id = ID.myID.rawValue
-
         for i in 0..<20{
             
             id = arc4random()%2 == 0 ? ID.myID.rawValue : ID.otherID.rawValue

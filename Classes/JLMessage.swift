@@ -20,6 +20,7 @@ public enum MessageKind:Int{
 
 
 public enum MessageSendStatus:Int{
+    case Waiting = 0
     case Sent = 1
     case Sending = 2
     case ErrorToSend = 3
