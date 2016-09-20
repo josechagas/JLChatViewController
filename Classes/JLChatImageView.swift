@@ -29,6 +29,9 @@ public class JLChatImageView: UIImageView {
         }
     }
     
+    /**
+     This is an ActivityIndicator used to indicate some activity with this imageview, for example loading the respective image
+     */
     public var loadActivity:UIActivityIndicatorView!
 
     

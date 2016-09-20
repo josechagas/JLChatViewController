@@ -11,12 +11,13 @@ import JLChatViewController
 
 
 
-class ProductMessage: JLMessage {
+class ProductMessage: JLImageMessage {
 
     var productPrice:String?
     
+    var text:String!
     
-    init(senderID: String, messageDate: NSDate, senderImage: UIImage?,text:String,relatedImage: UIImage,productPrice:String?) {
+    init(senderID: String, messageDate: NSDate, senderImage: UIImage?,text:String!,relatedImage: UIImage,productPrice:String?) {
         super.init(senderID: senderID, messageDate: messageDate, senderImage: senderImage, relatedImage: relatedImage)
         
         self.text = text

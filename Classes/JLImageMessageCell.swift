@@ -107,7 +107,7 @@ public class JLImageMessageCell: JLChatMessageCell {
         
         senderImageView.image = message.senderImage
         
-        if let image = message.relatedImage{
+        if let image = (message as! JLImageMessage).relatedImage{
             //put it on bubble form and add
             if !self.cellAlreadyUsed || usedImageIdentifier != image.hashValue{
                 usedImageIdentifier = image.hashValue

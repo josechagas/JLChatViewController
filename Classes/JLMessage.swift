@@ -43,12 +43,12 @@ public class JLMessage: NSObject {
      The text of the message.
      
      */
-    public var text:String?
+    //public var text:String?
     
     /**
      The image of the message.
     */
-    public var relatedImage:UIImage?
+    //public var relatedImage:UIImage?
     
     /**
      The date that the message were sent.
@@ -72,14 +72,29 @@ public class JLMessage: NSObject {
      */
     public var messageRead:Bool = true
     
-    /**
-     This is the initializer for the messages of messageKind = MessageKind.Text
-     */
+    
+    
+    public init(senderID:String,messageDate:NSDate,senderImage:UIImage?){
+        
+        super.init()
+        
+        self.senderID = senderID
+        
+        self.senderImage = senderImage
+        
+        self.messageKind = MessageKind.Text
+        
+        self.messageDate = messageDate
+        
+    }
+    
+    
+    @available(*,deprecated,renamed="init(senderID:String,messageDate:NSDate,senderImage:UIImage?)",message="Use JLTextMessage class for messages that have some text")
     public init(text:String,senderID:String,messageDate:NSDate,senderImage:UIImage?){
         
         super.init()
         
-        self.text = text
+        //self.text = text
         
         self.senderID = senderID
         
@@ -94,6 +109,8 @@ public class JLMessage: NSObject {
     /**
      This is the initializer for the messages of messageKind = MessageKind.Image
      */
+    /*@available(*,deprecated,renamed="init(senderID:String,messageDate:NSDate,senderImage:UIImage?)",message="Use JLImageMessage class for messages that have some image as content")
+    
     public init(senderID:String,messageDate:NSDate,senderImage:UIImage?,relatedImage:UIImage?){
         
         super.init()
@@ -106,7 +123,7 @@ public class JLMessage: NSObject {
         
         self.messageDate = messageDate
         
-    }
+    }*/
     
     /**
      Use this method to update messageStatus.

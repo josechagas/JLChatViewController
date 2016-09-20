@@ -89,8 +89,8 @@ class ProductMessageCell: JLChatMessageCell {
         
         
         //let productMessage = message as! ProductMessage
-        self.nameLabel.text = message.text
-        self.productImageView.image = message.relatedImage
+        self.nameLabel.text = (message as! ProductMessage).text
+        self.productImageView.image = (message as! ProductMessage).relatedImage
         
         if let img = message.senderImage{
             self.senderImageView.image = img

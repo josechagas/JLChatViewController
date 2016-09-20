@@ -7,168 +7,172 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0356EC65DE98583CA985196FBCD0940D /* JLChatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AF5470A75E0A1E5D7EE178A03E14DC /* JLChatImageView.swift */; };
-		069D20125E76D3ED17091B2AE1A7E4F8 /* JLBundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40763BB5984B3DFC416483E3E0835D60 /* JLBundleController.swift */; };
+		110F50FEDCBA35DC3FB0D87D5E8BDEB6 /* JLUserTypingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6E0B4746161AF5C1F36C2DDCC2D9A93 /* JLUserTypingView.xib */; };
+		129786AFF82EDE30570E9F256FE5B9FF /* UserWriting__005.png in Resources */ = {isa = PBXBuildFile; fileRef = 3302EFC51080F06E7763CB0572B16D6E /* UserWriting__005.png */; };
+		12D0214B8B29FE47FCE3382205DEC4DB /* UserWriting__002.png in Resources */ = {isa = PBXBuildFile; fileRef = BA485F39677F23A4FA287F7B10B6F4DF /* UserWriting__002.png */; };
+		133F2CA8D938AC4D6891880EDF4C6621 /* JLChatViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A929C658AB6A860BFEFDEAC3882A2594 /* JLChatViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D79B7561736D62F8DFDFD9E349A74A5 /* UserWriting__008.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CED08F46CA37BD8FF3E7C146F0B6B3E /* UserWriting__008.png */; };
+		214FC747FD46AC1593A6AB67B2E5F993 /* bubble_min_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7DCFE5F0E22D45A6A6BB464C93F166 /* bubble_min_mask@2x.png */; };
+		2187435EB522138CFF6F648475CF1BF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
 		25613D6E798FA10D625F514EEAF04026 /* Pods-JLChatViewController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */; };
-		29EB8AA956B57616178DB7D102E3D815 /* JLCustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC31DA5193CDF16589F74FF7D6B0BB8C /* JLCustomTextView.swift */; };
-		32930E6F6BFE7BB25B266BBAECB60DE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		3373E388BED87DA3A91FA3D482900FCF /* JLImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C1E1FD3F45D66126C020BE09B15DB2 /* JLImageMessageCell.swift */; };
-		3810F1DA76CDAF3B06F86C69A3DFE9B6 /* JLChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E833C7F0A5962D5179AE8B02422916 /* JLChatTableView.swift */; };
-		3C98CB20FF7AC296DA401938E6183518 /* bubble_min_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 08EF6FF9A9FB74AD0BE4F04533A11B33 /* bubble_min_mask.png */; };
-		3D9A811C7FB4B349C644D65C0A430602 /* JLChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A720EC038DEB99043D84BAAA7F718 /* JLChatViewController.swift */; };
-		3E93AC95926E22FBCDA3121D194BA689 /* JLChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D923B14ED676E85079FF48C284139D2C /* JLChatMessageCell.swift */; };
-		45332088A67186D4008E2F9CA47ABAAE /* JLChatToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45571AF2EFC3D385232D18DFFABC2C99 /* JLChatToolBar.swift */; };
-		461C42450E30C558D7DC645D1895D688 /* bubble_min_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49EEE92444D71BBEE139A30FE8EE18BB /* bubble_min_incoming@3x.png */; };
-		47ED0C4535EC7BD18EB859270C63509D /* JLFileIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67F0B90F2D69A7A45C11D161607BD2A /* JLFileIndicatorView.swift */; };
-		4BBA088D05166AE799F693FB692141CB /* UserWriting__006.png in Resources */ = {isa = PBXBuildFile; fileRef = AB1B5F25895E7CE0127DDFC2E595148E /* UserWriting__006.png */; };
-		507BA5FF24CD1206F7B7ABCDC011D027 /* JLChatViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95490591604C9810440199FD72BD1401 /* JLChatViewController.bundle */; };
-		565DAADD5BF933FB6A967D69B59ED565 /* UserWriting__004.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC9DB9849486C842DF5CA1D34F6AA7C /* UserWriting__004.png */; };
-		648890801B88E8FA72A172F2B63584B4 /* JLChatLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0CAB94FE86650593153BA6E3CD179C /* JLChatLoadingView.xib */; };
-		65B98AF7973EE483C97AF27987D3E371 /* JLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B50D0AE7ABB8A1F844CE41EEBF5EC2 /* JLFile.swift */; };
-		662A5F8F3B7981D6622AD7EC85233BEF /* bubble_min_mask_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 7431D8B88950842E0F8E93C42F52BE50 /* bubble_min_mask_incoming.png */; };
-		6756643F8CD4760C904620B1DEE3A400 /* UserWriting__000.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCB920FC8A26A0023146D21E73897A0 /* UserWriting__000.png */; };
-		67A20E57B88AD656160516FAE24ADE4D /* JLUserTypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5CBB2A05BED1BE1A8E6ADAFF962A54 /* JLUserTypingView.swift */; };
-		704754FAF09B03ADC7496253E4ED253B /* JLMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E64E701A47DBA451FF54D12BD608155 /* JLMessage.swift */; };
+		293D3EBA4F760537297ADBF7FD199EB2 /* UserWriting__001.png in Resources */ = {isa = PBXBuildFile; fileRef = ED646581D31B776AA778C469E4A26B7A /* UserWriting__001.png */; };
+		31EEAB85A1C8B4767742648ED9494197 /* JLTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDAE7AA2E3B2C5686BD12D849F1213 /* JLTextMessage.swift */; };
+		3295F785BBC86A8E876ECCE289FE3DDF /* JLChatLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736E34FB09F42EFF451E6598401AB2EA /* JLChatLabel.swift */; };
+		343049257D2A7BD38878C2468955B2CD /* UserWriting__007.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F5CB34BF0CECE925BAA5925CF537B5 /* UserWriting__007.png */; };
+		34396567FD205D439EF0AAB7C4B3E281 /* bubble_min_mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5998D89BC3D2B5E64FBB0559257F809 /* bubble_min_mask@3x.png */; };
+		35BEB298EA93B87BA2B6DA5BF643BD42 /* bubble_min_mask_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D59C81780435310C63FDEEA3D8033CD /* bubble_min_mask_incoming.png */; };
+		38632E33551C399570EC2B27656CFCC9 /* UserWriting__004.png in Resources */ = {isa = PBXBuildFile; fileRef = 58D1ED5D4DFA18673B7FB77AABC0A6E7 /* UserWriting__004.png */; };
+		414C868C3690B9ABC1FE97F7A5785E88 /* JLChatToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01DE25511D86BD0CDCEA315F618219C /* JLChatToolBar.swift */; };
+		460494E80DE12982E8CB3E9F7BDF2278 /* JLUserTypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA0D51ADCEAD2988AED78FE047EB6FC /* JLUserTypingView.swift */; };
+		46C7B5D979FD23CEAEC6961F98C5FA8C /* UserWriting__009.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDC4EC00299D57F03AF4DA05AFF0608 /* UserWriting__009.png */; };
+		4F5FBD18F2889DE98407842DBC0FB6D3 /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD9DB0C2CFFBE678ED6479A629E41DA /* bubble_min.png */; };
+		505F068F6A188FC4EE1A2EC002E1B12F /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E96FBA53B290C89B97ED99752F875988 /* bubble_min@2x.png */; };
+		559D5E94AAEEFD1F8939A306468DE5D9 /* bubble_min_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 8DA2129257AD1766A05B43434C683065 /* bubble_min_incoming.png */; };
+		5625C26A06735CF41D6B84E715E08AC7 /* UserWriting__000.png in Resources */ = {isa = PBXBuildFile; fileRef = 55740EB2C4D8CBBF38C8DB31175E280B /* UserWriting__000.png */; };
+		578B95C75415FF75636E8A977394C687 /* bubble_min_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E7D0D82E1B84372651CA38D2BE1EAA /* bubble_min_mask.png */; };
+		583C92E414CDB3EB5AC33EDDC024A557 /* bubble_min_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C642A231C8E60AB483F1BE59355CA4 /* bubble_min_incoming@3x.png */; };
+		5A18C2E31D45B1CFC365A7654C38BBAD /* bubble_min_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4024D61C3540A1F37B64CC870D6B7506 /* bubble_min_incoming@2x.png */; };
+		5A8930BB91054B90E00C9F8EBE7F6605 /* JLMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793A4747998772B2FDA5DFF202B63384 /* JLMessage.swift */; };
+		5BF055B890F05E33B06904976633A312 /* JLFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC75D5BDC2DB254225E8BC4CBB42F4 /* JLFile.swift */; };
+		631BB3E24408E5CA829E7CFA70D711BD /* JLImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E800AF4B09D62ED2EB5443EBE9821D5F /* JLImageMessageCell.swift */; };
+		6A5E21B9929A7E6A8F36333119CEC78A /* UserWriting__003.png in Resources */ = {isa = PBXBuildFile; fileRef = B4FE31A45BA66F921CF45466DCC7FEB8 /* UserWriting__003.png */; };
+		6D9F47F151854DC85A4EA8C2FF1B3791 /* JLChatLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD8531B00728C449E305B8DB2EA046A /* JLChatLoadingView.swift */; };
+		71071A9DF6BA75C8286F56C7C44ACA4D /* JLChatAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B0BDD7553383FEDC83CDA02070A986 /* JLChatAppearence.swift */; };
 		757100C0954D55CE9CE88D5FB3498C5A /* Pods-JLChatViewController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75857152D407B4AA98EDB3BC7065A3C2 /* JLChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFE41839FB63C46754DD53F31F15A932 /* JLChat.storyboard */; };
-		76980AE040ED57A0C8798424E881574E /* JLChatAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882031B159CCA6B626EAFD54F9AE8E5 /* JLChatAppearence.swift */; };
-		77F4589687871706A3F59698C35989AE /* alert9Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = A5029C6257AC8744DBF599FA1E347416 /* alert9Normal.png */; };
-		7E7F5CA069050CABF6D96BCC4F393945 /* bubble_min_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 85D6C6E0DA6A562B05F0E6D753C86DBB /* bubble_min_incoming.png */; };
-		7F1B5D8AF13DD61CA9B11A1B4C5D4BB5 /* JLChatDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E605A586A4264BA2457EB05993CBAE9F /* JLChatDateView.xib */; };
-		8130C9CB7EAEDBB78AFEC2B27FAED1E4 /* UserWriting__001.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DEEC816295B14918352E7E7001FEF0 /* UserWriting__001.png */; };
-		839742F97CE7A3C0FBF0B54BEC664694 /* JLUserTypingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E54E37211D3B35AAE20B5CB54BA3B23 /* JLUserTypingView.xib */; };
+		76DB763C08E68F0EDE397FB11B881B72 /* JLFileIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8221A168C1B1FC68109B723590D966 /* JLFileIndicatorView.swift */; };
+		7C6A396533DE53DFE096F09496411A2A /* JLChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783B2C66F197C61B96FD179EA47C4C7 /* JLChatMessageCell.swift */; };
+		837742C0BB55149190FF797BAB049C75 /* JLChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3B9CBE5665BDA07BEE537480CCE70F /* JLChat.storyboard */; };
 		85040CEB816EA930286259D82D466485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		87069D48E9D928D5674966A0420EE139 /* UserWriting__005.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DED98BBA3516945B5204EC2B34FFAF /* UserWriting__005.png */; };
+		85238E5BAA1B38AB697ED9C4A8661599 /* JLBundleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5758024B18ED0726474314B0709E56 /* JLBundleController.swift */; };
+		8875C22E1D91C11A0099078A /* JLImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8875C22D1D91C11A0099078A /* JLImageMessage.swift */; };
 		89DB9762C348E3C4D54495BBEB4A0BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		8AA0B0DE82BFB24BFDB31F6F71ED96D4 /* JLChatViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC615A2F09F606E608278BE93C417EF0 /* JLChatViewController-dummy.m */; };
 		8C20B0D7B422AD1DAA7D6E355784028C /* Pods-JLChatViewController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FDE4E0CEFD55D76A947B8C1C1C2B7E4 /* UserWriting__002.png in Resources */ = {isa = PBXBuildFile; fileRef = CC2C3407FE9DC05AD13BF778D30449F8 /* UserWriting__002.png */; };
-		9BA51D2C3533A3D552F29F5F24A8AEB3 /* JLChatLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2E9E30EC57A06B37F9D01920AD8C3B /* JLChatLoadingView.swift */; };
-		9F0199E3BD30860BCFD05428F98AA843 /* alert9Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D665D56C941CD4A56742A6FE4261CD20 /* alert9Selected.png */; };
-		A3BC74880AD1EAC1EAF38AB25228F3D1 /* UserWriting__008.png in Resources */ = {isa = PBXBuildFile; fileRef = 6410E5C32F56AB6A8A7D0B87ACBB6179 /* UserWriting__008.png */; };
-		A967A7DFEB198E6DCCDE315D99B47064 /* JLTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2708DD3FA5CB9B72288781CAD98868 /* JLTextMessageCell.swift */; };
-		AC7AC6857D98594B1B2C059CD4D41C1F /* bubble_min@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D71F298CBE2063F7167EBD4BE389C4B3 /* bubble_min@3x.png */; };
-		ADAE4499227307DECD9FEE9ADDF2C7EB /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4C85F3FA4CBCDFAB528F17266BD571 /* bubble_min@2x.png */; };
-		AEF64434F3FA45CFBCD10B045B16FB3A /* bubble_min_mask_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2568FCA2CCE2B7420C03F59C041CE683 /* bubble_min_mask_incoming@2x.png */; };
-		AFF1DA29768E8CC622A75E3B25F4A3E4 /* UserWriting__007.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DCC30B26DFE8827F6524A76BC9ABDF /* UserWriting__007.png */; };
-		B06241B9300E08CBF76342C2B9DDAE57 /* JLChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90D001ABBB02A35F21EEACDD8C7BBB /* JLChatTextView.swift */; };
-		B639A9B9793929BFF055C5BC74B7CDD1 /* bubble_min_mask_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4151711F76B5B01419D40011975A6B93 /* bubble_min_mask_incoming@3x.png */; };
-		BF54063117B7B8CBDB6A62912D51E4DC /* JLChatViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B66504D9040C536A5E4A359690101D1 /* JLChatViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDC891A6815E4A9DE84DE6DBD59EA277 /* UserWriting__003.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A8669EFAA6EA032994CE9B3FEEEB9A7 /* UserWriting__003.png */; };
+		8C7F69DB135AD60F759167BC487C6C32 /* UserWriting__006.png in Resources */ = {isa = PBXBuildFile; fileRef = D54A20C52BCDEAB3EB5342F4FF04BED1 /* UserWriting__006.png */; };
+		8D8DB17A072A0850ED4A1D82E72726FB /* JLChatDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C5458FC4A8FF055445EE7A5A9D59E /* JLChatDateView.swift */; };
+		9C4D3E6267F32EDA2D5EE1622495C1A9 /* JLChatViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 95490591604C9810440199FD72BD1401 /* JLChatViewController.bundle */; };
+		9F2D0D72B4314982724BB62C86DBF22D /* JLChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287D232B226F3CB3CF1B99187CBD7152 /* JLChatViewController.swift */; };
+		A680E4B2845D62AF7EDF5DFE350A7E04 /* bubble_min_mask_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3931D4006CE47D2B59387240537A7728 /* bubble_min_mask_incoming@2x.png */; };
+		A87BBC1DE6881B403A19A5DA83EBC433 /* JLCustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02B9CCC3B7726D019483CA75827967 /* JLCustomTextView.swift */; };
+		AED660CDBF149CBC1B292FD2DB5BECC4 /* JLChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14D114BA43CDE2D12686593C5955150 /* JLChatTableView.swift */; };
+		B1AC95F8D648CA8EB81C56F350ECE216 /* bubble_min_mask_incoming@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2490DCCA4B9978216ED95E723A47CFC6 /* bubble_min_mask_incoming@3x.png */; };
+		C553B9536BAF6880F4061721C4E71F44 /* JLTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A7BC0D8E1B38E00FDE9328E3CA5785 /* JLTextMessageCell.swift */; };
+		C5C748887D7F87015C6BD68828511938 /* bubble_min@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7785FD7CC3D21EDACC533B01A7E80AB1 /* bubble_min@3x.png */; };
 		D13F00E4FA20CD248A5EC34D036F805C /* Pods-JLChatViewController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */; };
-		D71D40821DE41F53EDA8D3CD592EA5C9 /* JLChatDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9067565BA31CC7E777A208D3D60A0E /* JLChatDateView.swift */; };
-		E0F302FDE9C481FC44A213940C21B76A /* bubble_min_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFF5DB4534141F26087C710C1FCE877 /* bubble_min_mask@2x.png */; };
-		E422D965E04538E1AFCC9F1F36C852DE /* JLChatLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8476B9037DCB3BC0E1C39C54344E6B65 /* JLChatLabel.swift */; };
-		E61009226DD8B1DF1B30F7BBB12D09B8 /* bubble_min.png in Resources */ = {isa = PBXBuildFile; fileRef = E617A35C2F28436CB0A7636A132E670A /* bubble_min.png */; };
-		E7353CED27A56CE7263EB6C04DD67EC9 /* UserWriting__009.png in Resources */ = {isa = PBXBuildFile; fileRef = FF26E38D6CBA53ED69C02AE173F0CA0C /* UserWriting__009.png */; };
-		EC321197D3DE1B8ACC1888750F797618 /* bubble_min_incoming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB3D9EF3324E19B00B209D3A87CC885 /* bubble_min_incoming@2x.png */; };
-		F00E97C8A57F655BB1FB357A07E344A7 /* bubble_min_mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3A0269335512EE0F17D1C341CF6D56 /* bubble_min_mask@3x.png */; };
+		D6F1BC55EC6066838183C826A84EE295 /* alert9Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 63C7CBE685922453232F8D6E8807F88C /* alert9Normal.png */; };
+		D943C3EC0E92A8F940488E2C80A4ECAB /* JLChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5516C34DAA1E1DF6BF7A4EBCB28B917C /* JLChatTextView.swift */; };
+		EAF62275B91352A69E138A5622836E17 /* alert9Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1F91B264B5DD4430D3AAA6F99C78D3 /* alert9Selected.png */; };
+		ECA0B8002E221F0466B864A0489AB055 /* JLChatViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF30D4E7D61403D7E069AA2B9BA196B /* JLChatViewController-dummy.m */; };
+		F310F975736B2D16998CE50246508DC7 /* JLChatDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4ED20715FE08C77E40970B3A027A71 /* JLChatDateView.xib */; };
+		FD60F412CB179B05278704337E382A23 /* JLChatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53F2B2F6A1251153C6C8C7189190D94 /* JLChatImageView.swift */; };
+		FE068B84CAA1D46928CE649B0AA0F009 /* JLChatLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FE564077425936EB9007E6F79FC1458 /* JLChatLoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		848B41299932C437840C3F7FAA3D92E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1E9E39F06CDB98EDBA2F1BF7F4EBF69;
+			remoteInfo = "JLChatViewController-JLChatViewController";
+		};
 		8946E0C494E7441CFF30A4FD0BA6674A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CB9D8D920ECB5603C761F6346B1412CE;
+			remoteGlobalIDString = 81379BDE14116CC1EDED666A42184BD7;
 			remoteInfo = JLChatViewController;
-		};
-		9F7351771DA5FD2E02798459977AB2B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BC92DD7B57CB69F78A66A29AAD472140;
-			remoteInfo = "JLChatViewController-JLChatViewController";
 		};
 		B6B13630BCFB7DE8F67784FE1CC88485 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CB9D8D920ECB5603C761F6346B1412CE;
+			remoteGlobalIDString = 81379BDE14116CC1EDED666A42184BD7;
 			remoteInfo = JLChatViewController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		005A720EC038DEB99043D84BAAA7F718 /* JLChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatViewController.swift; sourceTree = "<group>"; };
-		06AF5470A75E0A1E5D7EE178A03E14DC /* JLChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatImageView.swift; sourceTree = "<group>"; };
+		01C642A231C8E60AB483F1BE59355CA4 /* bubble_min_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@3x.png"; sourceTree = "<group>"; };
 		0847DCE12255A6424F740C3402FB17EC /* Pods-JLChatViewController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		08EF6FF9A9FB74AD0BE4F04533A11B33 /* bubble_min_mask.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask.png; sourceTree = "<group>"; };
 		0A772C5E5E299E6FBACDA48CED7FC3AD /* Pods-JLChatViewController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0F9067565BA31CC7E777A208D3D60A0E /* JLChatDateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatDateView.swift; sourceTree = "<group>"; };
-		216CAEB27E00F8428010257864FD39DF /* ResourceBundle-JLChatViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-JLChatViewController-Info.plist"; sourceTree = "<group>"; };
-		2568FCA2CCE2B7420C03F59C041CE683 /* bubble_min_mask_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@2x.png"; sourceTree = "<group>"; };
+		1CD9DB0C2CFFBE678ED6479A629E41DA /* bubble_min.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min.png; sourceTree = "<group>"; };
+		2490DCCA4B9978216ED95E723A47CFC6 /* bubble_min_mask_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@3x.png"; sourceTree = "<group>"; };
+		287D232B226F3CB3CF1B99187CBD7152 /* JLChatViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatViewController.swift; sourceTree = "<group>"; };
+		28A7BC0D8E1B38E00FDE9328E3CA5785 /* JLTextMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLTextMessageCell.swift; sourceTree = "<group>"; };
+		2EF30D4E7D61403D7E069AA2B9BA196B /* JLChatViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLChatViewController-dummy.m"; sourceTree = "<group>"; };
 		2FBE367B2D05F5C50E5084DC2EF73170 /* Pods-JLChatViewController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLChatViewController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		30DEEC816295B14918352E7E7001FEF0 /* UserWriting__001.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__001.png; sourceTree = "<group>"; };
+		3302EFC51080F06E7763CB0572B16D6E /* UserWriting__005.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__005.png; sourceTree = "<group>"; };
 		35504E0157D35ACD2B7922AC6D1DDDEB /* Pods-JLChatViewController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		3931D4006CE47D2B59387240537A7728 /* bubble_min_mask_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@2x.png"; sourceTree = "<group>"; };
 		39BC80F05B69354B1F2A2B717733C193 /* Pods-JLChatViewController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3A21714F23DE9B63718CA38FACB574DC /* Pods-JLChatViewController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		40763BB5984B3DFC416483E3E0835D60 /* JLBundleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLBundleController.swift; sourceTree = "<group>"; };
-		4151711F76B5B01419D40011975A6B93 /* bubble_min_mask_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask_incoming@3x.png"; sourceTree = "<group>"; };
-		41B50D0AE7ABB8A1F844CE41EEBF5EC2 /* JLFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFile.swift; sourceTree = "<group>"; };
-		42E833C7F0A5962D5179AE8B02422916 /* JLChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTableView.swift; sourceTree = "<group>"; };
-		45571AF2EFC3D385232D18DFFABC2C99 /* JLChatToolBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatToolBar.swift; sourceTree = "<group>"; };
+		4024D61C3540A1F37B64CC870D6B7506 /* bubble_min_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@2x.png"; sourceTree = "<group>"; };
+		41F5CB34BF0CECE925BAA5925CF537B5 /* UserWriting__007.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__007.png; sourceTree = "<group>"; };
 		47E00999B3A9BCC9BEE8E539E117F2EA /* Pods-JLChatViewController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Tests-dummy.m"; sourceTree = "<group>"; };
-		49EEE92444D71BBEE139A30FE8EE18BB /* bubble_min_incoming@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@3x.png"; sourceTree = "<group>"; };
-		4A2708DD3FA5CB9B72288781CAD98868 /* JLTextMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLTextMessageCell.swift; sourceTree = "<group>"; };
-		4B66504D9040C536A5E4A359690101D1 /* JLChatViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-umbrella.h"; sourceTree = "<group>"; };
-		4CC9DB9849486C842DF5CA1D34F6AA7C /* UserWriting__004.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__004.png; sourceTree = "<group>"; };
-		4E54E37211D3B35AAE20B5CB54BA3B23 /* JLUserTypingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLUserTypingView.xib; sourceTree = "<group>"; };
+		4FE564077425936EB9007E6F79FC1458 /* JLChatLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatLoadingView.xib; sourceTree = "<group>"; };
+		53DDAE7AA2E3B2C5686BD12D849F1213 /* JLTextMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLTextMessage.swift; sourceTree = "<group>"; };
+		5516C34DAA1E1DF6BF7A4EBCB28B917C /* JLChatTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTextView.swift; sourceTree = "<group>"; };
+		55740EB2C4D8CBBF38C8DB31175E280B /* UserWriting__000.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__000.png; sourceTree = "<group>"; };
+		58D1ED5D4DFA18673B7FB77AABC0A6E7 /* UserWriting__004.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__004.png; sourceTree = "<group>"; };
+		5D0B273E1B765ABD8EC4DEE83172F731 /* JLChatViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLChatViewController.xcconfig; sourceTree = "<group>"; };
 		5D4D92BF6507E1133A1F9B62EA85F57B /* JLChatViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLChatViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62DCC30B26DFE8827F6524A76BC9ABDF /* UserWriting__007.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__007.png; sourceTree = "<group>"; };
-		6410E5C32F56AB6A8A7D0B87ACBB6179 /* UserWriting__008.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__008.png; sourceTree = "<group>"; };
+		63C7CBE685922453232F8D6E8807F88C /* alert9Normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Normal.png; sourceTree = "<group>"; };
 		641C1BE7F3B2653991B7DCB4104CC6FE /* Pods-JLChatViewController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6BFF5DB4534141F26087C710C1FCE877 /* bubble_min_mask@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@2x.png"; sourceTree = "<group>"; };
+		676A13710EE496F2D9716E5E4C84C536 /* ResourceBundle-JLChatViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-JLChatViewController-Info.plist"; sourceTree = "<group>"; };
+		6A5758024B18ED0726474314B0709E56 /* JLBundleController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLBundleController.swift; sourceTree = "<group>"; };
+		6CED08F46CA37BD8FF3E7C146F0B6B3E /* UserWriting__008.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__008.png; sourceTree = "<group>"; };
 		6E5323888A877FA7583C3AB8F1C73F47 /* Pods_JLChatViewController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDC4EC00299D57F03AF4DA05AFF0608 /* UserWriting__009.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__009.png; sourceTree = "<group>"; };
 		6F71E83F345459312DCBA731D8209CFA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7431D8B88950842E0F8E93C42F52BE50 /* bubble_min_mask_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask_incoming.png; sourceTree = "<group>"; };
+		736E34FB09F42EFF451E6598401AB2EA /* JLChatLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLabel.swift; sourceTree = "<group>"; };
 		7696A6625C035B2B2AE75A82863B6FCE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7785FD7CC3D21EDACC533B01A7E80AB1 /* bubble_min@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@3x.png"; sourceTree = "<group>"; };
+		793A4747998772B2FDA5DFF202B63384 /* JLMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLMessage.swift; sourceTree = "<group>"; };
 		7ED26B7335D02E09A758CD3DABD75FC5 /* Pods-JLChatViewController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		80C1E1FD3F45D66126C020BE09B15DB2 /* JLImageMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLImageMessageCell.swift; sourceTree = "<group>"; };
-		819356531E3373CD214C12D5CA4EF44F /* JLChatViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLChatViewController.xcconfig; sourceTree = "<group>"; };
+		7FD8531B00728C449E305B8DB2EA046A /* JLChatLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLoadingView.swift; sourceTree = "<group>"; };
 		84746E033736AD06D32F2E385FC53DDF /* Pods-JLChatViewController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLChatViewController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8476B9037DCB3BC0E1C39C54344E6B65 /* JLChatLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLabel.swift; sourceTree = "<group>"; };
 		85717E15975005146A5B387BCE0E5876 /* Pods-JLChatViewController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		85D6C6E0DA6A562B05F0E6D753C86DBB /* bubble_min_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_incoming.png; sourceTree = "<group>"; };
 		86EDB6C3AB2F49059CEE4EF53634F7C3 /* Pods-JLChatViewController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLChatViewController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		87C194DD59D3DC628250F50E1A58016E /* JLChatViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-prefix.pch"; sourceTree = "<group>"; };
+		8783B2C66F197C61B96FD179EA47C4C7 /* JLChatMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatMessageCell.swift; sourceTree = "<group>"; };
+		8875C22D1D91C11A0099078A /* JLImageMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLImageMessage.swift; sourceTree = "<group>"; };
+		8B7DCFE5F0E22D45A6A6BB464C93F166 /* bubble_min_mask@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@2x.png"; sourceTree = "<group>"; };
+		8BDC75D5BDC2DB254225E8BC4CBB42F4 /* JLFile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFile.swift; sourceTree = "<group>"; };
 		8CB45A011B98D7613ADDD80A6893F805 /* Pods-JLChatViewController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Tests-resources.sh"; sourceTree = "<group>"; };
+		8DA2129257AD1766A05B43434C683065 /* bubble_min_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_incoming.png; sourceTree = "<group>"; };
+		8E361ED788659E00CBA87B6EF5B43B56 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95490591604C9810440199FD72BD1401 /* JLChatViewController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLChatViewController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A52A7D0EA39C9AFB8392E791FDED11C /* JLChatViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JLChatViewController.modulemap; sourceTree = "<group>"; };
+		96E7D0D82E1B84372651CA38D2BE1EAA /* bubble_min_mask.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask.png; sourceTree = "<group>"; };
+		97B0BDD7553383FEDC83CDA02070A986 /* JLChatAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatAppearence.swift; sourceTree = "<group>"; };
+		999C5458FC4A8FF055445EE7A5A9D59E /* JLChatDateView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatDateView.swift; sourceTree = "<group>"; };
 		9A7D28DC30BBD1D1BF9E0E5058F87FC1 /* Pods-JLChatViewController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLChatViewController_Example-dummy.m"; sourceTree = "<group>"; };
-		9A8669EFAA6EA032994CE9B3FEEEB9A7 /* UserWriting__003.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__003.png; sourceTree = "<group>"; };
-		9AC920A8F97DE061A9941D7A156C6C95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DCB920FC8A26A0023146D21E73897A0 /* UserWriting__000.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__000.png; sourceTree = "<group>"; };
-		9E64E701A47DBA451FF54D12BD608155 /* JLMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLMessage.swift; sourceTree = "<group>"; };
-		9EB3D9EF3324E19B00B209D3A87CC885 /* bubble_min_incoming@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_incoming@2x.png"; sourceTree = "<group>"; };
-		A5029C6257AC8744DBF599FA1E347416 /* alert9Normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Normal.png; sourceTree = "<group>"; };
-		A67F0B90F2D69A7A45C11D161607BD2A /* JLFileIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFileIndicatorView.swift; sourceTree = "<group>"; };
-		AB1B5F25895E7CE0127DDFC2E595148E /* UserWriting__006.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__006.png; sourceTree = "<group>"; };
-		AC0CAB94FE86650593153BA6E3CD179C /* JLChatLoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatLoadingView.xib; sourceTree = "<group>"; };
+		9BA0D51ADCEAD2988AED78FE047EB6FC /* JLUserTypingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLUserTypingView.swift; sourceTree = "<group>"; };
+		9D59C81780435310C63FDEEA3D8033CD /* bubble_min_mask_incoming.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min_mask_incoming.png; sourceTree = "<group>"; };
+		A476C19A9588770301770C65EF4C32DE /* JLChatViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-prefix.pch"; sourceTree = "<group>"; };
+		A53F2B2F6A1251153C6C8C7189190D94 /* JLChatImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatImageView.swift; sourceTree = "<group>"; };
+		A929C658AB6A860BFEFDEAC3882A2594 /* JLChatViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLChatViewController-umbrella.h"; sourceTree = "<group>"; };
+		AB8221A168C1B1FC68109B723590D966 /* JLFileIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLFileIndicatorView.swift; sourceTree = "<group>"; };
+		AF1F91B264B5DD4430D3AAA6F99C78D3 /* alert9Selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Selected.png; sourceTree = "<group>"; };
 		AF79E56E6A53F86F740D2E00E8992C16 /* Pods_JLChatViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JLChatViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B04A36A0DD8D04758674C07FE14E885E /* Pods-JLChatViewController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Tests.modulemap"; sourceTree = "<group>"; };
-		C882031B159CCA6B626EAFD54F9AE8E5 /* JLChatAppearence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatAppearence.swift; sourceTree = "<group>"; };
-		CB2E9E30EC57A06B37F9D01920AD8C3B /* JLChatLoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatLoadingView.swift; sourceTree = "<group>"; };
-		CC2C3407FE9DC05AD13BF778D30449F8 /* UserWriting__002.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__002.png; sourceTree = "<group>"; };
-		CC615A2F09F606E608278BE93C417EF0 /* JLChatViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLChatViewController-dummy.m"; sourceTree = "<group>"; };
-		CE90D001ABBB02A35F21EEACDD8C7BBB /* JLChatTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTextView.swift; sourceTree = "<group>"; };
+		B4FE31A45BA66F921CF45466DCC7FEB8 /* UserWriting__003.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__003.png; sourceTree = "<group>"; };
+		B6E0B4746161AF5C1F36C2DDCC2D9A93 /* JLUserTypingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLUserTypingView.xib; sourceTree = "<group>"; };
+		BA485F39677F23A4FA287F7B10B6F4DF /* UserWriting__002.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__002.png; sourceTree = "<group>"; };
+		BD3B9CBE5665BDA07BEE537480CCE70F /* JLChat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = JLChat.storyboard; sourceTree = "<group>"; };
+		C3AE095D88A5B402DB7CAA26B4C2F0B8 /* JLChatViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JLChatViewController.modulemap; sourceTree = "<group>"; };
+		CE4ED20715FE08C77E40970B3A027A71 /* JLChatDateView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatDateView.xib; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CF4C85F3FA4CBCDFAB528F17266BD571 /* bubble_min@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
+		D14D114BA43CDE2D12686593C5955150 /* JLChatTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatTableView.swift; sourceTree = "<group>"; };
 		D5209C24BDEE577269CA37A04847EFE6 /* Pods-JLChatViewController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JLChatViewController_Example.modulemap"; sourceTree = "<group>"; };
-		D665D56C941CD4A56742A6FE4261CD20 /* alert9Selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = alert9Selected.png; sourceTree = "<group>"; };
-		D71F298CBE2063F7167EBD4BE389C4B3 /* bubble_min@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@3x.png"; sourceTree = "<group>"; };
-		D923B14ED676E85079FF48C284139D2C /* JLChatMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatMessageCell.swift; sourceTree = "<group>"; };
+		D54A20C52BCDEAB3EB5342F4FF04BED1 /* UserWriting__006.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__006.png; sourceTree = "<group>"; };
 		DA68CAAA8521FAE8021081261B8C8C5B /* Pods-JLChatViewController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLChatViewController_Example-resources.sh"; sourceTree = "<group>"; };
-		DB3A0269335512EE0F17D1C341CF6D56 /* bubble_min_mask@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@3x.png"; sourceTree = "<group>"; };
-		DD5CBB2A05BED1BE1A8E6ADAFF962A54 /* JLUserTypingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLUserTypingView.swift; sourceTree = "<group>"; };
-		E605A586A4264BA2457EB05993CBAE9F /* JLChatDateView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = JLChatDateView.xib; sourceTree = "<group>"; };
-		E617A35C2F28436CB0A7636A132E670A /* bubble_min.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = bubble_min.png; sourceTree = "<group>"; };
-		EC31DA5193CDF16589F74FF7D6B0BB8C /* JLCustomTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLCustomTextView.swift; sourceTree = "<group>"; };
-		F0DED98BBA3516945B5204EC2B34FFAF /* UserWriting__005.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__005.png; sourceTree = "<group>"; };
+		E01DE25511D86BD0CDCEA315F618219C /* JLChatToolBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLChatToolBar.swift; sourceTree = "<group>"; };
+		E800AF4B09D62ED2EB5443EBE9821D5F /* JLImageMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLImageMessageCell.swift; sourceTree = "<group>"; };
+		E96FBA53B290C89B97ED99752F875988 /* bubble_min@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
+		EA02B9CCC3B7726D019483CA75827967 /* JLCustomTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JLCustomTextView.swift; sourceTree = "<group>"; };
+		ED646581D31B776AA778C469E4A26B7A /* UserWriting__001.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__001.png; sourceTree = "<group>"; };
+		F5998D89BC3D2B5E64FBB0559257F809 /* bubble_min_mask@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "bubble_min_mask@3x.png"; sourceTree = "<group>"; };
 		F9B04873A4BF170B812E91A2ED77F051 /* Pods-JLChatViewController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JLChatViewController_Example-umbrella.h"; sourceTree = "<group>"; };
-		FF26E38D6CBA53ED69C02AE173F0CA0C /* UserWriting__009.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = UserWriting__009.png; sourceTree = "<group>"; };
-		FFE41839FB63C46754DD53F31F15A932 /* JLChat.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = JLChat.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,11 +184,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		725892BF9C8D3D2E6AEEB933D8DB42F1 /* Frameworks */ = {
+		5C3646080C95B408179A5A8952A9EFB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32930E6F6BFE7BB25B266BBAECB60DE2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F6D8D313BDA18B875C0F9F73BFB9612 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2187435EB522138CFF6F648475CF1BF1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,13 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				85040CEB816EA930286259D82D466485 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EFF2957B8BF87C3EADE081EDD7894937 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,77 +227,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		558D186D3DAFB7AF47F36CD49C55EE3C /* JLChatViewController */ = {
-			isa = PBXGroup;
-			children = (
-				726E7DDDD54CB1D570F834087A5CCBA7 /* Classes */,
-				C223FCC03D786751F834834280FBA03C /* Resources */,
-				83AF0081C60831D77744BD71D99CE5DA /* Support Files */,
-			);
-			name = JLChatViewController;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		6BBEB8671F504C82A83685F071C948D7 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				A5029C6257AC8744DBF599FA1E347416 /* alert9Normal.png */,
-				D665D56C941CD4A56742A6FE4261CD20 /* alert9Selected.png */,
-				E617A35C2F28436CB0A7636A132E670A /* bubble_min.png */,
-				CF4C85F3FA4CBCDFAB528F17266BD571 /* bubble_min@2x.png */,
-				D71F298CBE2063F7167EBD4BE389C4B3 /* bubble_min@3x.png */,
-				85D6C6E0DA6A562B05F0E6D753C86DBB /* bubble_min_incoming.png */,
-				9EB3D9EF3324E19B00B209D3A87CC885 /* bubble_min_incoming@2x.png */,
-				49EEE92444D71BBEE139A30FE8EE18BB /* bubble_min_incoming@3x.png */,
-				08EF6FF9A9FB74AD0BE4F04533A11B33 /* bubble_min_mask.png */,
-				6BFF5DB4534141F26087C710C1FCE877 /* bubble_min_mask@2x.png */,
-				DB3A0269335512EE0F17D1C341CF6D56 /* bubble_min_mask@3x.png */,
-				7431D8B88950842E0F8E93C42F52BE50 /* bubble_min_mask_incoming.png */,
-				2568FCA2CCE2B7420C03F59C041CE683 /* bubble_min_mask_incoming@2x.png */,
-				4151711F76B5B01419D40011975A6B93 /* bubble_min_mask_incoming@3x.png */,
-				FFE41839FB63C46754DD53F31F15A932 /* JLChat.storyboard */,
-				E605A586A4264BA2457EB05993CBAE9F /* JLChatDateView.xib */,
-				AC0CAB94FE86650593153BA6E3CD179C /* JLChatLoadingView.xib */,
-				4E54E37211D3B35AAE20B5CB54BA3B23 /* JLUserTypingView.xib */,
-				9DCB920FC8A26A0023146D21E73897A0 /* UserWriting__000.png */,
-				30DEEC816295B14918352E7E7001FEF0 /* UserWriting__001.png */,
-				CC2C3407FE9DC05AD13BF778D30449F8 /* UserWriting__002.png */,
-				9A8669EFAA6EA032994CE9B3FEEEB9A7 /* UserWriting__003.png */,
-				4CC9DB9849486C842DF5CA1D34F6AA7C /* UserWriting__004.png */,
-				F0DED98BBA3516945B5204EC2B34FFAF /* UserWriting__005.png */,
-				AB1B5F25895E7CE0127DDFC2E595148E /* UserWriting__006.png */,
-				62DCC30B26DFE8827F6524A76BC9ABDF /* UserWriting__007.png */,
-				6410E5C32F56AB6A8A7D0B87ACBB6179 /* UserWriting__008.png */,
-				FF26E38D6CBA53ED69C02AE173F0CA0C /* UserWriting__009.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		726E7DDDD54CB1D570F834087A5CCBA7 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				40763BB5984B3DFC416483E3E0835D60 /* JLBundleController.swift */,
-				C882031B159CCA6B626EAFD54F9AE8E5 /* JLChatAppearence.swift */,
-				0F9067565BA31CC7E777A208D3D60A0E /* JLChatDateView.swift */,
-				06AF5470A75E0A1E5D7EE178A03E14DC /* JLChatImageView.swift */,
-				8476B9037DCB3BC0E1C39C54344E6B65 /* JLChatLabel.swift */,
-				CB2E9E30EC57A06B37F9D01920AD8C3B /* JLChatLoadingView.swift */,
-				D923B14ED676E85079FF48C284139D2C /* JLChatMessageCell.swift */,
-				42E833C7F0A5962D5179AE8B02422916 /* JLChatTableView.swift */,
-				CE90D001ABBB02A35F21EEACDD8C7BBB /* JLChatTextView.swift */,
-				45571AF2EFC3D385232D18DFFABC2C99 /* JLChatToolBar.swift */,
-				005A720EC038DEB99043D84BAAA7F718 /* JLChatViewController.swift */,
-				EC31DA5193CDF16589F74FF7D6B0BB8C /* JLCustomTextView.swift */,
-				41B50D0AE7ABB8A1F844CE41EEBF5EC2 /* JLFile.swift */,
-				A67F0B90F2D69A7A45C11D161607BD2A /* JLFileIndicatorView.swift */,
-				80C1E1FD3F45D66126C020BE09B15DB2 /* JLImageMessageCell.swift */,
-				9E64E701A47DBA451FF54D12BD608155 /* JLMessage.swift */,
-				4A2708DD3FA5CB9B72288781CAD98868 /* JLTextMessageCell.swift */,
-				DD5CBB2A05BED1BE1A8E6ADAFF962A54 /* JLUserTypingView.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -305,19 +238,23 @@
 			);
 			sourceTree = "<group>";
 		};
-		83AF0081C60831D77744BD71D99CE5DA /* Support Files */ = {
+		8163D9866F7FBADB760EBDF8C3E03D01 /* JLChatViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9AC920A8F97DE061A9941D7A156C6C95 /* Info.plist */,
-				9A52A7D0EA39C9AFB8392E791FDED11C /* JLChatViewController.modulemap */,
-				819356531E3373CD214C12D5CA4EF44F /* JLChatViewController.xcconfig */,
-				CC615A2F09F606E608278BE93C417EF0 /* JLChatViewController-dummy.m */,
-				87C194DD59D3DC628250F50E1A58016E /* JLChatViewController-prefix.pch */,
-				4B66504D9040C536A5E4A359690101D1 /* JLChatViewController-umbrella.h */,
-				216CAEB27E00F8428010257864FD39DF /* ResourceBundle-JLChatViewController-Info.plist */,
+				D60C783917595BFE0309D646356FE080 /* Classes */,
+				863F52D0A6B56DE1DC4EAB02CC1D5331 /* Resources */,
+				BE23D1147C9C79B3689545810B7893D8 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/JLChatViewController";
+			name = JLChatViewController;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		863F52D0A6B56DE1DC4EAB02CC1D5331 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A911295CD3BF3918BC57B271212FAAC /* Assets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		8CDBE59DEA965FCBE535307214A99C30 /* Pods-JLChatViewController_Example */ = {
@@ -341,9 +278,44 @@
 		9657A465F987466C618585D37A8C9412 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				558D186D3DAFB7AF47F36CD49C55EE3C /* JLChatViewController */,
+				8163D9866F7FBADB760EBDF8C3E03D01 /* JLChatViewController */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9A911295CD3BF3918BC57B271212FAAC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				63C7CBE685922453232F8D6E8807F88C /* alert9Normal.png */,
+				AF1F91B264B5DD4430D3AAA6F99C78D3 /* alert9Selected.png */,
+				1CD9DB0C2CFFBE678ED6479A629E41DA /* bubble_min.png */,
+				E96FBA53B290C89B97ED99752F875988 /* bubble_min@2x.png */,
+				7785FD7CC3D21EDACC533B01A7E80AB1 /* bubble_min@3x.png */,
+				8DA2129257AD1766A05B43434C683065 /* bubble_min_incoming.png */,
+				4024D61C3540A1F37B64CC870D6B7506 /* bubble_min_incoming@2x.png */,
+				01C642A231C8E60AB483F1BE59355CA4 /* bubble_min_incoming@3x.png */,
+				96E7D0D82E1B84372651CA38D2BE1EAA /* bubble_min_mask.png */,
+				8B7DCFE5F0E22D45A6A6BB464C93F166 /* bubble_min_mask@2x.png */,
+				F5998D89BC3D2B5E64FBB0559257F809 /* bubble_min_mask@3x.png */,
+				9D59C81780435310C63FDEEA3D8033CD /* bubble_min_mask_incoming.png */,
+				3931D4006CE47D2B59387240537A7728 /* bubble_min_mask_incoming@2x.png */,
+				2490DCCA4B9978216ED95E723A47CFC6 /* bubble_min_mask_incoming@3x.png */,
+				BD3B9CBE5665BDA07BEE537480CCE70F /* JLChat.storyboard */,
+				CE4ED20715FE08C77E40970B3A027A71 /* JLChatDateView.xib */,
+				4FE564077425936EB9007E6F79FC1458 /* JLChatLoadingView.xib */,
+				B6E0B4746161AF5C1F36C2DDCC2D9A93 /* JLUserTypingView.xib */,
+				55740EB2C4D8CBBF38C8DB31175E280B /* UserWriting__000.png */,
+				ED646581D31B776AA778C469E4A26B7A /* UserWriting__001.png */,
+				BA485F39677F23A4FA287F7B10B6F4DF /* UserWriting__002.png */,
+				B4FE31A45BA66F921CF45466DCC7FEB8 /* UserWriting__003.png */,
+				58D1ED5D4DFA18673B7FB77AABC0A6E7 /* UserWriting__004.png */,
+				3302EFC51080F06E7763CB0572B16D6E /* UserWriting__005.png */,
+				D54A20C52BCDEAB3EB5342F4FF04BED1 /* UserWriting__006.png */,
+				41F5CB34BF0CECE925BAA5925CF537B5 /* UserWriting__007.png */,
+				6CED08F46CA37BD8FF3E7C146F0B6B3E /* UserWriting__008.png */,
+				6EDC4EC00299D57F03AF4DA05AFF0608 /* UserWriting__009.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -354,12 +326,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C223FCC03D786751F834834280FBA03C /* Resources */ = {
+		BE23D1147C9C79B3689545810B7893D8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6BBEB8671F504C82A83685F071C948D7 /* Assets */,
+				8E361ED788659E00CBA87B6EF5B43B56 /* Info.plist */,
+				C3AE095D88A5B402DB7CAA26B4C2F0B8 /* JLChatViewController.modulemap */,
+				5D0B273E1B765ABD8EC4DEE83172F731 /* JLChatViewController.xcconfig */,
+				2EF30D4E7D61403D7E069AA2B9BA196B /* JLChatViewController-dummy.m */,
+				A476C19A9588770301770C65EF4C32DE /* JLChatViewController-prefix.pch */,
+				A929C658AB6A860BFEFDEAC3882A2594 /* JLChatViewController-umbrella.h */,
+				676A13710EE496F2D9716E5E4C84C536 /* ResourceBundle-JLChatViewController-Info.plist */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JLChatViewController";
+			sourceTree = "<group>";
+		};
+		D60C783917595BFE0309D646356FE080 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6A5758024B18ED0726474314B0709E56 /* JLBundleController.swift */,
+				97B0BDD7553383FEDC83CDA02070A986 /* JLChatAppearence.swift */,
+				999C5458FC4A8FF055445EE7A5A9D59E /* JLChatDateView.swift */,
+				A53F2B2F6A1251153C6C8C7189190D94 /* JLChatImageView.swift */,
+				736E34FB09F42EFF451E6598401AB2EA /* JLChatLabel.swift */,
+				7FD8531B00728C449E305B8DB2EA046A /* JLChatLoadingView.swift */,
+				8783B2C66F197C61B96FD179EA47C4C7 /* JLChatMessageCell.swift */,
+				D14D114BA43CDE2D12686593C5955150 /* JLChatTableView.swift */,
+				5516C34DAA1E1DF6BF7A4EBCB28B917C /* JLChatTextView.swift */,
+				E01DE25511D86BD0CDCEA315F618219C /* JLChatToolBar.swift */,
+				287D232B226F3CB3CF1B99187CBD7152 /* JLChatViewController.swift */,
+				EA02B9CCC3B7726D019483CA75827967 /* JLCustomTextView.swift */,
+				8BDC75D5BDC2DB254225E8BC4CBB42F4 /* JLFile.swift */,
+				AB8221A168C1B1FC68109B723590D966 /* JLFileIndicatorView.swift */,
+				E800AF4B09D62ED2EB5443EBE9821D5F /* JLImageMessageCell.swift */,
+				793A4747998772B2FDA5DFF202B63384 /* JLMessage.swift */,
+				53DDAE7AA2E3B2C5686BD12D849F1213 /* JLTextMessage.swift */,
+				28A7BC0D8E1B38E00FDE9328E3CA5785 /* JLTextMessageCell.swift */,
+				9BA0D51ADCEAD2988AED78FE047EB6FC /* JLUserTypingView.swift */,
+				8875C22D1D91C11A0099078A /* JLImageMessage.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F7D10027BD23F00FF17B31B85280947D /* Pods-JLChatViewController_Tests */ = {
@@ -402,6 +408,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		711A4973E636359CEE4270EF99668049 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				133F2CA8D938AC4D6891880EDF4C6621 /* JLChatViewController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE3BCBFB39784CC0247D007CA0FA72A3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,24 +424,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8D7C4A43EABEE1B3BE24F22C0C2C273 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF54063117B7B8CBDB6A62912D51E4DC /* JLChatViewController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BC92DD7B57CB69F78A66A29AAD472140 /* JLChatViewController-JLChatViewController */ = {
+		81379BDE14116CC1EDED666A42184BD7 /* JLChatViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62468DD9CD592FEC91FA4DF8ACC5BD5A /* Build configuration list for PBXNativeTarget "JLChatViewController-JLChatViewController" */;
+			buildConfigurationList = 8E4DF567A214371304A5A095F2970912 /* Build configuration list for PBXNativeTarget "JLChatViewController" */;
 			buildPhases = (
-				71AD85EC43A0980525CCB8E8BF1B7334 /* Sources */,
-				EFF2957B8BF87C3EADE081EDD7894937 /* Frameworks */,
-				F78C58001785C17CB272079A895829C5 /* Resources */,
+				657FBAC3510DA058F3D64C02C33DAC82 /* Sources */,
+				6F6D8D313BDA18B875C0F9F73BFB9612 /* Frameworks */,
+				A0117A212588FD68C3EDEA84D1446E38 /* Resources */,
+				711A4973E636359CEE4270EF99668049 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D328C459B911ABA89C6EBE756ADC8B9 /* PBXTargetDependency */,
+			);
+			name = JLChatViewController;
+			productName = JLChatViewController;
+			productReference = 5D4D92BF6507E1133A1F9B62EA85F57B /* JLChatViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C1E9E39F06CDB98EDBA2F1BF7F4EBF69 /* JLChatViewController-JLChatViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46678EBF739719C25F68F98D5B9C10EB /* Build configuration list for PBXNativeTarget "JLChatViewController-JLChatViewController" */;
+			buildPhases = (
+				5F87A3DDDC78C07511DE0FE497EA1D18 /* Sources */,
+				5C3646080C95B408179A5A8952A9EFB3 /* Frameworks */,
+				97F5CFDEF9BE645B219AA356177A0B72 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -437,25 +462,6 @@
 			productName = "JLChatViewController-JLChatViewController";
 			productReference = 95490591604C9810440199FD72BD1401 /* JLChatViewController.bundle */;
 			productType = "com.apple.product-type.bundle";
-		};
-		CB9D8D920ECB5603C761F6346B1412CE /* JLChatViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 678615622BFFF6375EF3EAA28343B2D5 /* Build configuration list for PBXNativeTarget "JLChatViewController" */;
-			buildPhases = (
-				FB2895C0B8D4BF5F9E46D30103587D62 /* Sources */,
-				725892BF9C8D3D2E6AEEB933D8DB42F1 /* Frameworks */,
-				25D7A9BDB860403C7CE7D972AD040280 /* Resources */,
-				F8D7C4A43EABEE1B3BE24F22C0C2C273 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AF241D79E598DD0D55E5FCA0EEA55309 /* PBXTargetDependency */,
-			);
-			name = JLChatViewController;
-			productName = JLChatViewController;
-			productReference = 5D4D92BF6507E1133A1F9B62EA85F57B /* JLChatViewController.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 		E03CB62DB28AE025F10DF3047F92B33F /* Pods-JLChatViewController_Example */ = {
 			isa = PBXNativeTarget;
@@ -514,8 +520,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB9D8D920ECB5603C761F6346B1412CE /* JLChatViewController */,
-				BC92DD7B57CB69F78A66A29AAD472140 /* JLChatViewController-JLChatViewController */,
+				81379BDE14116CC1EDED666A42184BD7 /* JLChatViewController */,
+				C1E9E39F06CDB98EDBA2F1BF7F4EBF69 /* JLChatViewController-JLChatViewController */,
 				E03CB62DB28AE025F10DF3047F92B33F /* Pods-JLChatViewController_Example */,
 				FB595C56AE942B476C91539D696A6DEB /* Pods-JLChatViewController_Tests */,
 			);
@@ -523,56 +529,84 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		25D7A9BDB860403C7CE7D972AD040280 /* Resources */ = {
+		97F5CFDEF9BE645B219AA356177A0B72 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507BA5FF24CD1206F7B7ABCDC011D027 /* JLChatViewController.bundle in Resources */,
+				D6F1BC55EC6066838183C826A84EE295 /* alert9Normal.png in Resources */,
+				EAF62275B91352A69E138A5622836E17 /* alert9Selected.png in Resources */,
+				4F5FBD18F2889DE98407842DBC0FB6D3 /* bubble_min.png in Resources */,
+				505F068F6A188FC4EE1A2EC002E1B12F /* bubble_min@2x.png in Resources */,
+				C5C748887D7F87015C6BD68828511938 /* bubble_min@3x.png in Resources */,
+				559D5E94AAEEFD1F8939A306468DE5D9 /* bubble_min_incoming.png in Resources */,
+				5A18C2E31D45B1CFC365A7654C38BBAD /* bubble_min_incoming@2x.png in Resources */,
+				583C92E414CDB3EB5AC33EDDC024A557 /* bubble_min_incoming@3x.png in Resources */,
+				578B95C75415FF75636E8A977394C687 /* bubble_min_mask.png in Resources */,
+				214FC747FD46AC1593A6AB67B2E5F993 /* bubble_min_mask@2x.png in Resources */,
+				34396567FD205D439EF0AAB7C4B3E281 /* bubble_min_mask@3x.png in Resources */,
+				35BEB298EA93B87BA2B6DA5BF643BD42 /* bubble_min_mask_incoming.png in Resources */,
+				A680E4B2845D62AF7EDF5DFE350A7E04 /* bubble_min_mask_incoming@2x.png in Resources */,
+				B1AC95F8D648CA8EB81C56F350ECE216 /* bubble_min_mask_incoming@3x.png in Resources */,
+				837742C0BB55149190FF797BAB049C75 /* JLChat.storyboard in Resources */,
+				F310F975736B2D16998CE50246508DC7 /* JLChatDateView.xib in Resources */,
+				FE068B84CAA1D46928CE649B0AA0F009 /* JLChatLoadingView.xib in Resources */,
+				110F50FEDCBA35DC3FB0D87D5E8BDEB6 /* JLUserTypingView.xib in Resources */,
+				5625C26A06735CF41D6B84E715E08AC7 /* UserWriting__000.png in Resources */,
+				293D3EBA4F760537297ADBF7FD199EB2 /* UserWriting__001.png in Resources */,
+				12D0214B8B29FE47FCE3382205DEC4DB /* UserWriting__002.png in Resources */,
+				6A5E21B9929A7E6A8F36333119CEC78A /* UserWriting__003.png in Resources */,
+				38632E33551C399570EC2B27656CFCC9 /* UserWriting__004.png in Resources */,
+				129786AFF82EDE30570E9F256FE5B9FF /* UserWriting__005.png in Resources */,
+				8C7F69DB135AD60F759167BC487C6C32 /* UserWriting__006.png in Resources */,
+				343049257D2A7BD38878C2468955B2CD /* UserWriting__007.png in Resources */,
+				1D79B7561736D62F8DFDFD9E349A74A5 /* UserWriting__008.png in Resources */,
+				46C7B5D979FD23CEAEC6961F98C5FA8C /* UserWriting__009.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F78C58001785C17CB272079A895829C5 /* Resources */ = {
+		A0117A212588FD68C3EDEA84D1446E38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77F4589687871706A3F59698C35989AE /* alert9Normal.png in Resources */,
-				9F0199E3BD30860BCFD05428F98AA843 /* alert9Selected.png in Resources */,
-				E61009226DD8B1DF1B30F7BBB12D09B8 /* bubble_min.png in Resources */,
-				ADAE4499227307DECD9FEE9ADDF2C7EB /* bubble_min@2x.png in Resources */,
-				AC7AC6857D98594B1B2C059CD4D41C1F /* bubble_min@3x.png in Resources */,
-				7E7F5CA069050CABF6D96BCC4F393945 /* bubble_min_incoming.png in Resources */,
-				EC321197D3DE1B8ACC1888750F797618 /* bubble_min_incoming@2x.png in Resources */,
-				461C42450E30C558D7DC645D1895D688 /* bubble_min_incoming@3x.png in Resources */,
-				3C98CB20FF7AC296DA401938E6183518 /* bubble_min_mask.png in Resources */,
-				E0F302FDE9C481FC44A213940C21B76A /* bubble_min_mask@2x.png in Resources */,
-				F00E97C8A57F655BB1FB357A07E344A7 /* bubble_min_mask@3x.png in Resources */,
-				662A5F8F3B7981D6622AD7EC85233BEF /* bubble_min_mask_incoming.png in Resources */,
-				AEF64434F3FA45CFBCD10B045B16FB3A /* bubble_min_mask_incoming@2x.png in Resources */,
-				B639A9B9793929BFF055C5BC74B7CDD1 /* bubble_min_mask_incoming@3x.png in Resources */,
-				75857152D407B4AA98EDB3BC7065A3C2 /* JLChat.storyboard in Resources */,
-				7F1B5D8AF13DD61CA9B11A1B4C5D4BB5 /* JLChatDateView.xib in Resources */,
-				648890801B88E8FA72A172F2B63584B4 /* JLChatLoadingView.xib in Resources */,
-				839742F97CE7A3C0FBF0B54BEC664694 /* JLUserTypingView.xib in Resources */,
-				6756643F8CD4760C904620B1DEE3A400 /* UserWriting__000.png in Resources */,
-				8130C9CB7EAEDBB78AFEC2B27FAED1E4 /* UserWriting__001.png in Resources */,
-				8FDE4E0CEFD55D76A947B8C1C1C2B7E4 /* UserWriting__002.png in Resources */,
-				CDC891A6815E4A9DE84DE6DBD59EA277 /* UserWriting__003.png in Resources */,
-				565DAADD5BF933FB6A967D69B59ED565 /* UserWriting__004.png in Resources */,
-				87069D48E9D928D5674966A0420EE139 /* UserWriting__005.png in Resources */,
-				4BBA088D05166AE799F693FB692141CB /* UserWriting__006.png in Resources */,
-				AFF1DA29768E8CC622A75E3B25F4A3E4 /* UserWriting__007.png in Resources */,
-				A3BC74880AD1EAC1EAF38AB25228F3D1 /* UserWriting__008.png in Resources */,
-				E7353CED27A56CE7263EB6C04DD67EC9 /* UserWriting__009.png in Resources */,
+				9C4D3E6267F32EDA2D5EE1622495C1A9 /* JLChatViewController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		71AD85EC43A0980525CCB8E8BF1B7334 /* Sources */ = {
+		5F87A3DDDC78C07511DE0FE497EA1D18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		657FBAC3510DA058F3D64C02C33DAC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85238E5BAA1B38AB697ED9C4A8661599 /* JLBundleController.swift in Sources */,
+				71071A9DF6BA75C8286F56C7C44ACA4D /* JLChatAppearence.swift in Sources */,
+				8D8DB17A072A0850ED4A1D82E72726FB /* JLChatDateView.swift in Sources */,
+				FD60F412CB179B05278704337E382A23 /* JLChatImageView.swift in Sources */,
+				3295F785BBC86A8E876ECCE289FE3DDF /* JLChatLabel.swift in Sources */,
+				6D9F47F151854DC85A4EA8C2FF1B3791 /* JLChatLoadingView.swift in Sources */,
+				7C6A396533DE53DFE096F09496411A2A /* JLChatMessageCell.swift in Sources */,
+				AED660CDBF149CBC1B292FD2DB5BECC4 /* JLChatTableView.swift in Sources */,
+				D943C3EC0E92A8F940488E2C80A4ECAB /* JLChatTextView.swift in Sources */,
+				414C868C3690B9ABC1FE97F7A5785E88 /* JLChatToolBar.swift in Sources */,
+				ECA0B8002E221F0466B864A0489AB055 /* JLChatViewController-dummy.m in Sources */,
+				9F2D0D72B4314982724BB62C86DBF22D /* JLChatViewController.swift in Sources */,
+				A87BBC1DE6881B403A19A5DA83EBC433 /* JLCustomTextView.swift in Sources */,
+				5BF055B890F05E33B06904976633A312 /* JLFile.swift in Sources */,
+				76DB763C08E68F0EDE397FB11B881B72 /* JLFileIndicatorView.swift in Sources */,
+				631BB3E24408E5CA829E7CFA70D711BD /* JLImageMessageCell.swift in Sources */,
+				5A8930BB91054B90E00C9F8EBE7F6605 /* JLMessage.swift in Sources */,
+				31EEAB85A1C8B4767742648ED9494197 /* JLTextMessage.swift in Sources */,
+				8875C22E1D91C11A0099078A /* JLImageMessage.swift in Sources */,
+				C553B9536BAF6880F4061721C4E71F44 /* JLTextMessageCell.swift in Sources */,
+				460494E80DE12982E8CB3E9F7BDF2278 /* JLUserTypingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,59 +626,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB2895C0B8D4BF5F9E46D30103587D62 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				069D20125E76D3ED17091B2AE1A7E4F8 /* JLBundleController.swift in Sources */,
-				76980AE040ED57A0C8798424E881574E /* JLChatAppearence.swift in Sources */,
-				D71D40821DE41F53EDA8D3CD592EA5C9 /* JLChatDateView.swift in Sources */,
-				0356EC65DE98583CA985196FBCD0940D /* JLChatImageView.swift in Sources */,
-				E422D965E04538E1AFCC9F1F36C852DE /* JLChatLabel.swift in Sources */,
-				9BA51D2C3533A3D552F29F5F24A8AEB3 /* JLChatLoadingView.swift in Sources */,
-				3E93AC95926E22FBCDA3121D194BA689 /* JLChatMessageCell.swift in Sources */,
-				3810F1DA76CDAF3B06F86C69A3DFE9B6 /* JLChatTableView.swift in Sources */,
-				B06241B9300E08CBF76342C2B9DDAE57 /* JLChatTextView.swift in Sources */,
-				45332088A67186D4008E2F9CA47ABAAE /* JLChatToolBar.swift in Sources */,
-				8AA0B0DE82BFB24BFDB31F6F71ED96D4 /* JLChatViewController-dummy.m in Sources */,
-				3D9A811C7FB4B349C644D65C0A430602 /* JLChatViewController.swift in Sources */,
-				29EB8AA956B57616178DB7D102E3D815 /* JLCustomTextView.swift in Sources */,
-				65B98AF7973EE483C97AF27987D3E371 /* JLFile.swift in Sources */,
-				47ED0C4535EC7BD18EB859270C63509D /* JLFileIndicatorView.swift in Sources */,
-				3373E388BED87DA3A91FA3D482900FCF /* JLImageMessageCell.swift in Sources */,
-				704754FAF09B03ADC7496253E4ED253B /* JLMessage.swift in Sources */,
-				A967A7DFEB198E6DCCDE315D99B47064 /* JLTextMessageCell.swift in Sources */,
-				67A20E57B88AD656160516FAE24ADE4D /* JLUserTypingView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		0ECB5AAB61F1B0DB93E4BE953174A0D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JLChatViewController;
-			target = CB9D8D920ECB5603C761F6346B1412CE /* JLChatViewController */;
+			target = 81379BDE14116CC1EDED666A42184BD7 /* JLChatViewController */;
 			targetProxy = B6B13630BCFB7DE8F67784FE1CC88485 /* PBXContainerItemProxy */;
 		};
 		5AE7A0D695F5FF4B4376695FE955AE77 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JLChatViewController;
-			target = CB9D8D920ECB5603C761F6346B1412CE /* JLChatViewController */;
+			target = 81379BDE14116CC1EDED666A42184BD7 /* JLChatViewController */;
 			targetProxy = 8946E0C494E7441CFF30A4FD0BA6674A /* PBXContainerItemProxy */;
 		};
-		AF241D79E598DD0D55E5FCA0EEA55309 /* PBXTargetDependency */ = {
+		7D328C459B911ABA89C6EBE756ADC8B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "JLChatViewController-JLChatViewController";
-			target = BC92DD7B57CB69F78A66A29AAD472140 /* JLChatViewController-JLChatViewController */;
-			targetProxy = 9F7351771DA5FD2E02798459977AB2B4 /* PBXContainerItemProxy */;
+			target = C1E9E39F06CDB98EDBA2F1BF7F4EBF69 /* JLChatViewController-JLChatViewController */;
+			targetProxy = 848B41299932C437840C3F7FAA3D92E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00A556226AD8EDEC80EEA98BB3934470 /* Release */ = {
+		0809C8ED74E1FF54E5AAA4E8B2BDC3BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 819356531E3373CD214C12D5CA4EF44F /* JLChatViewController.xcconfig */;
+			baseConfigurationReference = 5D0B273E1B765ABD8EC4DEE83172F731 /* JLChatViewController.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JLChatViewController";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -658,23 +666,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		08B32322BD7BEEAD1E52C99FAC43907C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 819356531E3373CD214C12D5CA4EF44F /* JLChatViewController.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JLChatViewController";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/JLChatViewController/ResourceBundle-JLChatViewController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = JLChatViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		0ACDCBCB0B6796575F46FFA2F5410C6B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -848,39 +839,9 @@
 			};
 			name = Release;
 		};
-		9929F6673708300B1423655ADC29386E /* Debug */ = {
+		9418EE511C8982115EF417691F8D242C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 819356531E3373CD214C12D5CA4EF44F /* JLChatViewController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JLChatViewController/JLChatViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JLChatViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JLChatViewController/JLChatViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = JLChatViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A4509F4BC60EEACEAE657A821B80927E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 819356531E3373CD214C12D5CA4EF44F /* JLChatViewController.xcconfig */;
+			baseConfigurationReference = 5D0B273E1B765ABD8EC4DEE83172F731 /* JLChatViewController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -949,6 +910,53 @@
 			};
 			name = Debug;
 		};
+		DE59E710FF7D7619CEC33ABC5F9D206D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D0B273E1B765ABD8EC4DEE83172F731 /* JLChatViewController.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/JLChatViewController";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/JLChatViewController/ResourceBundle-JLChatViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = JLChatViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		F1E8CB98020DB98F40E4A1470D0EB52E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D0B273E1B765ABD8EC4DEE83172F731 /* JLChatViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JLChatViewController/JLChatViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JLChatViewController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JLChatViewController/JLChatViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JLChatViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -961,20 +969,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62468DD9CD592FEC91FA4DF8ACC5BD5A /* Build configuration list for PBXNativeTarget "JLChatViewController-JLChatViewController" */ = {
+		46678EBF739719C25F68F98D5B9C10EB /* Build configuration list for PBXNativeTarget "JLChatViewController-JLChatViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				08B32322BD7BEEAD1E52C99FAC43907C /* Debug */,
-				00A556226AD8EDEC80EEA98BB3934470 /* Release */,
+				DE59E710FF7D7619CEC33ABC5F9D206D /* Debug */,
+				0809C8ED74E1FF54E5AAA4E8B2BDC3BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		678615622BFFF6375EF3EAA28343B2D5 /* Build configuration list for PBXNativeTarget "JLChatViewController" */ = {
+		8E4DF567A214371304A5A095F2970912 /* Build configuration list for PBXNativeTarget "JLChatViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9929F6673708300B1423655ADC29386E /* Debug */,
-				A4509F4BC60EEACEAE657A821B80927E /* Release */,
+				F1E8CB98020DB98F40E4A1470D0EB52E /* Debug */,
+				9418EE511C8982115EF417691F8D242C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

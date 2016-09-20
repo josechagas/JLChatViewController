@@ -127,7 +127,7 @@ public class JLTextMessageCell: JLChatMessageCell {
         
         
         
-        self.chatMessageLabel.text = message.text
+        self.chatMessageLabel.text = (message as! JLTextMessage).text
         //self.chatMessageLabel.settAttributedText(message.text)
 
         senderImageView.image = message.senderImage
