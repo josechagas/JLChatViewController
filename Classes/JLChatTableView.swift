@@ -189,6 +189,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         didSet{
             self.dataSource = self
             self.delegate = self
+            addTableHeader()
         }
     }
     
@@ -314,8 +315,6 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         self.estimatedSectionHeaderHeight = 71
         
         self.registerNib(UINib(nibName: "JLChatDateView", bundle: JLBundleController.getBundle()), forHeaderFooterViewReuseIdentifier: "DateView")
-
-        addTableHeader()
         
     }
     

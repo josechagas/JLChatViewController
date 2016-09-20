@@ -619,7 +619,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
     }
     
     func titleForJLChatLoadingView() -> String {
-        return "JLChatViewController"
+        return "JLChatViewController-Messages"
     }
     
     

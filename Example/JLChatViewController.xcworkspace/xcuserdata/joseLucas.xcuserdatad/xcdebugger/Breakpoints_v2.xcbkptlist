@@ -124,11 +124,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "493386831.279667"
+            timestampString = "496024891.822531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "290"
-            endingLineNumber = "290"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "runNextJob(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -204,11 +204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "493386831.279667"
+            timestampString = "496024891.822531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "736"
-            endingLineNumber = "736"
+            startingLineNumber = "735"
+            endingLineNumber = "735"
             landmarkName = "removeMessageCellAtIndexPath(_:relatedMessage:)"
             landmarkType = "5">
             <Locations>
@@ -220,11 +220,11 @@
                   moduleName = "JLChatViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "495109637.682559"
+                  timestampString = "496024893.261738"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "737"
-                  endingLineNumber = "737"
+                  startingLineNumber = "736"
+                  endingLineNumber = "736"
                   offsetFromSymbolStart = "373">
                </Location>
                <Location
@@ -235,11 +235,11 @@
                   moduleName = "JLChatViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "495109637.682667"
+                  timestampString = "496024893.261847"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "737"
-                  endingLineNumber = "737"
+                  startingLineNumber = "736"
+                  endingLineNumber = "736"
                   offsetFromSymbolStart = "203">
                </Location>
                <Location
@@ -250,11 +250,11 @@
                   moduleName = "JLChatViewController"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joseLucas/Documents/Libraries/JLChatViewController/Classes/JLChatTableView.swift"
-                  timestampString = "495109637.682746"
+                  timestampString = "496024893.26194"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "738"
-                  endingLineNumber = "738"
+                  startingLineNumber = "737"
+                  endingLineNumber = "737"
                   offsetFromSymbolStart = "41">
                </Location>
             </Locations>
@@ -315,11 +315,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/JLChatTableView.swift"
-            timestampString = "493387131.55114"
+            timestampString = "496024891.822531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "654"
-            endingLineNumber = "654"
+            startingLineNumber = "653"
+            endingLineNumber = "653"
             landmarkName = "tryToAddOldMessages(_:changesHandler:)"
             landmarkType = "5">
          </BreakpointContent>
