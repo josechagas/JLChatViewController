@@ -8,27 +8,27 @@
 
 import UIKit
 
-public class JLImageMessage: JLMessage {
+open class JLImageMessage: JLMessage {
 
     /**
      The image of the message.
      */
-    public var relatedImage:UIImage?
+    open var relatedImage:UIImage?
     
     
     
-    public init(senderID:String,messageDate:NSDate,senderImage:UIImage?,relatedImage:UIImage?){
+    public init(senderID:String,messageDate:Date,senderImage:UIImage?,relatedImage:UIImage?){
         
         super.init(senderID: senderID, messageDate: messageDate, senderImage: senderImage)
         
       
         self.relatedImage = relatedImage
         
-        self.messageKind = MessageKind.Image
+        self.messageKind = MessageKind.image
         
         self.messageDate = messageDate
         
-        self.messageKind = MessageKind.Image
+        self.messageKind = MessageKind.image
         
     }
     

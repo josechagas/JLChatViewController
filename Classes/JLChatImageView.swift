@@ -11,7 +11,7 @@
 
 import UIKit
 
-public class JLChatImageView: UIImageView {
+open class JLChatImageView: UIImageView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -21,18 +21,19 @@ public class JLChatImageView: UIImageView {
     }
     */
     
-    @IBInspectable public var useBubbleForm:Bool = true
+    @IBInspectable open var useBubbleForm:Bool = true
     
-    override public var image:UIImage?{
+    override open var image:UIImage?{
         didSet{
             self.clipsToBounds = true
         }
     }
     
+    
     /**
      This is an ActivityIndicator used to indicate some activity with this imageview, for example loading the respective image
      */
-    public var loadActivity:UIActivityIndicatorView!
+    open var loadActivity:UIActivityIndicatorView!
 
     
     override init(frame: CGRect) {
@@ -48,8 +49,8 @@ public class JLChatImageView: UIImageView {
         
     }
     
-    private func cutImage(image:UIImage)->UIImage{
-        let contextImage: UIImage = UIImage(CGImage: image.CGImage!)
+    fileprivate func cutImage(_ image:UIImage)->UIImage{
+        let contextImage: UIImage = UIImage(cgImage: image.cgImage!)
         
         let contextSize: CGSize = contextImage.size
         
@@ -74,13 +75,13 @@ public class JLChatImageView: UIImageView {
         
             
         
-        let rect: CGRect = CGRectMake(posX, posY, newWidth, newHeight)
+        let rect: CGRect = CGRect(x: posX, y: posY, width: newWidth, height: newHeight)
         
         // Create bitmap image from context using the rect
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        let imageRef: CGImage = contextImage.cgImage!.cropping(to: rect)!
         
         // Create a new image based on the imageRef and rotate back to the original orientation
-        let newImage: UIImage = UIImage(CGImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
+        let newImage: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
 
         return newImage
     }
@@ -90,53 +91,55 @@ public class JLChatImageView: UIImageView {
      - parameter image: the image you want to add.
      - parameter mask: The image that you want to use like a mask, pass nil if you do not want to apply any mask on it.
      */
-    public func addImage(image:UIImage,ApplyingMask mask:UIImage?){
+    open func addImage(_ image:UIImage,ApplyingMask mask:UIImage?){
         
         if useBubbleForm,let mask = mask{
+
+            DispatchQueue.global(priority:DispatchQoS.QoSClass.userInitiated.rawValue).async{
             
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // 1
-                let imageReference = self.cutImage(image).CGImage
+                let imageReference = self.cutImage(image).cgImage
                 //---- resizing the bubble mask
                 let hasAlpha = true
                 let scale: CGFloat = 0.0
                 
                 UIGraphicsBeginImageContextWithOptions(self.frame.size, !hasAlpha, scale)
-                mask.drawInRect(CGRect(origin: CGPointZero, size: self.frame.size))
+                mask.draw(in: CGRect(origin: CGPoint.zero, size: self.frame.size))
                 
                 let resizedMask = UIGraphicsGetImageFromCurrentImageContext()
                 
-                let maskReference = resizedMask.CGImage
+                let maskReference = resizedMask.cgImage
                 //-----
                 
                 
-                let imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
-                                                  CGImageGetHeight(maskReference),
-                                                  CGImageGetBitsPerComponent(maskReference),
-                                                  CGImageGetBitsPerPixel(maskReference),
-                                                  CGImageGetBytesPerRow(maskReference),
-                                                  CGImageGetDataProvider(maskReference), nil, true)
+                let imageMask = CGImage(maskWidth: maskReference.width,
+                                        height: maskReference.height,
+                                        bitsPerComponent: maskReference.bitsPerComponent,
+                                        bitsPerPixel: maskReference.bitsPerPixel,
+                                        bytesPerRow: maskReference.bytesPerRow,
+                                        provider: maskReference.dataProvider, decode: nil, shouldInterpolate: true)
                 
-                let maskedReference = CGImageCreateWithMask(imageReference, imageMask)
+                let maskedReference = imageReference.masking(imageMask)
                 UIGraphicsEndImageContext()
                 
-                let maskedImage = UIImage(CGImage:maskedReference!)
+                let maskedImage = UIImage(cgImage:maskedReference!)
                 
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.image = maskedImage
                 }
+
+            
             }
             
         }
         else{
             self.image = image
-
         }
     }
     
     
-    private func initLoadActivity(){
+    fileprivate func initLoadActivity(){
         
-        loadActivity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        loadActivity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         
         loadActivity.hidesWhenStopped = true
         
@@ -147,11 +150,11 @@ public class JLChatImageView: UIImageView {
         loadActivity.startAnimating()
         //Constraints
         
-        let centerX = NSLayoutConstraint(item: loadActivity, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        let centerX = NSLayoutConstraint(item: loadActivity, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
         self.addConstraint(centerX)
         
         
-        let centerY = NSLayoutConstraint(item: loadActivity, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: loadActivity, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
         self.addConstraint(centerY)
         
     }

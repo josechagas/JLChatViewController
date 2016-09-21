@@ -14,7 +14,7 @@ protocol FileIndicatorViewDelegate{
     func didTapFileIndicatorView()
 }
 
-public class JLFileIndicatorView: UIView {
+open class JLFileIndicatorView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -25,15 +25,15 @@ public class JLFileIndicatorView: UIView {
     */
     
     
-    private var fileImageView:UIImageView!
+    fileprivate var fileImageView:UIImageView!
     
-    private var leadingAlignmentConstraint:NSLayoutConstraint!
+    fileprivate var leadingAlignmentConstraint:NSLayoutConstraint!
     
-    private var fileTitleLabel:UILabel!
+    fileprivate var fileTitleLabel:UILabel!
     
-    private var removeFileButton:UIButton!
+    fileprivate var removeFileButton:UIButton!
     
-    private var fileInformations:JLFile?
+    fileprivate var fileInformations:JLFile?
     
     
     var delegate:FileIndicatorViewDelegate?
@@ -64,11 +64,11 @@ public class JLFileIndicatorView: UIView {
     }
     
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         
         super.layoutSubviews()
         
-        if let file = fileInformations, _ = file.image{
+        if let file = fileInformations, let _ = file.image{
             leadingAlignmentConstraint.constant = 0
         }
         else{
@@ -77,11 +77,11 @@ public class JLFileIndicatorView: UIView {
         self.layoutIfNeeded()
     }
         
-    private func  configView(){
+    fileprivate func  configView(){
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.height/4
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1).CGColor
+        self.layer.borderColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1).cgColor
         
     }
     
@@ -89,7 +89,7 @@ public class JLFileIndicatorView: UIView {
      Use this method for you add the informations on JLFileIndicatorView
      - parameter file: The JLFile instance with its informations.
     */
-    func addFileInformations(file:JLFile){
+    func addFileInformations(_ file:JLFile){
         
         if let image = file.image{
             fileImageView.image = image
@@ -104,23 +104,23 @@ public class JLFileIndicatorView: UIView {
     
     //MARK: - Gesture reognizers
     
-    private func addGestures(){
+    fileprivate func addGestures(){
         
         let tap = UITapGestureRecognizer(target: self, action:#selector(JLFileIndicatorView.target(_:)))
         self.addGestureRecognizer(tap)
     }
     
-    func target(tapGes:UITapGestureRecognizer){
+    func target(_ tapGes:UITapGestureRecognizer){
         
-        self.removeFileButton.highlighted = true
+        self.removeFileButton.isHighlighted = true
         
         self.delegate?.didTapFileIndicatorView()
         
     }
     
-    func removeFileButtonAction(sender:AnyObject?){
+    func removeFileButtonAction(_ sender:AnyObject?){
         
-        self.removeFileButton.highlighted = true
+        self.removeFileButton.isHighlighted = true
         
         self.delegate?.didTapFileIndicatorView()
 
@@ -129,13 +129,13 @@ public class JLFileIndicatorView: UIView {
     //MARK: - add subViews
     
 
-    private func initFileImageView(){
+    fileprivate func initFileImageView(){
         
         fileImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         
-        fileImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        fileImageView.contentMode = UIViewContentMode.scaleAspectFill
         
-        fileImageView.backgroundColor = UIColor.blueColor()
+        fileImageView.backgroundColor = UIColor.blue
         
         fileImageView.layer.masksToBounds = true
         
@@ -148,25 +148,25 @@ public class JLFileIndicatorView: UIView {
         
         //Constraints
         
-        let aspectRatio = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: fileImageView, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
+        let aspectRatio = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: fileImageView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
 
         fileImageView.addConstraint(aspectRatio)
         
-        leadingAlignmentConstraint = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.Leading, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.Leading, multiplier: 1, constant:0)
+        leadingAlignmentConstraint = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.leading, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.leading, multiplier: 1, constant:0)
         
         self.addConstraint(leadingAlignmentConstraint)
         
-        let topAlignmentConstraint = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.Top, multiplier: 1, constant:0)
+        let topAlignmentConstraint = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.top, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.top, multiplier: 1, constant:0)
         
         self.addConstraint(topAlignmentConstraint)
         
-        let bottomAlignmentConstraint = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.Bottom, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.Bottom, multiplier: 1, constant:0)
+        let bottomAlignmentConstraint = NSLayoutConstraint(item: fileImageView, attribute: NSLayoutAttribute.bottom, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.bottom, multiplier: 1, constant:0)
         
         self.addConstraint(bottomAlignmentConstraint)
         
     }
     
-    private func initFileTitleLabel(){
+    fileprivate func initFileTitleLabel(){
         
         self.fileTitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 15))
         
@@ -189,11 +189,11 @@ public class JLFileIndicatorView: UIView {
         
         //constraints
         
-        let leadingAlignmentConstraint = NSLayoutConstraint(item: fileTitleLabel, attribute: NSLayoutAttribute.Leading, relatedBy: .Equal, toItem: fileImageView, attribute:NSLayoutAttribute.Trailing, multiplier: 1, constant:5)
+        let leadingAlignmentConstraint = NSLayoutConstraint(item: fileTitleLabel, attribute: NSLayoutAttribute.leading, relatedBy: .equal, toItem: fileImageView, attribute:NSLayoutAttribute.trailing, multiplier: 1, constant:5)
         
         self.addConstraint(leadingAlignmentConstraint)
         
-        let centerYConstraint =  NSLayoutConstraint(item: fileTitleLabel, attribute: NSLayoutAttribute.CenterY, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.CenterY, multiplier: 1, constant:0)
+        let centerYConstraint =  NSLayoutConstraint(item: fileTitleLabel, attribute: NSLayoutAttribute.centerY, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.centerY, multiplier: 1, constant:0)
         
         self.addConstraint(centerYConstraint)
         
@@ -201,23 +201,23 @@ public class JLFileIndicatorView: UIView {
     }
     
     
-    private func initRemoveFileButton(){
+    fileprivate func initRemoveFileButton(){
         
         removeFileButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         
-        removeFileButton.setTitle("x", forState: UIControlState.Normal)
+        removeFileButton.setTitle("x", for: UIControlState())
         
-        removeFileButton.tintColor = UIColor.grayColor()
+        removeFileButton.tintColor = UIColor.gray
         
-        removeFileButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        removeFileButton.setTitleColor(UIColor.gray, for: UIControlState())
         
-        removeFileButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
+        removeFileButton.setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
         
         removeFileButton.translatesAutoresizingMaskIntoConstraints = false
         
         
         
-        removeFileButton.addTarget(self, action:#selector(JLFileIndicatorView.removeFileButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        removeFileButton.addTarget(self, action:#selector(JLFileIndicatorView.removeFileButtonAction(_:)), for: UIControlEvents.touchUpInside)
         
         self.addSubview(removeFileButton)
         
@@ -227,23 +227,23 @@ public class JLFileIndicatorView: UIView {
         
         //constraints
         
-        let aspectRatio = NSLayoutConstraint(item: removeFileButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: removeFileButton, attribute: NSLayoutAttribute.Height, multiplier: 0.5, constant: 0)
+        let aspectRatio = NSLayoutConstraint(item: removeFileButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: removeFileButton, attribute: NSLayoutAttribute.height, multiplier: 0.5, constant: 0)
         
         removeFileButton.addConstraint(aspectRatio)
         
-        let leadingAlignmentConstraint = NSLayoutConstraint(item: removeFileButton, attribute: NSLayoutAttribute.Leading, relatedBy: .Equal, toItem: fileTitleLabel, attribute:NSLayoutAttribute.Trailing, multiplier: 1, constant:0)
+        let leadingAlignmentConstraint = NSLayoutConstraint(item: removeFileButton, attribute: NSLayoutAttribute.leading, relatedBy: .equal, toItem: fileTitleLabel, attribute:NSLayoutAttribute.trailing, multiplier: 1, constant:0)
         
         self.addConstraint(leadingAlignmentConstraint)
         
-        let trailingAlignmentConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Trailing, relatedBy: .Equal, toItem: removeFileButton, attribute:NSLayoutAttribute.Trailing, multiplier: 1, constant:5)
+        let trailingAlignmentConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.trailing, relatedBy: .equal, toItem: removeFileButton, attribute:NSLayoutAttribute.trailing, multiplier: 1, constant:5)
         
         self.addConstraint(trailingAlignmentConstraint)
         
-        let topAlignmentConstraint = NSLayoutConstraint(item: removeFileButton, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.Top, multiplier: 1, constant:0)
+        let topAlignmentConstraint = NSLayoutConstraint(item: removeFileButton, attribute: NSLayoutAttribute.top, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.top, multiplier: 1, constant:0)
         
         self.addConstraint(topAlignmentConstraint)
         
-        let bottomAlignmentConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: .Equal, toItem: removeFileButton, attribute:NSLayoutAttribute.Bottom, multiplier: 1, constant:0)
+        let bottomAlignmentConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.bottom, relatedBy: .equal, toItem: removeFileButton, attribute:NSLayoutAttribute.bottom, multiplier: 1, constant:0)
         
         self.addConstraint(bottomAlignmentConstraint)
         

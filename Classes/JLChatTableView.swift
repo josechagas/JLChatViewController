@@ -12,10 +12,10 @@ extension NSObject{
     /**
      Execute some operation on a serial queue specially to avoid data inconsistency
      */
-    private func runBlockSinchronized(closure:()->()){
-        let mySerialQueue = dispatch_queue_create("sinchronization_Queue", DISPATCH_QUEUE_SERIAL)
+    fileprivate func runBlockSinchronized(_ closure:()->()){
+        let mySerialQueue = DispatchQueue(label: "sinchronization_Queue", attributes: [])
         
-        dispatch_sync(mySerialQueue) {
+        mySerialQueue.sync {
             closure()
         }
     }
@@ -25,19 +25,19 @@ extension NSObject{
     /**
      use it for default date header view
      */
-    case DefaultDateView = 0
+    case defaultDateView = 0
     
     /**
      use it for custom date header view
      */
-    case CustomDateView = 1
+    case customDateView = 1
 
     /**
      use it for another kind of header view you want to add,
      for example a header view that indicates the number of unread messages.
 
      */
-    case CustomView = 2
+    case customView = 2
 }
 
 /**
@@ -48,7 +48,7 @@ public protocol JLChatMessagesMenuDelegate{
     /**
     executed to discover if the UIMenuItem with title can be shown
     */
-    func shouldShowMenuItemForCellAtIndexPath(title:String,indexPath:NSIndexPath)->Bool
+    func shouldShowMenuItemForCellAtIndexPath(_ title:String,indexPath:IndexPath)->Bool
     
     /**
     Define the title of the UIMenuItem that excutes the delete action.
@@ -71,11 +71,11 @@ public protocol JLChatMessagesMenuDelegate{
     /**
      The action that delete message.
      */
-    func performDeleteActionForCellAtIndexPath(indexPath:NSIndexPath)
+    func performDeleteActionForCellAtIndexPath(_ indexPath:IndexPath)
     /**
      The action that tries to send again the message.
      */
-    func performSendActionForCellAtIndexPath(indexPath:NSIndexPath)
+    func performSendActionForCellAtIndexPath(_ indexPath:IndexPath)
     
 }
 
@@ -93,20 +93,20 @@ public protocol JLChatMessagesMenuDelegate{
      - parameter indexPath: The position of JLMessage required
      */
     
-    func jlChatMessageAtIndexPath(indexPath:NSIndexPath)->JLMessage?
+    func jlChatMessageAtIndexPath(_ indexPath:IndexPath)->JLMessage?
     
     /**
      Implement this method if your chat needs more than one section, the default section is the one for loading old messages indication
      
      - returns: Number of DateHeaderViews + CustomHeaderViews(CustomDateHeaderViews + OtherCustomViews)
      */
-    optional func numberOfDateAndCustomSectionsInJLChat(chat:JLChatTableView)->Int
+    @objc optional func numberOfDateAndCustomSectionsInJLChat(_ chat:JLChatTableView)->Int
     
     /**
      Implement this method if you implemented 'numberOfDateAndCustomSectionsInJLChat' to indicate the kind of header view for each section
      - parameter section: The section number of the header view
      */
-    optional func jlChatKindOfHeaderViewInSection(section:Int)->JLChatSectionHeaderViewKind
+    @objc optional func jlChatKindOfHeaderViewInSection(_ section:Int)->JLChatSectionHeaderViewKind
     
     /**
      Implement this method if your chat has some headerView of kind   JLChatSectionHeaderViewKind.CustomView to inform height of it
@@ -114,7 +114,7 @@ public protocol JLChatMessagesMenuDelegate{
      
      - returns: The corresponding height of custom header View
      */
-    optional func jlChatHeightForCustomHeaderInSection(section:Int)->CGFloat
+    @objc optional func jlChatHeightForCustomHeaderInSection(_ section:Int)->CGFloat
     
     /**
      Implement this method if your chat has some headerView of kind  JLChatSectionHeaderViewKind.CustomView and/or JLChatSectionHeaderViewKind.CustomDateView, load your custom header views here
@@ -122,31 +122,31 @@ public protocol JLChatMessagesMenuDelegate{
      
      - returns: The corresponding view of custom header View
      */
-    optional func jlChatCustomHeaderInSection(section:Int)->UIView?
+    @objc optional func jlChatCustomHeaderInSection(_ section:Int)->UIView?
     
     /**
      The number of messages in corresponding section
      - parameter section: The section that have the header views with date for example
      - returns: The number of messages of the corresponding section
      */
-    func jlChatNumberOfMessagesInSection(section:Int)->Int
+    func jlChatNumberOfMessagesInSection(_ section:Int)->Int
     
     /**
      Implement this method to load the correct message cell for the indexPath
      - parameter indexPath: The indexPath for the cell
      - returns: The loaded cell
      */
-    func jlChat(chat:JLChatTableView,MessageCellForRowAtIndexPath indexPath:NSIndexPath)->JLChatMessageCell
+    func jlChat(_ chat:JLChatTableView,MessageCellForRowAtIndexPath indexPath:IndexPath)->JLChatMessageCell
 
     /**
      This method will be called always when there is a message with messageKind = MessageKind.Custom
      */
-    optional func chat(chat: JLChatTableView, CustomMessageCellForRowAtIndexPath indexPath: NSIndexPath) -> JLChatMessageCell
+    @objc optional func chat(_ chat: JLChatTableView, CustomMessageCellForRowAtIndexPath indexPath: IndexPath) -> JLChatMessageCell
 
     /**
      Implement this method if you want ot change the default title of section for loading old messages indication
      */
-    optional func titleForJLChatLoadingView()->String
+    @objc optional func titleForJLChatLoadingView()->String
     
     
 }
@@ -163,29 +163,29 @@ public protocol ChatDelegate{
     /**
      Executed when there is a tap on any message.
      */
-    func didTapMessageAtIndexPath(indexPath:NSIndexPath)
+    func didTapMessageAtIndexPath(_ indexPath:IndexPath)
     
 }
 
 
-public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate,UITableViewDataSource {
+open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate,UITableViewDataSource {
     
     /**
      The id of the current user
      */
-    public var myID:String!
+    open var myID:String!
     /**
      The 'JLChatMessagesMenuDelegate' instance.
      */
-    public var messagesMenuDelegate:JLChatMessagesMenuDelegate?
+    open var messagesMenuDelegate:JLChatMessagesMenuDelegate?
     /**
      The 'ChatDelegate' instance.
      */
-    public var chatDelegate:ChatDelegate?
+    open var chatDelegate:ChatDelegate?
     /**
      The 'ChatDataSource' instance.
      */
-    public var chatDataSource:ChatDataSource?{
+    open var chatDataSource:ChatDataSource?{
         didSet{
             self.dataSource = self
             self.delegate = self
@@ -198,20 +198,20 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      A boolean value that indicates if should or not scroll to bottom when reloading the data
      */
-    private var enableFirstScrollToBottom:Bool = true
+    fileprivate var enableFirstScrollToBottom:Bool = true
     /**
      The calculated rows height to increase the performance when presenting them to user
      */
-    private var calculatedRowsHeight:[Int:CGFloat] = [Int:CGFloat]()
+    fileprivate var calculatedRowsHeight:[Int:CGFloat] = [Int:CGFloat]()
     
     /**
      A boolean that indicates that the chat will search for unread messages and scroll to them to start showing the first one
      */
-    private var checkForUnreadMessages:Bool = true
+    fileprivate var checkForUnreadMessages:Bool = true
     /**
      The position of the first unread message added to chat
      */
-    private var firstUnreadMessageIndexPath:NSIndexPath?
+    fileprivate var firstUnreadMessageIndexPath:IndexPath?
     
     
     //new messages part - start
@@ -219,31 +219,31 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      Method that will be called after adding a new message
      */
-    private var addNewMessageCompletion:(()->())?
+    fileprivate var addNewMessageCompletion:(()->())?
     /**
      Boolean that indicates that is or not adding a new message
      */
-    private var addingNewMessage:Bool = false
+    fileprivate var addingNewMessage:Bool = false
     
     /**
      Saves the reference for changes on datasource because sometimes to add a new message is necessary to execute some other methods first so its necessary to save it and at the right time execute it
      */
-    private var changesOnDataSourceHandler:(()->())?
+    fileprivate var changesOnDataSourceHandler:(()->())?
     
     /**
      The number of new messages that will be added at once
      */
-    private var quantOfNewMess:Int = 0
+    fileprivate var quantOfNewMess:Int = 0
     
     /**
      Boolean that indicates that is or not scrolling to bottom to add a new message
      */
-    private var scrollingToAddANewMessage:Bool = false
+    fileprivate var scrollingToAddANewMessage:Bool = false
     
     /**
      Boolean that indicates that is or not scrolling to bottom
      */
-    private var scrollingToBottom:Bool = false
+    fileprivate var scrollingToBottom:Bool = false
 
     //new messages part - end
 
@@ -252,7 +252,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      Bolean value that indicates when its loading old messages its specially to avoid load of older messages when its already loading
      */
-    private var isLoadingOldMessages:Bool = false
+    fileprivate var isLoadingOldMessages:Bool = false
     //old messages part - end
     
     
@@ -260,9 +260,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      Boolean value that indicates when its executing some insertion, deletion or update operation
      */
-    private var isExecutingSomeOperation:Bool = false
+    fileprivate var isExecutingSomeOperation:Bool = false
     typealias ChatClosureType = () -> ()
-    private var messageAddQueue:[ChatClosureType] = [ChatClosureType]()
+    fileprivate var messageAddQueue:[ChatClosureType] = [ChatClosureType]()
     // operations of deletion insertion and update queue - end
     
     
@@ -284,15 +284,15 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      Execute the next action presented on 'completionQueue'
      - parameter afterDelay: a delay in seconds to execute the next job
      */
-    private func runNextJob(afterDelay:Double){
+    fileprivate func runNextJob(_ afterDelay:Double){
         ///-------------------
         self.runBlockSinchronized({
             if self.messageAddQueue.count > 0{
                 self.isExecutingSomeOperation = true
-                let function = self.messageAddQueue.removeAtIndex(0)
+                let function = self.messageAddQueue.remove(at: 0)
                 let delayInSeconds = afterDelay
-                let popTime = dispatch_time(DISPATCH_TIME_NOW,Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue()) {
+                let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime) {
                     function()
                 }
             }
@@ -308,13 +308,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     //MARK: - Config Update and Reload type methods
     
-    private func initChatTableView(){
+    fileprivate func initChatTableView(){
         
         self.rowHeight = UITableViewAutomaticDimension
         self.estimatedRowHeight = 60
         self.estimatedSectionHeaderHeight = 71
         
-        self.registerNib(UINib(nibName: "JLChatDateView", bundle: JLBundleController.getBundle()), forHeaderFooterViewReuseIdentifier: "DateView")
+        self.register(UINib(nibName: "JLChatDateView", bundle: JLBundleController.getBundle()), forHeaderFooterViewReuseIdentifier: "DateView")
         
     }
     
@@ -323,9 +323,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      This method adds the Table header view that has the title of chat and indicates when its loading old messages
      */
-    private func addTableHeader(){
+    fileprivate func addTableHeader(){
         
-        let view = JLBundleController.getBundle()!.loadNibNamed("JLChatLoadingView", owner: self, options: nil)[0] as! JLChatLoadingView
+        let view = JLBundleController.getBundle()!.loadNibNamed("JLChatLoadingView", owner: self, options: nil)?[0] as! JLChatLoadingView
         
         if let titleFunc = chatDataSource?.titleForJLChatLoadingView{
             view.loadingTextLabel.text = titleFunc()
@@ -336,7 +336,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
         view.activityIndicator.stopAnimating()
 
-        self.tableHeaderView = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: self.frame.width, height: 71)))
+        self.tableHeaderView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: self.frame.width, height: 71)))
         
         self.tableHeaderView?.addSubview(view)
         
@@ -344,13 +344,13 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     //rows height
     
-    private func invalidateheightsForCells(){
+    fileprivate func invalidateheightsForCells(){
         calculatedRowsHeight.forEach { (key,value) in
             calculatedRowsHeight[key] = 0
         }
     }
     
-    private func addHeightForCellAtIndexPath(messageHash:Int,height:CGFloat){
+    fileprivate func addHeightForCellAtIndexPath(_ messageHash:Int,height:CGFloat){
         calculatedRowsHeight[messageHash] = height
     }
     
@@ -362,10 +362,10 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter message:The message that is being reloaded or added on 'chatMessageForRowAtIndexPath'
      - parameter indexPath: The indexPath of 'message'
      */
-    private func checkForUnreadMessage(message:JLMessage,CurrentIndexPath indexPath:NSIndexPath){
+    fileprivate func checkForUnreadMessage(_ message:JLMessage,CurrentIndexPath indexPath:IndexPath){
         
         if let unreadIndex = firstUnreadMessageIndexPath{
-            if message.messageRead == false && (unreadIndex.row > indexPath.row || unreadIndex.section > indexPath.section) {
+            if message.messageRead == false && ((unreadIndex as NSIndexPath).row > (indexPath as NSIndexPath).row || (unreadIndex as NSIndexPath).section > (indexPath as NSIndexPath).section) {
                 firstUnreadMessageIndexPath = indexPath
             }
         }
@@ -386,8 +386,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      
      Never use it to add old messages inside chat tableView.
     */
-    @available(*,deprecated,renamed="addNewMessages(quant:Int)",message="This method is deprecated use addNewMessages(quant:Int) instead")
-    public func addNewMessage(quant:Int){
+    @available(*,deprecated,renamed: "addNewMessages",message: "This method is deprecated use addNewMessages(quant:Int) instead")
+    open func addNewMessage(_ quant:Int){
         self.addNewMessages(quant,changesHandler: {},completionHandler: nil)
     }
    
@@ -400,7 +400,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter changesHandler: A closure that should contain all insertions on your data structure of messages
      - parameter completionHandler: Method that will be called at the end of adding a new message
      */
-    public func addNewMessages(quant:Int,changesHandler:()->(),completionHandler:(()->())?){
+    open func addNewMessages(_ quant:Int,changesHandler:@escaping ()->(),completionHandler:(()->())?){
 
         if quant > 0{
             if isExecutingSomeOperation{
@@ -422,7 +422,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      Pass nil on quant if its a new try for a older add of new message
      */
-    private func tryToAddNewMessagesNow(quant:Int?,changesHandler:(()->())?){
+    fileprivate func tryToAddNewMessagesNow(_ quant:Int?,changesHandler:(()->())?){
         
         if let quant = quant{
             self.runBlockSinchronized({
@@ -501,9 +501,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                 scrollingToAddANewMessage = false
                 
                 let delayInSeconds = 0.5
-                let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                            Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue()) {
+                let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime) {
                     self.addingNewMessage = true
                     
                     //contabiliza as novas mensagens
@@ -547,10 +546,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      This method executes the add new messages completion block
      - parameter delay: a time interval to wait for execute the corresponding block
      */
-    private func runAddNewMessagesCompletion(AfterDelay delay:Double){
-        let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                    Int64(delay * Double(NSEC_PER_SEC)))
-        dispatch_after(popTime, dispatch_get_main_queue()) {
+    fileprivate func runAddNewMessagesCompletion(AfterDelay delay:Double){
+        let popTime = DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
             if let completion = self.addNewMessageCompletion{
                 self.runBlockSinchronized({
                     completion()
@@ -577,8 +575,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter quant: the number of messages that will be added.
      
      */
-    @available(*,deprecated,renamed="addOldMessages(quant:Int,changesHandler:()->())",message="This method is deprecated use addNewMessages(quant:Int,changesHandler:()->()) instead")
-    public func addOldMessages(quant:Int){
+    @available(*,deprecated,renamed: "addOldMessages",message: "This method is deprecated use addNewMessages(quant:Int,changesHandler:()->()) instead")
+    open func addOldMessages(_ quant:Int){
         self.addOldMessages(quant, changesHandler: {})
     }
     
@@ -590,7 +588,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter quant: the number of messages that will be added.
      - parameter changesHandler: A closure that should contain all insertions on your data structure of messages
      */
-    public func addOldMessages(quant:Int,changesHandler:()->()){
+    open func addOldMessages(_ quant:Int,changesHandler:@escaping ()->()){
         
         if quant > 0{
             if isExecutingSomeOperation{
@@ -613,7 +611,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      
      Never call this method out of addOldMessages method
      */
-    private func tryToAddOldMessages(quant:Int,changesHandler:()->()){
+    fileprivate func tryToAddOldMessages(_ quant:Int,changesHandler:()->()){
         
         
         
@@ -641,8 +639,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         enableFirstScrollToBottom = false// putting it to false because it will be true when you try to add old messages for the first time when you started the chat with zero messages
         
     
-        var lastTopVisibleCellIndexPath:NSIndexPath?
-        if let visibleIndexPaths = self.indexPathsForVisibleRows where visibleIndexPaths.count > 0{
+        var lastTopVisibleCellIndexPath:IndexPath?
+        if let visibleIndexPaths = self.indexPathsForVisibleRows , visibleIndexPaths.count > 0{
             lastTopVisibleCellIndexPath = visibleIndexPaths[0]
         }
         
@@ -650,12 +648,12 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         self.reloadData()
 
         if let indexPath = lastTopVisibleCellIndexPath{
-            let newSection = indexPath.section + (actualNumbOfSections - lastNumbOfSections)
-            let newRow = indexPath.section > 0 ? indexPath.row : indexPath.row + (lastSectionZeroQuant - sectionZeroQuant)
+            let newSection = (indexPath as NSIndexPath).section + (actualNumbOfSections - lastNumbOfSections)
+            let newRow = (indexPath as NSIndexPath).section > 0 ? (indexPath as NSIndexPath).row : (indexPath as NSIndexPath).row + (lastSectionZeroQuant - sectionZeroQuant)
 
-            let lastTopCellNewIndexPath = NSIndexPath(forRow: newRow, inSection: newSection)
+            let lastTopCellNewIndexPath = IndexPath(row: newRow, section: newSection)
 
-            self.scrollToRowAtIndexPath(lastTopCellNewIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+            self.scrollToRow(at: lastTopCellNewIndexPath, at: UITableViewScrollPosition.top, animated: false)
         }
         //stop the activity because ended the load
         forceToFinishLoadingAnimation()
@@ -666,7 +664,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     /**
      Use this method when some kind of error when trying to load old messages happend and you just want to stop the animation
     */
-    public func forceToFinishLoadingAnimation(){
+    open func forceToFinishLoadingAnimation(){
         if let header = self.tableHeaderView!.subviews[0] as? JLChatLoadingView{
             header.activityIndicator.stopAnimating()
         }
@@ -680,11 +678,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter message: The message that corresponds to the cell at indexPath 'indexPath'
      with its status already updated.
      */
-    public func updateMessageStatusOfCellAtIndexPath(indexPath:NSIndexPath,message:JLMessage){
+    open func updateMessageStatusOfCellAtIndexPath(_ indexPath:IndexPath,message:JLMessage){
         
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            if let cell = self.cellForRowAtIndexPath(indexPath) as? JLChatMessageCell{
+        let delayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            if let cell = self.cellForRow(at: indexPath) as? JLChatMessageCell{
                 cell.updateMessageStatus(message)
             }
         }
@@ -695,18 +693,18 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      Use this method to remove from 'ChatTableView' the message at indexPath
      - parameter indexPath: the indexPath of the message that you want to remove from 'ChatTableView'.
     */
-    @available(*,deprecated,renamed="removeMessagesCellsAtIndexPaths(indexPaths:[NSIndexPath],relatedMessages:[JLMessage]!)",message="This method is deprecated use removeMessagesCellsAtIndexPaths instead")
-    public func removeMessage(indexPath:NSIndexPath){
+    @available(*,deprecated,renamed: "removeMessagesCellsAtIndexPaths",message: "This method is deprecated use removeMessagesCellsAtIndexPaths instead")
+    open func removeMessage(_ indexPath:IndexPath){
         let message:JLMessage? = self.chatDataSource!.jlChatMessageAtIndexPath(indexPath)
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-            if let cell = self.cellForRowAtIndexPath(indexPath){
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
+            if let cell = self.cellForRow(at: indexPath){
                 cell.alpha = 0
             }
             
         }) { (finished) -> Void in
             if finished{
                 if let message = message{
-                    self.calculatedRowsHeight.removeValueForKey(message.hash)
+                    self.calculatedRowsHeight.removeValue(forKey: message.hash)
                 }
                 self.reloadData()
             }
@@ -721,21 +719,21 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter indexPath: the indexPaths of the messages that you want to remove from 'ChatTableView'.
      - parameter relatedMessage: The messages that corresponds to cells you want to remove from chat
      */
-    public func removeMessageCellAtIndexPath(indexPath:NSIndexPath,relatedMessage:JLMessage!){
+    open func removeMessageCellAtIndexPath(_ indexPath:IndexPath,relatedMessage:JLMessage!){
         //self.calculatedRowsHeight.removeValueForKey(relatedMessage.hash)
         //self.beginUpdates()
         //self.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         //self.endUpdates()
         
         
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
-            if let cell = self.cellForRowAtIndexPath(indexPath){
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: { () -> Void in
+            if let cell = self.cellForRow(at: indexPath){
                 cell.alpha = 0
             }
             
         }) { (finished) -> Void in
             if finished{
-                self.calculatedRowsHeight.removeValueForKey(relatedMessage.hash)
+                self.calculatedRowsHeight.removeValue(forKey: relatedMessage.hash)
                 self.reloadData()
             }
         }
@@ -798,20 +796,20 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter section: The section number that you want to remove
      - parameter messagesOfSection: the messages that belongs to this section and will be removed to.
      */
-    public func removeChatSection(section:Int,messagesOfSection:[JLMessage]?){
+    open func removeChatSection(_ section:Int,messagesOfSection:[JLMessage]?){
         
         if let messages = messagesOfSection{
             for message in messages{
-                self.calculatedRowsHeight.removeValueForKey(message.hash)
+                self.calculatedRowsHeight.removeValue(forKey: message.hash)
             }
         }
-        else if self.numberOfRowsInSection(section) > 0{
+        else if self.numberOfRows(inSection: section) > 0{
             self.calculatedRowsHeight.removeAll()
         }
         
-        if self.numberOfSections > self.dataSource!.numberOfSectionsInTableView!(self){
+        if self.numberOfSections > self.dataSource!.numberOfSections!(in: self){
             self.beginUpdates()
-            self.deleteSections(NSIndexSet(index: section), withRowAnimation: UITableViewRowAnimation.Fade)
+            self.deleteSections(IndexSet(integer: section), with: UITableViewRowAnimation.fade)
             self.endUpdates()
         }
         
@@ -870,17 +868,17 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter sections: An array that contains the position of sections you want to delete.
      - parameter relatedMessages: The messages related to rowsIndexPath and to sections.
      */
-    public func removeMessagesCells(rowsIndexPath:[NSIndexPath]?,AndSections sections:[Int]?,WithRelatedMessages relatedMessages:[JLMessage]?){
+    open func removeMessagesCells(_ rowsIndexPath:[IndexPath]?,AndSections sections:[Int]?,WithRelatedMessages relatedMessages:[JLMessage]?){
         if let messages = relatedMessages{
             for message in messages{
-                self.calculatedRowsHeight.removeValueForKey(message.hash)
+                self.calculatedRowsHeight.removeValue(forKey: message.hash)
             }
         }
         else{
             self.calculatedRowsHeight.removeAll()
         }
         
-        var indexPaths = [NSIndexPath]()
+        var indexPaths = [IndexPath]()
         var sectionsNumber = [Int]()
         if let rowsIndexs = rowsIndexPath{
             indexPaths = rowsIndexs
@@ -891,9 +889,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
         
         self.beginUpdates()
-        self.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+        self.deleteRows(at: indexPaths, with: UITableViewRowAnimation.fade)
         for i in sectionsNumber{
-            self.deleteSections(NSIndexSet(index: i), withRowAnimation: UITableViewRowAnimation.Fade)
+            self.deleteSections(IndexSet(integer: i), with: UITableViewRowAnimation.fade)
         }
         self.endUpdates()
 
@@ -901,20 +899,20 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     
     
-    private func frameMadeByRowsInRange(rowsRange:NSRange?,AndSection section:Int)->CGRect?{
+    fileprivate func frameMadeByRowsInRange(_ rowsRange:NSRange?,AndSection section:Int)->CGRect?{
         
         var initialRow = 0
         var totalRows = 0
         
         if let rowsRange = rowsRange{
             initialRow = rowsRange.location
-            totalRows = rowsRange.length + rowsRange.location < self.numberOfRowsInSection(section) ? rowsRange.length + rowsRange.location : self.numberOfRowsInSection(section)
+            totalRows = rowsRange.length + rowsRange.location < self.numberOfRows(inSection: section) ? rowsRange.length + rowsRange.location : self.numberOfRows(inSection: section)
         }
         
         var totalHeight:CGFloat = 0
         var initialRowFrame:CGRect?
         for row in initialRow..<totalRows{
-            if let cell = self.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: section)){
+            if let cell = self.cellForRow(at: IndexPath(row: row, section: section)){
                 if let _ = initialRowFrame{
                     
                 }
@@ -925,8 +923,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             }
         }
         
-        if totalRows == self.numberOfRowsInSection(section){
-            if let header = self.headerViewForSection(section){
+        if totalRows == self.numberOfRows(inSection: section){
+            if let header = self.headerView(forSection: section){
                 if let _ = initialRowFrame{
                     
                 }
@@ -950,7 +948,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      
      - parameter choosedIndexPath: The indexPath of the row to cover the frame
      */
-    private func moveChatItemsToCoverFrame(frame:CGRect!){
+    fileprivate func moveChatItemsToCoverFrame(_ frame:CGRect!){
         
         if frame.height > 0{
             
@@ -985,9 +983,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             
             for i in 0..<self.numberOfSections{
                 //for headers
-                if let sectionHeader = self.headerViewForSection(i){
+                if let sectionHeader = self.headerView(forSection: i){
                     sectionHeader.layer.delegate = self.layer
-                    UIView.animateKeyframesWithDuration(0.25, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: {
+                    UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: UIViewKeyframeAnimationOptions(), animations: {
                         
                         if sectionHeader.frame.origin.y < yPosition{
                             sectionHeader.frame.origin = CGPoint(x: sectionHeader.frame.origin.x, y: sectionHeader.frame.origin.y + beforeCellMoveBy)
@@ -1002,9 +1000,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                     
                 }
                 //for footers
-                if let sectionFooter = self.footerViewForSection(i){
+                if let sectionFooter = self.footerView(forSection: i){
                     sectionFooter.layer.delegate = self.layer
-                    UIView.animateKeyframesWithDuration(0.25, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: {
+                    UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: UIViewKeyframeAnimationOptions(), animations: {
                         
                         if sectionFooter.frame.origin.y < yPosition{
                             sectionFooter.frame.origin = CGPoint(x: sectionFooter.frame.origin.x, y: sectionFooter.frame.origin.y + beforeCellMoveBy)
@@ -1023,9 +1021,9 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             //for rows
             if let indexPaths = self.indexPathsForVisibleRows{
                 for indexPath in indexPaths{
-                    if let cell = self.cellForRowAtIndexPath(indexPath){
+                    if let cell = self.cellForRow(at: indexPath){
                         cell.layer.delegate = self.layer
-                        UIView.animateKeyframesWithDuration(0.25, delay: 0, options: UIViewKeyframeAnimationOptions.CalculationModeLinear, animations: {
+                        UIView.animateKeyframes(withDuration: 0.25, delay: 0, options: UIViewKeyframeAnimationOptions(), animations: {
                             
                             if cell.frame.origin.y < yPosition{
                                 cell.frame.origin = CGPoint(x: cell.frame.origin.x, y: cell.frame.origin.y + beforeCellMoveBy)
@@ -1051,14 +1049,14 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter cell: The cell that will be configured
      - parameter indexPath: the indexpath that contain this cell
      */
-    private func configMenuItemsOfCell(cell:JLChatMessageCell, ForRowAtIndexPath indexPath:NSIndexPath){
+    fileprivate func configMenuItemsOfCell(_ cell:JLChatMessageCell, ForRowAtIndexPath indexPath:IndexPath){
         if let delegate = self.messagesMenuDelegate {
             
             let deleteTitle = delegate.titleForDeleteMenuItem()
             let sendTitle = delegate.titleForSendMenuItem()
             
             cell.sendMenuEnabled = { () -> Bool in
-                if let correctIndexPath = self.indexPathForCell(cell) where !self.isExecutingSomeOperation{
+                if let correctIndexPath = self.indexPath(for: cell) , !self.isExecutingSomeOperation{
                     if let sendTitle = sendTitle{
                         return delegate.shouldShowMenuItemForCellAtIndexPath(sendTitle, indexPath: correctIndexPath)
                     }
@@ -1069,7 +1067,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             }
             
             cell.deleteMenuEnabled = { () -> Bool in
-                if let correctIndexPath = self.indexPathForCell(cell) where !self.isExecutingSomeOperation{
+                if let correctIndexPath = self.indexPath(for: cell) , !self.isExecutingSomeOperation{
                     if let deleteTitle = deleteTitle{
                         return delegate.shouldShowMenuItemForCellAtIndexPath(deleteTitle, indexPath: correctIndexPath)
                     }
@@ -1081,12 +1079,12 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             
             
             cell.configMenu(deleteTitle, sendTitle: sendTitle, deleteBlock: { () -> () in
-                if let correctIndexPath = self.indexPathForCell(cell){
+                if let correctIndexPath = self.indexPath(for: cell){
                     delegate.performDeleteActionForCellAtIndexPath(correctIndexPath)
                 }
                 
                 }, sendBlock: { () -> () in
-                    if let correctIndexPath = self.indexPathForCell(cell){
+                    if let correctIndexPath = self.indexPath(for: cell){
                         delegate.performSendActionForCellAtIndexPath(correctIndexPath)
                     }
             })
@@ -1100,22 +1098,21 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter indexPath: The indexpath of corresponding cell
      - parameter completionHandler: A block of code to be executed after animating the last new message cell
      */
-    private func animateAdditionOfNewMessageCell(cell:JLChatMessageCell,AtIndexPath indexPath:NSIndexPath,completionHandler:()->()){
+    fileprivate func animateAdditionOfNewMessageCell(_ cell:JLChatMessageCell,AtIndexPath indexPath:IndexPath,completionHandler:@escaping ()->()){
         let lastSectionNumber = self.numberOfSections - 1
         
-        for number in (0..<quantOfNewMess).reverse(){
+        for number in (0..<quantOfNewMess).reversed(){
             //let index = newIndexPaths[number]
-            let lastRowAtSection = self.numberOfRowsInSection(lastSectionNumber) - 1
-            if indexPath.row == lastRowAtSection - number && indexPath.section == lastSectionNumber{//newer message
+            let lastRowAtSection = self.numberOfRows(inSection: lastSectionNumber) - 1
+            if (indexPath as NSIndexPath).row == lastRowAtSection - number && (indexPath as NSIndexPath).section == lastSectionNumber{//newer message
                 //Animate it's  appearance
                 cell.contentView.alpha = 0
-                print("animando aparicao da menssagem \(indexPath.row)")
+                print("animando aparicao da menssagem \((indexPath as NSIndexPath).row)")
                 let delayInSeconds = 0.4
-                let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                            Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue()) {
+                let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime) {
                     //print("animando no willDisplayCEll")
-                    UIView.animateWithDuration(0.6, animations: {
+                    UIView.animate(withDuration: 0.6, animations: {
                         cell.contentView.alpha = 1
                         }, completion: { (finished) in
                             if finished{
@@ -1135,7 +1132,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
  
     //MARK: - ScrollView methods
     
-    public func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         self.scrollingToBottom = false
         
         //was scrolling to add a new message and its on bottom
@@ -1145,7 +1142,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     }
     
     
-    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollingToBottom = false
         if self.contentOffset.y <= 0 - (self.contentInset.top){//its on top or bouncing on top
             if !isLoadingOldMessages{
@@ -1167,16 +1164,15 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     //MARK: header methods
     
     
-    public func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    open func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         let lastSectionNumber = self.numberOfSections - 1
-        if addingNewMessage && lastSectionNumber == section && self.numberOfRowsInSection(section) == 1{
+        if addingNewMessage && lastSectionNumber == section && self.numberOfRows(inSection: section) == 1{
             let delayInSeconds = 0.1
             view.alpha = 0
-            let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                        Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-            dispatch_after(popTime, dispatch_get_main_queue()) {
-                UIView.animateWithDuration(1, animations: {
+            let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: popTime) {
+                UIView.animate(withDuration: 1, animations: {
                     view.alpha = 1
                 })
             }
@@ -1184,15 +1180,15 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
     }
     
-    public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
   
-    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if let _ = chatDataSource{
             if let sectionKindFunc = self.chatDataSource!.jlChatKindOfHeaderViewInSection{
-                if sectionKindFunc(section) != JLChatSectionHeaderViewKind.DefaultDateView{
+                if sectionKindFunc(section) != JLChatSectionHeaderViewKind.defaultDateView{
                     if let viewHeighFunc = self.chatDataSource!.jlChatHeightForCustomHeaderInSection{
                         return viewHeighFunc(section)
                     }
@@ -1217,12 +1213,12 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     
     
-    public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let _ = chatDataSource{
             
             if let sectionKindFunc = self.chatDataSource!.jlChatKindOfHeaderViewInSection{
                 switch sectionKindFunc(section){
-                case JLChatSectionHeaderViewKind.CustomView, JLChatSectionHeaderViewKind.CustomDateView:
+                case JLChatSectionHeaderViewKind.customView, JLChatSectionHeaderViewKind.customDateView:
                     if let customViewFunc = self.chatDataSource!.jlChatCustomHeaderInSection{
                         return customViewFunc(section)
                     }
@@ -1233,8 +1229,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                     
                 //case JLChatSectionHeaderViewKind.DefaultDateView:
                 default:
-                    if let view = self.dequeueReusableHeaderFooterViewWithIdentifier("DateView") as? JLChatDateView{
-                        if let firstMessageOfSection = self.chatDataSource!.jlChatMessageAtIndexPath(NSIndexPath(forRow: 0, inSection: section)){
+                    if let view = self.dequeueReusableHeaderFooterView(withIdentifier: "DateView") as? JLChatDateView{
+                        if let firstMessageOfSection = self.chatDataSource!.jlChatMessageAtIndexPath(IndexPath(row: 0, section: section)){
                             view.dateLabel.text = firstMessageOfSection.generateStringFromDate()
                         }
                         return view
@@ -1257,29 +1253,29 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
 
     
     //MARK: Cell methods
-    public func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if let message = self.chatDataSource!.jlChatMessageAtIndexPath(indexPath){
-            if let value = calculatedRowsHeight[message.hash] where value != 0{
+            if let value = calculatedRowsHeight[message.hash] , value != 0{
                 return value
             }
         }
         return 60
     }
     
-    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let message = self.chatDataSource!.jlChatMessageAtIndexPath(indexPath){
-            if let value = calculatedRowsHeight[message.hash] where value != 0{
-                print("calculated \(indexPath.row)")
+            if let value = calculatedRowsHeight[message.hash] , value != 0{
+                print("calculated \((indexPath as NSIndexPath).row)")
                 return value
             }
         }
-        print("not calculated \(indexPath.row)")
+        print("not calculated \((indexPath as NSIndexPath).row)")
         return UITableViewAutomaticDimension
     }
     
     
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.deselectRowAtIndexPath(indexPath, animated: true)
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.deselectRow(at: indexPath, animated: true)
        
         self.chatDelegate?.didTapMessageAtIndexPath(indexPath)
 
@@ -1287,7 +1283,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     
     
-    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cellToReturn = cell as! JLChatMessageCell
         
@@ -1304,11 +1300,11 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
         
         if let index = firstUnreadMessageIndexPath{
-            if (indexPath.row == index.row && indexPath.section == index.section){
+            if ((indexPath as NSIndexPath).row == (index as NSIndexPath).row && (indexPath as NSIndexPath).section == (index as NSIndexPath).section){
                 firstUnreadMessageIndexPath = nil
             }
         }
-        else if (indexPath.row == self.numberOfRowsInSection(lastSectionNumber) - 1 && indexPath.section == lastSectionNumber){
+        else if ((indexPath as NSIndexPath).row == self.numberOfRows(inSection: lastSectionNumber) - 1 && (indexPath as NSIndexPath).section == lastSectionNumber){
             self.enableFirstScrollToBottom = false
         }
 
@@ -1321,7 +1317,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     
     //MARK: -  Datasource
 
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         
         if let function = self.chatDataSource!.numberOfDateAndCustomSectionsInJLChat{
             return function(self)
@@ -1330,12 +1326,12 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
 
     }
     
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.chatDataSource!.jlChatNumberOfMessagesInSection(section)
     }
     
     
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = self.chatDataSource!.jlChat(self, MessageCellForRowAtIndexPath: indexPath)
         
@@ -1348,7 +1344,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     - parameter indexPath: The indexPath of the cell on chat tableView.
     - returns: The created message cell.
     */
-    public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath)->JLChatMessageCell{
+    open func chatMessageForRowAtIndexPath(_ indexPath: IndexPath)->JLChatMessageCell{
         
         let lastSectionNumber = self.numberOfSections - 1
         
@@ -1359,16 +1355,16 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         //
         
         // configuration part
-        let thisIsTheNewMessage:Bool = (addingNewMessage && indexPath.row == self.numberOfRowsInSection(lastSectionNumber) - 1 && indexPath.section == lastSectionNumber)
+        let thisIsTheNewMessage:Bool = (addingNewMessage && (indexPath as NSIndexPath).row == self.numberOfRows(inSection: lastSectionNumber) - 1 && (indexPath as NSIndexPath).section == lastSectionNumber)
         
         let isOutgoingMessage = message.senderID == self.myID
         
         var identifier:String!
         
-        if message.messageKind == MessageKind.Text{
+        if message.messageKind == MessageKind.text{
             identifier = isOutgoingMessage ? "outgoingTextCell" : "incomingTextCell"
         }
-        else if message.messageKind == MessageKind.Image{
+        else if message.messageKind == MessageKind.image{
             identifier = isOutgoingMessage ? "outgoingImageCell" : "incomingImageCell"
             
         }
@@ -1380,7 +1376,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
         if identifier == "custom"{
             if let customMess = self.chatDataSource!.chat{
-                cellToReturn = customMess(self, CustomMessageCellForRowAtIndexPath: indexPath)
+                cellToReturn = customMess(self, indexPath)
             }
             else{
                 print("\n\n\n ERROR\n You have one or more messages with messageKind property equal to MessageKind.Custom, so implement the method chat(chat: JLChatTableView, CustomMessageCellForRowAtIndexPath indexPath: NSIndexPath) of ChatDataSource")
@@ -1390,7 +1386,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         }
         else{
             
-            cellToReturn = self.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! JLChatMessageCell
+            cellToReturn = self.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! JLChatMessageCell
             
             
         }
@@ -1405,8 +1401,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     }
     
     
-    @available(*, deprecated,renamed="chatMessageForRowAtIndexPath(indexPath: NSIndexPath)", message="This method is deprecated use `chatMessageForRowAtIndexPath(indexPath: NSIndexPath)` instead ")
-    public func chatMessageForRowAtIndexPath(indexPath: NSIndexPath,message:JLMessage)->JLChatMessageCell{
+    @available(*, deprecated,renamed: "chatMessageForRowAtIndexPath", message: "This method is deprecated use `chatMessageForRowAtIndexPath(indexPath: NSIndexPath)` instead ")
+    open func chatMessageForRowAtIndexPath(_ indexPath: IndexPath,message:JLMessage)->JLChatMessageCell{
         return chatMessageForRowAtIndexPath(indexPath)
     }
     
@@ -1419,24 +1415,22 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      
      - parameter indexPath: The indexPath of message that is being reloaded or added on 'chatMessageForRowAtIndexPath'
      */
-    private func positionScrollProperly(UsingIndexPath indexPath:NSIndexPath){
+    fileprivate func positionScrollProperly(UsingIndexPath indexPath:IndexPath){
         
         if let unReadMessindexPath = firstUnreadMessageIndexPath{
             let delayInSeconds = 0.01
-            let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                        Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-            dispatch_after(popTime, dispatch_get_main_queue()) {
-                self.scrollToRowAtIndexPath(unReadMessindexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: false)
+            let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: popTime) {
+                self.scrollToRow(at: unReadMessindexPath, at: UITableViewScrollPosition.middle, animated: false)
             }
         }
         else if addingNewMessage{
             
             let lastSectionNumber = self.numberOfSections - 1
-            if indexPath.row >= self.numberOfRowsInSection(lastSectionNumber) - (1 + quantOfNewMess) && indexPath.section == lastSectionNumber{//newer message
+            if (indexPath as NSIndexPath).row >= self.numberOfRows(inSection: lastSectionNumber) - (1 + quantOfNewMess) && (indexPath as NSIndexPath).section == lastSectionNumber{//newer message
                 let delayInSeconds = 0.34
-                let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                            Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue()) {
+                let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime) {
                     self.scrollChatToBottom(true,basedOnLastRow: false)
                 }
                 
@@ -1444,11 +1438,10 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             
         }
         else if enableFirstScrollToBottom{
-            if let visibleIndexPaths = self.indexPathsForVisibleRows where visibleIndexPaths.count > 0{
+            if let visibleIndexPaths = self.indexPathsForVisibleRows , visibleIndexPaths.count > 0{
                 let delayInSeconds = 0.01
-                let popTime = dispatch_time(DISPATCH_TIME_NOW,
-                                            Int64(delayInSeconds * Double(NSEC_PER_SEC)))
-                dispatch_after(popTime, dispatch_get_main_queue()) {
+                let popTime = DispatchTime.now() + Double(Int64(delayInSeconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+                DispatchQueue.main.asyncAfter(deadline: popTime) {
                     self.scrollChatToBottom(false,basedOnLastRow: false)
                 }
             }
@@ -1460,7 +1453,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
      - parameter animated:True if you want to animate the scrolling and false if not.
      - parameter basedOnLastRow: A boolean that indicates to do the scroll using scrollToRowAtIndexPath or not use it for really big distances, pass nil on this parameter if you do not want to decide it
      */
-    func scrollChatToBottom(animated:Bool,basedOnLastRow:Bool?){
+    func scrollChatToBottom(_ animated:Bool,basedOnLastRow:Bool?){
         
         //when scrolling with animated false, it should not be changed to true because this kind of scroll only hanpen on configuration moment.
         scrollingToBottom = animated
@@ -1470,8 +1463,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         if let basedOnLastRow = basedOnLastRow{
             if basedOnLastRow{
                 print("to bottom with scrollToRow")
-                let indexPath = NSIndexPath(forRow:self.numberOfRowsInSection(lastSectionNumber) - 1, inSection:lastSectionNumber)
-                self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+                let indexPath = IndexPath(row:self.numberOfRows(inSection: lastSectionNumber) - 1, section:lastSectionNumber)
+                self.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: animated)
             }
             else{
                 print("to bottom with scrollToRect")
@@ -1485,8 +1478,8 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
             }
             else{
                 print("to bottom with scrollToRow")
-                let indexPath = NSIndexPath(forRow:self.numberOfRowsInSection(lastSectionNumber) - 1, inSection: lastSectionNumber)
-                self.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+                let indexPath = IndexPath(row:self.numberOfRows(inSection: lastSectionNumber) - 1, section: lastSectionNumber)
+                self.scrollToRow(at: indexPath, at: UITableViewScrollPosition.bottom, animated: animated)
             }
             
         }
@@ -1500,7 +1493,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
     //MARK: - ToolBarFrameDelegate methods
     
     
-    public func haveToUpdateInsetsBottom(bottom: CGFloat,scrollToBottom:Bool) {
+    open func haveToUpdateInsetsBottom(_ bottom: CGFloat,scrollToBottom:Bool) {
         
         updateInsetsBottom(bottom,animated: false,duration: 0)
         
@@ -1510,16 +1503,16 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
         
     }
     
-    public func updateInsetsBottom(bottom:CGFloat,animated:Bool,duration:NSTimeInterval){
+    open func updateInsetsBottom(_ bottom:CGFloat,animated:Bool,duration:TimeInterval){
         
         let actualInsets = self.contentInset
 
         if animated{
-            UIView.animateWithDuration(duration, animations: {
+            UIView.animate(withDuration: duration, animations: {
                 self.contentInset = UIEdgeInsets(top: actualInsets.top, left: actualInsets.left, bottom: bottom, right: actualInsets.right)
                 self.scrollIndicatorInsets = self.contentInset
                 
-            }) { (finished) in
+            }, completion: { (finished) in
                 if finished{
                     let numberOfRows = self.numberOfSections
                     
@@ -1527,7 +1520,7 @@ public class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelega
                         self.scrollChatToBottom(true,basedOnLastRow: nil)
                     }
                 }
-            }
+            }) 
         }
         else{
             self.contentInset = UIEdgeInsets(top: actualInsets.top, left: actualInsets.left, bottom: bottom, right: actualInsets.right)

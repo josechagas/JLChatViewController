@@ -12,32 +12,32 @@ import UIKit
 
 
 public enum MessageKind:Int{
-    case Text = 1
-    case Image = 2
-    case Custom = 3
-    case AllZeros = 0
+    case text = 1
+    case image = 2
+    case custom = 3
+    case allZeros = 0
 }
 
 
 public enum MessageSendStatus:Int{
-    case Waiting = 0
-    case Sent = 1
-    case Sending = 2
-    case ErrorToSend = 3
+    case waiting = 0
+    case sent = 1
+    case sending = 2
+    case errorToSend = 3
 }
 
 
-public class JLMessage: NSObject {
+open class JLMessage: NSObject {
 
     /**
      The id of the one that sent the message.
     */
-    public var senderID:String!
+    open var senderID:String!
     
     /**
      The image of the one that sent the message.
      */
-    public var senderImage:UIImage?
+    open var senderImage:UIImage?
     
     /**
      The text of the message.
@@ -53,28 +53,29 @@ public class JLMessage: NSObject {
     /**
      The date that the message were sent.
     */
-    public var messageDate:NSDate!
+    open var messageDate:Date!
     
     
     /**
      The Message kind accordingly to the enum MessageKind
      */
-    public var messageKind:MessageKind = MessageKind.AllZeros
+    open var messageKind:MessageKind = MessageKind.allZeros
     
     /**
      The message status accordingly to the enum MessageSendStatus
      Ex some error happend when trying to send the message so messageStatus = MessageSendStatus.ErrorToSend
     */
-    public private(set) var messageStatus:MessageSendStatus = MessageSendStatus.Sending
+    open fileprivate(set) var messageStatus:MessageSendStatus = MessageSendStatus.sending
     
     /**
      The message read status 
      */
-    public var messageRead:Bool = true
+    open var messageRead:Bool = true
     
     
     
-    public init(senderID:String,messageDate:NSDate,senderImage:UIImage?){
+    
+    public init(senderID:String,messageDate:Date,senderImage:UIImage?){
         
         super.init()
         
@@ -82,15 +83,15 @@ public class JLMessage: NSObject {
         
         self.senderImage = senderImage
         
-        self.messageKind = MessageKind.Text
+        self.messageKind = MessageKind.text
         
         self.messageDate = messageDate
         
     }
     
     
-    @available(*,deprecated,renamed="init(senderID:String,messageDate:NSDate,senderImage:UIImage?)",message="Use JLTextMessage class for messages that have some text")
-    public init(text:String,senderID:String,messageDate:NSDate,senderImage:UIImage?){
+    @available(*,deprecated,renamed: "init",message: "Use JLTextMessage class for messages that have some text")
+    public init(text:String,senderID:String,messageDate:Date,senderImage:UIImage?){
         
         super.init()
         
@@ -100,7 +101,7 @@ public class JLMessage: NSObject {
         
         self.senderImage = senderImage
         
-        self.messageKind = MessageKind.Text
+        self.messageKind = MessageKind.text
         
         self.messageDate = messageDate
         
@@ -128,22 +129,22 @@ public class JLMessage: NSObject {
     /**
      Use this method to update messageStatus.
     */
-    public func updateMessageSendStatus(newStatus:MessageSendStatus){
+    open func updateMessageSendStatus(_ newStatus:MessageSendStatus){
         self.messageStatus = newStatus
     }
     
     /**
      this method gives you the formatted string to be shown on the top of the messageCell, almost never you will need to call this method.
     */
-    public func generateStringFromDate()->String{
+    open func generateStringFromDate()->String{
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.doesRelativeDateFormatting = true
         
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.short
         
-        return dateFormatter.stringFromDate(self.messageDate)
+        return dateFormatter.string(from: self.messageDate)
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class JLFile: NSObject {
+open class JLFile: NSObject {
 
     var title:String = "file"
     
