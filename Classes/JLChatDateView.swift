@@ -8,9 +8,9 @@
 
 import UIKit
 
-open class JLChatDateView: UITableViewHeaderFooterView {
+public class JLChatDateView: UITableViewHeaderFooterView {
 
-    @IBOutlet open weak var dateLabel: UILabel!
+    @IBOutlet public weak var dateLabel: UILabel!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

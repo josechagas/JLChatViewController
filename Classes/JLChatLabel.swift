@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class JLChatLabel: UILabel {
+public class JLChatLabel: UILabel {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -20,7 +20,7 @@ open class JLChatLabel: UILabel {
     
     @IBInspectable var isOutgoingMessage:Bool = true
     
-    open override var text: String?{
+    public override var text: String?{
         didSet{
             if let text = text{
                 settAttributedText(text)
@@ -28,7 +28,7 @@ open class JLChatLabel: UILabel {
         }
     }
     
-    fileprivate var detectedDataTypes = [NSTextCheckingResult]()
+    private var detectedDataTypes = [NSTextCheckingResult]()
     
     var outgoingEdges:UIEdgeInsets!{
         get{
@@ -42,26 +42,26 @@ open class JLChatLabel: UILabel {
     }
 
     
-    open override func draw(_ rect: CGRect) {
+    public override func drawRect(rect: CGRect) {
         
         if isOutgoingMessage{
-            JLChatAppearence.outgoingBubbleImage?.draw(in: rect)
+            JLChatAppearence.outgoingBubbleImage?.drawInRect(rect)
         }
         else{
-            JLChatAppearence.incomingBubbleImage?.draw(in: rect)
+            JLChatAppearence.incomingBubbleImage?.drawInRect(rect)
         }
         self.invalidateIntrinsicContentSize()
-        super.draw(rect)
+        super.drawRect(rect)
         self.invalidateIntrinsicContentSize()
     }
     
-    override open func drawText(in rect: CGRect) {
+    override public func drawTextInRect(rect: CGRect) {
         let rectWithEdges = UIEdgeInsetsInsetRect(rect, isOutgoingMessage ? outgoingEdges : incomingEdges)
-        super.drawText(in: rectWithEdges)
+        super.drawTextInRect(rectWithEdges)
     }
     
     
-    override open var intrinsicContentSize : CGSize {
+    override public func intrinsicContentSize() -> CGSize {
         let edges = isOutgoingMessage ? outgoingEdges : incomingEdges
         //let intrinsicSize = super.intrinsicContentSize()
         
@@ -71,13 +71,13 @@ open class JLChatLabel: UILabel {
          */
         let subtractBy = 50 + (isOutgoingMessage ? (JLChatAppearence.showOutgoingSenderImage ? JLChatAppearence.senderImageSize.width : 0) : (JLChatAppearence.showIncomingSenderImage ? JLChatAppearence.senderImageSize.width : 0))
         
-        let sizeOfText = self.sizeToFitText(LimitedToMaxSize: CGSize(width: self.superview!.frame.width - subtractBy - (edges?.right)! - (edges?.left)!, height: CGFloat(FLT_MAX)))
+        let sizeOfText = self.sizeToFitText(LimitedToMaxSize: CGSize(width: self.superview!.frame.width - subtractBy - edges.right - edges.left, height: CGFloat(FLT_MAX)))
 
-        var size:CGSize = CGSize.zero
+        var size:CGSize = CGSizeZero
 
-        size.width = (edges?.right)! + (edges?.left)! + sizeOfText.width + 1//(intrinsicSize.width + sizeOfText.width)/2.0//+ (intrinsicSize.width > sizeOfText.width ? intrinsicSize.width: sizeOfText.width)
+        size.width = edges.right + edges.left + sizeOfText.width + 1//(intrinsicSize.width + sizeOfText.width)/2.0//+ (intrinsicSize.width > sizeOfText.width ? intrinsicSize.width: sizeOfText.width)
         
-        size.height = (edges?.bottom)! + (edges?.top)! + sizeOfText.height/*(intrinsicSize.height > sizeOfText.height ? intrinsicSize.height: sizeOfText.height)*/ + 1
+        size.height = edges.bottom + edges.top + sizeOfText.height/*(intrinsicSize.height > sizeOfText.height ? intrinsicSize.height: sizeOfText.height)*/ + 1
         return size
         
     }
@@ -90,7 +90,7 @@ open class JLChatLabel: UILabel {
      
      - returns : The estimated size to contain the text of label
      */
-    fileprivate func sizeToFitText(LimitedToMaxSize maxSize:CGSize)->CGSize{
+    private func sizeToFitText(LimitedToMaxSize maxSize:CGSize)->CGSize{
         
         if let attributedText = attributedText{
             
@@ -98,7 +98,7 @@ open class JLChatLabel: UILabel {
             
             //let options : NSStringDrawingOptions = NSStringDrawingOptions(rawValue: NSStringDrawingOptions.UsesLineFragmentOrigin.rawValue | NSStringDrawingOptions.UsesFontLeading.rawValue)
 
-            let rect = attributedText.boundingRect(with: maximumSize, options:NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
+            let rect = attributedText.boundingRectWithSize(maximumSize, options:NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
             
             //let rectLine = attributedText.boundingRectWithSize(maximumSize, options:NSStringDrawingOptions.UsesFontLeading, context: nil)
             
@@ -117,21 +117,21 @@ open class JLChatLabel: UILabel {
     
     //MARK: - Message build methods
     
-    open func settAttributedText(_ text:String!){
+    public func settAttributedText(text:String!){
         self.preferredMaxLayoutWidth = self.superview!.frame.width - 70
         
         var attributedText = NSMutableAttributedString(string: text, attributes: [NSFontAttributeName:self.font/*,NSParagraphStyleAttributeName:NSParagraphStyle.defaultParagraphStyle()*/])
         
         let linksDetected = detectLinks(text)
-        self.detectedDataTypes.append(contentsOf: linksDetected)
+        self.detectedDataTypes.appendContentsOf(linksDetected)
        
-        applyStyles([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue as AnyObject,NSForegroundColorAttributeName:UIColor(red: 0, green: 0.4, blue: 0.9, alpha: 1)], To: &attributedText, Where: linksDetected)
+        applyStyles([NSUnderlineStyleAttributeName:NSUnderlineStyle.StyleSingle.rawValue,NSForegroundColorAttributeName:UIColor(red: 0, green: 0.4, blue: 0.9, alpha: 1)], To: &attributedText, Where: linksDetected)
         
         
         let phoneNumbersDetected = detectPhoneNumbers(text)
-        self.detectedDataTypes.append(contentsOf: phoneNumbersDetected)
+        self.detectedDataTypes.appendContentsOf(phoneNumbersDetected)
         
-        applyStyles([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue as AnyObject,NSForegroundColorAttributeName:UIColor(red: 0, green: 0.4, blue: 0.9, alpha: 1)], To: &attributedText, Where: phoneNumbersDetected)
+        applyStyles([NSUnderlineStyleAttributeName:NSUnderlineStyle.StyleSingle.rawValue,NSForegroundColorAttributeName:UIColor(red: 0, green: 0.4, blue: 0.9, alpha: 1)], To: &attributedText, Where: phoneNumbersDetected)
         
         if detectedDataTypes.count > 0{
             addGestures()
@@ -146,7 +146,7 @@ open class JLChatLabel: UILabel {
      - parameter attributedText: The attribtedText that contains the text you want to apply some styles
      - parameter values: An array of NSTextChekingResult that contains all text you want to apply some style
      */
-    fileprivate func applyStyles(_ styles:[String:AnyObject],To attributedText:inout NSMutableAttributedString, Where values:[NSTextCheckingResult]){
+    private func applyStyles(styles:[String:AnyObject],inout To attributedText:NSMutableAttributedString, Where values:[NSTextCheckingResult]){
         
         for textResult in values{
             attributedText.addAttributes(styles, range: textResult.range)
@@ -156,11 +156,11 @@ open class JLChatLabel: UILabel {
     
     //MARK: - Data Detection methods
     
-    fileprivate func detectLinks(_ text:String)->[NSTextCheckingResult]{
+    private func detectLinks(text:String)->[NSTextCheckingResult]{
         //https://www.hackingwithswift.com/example-code/strings/how-to-detect-a-url-in-a-string-using-nsdatadetector
         do{
-            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-            let matches = detector.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
+            let detector = try NSDataDetector(types: NSTextCheckingType.Link.rawValue)
+            let matches = detector.matchesInString(text, options: [], range: NSRange(location: 0, length: text.characters.count))
         
             return matches
         }
@@ -170,10 +170,10 @@ open class JLChatLabel: UILabel {
         return []
     }
     
-    fileprivate func detectPhoneNumbers(_ text:String)->[NSTextCheckingResult]{
+    private func detectPhoneNumbers(text:String)->[NSTextCheckingResult]{
         do{
-            let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue)
-            let matches = detector.matches(in: text, options: [], range: NSRange(location: 0, length: text.characters.count))
+            let detector = try NSDataDetector(types: NSTextCheckingType.PhoneNumber.rawValue)
+            let matches = detector.matchesInString(text, options: [], range: NSRange(location: 0, length: text.characters.count))
             
             return matches
         }
@@ -186,14 +186,14 @@ open class JLChatLabel: UILabel {
     
     //MARK: - Gestures
     
-    fileprivate func addGestures(){
+    private func addGestures(){
         let tap = UITapGestureRecognizer(target: self, action: #selector(JLChatLabel.tapAction(_:)))
         self.addGestureRecognizer(tap)
     }
     
-    func tapAction(_ tapGes:UITapGestureRecognizer){
+    func tapAction(tapGes:UITapGestureRecognizer){
         
-        let positionOnlabel = tapGes.location(in: self)
+        let positionOnlabel = tapGes.locationInView(self)
         
         if let attrText = self.attributedText{
 
@@ -208,7 +208,7 @@ open class JLChatLabel: UILabel {
             let textStorage = NSTextStorage(attributedString: attrText)
             textStorage.addLayoutManager(layoutManager)
             
-            var frameUsedByContainer = layoutManager.usedRect(for: textContainer)
+            var frameUsedByContainer = layoutManager.usedRectForTextContainer(textContainer)
             
             frameUsedByContainer.origin = CGPoint(x: self.center.x - frameUsedByContainer.width/2, y: self.center.y - frameUsedByContainer.height/2)
             
@@ -219,7 +219,7 @@ open class JLChatLabel: UILabel {
             
             let positionOnTextContainer = CGPoint(x: xValue, y: yValue)
             
-            let characterInder = layoutManager.characterIndex(for: positionOnTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+            let characterInder = layoutManager.characterIndexForPoint(positionOnTextContainer, inTextContainer: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
             
             print(characterInder)
             
@@ -233,21 +233,21 @@ open class JLChatLabel: UILabel {
         
     }
     
-    fileprivate func performActionForDataTapped(_ dataText:NSTextCheckingResult){
+    private func performActionForDataTapped(dataText:NSTextCheckingResult){
         switch dataText.resultType {
-        case NSTextCheckingResult.CheckingType.link:
-            if let url = URL(string: NSString(string: self.text!).substring(with: dataText.range))  , UIApplication.shared.canOpenURL(url){
-                UIApplication.shared.openURL(url)
+        case NSTextCheckingType.Link:
+            if let url = NSURL(string: NSString(string: self.text!).substringWithRange(dataText.range))  where UIApplication.sharedApplication().canOpenURL(url){
+                UIApplication.sharedApplication().openURL(url)
             }
-            else if let url = URL(string: "https://\(NSString(string: self.text!).substring(with: dataText.range))") , UIApplication.shared.canOpenURL(url){
-                UIApplication.shared.openURL(url)
+            else if let url = NSURL(string: "https://\(NSString(string: self.text!).substringWithRange(dataText.range))") where UIApplication.sharedApplication().canOpenURL(url){
+                UIApplication.sharedApplication().openURL(url)
 
             }
-        case NSTextCheckingResult.CheckingType.phoneNumber:
-            let number = NSString(string: self.text!).substring(with: dataText.range)
+        case NSTextCheckingType.PhoneNumber:
+            let number = NSString(string: self.text!).substringWithRange(dataText.range)
         
-            if let phoneURl = URL(string: "tel://\(number)"){
-                UIApplication.shared.openURL(phoneURl)
+            if let phoneURl = NSURL(string: "tel://\(number)"){
+                UIApplication.sharedApplication().openURL(phoneURl)
             }
             
         default:

@@ -15,7 +15,7 @@ enum PasteboardKeysForValueTypes:String{
     case CustomData = "CustomData"
 }
 
-open class JLChatTextView: UITextView {
+public class JLChatTextView: UITextView {
 
     
     var bubbleImageView:UIImageView!
@@ -27,14 +27,14 @@ open class JLChatTextView: UITextView {
     }
     */
     
-    override open var text:String!{
+    override public var text:String!{
         didSet{
             configInsets()
         }
     }
     
     
-    fileprivate var bubbleDrawed:Bool = false
+    private var bubbleDrawed:Bool = false
 
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -53,7 +53,7 @@ open class JLChatTextView: UITextView {
     }
     
        
-    fileprivate func configInsets(){
+    private func configInsets(){
         
         self.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
@@ -62,7 +62,7 @@ open class JLChatTextView: UITextView {
     
     //MARK: Ballon methods
     
-    fileprivate func initBallon(){
+    private func initBallon(){
         
         bubbleImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size:self.frame.size))
         bubbleImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,17 +73,17 @@ open class JLChatTextView: UITextView {
         
         //Constraints
         
-        let centerX = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let centerX = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
         self.addConstraint(centerX)
         
         
-        let centerY = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
         self.addConstraint(centerY)
         
-        let height = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
         self.addConstraint(height)
         
-        let width = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: bubbleImageView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
         self.addConstraint(width)
         
         
@@ -94,7 +94,7 @@ open class JLChatTextView: UITextView {
      
      - parameter isOutgoingMessage: true this is a out going message, false this is a incoming message
      */
-    open func createBallonForMessage(IsThisOutGoingMessage isOutgoingMessage:Bool){
+    public func createBallonForMessage(IsThisOutGoingMessage isOutgoingMessage:Bool){
         
         if isOutgoingMessage{
             
@@ -119,7 +119,7 @@ open class JLChatTextView: UITextView {
      Creates the ballon image for the corresponding textView
      - parameter isOutgoingMessage: true this is a out going message, false this is a incoming message
      */
-    open func createBallonForOugoingMessage(_ isOutgoingMessage:Bool){
+    public func createBallonForOugoingMessage(isOutgoingMessage:Bool){
         
         if isOutgoingMessage{
             

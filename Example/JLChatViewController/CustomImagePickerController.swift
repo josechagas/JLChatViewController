@@ -14,7 +14,7 @@ class CustomImagePickerController: UIImagePickerController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.tintColor = UIColor.whiteColor()
         
         // Do any additional setup after loading the view.
     }
@@ -26,23 +26,23 @@ class CustomImagePickerController: UIImagePickerController {
     
     
     
-    func getImageFromGallery(_ viewController:UIViewController,allowsEditing:Bool){
+    func getImageFromGallery(viewController:UIViewController,allowsEditing:Bool){
         self.allowsEditing = allowsEditing
         
-        self.sourceType = .photoLibrary
-        viewController.present(self, animated: true, completion: nil)
+        self.sourceType = .PhotoLibrary
+        viewController.presentViewController(self, animated: true, completion: nil)
         
         //self.modalPresentationStyle = .Popover
         //viewController.presentViewController(self,animated: true, completion: nil)//4
 
     }
     
-    func getImageFromCamera(_ viewController:UIViewController,captureMode:UIImagePickerControllerCameraCaptureMode,allowsEditing:Bool){
+    func getImageFromCamera(viewController:UIViewController,captureMode:UIImagePickerControllerCameraCaptureMode,allowsEditing:Bool){
         self.allowsEditing = allowsEditing
-        self.sourceType = UIImagePickerControllerSourceType.camera
+        self.sourceType = UIImagePickerControllerSourceType.Camera
         self.cameraCaptureMode = captureMode
         //self.modalPresentationStyle = .FullScreen
-        viewController.present(self,animated: true,completion: nil)
+        viewController.presentViewController(self,animated: true,completion: nil)
     }
     
     
@@ -54,13 +54,13 @@ class CustomImagePickerController: UIImagePickerController {
     public let UIImagePickerControllerMediaURL: String // an NSURL*/
     
     
-    func getOriginalSelectedImageFrom(_ info:[String:AnyObject])->UIImage{
+    func getOriginalSelectedImageFrom(info:[String:AnyObject])->UIImage{
         
         
         return info[UIImagePickerControllerOriginalImage] as! UIImage
     }
     
-    func getEditedSelectedImageFrom(_ info:[String:AnyObject])->UIImage{
+    func getEditedSelectedImageFrom(info:[String:AnyObject])->UIImage{
         
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             return editedImage
@@ -69,12 +69,12 @@ class CustomImagePickerController: UIImagePickerController {
         return getOriginalSelectedImageFrom(info)
     }
     
-    func getMediaTypeFrom(_ info:[String:AnyObject])->String{
+    func getMediaTypeFrom(info:[String:AnyObject])->String{
         return info[UIImagePickerControllerMediaType] as! String
     }
     
-    func getMediaURLFrom(_ info:[String:AnyObject])->URL{
-        return info[UIImagePickerControllerMediaURL] as! URL
+    func getMediaURLFrom(info:[String:AnyObject])->NSURL{
+        return info[UIImagePickerControllerMediaURL] as! NSURL
     }
     
     /*

@@ -9,7 +9,7 @@
 import UIKit
 
 
-open class JLUserTypingView: UIView {
+public class JLUserTypingView: UIView {
     
     @IBOutlet weak var ballonImageView: UIImageView!
 
@@ -46,7 +46,7 @@ open class JLUserTypingView: UIView {
         
         let bundle = JLBundleController.getBundle()//NSBundle(forClass: JLUserTypingView.classForCoder())
         let nib = UINib(nibName: "JLUserTypingView", bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil)[0] as! JLUserTypingView
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! JLUserTypingView
         view.config()
         return view
     }
@@ -63,11 +63,11 @@ open class JLUserTypingView: UIView {
 
         addAnimationImages()
         
-        self.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 68, height: 44))
+        self.frame = CGRect(origin: CGPointZero, size: CGSize(width: 68, height: 44))
         
     }
     
-    fileprivate func configConstraints(){
+    private func configConstraints(){
         self.topDist.constant += JLChatAppearence.incomingTextAligment.top
         self.bottomDist.constant += JLChatAppearence.incomingTextAligment.bottom
         self.leftDist.constant += JLChatAppearence.incomingTextAligment.left
@@ -83,7 +83,7 @@ open class JLUserTypingView: UIView {
         var array:[UIImage] = [UIImage]()
         for i in 0..<10{
             
-            let image = UIImage(named: "UserWriting__00\(i)", in: bundle, compatibleWith: nil)
+            let image = UIImage(named: "UserWriting__00\(i)", inBundle: bundle, compatibleWithTraitCollection: nil)
 
             array.append(paintImage(image!, WithColor: JLChatAppearence.incomingTextColor))
         }
@@ -94,34 +94,34 @@ open class JLUserTypingView: UIView {
     /**
      This method is used to paint the dot images with the color of corresponding text of incoming messages
      */
-    fileprivate func paintImage( _ image:UIImage,WithColor color:UIColor)->UIImage{
+    private func paintImage( image:UIImage,WithColor color:UIColor)->UIImage{
         UIGraphicsBeginImageContext(image.size)
         let context = UIGraphicsGetCurrentContext()
         
         // flip the image
-        context?.scaleBy(x: 1.0, y: -1.0)
-        context?.translateBy(x: 0.0, y: -image.size.height)
+        CGContextScaleCTM(context, 1.0, -1.0)
+        CGContextTranslateCTM(context, 0.0, -image.size.height)
         
         // multiply blend mode
-        context?.setBlendMode(CGBlendMode.multiply)
+        CGContextSetBlendMode(context, CGBlendMode.Multiply)
         
         //fill rect with color
-        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        context?.clip(to: rect, mask: image.cgImage!)
+        let rect = CGRectMake(0, 0, image.size.width, image.size.height)
+        CGContextClipToMask(context, rect, image.CGImage)
         color.setFill()
-        context?.fill(rect)
+        CGContextFillRect(context, rect)
         
         // create uiimage
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         //apply cap insets
-        return newImage!
+        return newImage
     }
     
     /**
      Start the animation of animationImageView
      */
-    open func startAnimation(_ speed:Double){
+    public func startAnimation(speed:Double){
         
         animationImageView.animationDuration = speed
         animationImageView.animationRepeatCount = Int.max
@@ -131,7 +131,7 @@ open class JLUserTypingView: UIView {
     /**
      Stop the animation of animationImageView
      */
-    open func stopAnimation(){
+    public func stopAnimation(){
         animationImageView.stopAnimating()
     }
     

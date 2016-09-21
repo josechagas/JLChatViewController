@@ -9,16 +9,16 @@
 import UIKit
 //346
 
-open class JLImageMessageCell: JLChatMessageCell {
+public class JLImageMessageCell: JLChatMessageCell {
 
     /**
      Image that is related with the message
     */
-    @IBOutlet open weak var messageImageView: JLChatImageView!
+    @IBOutlet public weak var messageImageView: JLChatImageView!
     /**
      Image of the one that sent the message
     */
-    @IBOutlet open weak var senderImageView: UIImageView!
+    @IBOutlet public weak var senderImageView: UIImageView!
     
 
     /**
@@ -60,28 +60,28 @@ open class JLImageMessageCell: JLChatMessageCell {
     
     
     //This is a value to garantee that we will not mask the same image twice for the same cell
-    fileprivate var usedImageIdentifier:Int = 0
+    private var usedImageIdentifier:Int = 0
     
-    override open func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    override open func prepareForReuse() {
+    override public func prepareForReuse() {
         //messageImageView.image = nil
         //senderImageView.image = nil
         self.hideErrorButton(false)
 
     }
 
-    override open func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
     
-    open override func initCell(_ message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
+    public override func initCell(message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         
@@ -90,8 +90,8 @@ open class JLImageMessageCell: JLChatMessageCell {
             
             
             
-            self.errorButton.setImage(JLChatAppearence.normalStateErrorButtonImage, for: UIControlState())
-            self.errorButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, for: UIControlState.selected)
+            self.errorButton.setImage(JLChatAppearence.normalStateErrorButtonImage, forState: UIControlState.Normal)
+            self.errorButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, forState: UIControlState.Selected)
             
             if isOutgoingMessage{
                 configAsOutgoingMessage()
@@ -121,7 +121,7 @@ open class JLImageMessageCell: JLChatMessageCell {
         
         
         
-        if message.messageStatus == MessageSendStatus.errorToSend{
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(false)
         }
 
@@ -131,7 +131,7 @@ open class JLImageMessageCell: JLChatMessageCell {
     /**
      Use this method to add the image into 'messageImageView'
     */
-    open func addImage(_ image:UIImage){
+    public func addImage(image:UIImage){
         
         
         let mask = self.isOutgoingMessage ? JLChatAppearence.outgoingBubbleImageMask : JLChatAppearence.incomingBubbleImageMask
@@ -144,7 +144,7 @@ open class JLImageMessageCell: JLChatMessageCell {
     /**
      If the related image is not loaded and you are downloading it you can call this method for the user see that its been loaded, but by default if the 'JLMessage' parameter of method 'initCell' have its image  equal to nil this method is called.
     */
-    open func achiveLoadingMode(){
+    public func achiveLoadingMode(){
         self.messageImageView.image = isOutgoingMessage ? JLChatAppearence.outgoingBubbleLoadingImage : JLChatAppearence.incomingBubbleLoadingImage
         
         
@@ -154,11 +154,11 @@ open class JLImageMessageCell: JLChatMessageCell {
     }
     
     
-    override open func updateMessageStatus(_ message:JLMessage){
+    override public func updateMessageStatus(message:JLMessage){
         
         super.updateMessageStatus(message)
         
-        if message.messageStatus == MessageSendStatus.errorToSend{
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(true)
             
         }
@@ -170,17 +170,17 @@ open class JLImageMessageCell: JLChatMessageCell {
     
     //MARK: - Alert error button methods
     
-    override open func showErrorButton(_ animated:Bool){
+    override public func showErrorButton(animated:Bool){
         
         super.showErrorButton(animated)
         
         self.errorButtonDist.constant = 5
         
         if animated{
-            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.4) { () -> Void in
                 self.layoutIfNeeded()
-            }) 
-            UIView.animate(withDuration: 0.5, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            }
+            UIView.animateWithDuration(0.5, delay: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorButton.alpha = 1
                 
                 }, completion: nil)
@@ -195,7 +195,7 @@ open class JLImageMessageCell: JLChatMessageCell {
         
     }
     
-    override open func hideErrorButton(_ animated:Bool){
+    override public func hideErrorButton(animated:Bool){
         
         super.hideErrorButton(animated)
         
@@ -203,10 +203,10 @@ open class JLImageMessageCell: JLChatMessageCell {
         
         self.errorButton.alpha = 0
         if animated{
-            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.4) { () -> Void in
                 self.layoutIfNeeded()
-            }) 
-            UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            }
+            UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorButton.alpha = 0
                 
                 }, completion: nil)
@@ -222,11 +222,11 @@ open class JLImageMessageCell: JLChatMessageCell {
 
     
     //MARK: - Menu methods
-    @IBAction func errorButtonAction(_ sender: AnyObject) {
+    @IBAction func errorButtonAction(sender: AnyObject) {
         self.showMenu()
     }
        
-    override open func configMenu(_ deleteTitle:String?,sendTitle:String?,deleteBlock:@escaping ()->(),sendBlock:()->()){
+    override public func configMenu(deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
         
         
         if !isMenuConfigured{
@@ -240,7 +240,7 @@ open class JLImageMessageCell: JLChatMessageCell {
     }
     
     
-    fileprivate func addLongPress(){
+    private func addLongPress(){
         
         let longPress = UILongPressGestureRecognizer(target: self, action:#selector(JLImageMessageCell.longPressAction(_:)))
         
@@ -249,19 +249,19 @@ open class JLImageMessageCell: JLChatMessageCell {
     }
     
     
-    func longPressAction(_ longPress:UILongPressGestureRecognizer){
+    func longPressAction(longPress:UILongPressGestureRecognizer){
         
-        if longPress.state == UIGestureRecognizerState.began{
+        if longPress.state == UIGestureRecognizerState.Began{
             
             self.messageImageView.alpha = 0.5
             
         }
-        else if longPress.state == UIGestureRecognizerState.ended{
+        else if longPress.state == UIGestureRecognizerState.Ended{
             
             self.showMenu()
             
         }
-        else if longPress.state == UIGestureRecognizerState.cancelled || longPress.state == UIGestureRecognizerState.failed{
+        else if longPress.state == UIGestureRecognizerState.Cancelled || longPress.state == UIGestureRecognizerState.Failed{
             self.messageImageView.alpha = 1
         }
         
@@ -274,15 +274,15 @@ open class JLImageMessageCell: JLChatMessageCell {
         
         let targetRectangle = self.messageImageView.frame
         
-        UIMenuController.shared.setTargetRect(targetRectangle, in: self)
+        UIMenuController.sharedMenuController().setTargetRect(targetRectangle, inView: self)
         
-        UIMenuController.shared.setMenuVisible(true, animated: true)
+        UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
     }
     
    
     //MARK: - Config methods
     
-    open override func configAsIncomingMessage(){
+    public override func configAsIncomingMessage(){
         if JLChatAppearence.showIncomingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
@@ -308,7 +308,7 @@ open class JLImageMessageCell: JLChatMessageCell {
 
     }
     
-    open override func configAsOutgoingMessage(){
+    public override func configAsOutgoingMessage(){
         if JLChatAppearence.showOutgoingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             

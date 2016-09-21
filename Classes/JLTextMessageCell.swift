@@ -14,17 +14,17 @@ import UIKit
 //https://yalantis.com/blog/mastering-uikit-performance/
 
 
-open class JLTextMessageCell: JLChatMessageCell {
+public class JLTextMessageCell: JLChatMessageCell {
     
     
-    @IBOutlet open weak var chatTextView: JLChatTextView!
+    @IBOutlet public weak var chatTextView: JLChatTextView!
     
-    @IBOutlet open weak var senderImageView: UIImageView!
+    @IBOutlet public weak var senderImageView: UIImageView!
     
     @IBOutlet weak var errorToSendButton: UIButton!
     
 
-    @IBOutlet open weak var chatMessageLabel: JLChatLabel!
+    @IBOutlet public weak var chatMessageLabel: JLChatLabel!
     // --- ---- ----- constraints
     
     
@@ -76,25 +76,25 @@ open class JLTextMessageCell: JLChatMessageCell {
     }
     
 
-    override open func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         self.layoutIfNeeded()
         // Initialization code
     }
     
-    override open func prepareForReuse() {
+    override public func prepareForReuse() {
         //senderImageView.image = nil
         hideErrorButton(false)
 
     }
     
-    override open func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     
-    open override func initCell(_ message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
+    public override func initCell(message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         
         //If it is being reused do not configure these things again
@@ -104,8 +104,8 @@ open class JLTextMessageCell: JLChatMessageCell {
             
             self.chatMessageLabel.font = JLChatAppearence.chatFont
             
-            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, for: UIControlState())
-            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, for: UIControlState.selected)
+            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, forState: UIControlState.Normal)
+            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, forState: UIControlState.Selected)
             
             
             if isOutgoingMessage{
@@ -132,7 +132,7 @@ open class JLTextMessageCell: JLChatMessageCell {
 
         senderImageView.image = message.senderImage
         
-        if message.messageStatus == MessageSendStatus.errorToSend{
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
             showErrorButton(false)
         }
 
@@ -140,11 +140,11 @@ open class JLTextMessageCell: JLChatMessageCell {
     
       
     
-    override open func updateMessageStatus(_ message:JLMessage){
+    override public func updateMessageStatus(message:JLMessage){
         
         super.updateMessageStatus(message)
         
-        if message.messageStatus == MessageSendStatus.errorToSend{
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(true)
         }
         else{
@@ -156,7 +156,7 @@ open class JLTextMessageCell: JLChatMessageCell {
     
     //MARK: - Alert error button methods
     
-    override open func showErrorButton(_ animated:Bool){
+    override public func showErrorButton(animated:Bool){
         
         super.showErrorButton(animated)
         
@@ -164,11 +164,11 @@ open class JLTextMessageCell: JLChatMessageCell {
         
         if animated{
             
-            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.4) { () -> Void in
                 self.layoutIfNeeded()
-            }) 
+            }
             
-            UIView.animate(withDuration: 0.5, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            UIView.animateWithDuration(0.5, delay: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorToSendButton.alpha = 1
                 
                 }, completion: nil)
@@ -182,7 +182,7 @@ open class JLTextMessageCell: JLChatMessageCell {
        
     }
     
-     override open func hideErrorButton(_ animated:Bool){
+     override public func hideErrorButton(animated:Bool){
         
         super.hideErrorButton(animated)
         
@@ -190,12 +190,12 @@ open class JLTextMessageCell: JLChatMessageCell {
         
         if animated{
             
-            UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorToSendButton.alpha = 0
                 
                 }, completion: nil)
             
-            UIView.animate(withDuration: 0.4, delay: 0.4, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            UIView.animateWithDuration(0.4, delay: 0.4, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.layoutIfNeeded()
                 
                 }, completion: nil)
@@ -212,12 +212,12 @@ open class JLTextMessageCell: JLChatMessageCell {
     
     
     //MARK: - Menu methods
-    @IBAction func errorButtonAction(_ sender: AnyObject) {
+    @IBAction func errorButtonAction(sender: AnyObject) {
         
         showMenu()
     }
     
-    override open func configMenu(_ deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
+    override public func configMenu(deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
         
         if !isMenuConfigured{
             addLongPress()
@@ -230,7 +230,7 @@ open class JLTextMessageCell: JLChatMessageCell {
 
     }
     
-    fileprivate func addLongPress(){
+    private func addLongPress(){
         
         let longPress = UILongPressGestureRecognizer(target: self, action:#selector(JLTextMessageCell.longPressAction(_:)))
             
@@ -238,18 +238,18 @@ open class JLTextMessageCell: JLChatMessageCell {
     }
     
     
-    func longPressAction(_ longPress:UILongPressGestureRecognizer){
+    func longPressAction(longPress:UILongPressGestureRecognizer){
         
-        if longPress.state == UIGestureRecognizerState.began{
+        if longPress.state == UIGestureRecognizerState.Began{
             
             self.chatMessageLabel.alpha = 0.5
         }
-        else if longPress.state == UIGestureRecognizerState.ended{
+        else if longPress.state == UIGestureRecognizerState.Ended{
             
             self.showMenu()
             
         }
-        else if longPress.state == UIGestureRecognizerState.cancelled || longPress.state == UIGestureRecognizerState.failed{
+        else if longPress.state == UIGestureRecognizerState.Cancelled || longPress.state == UIGestureRecognizerState.Failed{
             self.chatMessageLabel.alpha = 1
         }
         
@@ -263,9 +263,9 @@ open class JLTextMessageCell: JLChatMessageCell {
         
         let targetRectangle = self.chatMessageLabel.frame
         
-        UIMenuController.shared.setTargetRect(targetRectangle, in: self)
+        UIMenuController.sharedMenuController().setTargetRect(targetRectangle, inView: self)
                 
-        UIMenuController.shared.setMenuVisible(true, animated: true)
+        UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
         
 
     }
@@ -273,7 +273,7 @@ open class JLTextMessageCell: JLChatMessageCell {
     
     
     //MARK: - Config methods
-    open override func configAsOutgoingMessage(){
+    public override func configAsOutgoingMessage(){
         if JLChatAppearence.showOutgoingSenderImage{
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor
             
@@ -303,7 +303,7 @@ open class JLTextMessageCell: JLChatMessageCell {
         self.chatMessageLabel.textColor = JLChatAppearence.outGoingTextColor
     }
     
-    open override func configAsIncomingMessage(){
+    public override func configAsIncomingMessage(){
         if JLChatAppearence.showIncomingSenderImage{
             
             self.senderImageView.backgroundColor = JLChatAppearence.senderImageBackgroundColor

@@ -25,15 +25,15 @@ public protocol ChatToolBarDelegate{
 
 
 public protocol ToolBarFrameDelegate{
-    func haveToUpdateInsetsBottom(_ bottom:CGFloat,scrollToBottom:Bool)
+    func haveToUpdateInsetsBottom(bottom:CGFloat,scrollToBottom:Bool)
 }
 
 
 
 
-open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
+public class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
-    override open var frame:CGRect{
+    override public var frame:CGRect{
         didSet{
             toolBarFrameDelegate?.haveToUpdateInsetsBottom(keyBoadHeight + self.frame.height,scrollToBottom: false)
         }
@@ -42,9 +42,9 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     /**
      This is used to control the max possible height the tool bar based on device dimensions, its to avoid the toolbar to get all screen
      */
-    fileprivate var maxAllowedHeight:CGFloat{
+    private var maxAllowedHeight:CGFloat{
         get{
-            let screenRect = UIScreen.main.bounds
+            let screenRect = UIScreen.mainScreen().bounds
             //let actualAspectRatio = screenRect.size.height/screenRect.size.width
             let value = (screenRect.size.height - self.keyBoadHeight)/4
             return value
@@ -54,23 +54,23 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     /**
      The instance of the textView where you write your message and add an indicator of file
      */
-    open fileprivate(set) var inputText:JLCustomTextView!
+    public private(set) var inputText:JLCustomTextView!
     
     
     
-    open fileprivate(set) var rightButton:UIButton!
+    public private(set) var rightButton:UIButton!
     
-    open fileprivate(set) var leftButton:UIButton!
+    public private(set) var leftButton:UIButton!
     
-    open var toolBarDelegate:ChatToolBarDelegate?
+    public var toolBarDelegate:ChatToolBarDelegate?
     
-    open var toolBarFrameDelegate:ToolBarFrameDelegate?{
+    public var toolBarFrameDelegate:ToolBarFrameDelegate?{
         didSet{
             toolBarFrameDelegate?.haveToUpdateInsetsBottom(keyBoadHeight + self.frame.height,scrollToBottom: false)
         }
     }
     
-    fileprivate var lastToolBarHeight:CGFloat = 0
+    private var lastToolBarHeight:CGFloat = 0
     
     var keyBoadHeight:CGFloat = 0//used to help in the correction of the chat tableView insets
     
@@ -98,7 +98,7 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     //MARK: - Frame change delegate
     
-    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         if keyPath == "center"{
             
@@ -110,9 +110,9 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     }
     
     
-    fileprivate func addObserver(){
+    private func addObserver(){
         
-        self.addObserver(self, forKeyPath: "center", options: NSKeyValueObservingOptions.new, context: nil)
+        self.addObserver(self, forKeyPath: "center", options: NSKeyValueObservingOptions.New, context: nil)
         
     }
     
@@ -126,7 +126,7 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     - parameter placeHolder: The text that will be shown when there is nothing on 'JLCustomTextView'
 
     */
-    open func configToolInputText(_ font:UIFont,textColor:UIColor?,placeHolder:String?){
+    public func configToolInputText(font:UIFont,textColor:UIColor?,placeHolder:String?){
         
         self.inputText.textColor = textColor
         self.inputText.font = font
@@ -143,11 +143,11 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
      - parameter title: title of the button
      - parameter image: the image of the button
     */
-    open func configLeftButton(_ title:String?,image:UIImage?){
+    public func configLeftButton(title:String?,image:UIImage?){
         
-        self.leftButton.setTitle(title, for: UIControlState())
+        self.leftButton.setTitle(title, forState: UIControlState.Normal)
         
-        self.leftButton.setImage(image, for: UIControlState())
+        self.leftButton.setImage(image, forState: UIControlState.Normal)
     
     }
     /**
@@ -155,18 +155,18 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
      - parameter title: title of the button
      - parameter image: the image of the button
      */
-    open func configRightButton(_ title:String?,image:UIImage?){
+    public func configRightButton(title:String?,image:UIImage?){
         
-        self.rightButton.setTitle(title, for: UIControlState())
+        self.rightButton.setTitle(title, forState: UIControlState.Normal)
         
-        self.rightButton.setImage(image, for: UIControlState())
+        self.rightButton.setImage(image, forState: UIControlState.Normal)
        
     }
     
-    fileprivate func addButtonsActions(){
+    private func addButtonsActions(){
     
-        leftButton.addTarget(self, action:#selector(JLChatToolBar.leftButtonAction(_:)), for: UIControlEvents.touchUpInside)
-        rightButton.addTarget(self, action:#selector(JLChatToolBar.rightButtonAction(_:)), for: UIControlEvents.touchUpInside)
+        leftButton.addTarget(self, action:#selector(JLChatToolBar.leftButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        rightButton.addTarget(self, action:#selector(JLChatToolBar.rightButtonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     
@@ -174,43 +174,43 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     //MARK: - Buttons actions
     
     
-    func leftButtonAction(_ sender:AnyObject?){
+    func leftButtonAction(sender:AnyObject?){
         
         toolBarDelegate?.didTapLeftButton()
         
     }
     
     
-    func rightButtonAction(_ sender:AnyObject?){
+    func rightButtonAction(sender:AnyObject?){
         toolBarDelegate?.didTapRightButton()
         self.inputText.resetTextView()
-        self.rightButton.isEnabled = self.inputText.thereIsSomeText()
+        self.rightButton.enabled = self.inputText.thereIsSomeText()
     }
     
     
     //MARK: - TextView delegate
     
-    open func textViewDidBeginEditing(_ textView: UITextView) {
-        self.rightButton.isEnabled = self.inputText.thereIsSomeText() || self.inputText.fileAddedState
+    public func textViewDidBeginEditing(textView: UITextView) {
+        self.rightButton.enabled = self.inputText.thereIsSomeText() || self.inputText.fileAddedState
     }
     
-    open func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(textView: UITextView) {
         
-        self.rightButton.isEnabled = self.inputText.thereIsSomeText() || self.inputText.fileAddedState
+        self.rightButton.enabled = self.inputText.thereIsSomeText() || self.inputText.fileAddedState
         
         if !self.inputText.thereIsSomeChar(){
             self.inputText.resetTextView()
         }
     }
     
-    open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if inputText.contentSize.height >= maxAllowedHeight{
-            inputText.isScrollEnabled = true
+            inputText.scrollEnabled = true
             inputText.frame.size = CGSize(width: inputText.frame.width, height: inputText.frame.height)
         }
         else{
             inputText.frame.size = CGSize(width: inputText.frame.width, height: inputText.contentSize.height)
-            inputText.isScrollEnabled = false
+            inputText.scrollEnabled = false
         }
         
         return true
@@ -241,18 +241,18 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     //MARK: - File Delegate methods
     
     func fileAdded() {
-        self.rightButton.isEnabled = self.inputText.thereIsSomeText() || true
+        self.rightButton.enabled = self.inputText.thereIsSomeText() || true
     }
     
     func fileRemoved() {
-        self.rightButton.isEnabled = self.inputText.thereIsSomeText() || false
+        self.rightButton.enabled = self.inputText.thereIsSomeText() || false
     }
     
     /**
      Use this method for you know if there is some file added to be sent
      - returns : True if there is a file added and False if there is not.
     */
-    open func thereIsSomeFileAdded()->Bool{
+    public func thereIsSomeFileAdded()->Bool{
         return self.inputText.fileAddedState
     }
     
@@ -261,16 +261,16 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     func registerKeyBoardNotifications(){
         
-        NotificationCenter.default.addObserver(self, selector:#selector(JLChatToolBar.showkeyBoardTarget(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatToolBar.showkeyBoardTarget(_:)), name: UIKeyboardWillShowNotification, object: nil)
 
-        NotificationCenter.default.addObserver(self, selector:#selector(JLChatToolBar.hideKeyBoardTarget(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatToolBar.hideKeyBoardTarget(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func showkeyBoardTarget(_ notification:Notification){
+    func showkeyBoardTarget(notification:NSNotification){
         
-        let info = (notification as NSNotification).userInfo as! [String:AnyObject]
+        let info = notification.userInfo as! [String:AnyObject]
         
-        let keyBoardFrame = info[UIKeyboardFrameEndUserInfoKey]?.cgRectValue
+        let keyBoardFrame = info[UIKeyboardFrameEndUserInfoKey]?.CGRectValue
         
         keyBoadHeight = keyBoardFrame!.height
         
@@ -280,7 +280,7 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     
     
-    func hideKeyBoardTarget(_ notification:Notification){
+    func hideKeyBoardTarget(notification:NSNotification){
         
         keyBoadHeight = 0
 
@@ -293,7 +293,7 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     //MARK: - add Subviews
     
-    fileprivate func addSubViews(){
+    private func addSubViews(){
         
         initLeftButton()
         initRightButton()
@@ -304,14 +304,14 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     
     
     //create and add the left button to the toolBar
-    fileprivate func initLeftButton(){
+    private func initLeftButton(){
         
         leftButton = UIButton(frame: CGRect(origin: CGPoint(x: 5, y: 5), size: CGSize(width: 46, height: self.frame.size.height - 10)))
         
-        leftButton.setTitle("File", for: UIControlState())
-        leftButton.setTitleColor(UIColor.blue, for: UIControlState())
-        leftButton.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
-        leftButton.setTitleColor(UIColor.gray, for: UIControlState.disabled)
+        leftButton.setTitle("File", forState: UIControlState.Normal)
+        leftButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        leftButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+        leftButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
 
         leftButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -320,11 +320,11 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         
         
     
-        let bottomDist =  NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.bottom, relatedBy: .equal, toItem: leftButton, attribute:NSLayoutAttribute.bottom, multiplier: 1, constant: 5)
+        let bottomDist =  NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: .Equal, toItem: leftButton, attribute:NSLayoutAttribute.Bottom, multiplier: 1, constant: 5)
         
         self.addConstraint(bottomDist)
         
-        let leftDist = NSLayoutConstraint(item: leftButton, attribute: NSLayoutAttribute.left, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.left, multiplier: 1, constant: 5)
+        let leftDist = NSLayoutConstraint(item: leftButton, attribute: NSLayoutAttribute.Left, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.Left, multiplier: 1, constant: 5)
         
         self.addConstraint(leftDist)
         
@@ -333,11 +333,11 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         //Height and Width
         
         
-        let height =  NSLayoutConstraint(item: leftButton, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute:NSLayoutAttribute.notAnAttribute, multiplier: 1, constant:leftButton.frame.height)
+        let height =  NSLayoutConstraint(item: leftButton, attribute: NSLayoutAttribute.Height, relatedBy: .Equal, toItem: nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant:leftButton.frame.height)
         
         leftButton.addConstraint(height)
         
-        let width =  NSLayoutConstraint(item: leftButton, attribute: NSLayoutAttribute.width, relatedBy: .equal, toItem: nil, attribute:NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: leftButton.frame.width)
+        let width =  NSLayoutConstraint(item: leftButton, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: leftButton.frame.width)
         
         leftButton.addConstraint(width)
 
@@ -345,15 +345,15 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
     }
     
     //create and add the right button into tooBar
-    fileprivate func initRightButton(){
+    private func initRightButton(){
         
         rightButton = UIButton(frame: CGRect(origin: CGPoint(x: self.frame.size.width - 5 - 46, y: 5), size: CGSize(width: 46, height: self.frame.size.height - 10)))
-        rightButton.setTitle("Send", for: UIControlState())
-        rightButton.setTitleColor(UIColor.blue, for: UIControlState())
-        rightButton.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
-        rightButton.setTitleColor(UIColor.gray, for: UIControlState.disabled)
+        rightButton.setTitle("Send", forState: UIControlState.Normal)
+        rightButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        rightButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Highlighted)
+        rightButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
 
-        rightButton.isEnabled = false
+        rightButton.enabled = false
         
         
         rightButton.translatesAutoresizingMaskIntoConstraints = false
@@ -362,11 +362,11 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         
         
         
-        let bottomDist =  NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.bottom, relatedBy: .equal, toItem: rightButton, attribute:NSLayoutAttribute.bottom, multiplier: 1, constant: 5)
+        let bottomDist =  NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: .Equal, toItem: rightButton, attribute:NSLayoutAttribute.Bottom, multiplier: 1, constant: 5)
         
         self.addConstraint(bottomDist)
     
-        let rightDist = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.right, relatedBy: .equal, toItem: rightButton, attribute:NSLayoutAttribute.right, multiplier: 1, constant: 5)
+        let rightDist = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Right, relatedBy: .Equal, toItem: rightButton, attribute:NSLayoutAttribute.Right, multiplier: 1, constant: 5)
         
         self.addConstraint(rightDist)
         
@@ -374,11 +374,11 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         //Height and Width
         
         
-        let height =  NSLayoutConstraint(item: rightButton, attribute: NSLayoutAttribute.height, relatedBy: .equal, toItem: nil, attribute:NSLayoutAttribute.notAnAttribute, multiplier: 1, constant:rightButton.frame.height)
+        let height =  NSLayoutConstraint(item: rightButton, attribute: NSLayoutAttribute.Height, relatedBy: .Equal, toItem: nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant:rightButton.frame.height)
         
         rightButton.addConstraint(height)
         
-        let width =  NSLayoutConstraint(item: rightButton, attribute: NSLayoutAttribute.width, relatedBy: .equal, toItem: nil, attribute:NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: rightButton.frame.width)
+        let width =  NSLayoutConstraint(item: rightButton, attribute: NSLayoutAttribute.Width, relatedBy: .Equal, toItem: nil, attribute:NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: rightButton.frame.width)
         
         rightButton.addConstraint(width)
 
@@ -387,11 +387,11 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
 
     //create and add textView into ToolBar
     
-    fileprivate func initTextView(){
+    private func initTextView(){
                 
         inputText = JLCustomTextView(frame: CGRect(origin: CGPoint(x: 40, y: 5), size: CGSize(width: self.frame.size.width - 80, height: self.frame.size.height - 10)))
         inputText.font = JLChatAppearence.chatFont
-        inputText.isScrollEnabled = false
+        inputText.scrollEnabled = false
         inputText.fileDelegate = self
         inputText.translatesAutoresizingMaskIntoConstraints = false
         
@@ -399,22 +399,22 @@ open class JLChatToolBar: UIToolbar,UITextViewDelegate,FileDelegate {
         
         
         
-        let topDist =  NSLayoutConstraint(item: inputText, attribute: NSLayoutAttribute.top, relatedBy: .equal, toItem: self, attribute:NSLayoutAttribute.top, multiplier: 1, constant: 7)
+        let topDist =  NSLayoutConstraint(item: inputText, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: self, attribute:NSLayoutAttribute.Top, multiplier: 1, constant: 7)
 
         self.addConstraint(topDist)
         
-        let bottomDist =  NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.bottom, relatedBy: .equal, toItem: inputText, attribute:NSLayoutAttribute.bottom, multiplier: 1, constant: 7)
+        let bottomDist =  NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.Bottom, relatedBy: .Equal, toItem: inputText, attribute:NSLayoutAttribute.Bottom, multiplier: 1, constant: 7)
 
         self.addConstraint(bottomDist)
         
         
         //dist to left button
-        let leftDist = NSLayoutConstraint(item: inputText, attribute: NSLayoutAttribute.left, relatedBy: .equal, toItem: leftButton, attribute:NSLayoutAttribute.right, multiplier: 1, constant: 5)
+        let leftDist = NSLayoutConstraint(item: inputText, attribute: NSLayoutAttribute.Left, relatedBy: .Equal, toItem: leftButton, attribute:NSLayoutAttribute.Right, multiplier: 1, constant: 5)
         
         self.addConstraint(leftDist)
         
         //dist to right button
-        let rightDist = NSLayoutConstraint(item: inputText, attribute: NSLayoutAttribute.right, relatedBy: .equal, toItem: rightButton, attribute:NSLayoutAttribute.left, multiplier: 1, constant: -5)
+        let rightDist = NSLayoutConstraint(item: inputText, attribute: NSLayoutAttribute.Right, relatedBy: .Equal, toItem: rightButton, attribute:NSLayoutAttribute.Left, multiplier: 1, constant: -5)
         
         self.addConstraint(rightDist)
 

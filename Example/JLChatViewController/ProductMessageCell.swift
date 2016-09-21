@@ -45,7 +45,7 @@ class ProductMessageCell: JLChatMessageCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -59,10 +59,10 @@ class ProductMessageCell: JLChatMessageCell {
         self.nameLabel.text = nil
     }
    
-    override func initCell(_ message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
+    override func initCell(message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         
-        self.selectionStyle = UITableViewCellSelectionStyle.none
+        self.selectionStyle = UITableViewCellSelectionStyle.None
         
         configView()
         
@@ -72,8 +72,8 @@ class ProductMessageCell: JLChatMessageCell {
             
             self.nameLabel.font = JLChatAppearence.chatFont
             
-            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, for: UIControlState())
-            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, for: UIControlState.selected)
+            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, forState: UIControlState.Normal)
+            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, forState: UIControlState.Selected)
             
             if isOutgoingMessage{
                 
@@ -96,26 +96,26 @@ class ProductMessageCell: JLChatMessageCell {
             self.senderImageView.image = img
         }
         
-        if message.messageStatus == MessageSendStatus.errorToSend{
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
             showErrorButton(false)
         }
 
     }
     
     
-    fileprivate func  configView(){
+    private func  configView(){
         delimiterView.layer.masksToBounds = true
         delimiterView.layer.cornerRadius = self.frame.height/4
         delimiterView.layer.borderWidth = 2
-        delimiterView.layer.borderColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1).cgColor
+        delimiterView.layer.borderColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1).CGColor
         
     }
     
     
     
-    override func updateMessageStatus(_ message:JLMessage){
+    override func updateMessageStatus(message:JLMessage){
         super.updateMessageStatus(message)
-        if message.messageStatus == MessageSendStatus.errorToSend{
+        if message.messageStatus == MessageSendStatus.ErrorToSend{
             self.showErrorButton(true)
         }
         else{
@@ -127,7 +127,7 @@ class ProductMessageCell: JLChatMessageCell {
     
     //MARK: - Alert error button methods
     
-    override func showErrorButton(_ animated:Bool){
+    override func showErrorButton(animated:Bool){
         
         super.showErrorButton(animated)
         
@@ -135,11 +135,11 @@ class ProductMessageCell: JLChatMessageCell {
         
         if animated{
             
-            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.4) { () -> Void in
                 self.layoutIfNeeded()
-            }) 
+            }
             
-            UIView.animate(withDuration: 0.5, delay: 0.3, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            UIView.animateWithDuration(0.5, delay: 0.3, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorToSendButton.alpha = 1
                 
                 }, completion: nil)
@@ -152,7 +152,7 @@ class ProductMessageCell: JLChatMessageCell {
         
     }
     
-    override internal func hideErrorButton(_ animated:Bool){
+    override internal func hideErrorButton(animated:Bool){
         
         super.hideErrorButton(animated)
         
@@ -160,10 +160,10 @@ class ProductMessageCell: JLChatMessageCell {
         
         if animated{
             
-            UIView.animate(withDuration: 0.4, animations: { () -> Void in
+            UIView.animateWithDuration(0.4) { () -> Void in
                 self.layoutIfNeeded()
-            }) 
-            UIView.animate(withDuration: 0.4, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            }
+            UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.errorToSendButton.alpha = 0
                 
                 }, completion: nil)
@@ -180,12 +180,12 @@ class ProductMessageCell: JLChatMessageCell {
     
     
     //MARK: - Menu methods
-    @IBAction func errorButtonAction(_ sender: AnyObject) {
+    @IBAction func errorButtonAction(sender: AnyObject) {
         
         showMenu()
     }
     
-    override func configMenu(_ deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
+    override func configMenu(deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
         
         if !isMenuConfigured{
             addLongPress()
@@ -197,7 +197,7 @@ class ProductMessageCell: JLChatMessageCell {
     }
     
 
-    fileprivate func addLongPress(){
+    private func addLongPress(){
         
         let longPress = UILongPressGestureRecognizer(target: self, action:#selector(ProductMessageCell.longPressAction(_:)))
         
@@ -207,19 +207,19 @@ class ProductMessageCell: JLChatMessageCell {
     }
     
     
-    func longPressAction(_ longPress:UILongPressGestureRecognizer){
+    func longPressAction(longPress:UILongPressGestureRecognizer){
         
-        if longPress.state == UIGestureRecognizerState.began{
+        if longPress.state == UIGestureRecognizerState.Began{
             
             self.delimiterView.alpha = 0.5
             
         }   
-        else if longPress.state == UIGestureRecognizerState.ended{
+        else if longPress.state == UIGestureRecognizerState.Ended{
             
             self.showMenu()
             
         }
-        else if longPress.state == UIGestureRecognizerState.cancelled || longPress.state == UIGestureRecognizerState.failed{
+        else if longPress.state == UIGestureRecognizerState.Cancelled || longPress.state == UIGestureRecognizerState.Failed{
             self.delimiterView.alpha = 1
         }
         
@@ -234,9 +234,9 @@ class ProductMessageCell: JLChatMessageCell {
         
         let targetRectangle = self.delimiterView.frame
         
-        UIMenuController.shared.setTargetRect(targetRectangle, in: self)
+        UIMenuController.sharedMenuController().setTargetRect(targetRectangle, inView: self)
         
-        UIMenuController.shared.setMenuVisible(true, animated: true)
+        UIMenuController.sharedMenuController().setMenuVisible(true, animated: true)
         
     }
     
