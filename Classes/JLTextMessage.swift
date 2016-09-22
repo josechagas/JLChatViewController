@@ -8,23 +8,23 @@
 
 import UIKit
 
-public class JLTextMessage: JLMessage {
+open class JLTextMessage: JLMessage {
     
     /**
      The text of the message.
      
      */
-    public var text:String?
+    open var text:String?
     
 
     
-    public override init(text:String,senderID:String,messageDate:NSDate,senderImage:UIImage?){
+    public init(text:String,senderID:String,messageDate:Date,senderImage:UIImage?){
         
         super.init(senderID: senderID, messageDate: messageDate, senderImage: senderImage)
         
         self.text = text
         
-        self.messageKind = MessageKind.Text
+        self.messageKind = MessageKind.text
     }
 
     
