@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class JLChatMessageCell: UITableViewCell {
+open class JLChatMessageCell: UITableViewCell {
     
     /**
      This variable indicates if this cell is being reused.
@@ -19,15 +19,15 @@ public class JLChatMessageCell: UITableViewCell {
      If value is false so you have to configure it again as outgoing or incoming message.
 
     */
-    public var cellAlreadyUsed:Bool = false
+    open var cellAlreadyUsed:Bool = false
 
 
-    public private(set) var isMenuConfigured:Bool = false
+    open fileprivate(set) var isMenuConfigured:Bool = false
     
     internal var isOutgoingMessage:Bool = false
     
-    private var sendBlock:(()->())!
-    private var deleteBlock:(()->())!
+    fileprivate var sendBlock:(()->())!
+    fileprivate var deleteBlock:(()->())!
     
     internal var sendMenuEnabled:()->Bool = { () -> Bool in
         
@@ -41,28 +41,28 @@ public class JLChatMessageCell: UITableViewCell {
     }
 
   
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    public override func prepareForReuse() {
+    open override func prepareForReuse() {
         super.prepareForReuse()
         self.alpha = 1
     }
     
 
-    override public func setSelected(selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    public override func canBecomeFirstResponder() -> Bool {
+    open override var canBecomeFirstResponder : Bool {
         return true
     }
     
-    public override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
 
         if (action == #selector(JLChatMessageCell.deleteAction(_:)) && deleteMenuEnabled()) || (action == #selector(JLChatMessageCell.sendAction(_:)) && sendMenuEnabled()){
             return true
@@ -73,23 +73,23 @@ public class JLChatMessageCell: UITableViewCell {
 
     
     
-    public override func becomeFirstResponder() -> Bool {
+    open override func becomeFirstResponder() -> Bool {
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(JLChatMessageCell.menuDismissed(_:)), name: UIMenuControllerDidHideMenuNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(JLChatMessageCell.menuDismissed(_:)), name: NSNotification.Name.UIMenuControllerDidHideMenu, object: nil)
         
         return super.becomeFirstResponder()
         
     }
     
     
-    public override func resignFirstResponder() -> Bool {
+    open override func resignFirstResponder() -> Bool {
         
         //NSNotificationCenter.defaultCenter().removeObserver(self, name: UIMenuControllerDidHideMenuNotification, object: nil)
         
         return super.resignFirstResponder()
     }
     
-    
+
     
     /**
      The implementation of this method have to contain every code that is necessary to initialize the message cell.
@@ -97,8 +97,8 @@ public class JLChatMessageCell: UITableViewCell {
         DEPRECATED
     */
 
-    @available(*,deprecated,renamed="initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool)",message="This method is deprecated use initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool)")
-    public func initCell(message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
+    @available(*,deprecated,renamed: "initCell",message: "This method is deprecated use initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool)")
+    open func initCell(_ message:JLMessage,thisIsNewMessage:Bool,showDate:Bool,isOutgoingMessage:Bool){
        
         self.isOutgoingMessage = isOutgoingMessage
         
@@ -110,7 +110,7 @@ public class JLChatMessageCell: UITableViewCell {
      You must override this method.
      
      */
-    public func initCell(message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool){
+    open func initCell(_ message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool){
         
         self.isOutgoingMessage = isOutgoingMessage
         
@@ -127,7 +127,7 @@ public class JLChatMessageCell: UITableViewCell {
     
     - parameter message: The 'JLMessage' instance related to its cell with its 'messageStatus' updated.
     */
-    public func updateMessageStatus(message:JLMessage){
+    open func updateMessageStatus(_ message:JLMessage){
         
     }
     /**
@@ -136,7 +136,7 @@ public class JLChatMessageCell: UITableViewCell {
      
      You must override this method.
      */
-    public func showErrorButton(animated:Bool){
+    open func showErrorButton(_ animated:Bool){
         
     }
     /**
@@ -144,27 +144,26 @@ public class JLChatMessageCell: UITableViewCell {
      
      You must override this method.
      */
-    public func hideErrorButton(animated:Bool){
+    open func hideErrorButton(_ animated:Bool){
        
     }
     
     //MARK: MenuController methods
     
-    func menuDismissed(notification:NSNotification){
+    func menuDismissed(_ notification:Notification){
         
         self.resignFirstResponder()
         
     }
     
     /**
-     Use this method to configure the menu items of this cell 'UIMenuController'
+     Use this method to configure the menu items of this cell 'UIMenuController'.
      - parameter deleteTitle: the title of the menu item that indicates the delete action.
      - parameter senTitle: the title of menu item that indicates the try to send again action.
      - parameter deleteBlock: action that is executed when delete menu item is clicked.
      - parameter sendBlock: action that is executed when send menu item is clicked.
-
      */
-    public func configMenu(deleteTitle:String?,sendTitle:String?,deleteBlock:()->(),sendBlock:()->()){
+    open func configMenu(_ deleteTitle:String?,sendTitle:String?,deleteBlock:@escaping ()->(),sendBlock:@escaping ()->()){
         
         var menus:[UIMenuItem] = [UIMenuItem]()
         
@@ -184,23 +183,23 @@ public class JLChatMessageCell: UITableViewCell {
             menus.append(UIMenuItem(title: "Try Again", action: #selector(JLChatMessageCell.sendAction(_:))))
         }
         
-        UIMenuController.sharedMenuController().menuItems = menus
+        UIMenuController.shared.menuItems = menus
         
-        UIMenuController.sharedMenuController().update()
+        UIMenuController.shared.update()
         
         self.deleteBlock = deleteBlock
         self.sendBlock = sendBlock
 
     }
     
-    public func deleteAction(sender:AnyObject){
+    open func deleteAction(_ sender:AnyObject){
         
         print("delete")
         deleteBlock()
         
     }
     
-    public func sendAction(sender:AnyObject){
+    open func sendAction(_ sender:AnyObject){
         
         print("send")
         sendBlock()
@@ -214,7 +213,7 @@ public class JLChatMessageCell: UITableViewCell {
     
     You must override this method.
     */
-    public func configAsOutgoingMessage(){
+    open func configAsOutgoingMessage(){
         
         
         
@@ -225,7 +224,7 @@ public class JLChatMessageCell: UITableViewCell {
      You must override this method.
 
      */
-    public func configAsIncomingMessage(){
+    open func configAsIncomingMessage(){
         
     }
     

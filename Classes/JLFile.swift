@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class JLFile: NSObject {
+open class JLFile: NSObject {
 
-    var title:String = "file"
+    open var title:String = "file"
     
-    var image:UIImage?
+    open var image:UIImage?
     
     public init(title:String?,image:UIImage?) {
         

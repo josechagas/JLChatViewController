@@ -25,7 +25,7 @@ class ShowChatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showChatButtonAction(sender: AnyObject) {
+    @IBAction func showChatButtonAction(_ sender: AnyObject) {
         
         //use this for you present the JLChatViewController
         if let vc = JLBundleController.instantiateJLChatVC() as? MyViewController{
@@ -39,7 +39,7 @@ class ShowChatViewController: UIViewController {
                 
             })
             
-            self.prepareForSegue(chatSegue, sender: nil)
+            self.prepare(for: chatSegue, sender: nil)
             
             chatSegue.perform()
             
