@@ -18,9 +18,9 @@ open class JLTextMessage: JLMessage {
     
 
     
-    public init(text:String,senderID:String,messageDate:Date,senderImage:UIImage?){
+    public init(id:Double!, text:String,senderID:String!,messageDate:Date,senderImage:UIImage?){
         
-        super.init(senderID: senderID, messageDate: messageDate, senderImage: senderImage)
+        super.init(id: id,senderID: senderID, messageDate: messageDate, senderImage: senderImage)
         
         self.text = text
         

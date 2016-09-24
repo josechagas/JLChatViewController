@@ -58,6 +58,49 @@ class ProductMessageCell: JLChatMessageCell {
         self.productImageView.image = nil
         self.nameLabel.text = nil
     }
+    
+    
+    override func initCell(_ message: JLMessage, isOutgoingMessage: Bool) {
+        super.initCell(message, isOutgoingMessage: isOutgoingMessage)
+        
+        self.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        configView()
+        
+        //If the cell is being reused do not config these things again
+        if cellAlreadyUsed == false{
+            
+            self.nameLabel.font = JLChatAppearence.chatFont
+            
+            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, for: UIControlState())
+            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, for: UIControlState.selected)
+            
+            if isOutgoingMessage{
+                
+                configAsOutgoingMessage()
+            }
+            else{
+                
+                configAsIncomingMessage()
+            }
+            cellAlreadyUsed = true
+            
+        }
+        
+        //let productMessage = message as! ProductMessage
+        self.nameLabel.text = (message as! ProductMessage).text
+        self.productImageView.image = (message as! ProductMessage).relatedImage
+        
+        if let img = message.senderImage{
+            self.senderImageView.image = img
+        }
+        
+        if message.messageStatus == MessageSendStatus.errorToSend{
+            showErrorButton(false)
+        }
+
+    }
+    
    
     override func initCell(_ message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)

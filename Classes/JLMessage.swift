@@ -28,6 +28,13 @@ public enum MessageSendStatus:Int{
 
 
 open class JLMessage: NSObject {
+    
+    /**
+     The identifier for a JLMessage instance, it must not be nill
+     
+     - NOTE: It can not repeat on a same CHAT
+     */
+    open var id:Double!
 
     /**
      The id of the one that sent the message.
@@ -73,7 +80,24 @@ open class JLMessage: NSObject {
     open var messageRead:Bool = true
     
     
+    public init(id:Double!,senderID:String!,messageDate:Date,senderImage:UIImage?){
+        
+        super.init()
+        
+        self.id = id
+        
+        self.senderID = senderID
+        
+        self.senderImage = senderImage
+        
+        self.messageKind = MessageKind.text
+        
+        self.messageDate = messageDate
+        
+    }
+
     
+    @available(*,deprecated,message: "This method is deprecated use init(id:Int,senderID:String,messageDate:Date,senderImage:UIImage?) instead")
     public init(senderID:String,messageDate:Date,senderImage:UIImage?){
         
         super.init()

@@ -90,6 +90,41 @@ open class JLTextMessageCell: JLChatMessageCell {
         // Configure the view for the selected state
     }
     
+    open override func initCell(_ message: JLMessage, isOutgoingMessage: Bool) {
+        super.initCell(message, isOutgoingMessage: isOutgoingMessage)
+        
+        //If it is being reused do not configure these things again
+        if cellAlreadyUsed == false{
+            
+            self.chatMessageLabel.font = JLChatAppearence.chatFont
+            
+            self.errorToSendButton.setImage(JLChatAppearence.normalStateErrorButtonImage, for: UIControlState())
+            self.errorToSendButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, for: UIControlState.selected)
+            
+            
+            if isOutgoingMessage{
+                configAsOutgoingMessage()
+            }
+            else{
+                configAsIncomingMessage()
+            }
+            
+            cellAlreadyUsed = true
+            
+        }
+        
+        
+        
+        self.chatMessageLabel.text = (message as! JLTextMessage).text        
+        senderImageView.image = message.senderImage
+        
+        if message.messageStatus == MessageSendStatus.errorToSend{
+            showErrorButton(false)
+        }
+
+        
+    }
+    
     open override func initCell(_ message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         super.initCell(message, thisIsNewMessage: thisIsNewMessage, isOutgoingMessage: isOutgoingMessage)
         

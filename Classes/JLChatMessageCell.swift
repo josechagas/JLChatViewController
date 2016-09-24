@@ -109,13 +109,31 @@ open class JLChatMessageCell: UITableViewCell {
      
      You must override this method.
      
+        DEPRECATED
      */
+    @available(*,deprecated,renamed: "initCell",message: "This method is deprecated use initCell(message:JLMessage,isOutgoingMessage:Bool)")
     open func initCell(_ message:JLMessage,thisIsNewMessage:Bool,isOutgoingMessage:Bool){
         
         self.isOutgoingMessage = isOutgoingMessage
         
     }
     
+    /**
+     The implementation of this method have to contain every code that is necessary to initialize the message cell.
+     - NOTE:
+     If you create a 
+     You must override this method.
+     
+     
+     - parameter message: The message this Cell represent
+     - parameter isOutgoingMessage: boolean value that indicate if this message is a outgoing message or not
+     
+     */
+    open func initCell(_ message:JLMessage,isOutgoingMessage:Bool){
+        
+        self.isOutgoingMessage = isOutgoingMessage
+        
+    }
     
     //MARK: Status methods
     /**

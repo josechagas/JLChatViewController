@@ -17,8 +17,8 @@ class ProductMessage: JLImageMessage {
     
     var text:String!
     
-    init(senderID: String, messageDate: Date, senderImage: UIImage?,text:String!,relatedImage: UIImage,productPrice:String?) {
-        super.init(senderID: senderID, messageDate: messageDate, senderImage: senderImage, relatedImage: relatedImage)
+    init(id:Double!, senderID: String, messageDate: Date, senderImage: UIImage?,text:String!,relatedImage: UIImage,productPrice:String?) {
+        super.init(id: id, senderID: senderID, messageDate: messageDate, senderImage: senderImage, relatedImage: relatedImage)
         
         self.text = text
         self.productPrice = productPrice

@@ -84,6 +84,46 @@ open class JLImageMessageCell: JLChatMessageCell {
         // Configure the view for the selected state
     }
     
+    open override func initCell(_ message: JLMessage, isOutgoingMessage: Bool) {
+        super.initCell(message, isOutgoingMessage: isOutgoingMessage)
+        
+        //If it is being reused do not configure these things again
+        if cellAlreadyUsed == false{
+            self.errorButton.setImage(JLChatAppearence.normalStateErrorButtonImage, for: UIControlState())
+            self.errorButton.setImage(JLChatAppearence.selectedStateErrorButtonImage, for: UIControlState.selected)
+            
+            if isOutgoingMessage{
+                configAsOutgoingMessage()
+            }
+            else{
+                configAsIncomingMessage()
+            }
+            
+            cellAlreadyUsed = true
+            
+        }
+        
+        senderImageView.image = message.senderImage
+        
+        if let image = (message as! JLImageMessage).relatedImage{
+            //put it on bubble form and add
+            if !self.cellAlreadyUsed || usedImageIdentifier != image.hashValue{
+                usedImageIdentifier = image.hashValue
+                self.addImage(image)
+            }
+        }
+        else{
+            self.achiveLoadingMode()
+        }
+        
+        if message.messageStatus == MessageSendStatus.errorToSend{
+            self.showErrorButton(false)
+        }
+
+        
+    }
+    
+    
     
     open override func initCell(_ message: JLMessage, thisIsNewMessage: Bool, isOutgoingMessage: Bool) {
         
