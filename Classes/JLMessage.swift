@@ -34,7 +34,7 @@ open class JLMessage: NSObject {
      
      - NOTE: It can not repeat on a same CHAT
      */
-    open var id:Double!
+    open var identifier:Double!
 
     /**
      The id of the one that sent the message.
@@ -80,11 +80,11 @@ open class JLMessage: NSObject {
     open var messageRead:Bool = true
     
     
-    public init(id:Double!,senderID:String!,messageDate:Date,senderImage:UIImage?){
+    public init(identifier:Double!,senderID:String!,messageDate:Date,senderImage:UIImage?){
         
         super.init()
         
-        self.id = id
+        self.identifier = identifier
         
         self.senderID = senderID
         

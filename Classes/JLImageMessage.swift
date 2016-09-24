@@ -17,9 +17,9 @@ open class JLImageMessage: JLMessage {
     
     
     
-    public init(id:Double!,senderID:String!,messageDate:Date,senderImage:UIImage?,relatedImage:UIImage?){
+    public init(identifier:Double!,senderID:String!,messageDate:Date,senderImage:UIImage?,relatedImage:UIImage?){
         
-        super.init(id: id,senderID: senderID, messageDate: messageDate, senderImage: senderImage)
+        super.init(identifier: identifier,senderID: senderID, messageDate: messageDate, senderImage: senderImage)
         
       
         self.relatedImage = relatedImage

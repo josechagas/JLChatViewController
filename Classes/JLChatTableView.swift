@@ -377,7 +377,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
      - parameter height: The calculated height of related cell
      */
     fileprivate func addHeightForCellAtIndexPath(_ message:JLMessage,height:CGFloat){
-        calculatedRowsHeight[message.id] = height
+        calculatedRowsHeight[message.identifier] = height
     }
     
     /**
@@ -730,7 +730,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
         }) { (finished) -> Void in
             if finished{
                 if let message = message{
-                    self.calculatedRowsHeight.removeValue(forKey: message.id)
+                    self.calculatedRowsHeight.removeValue(forKey: message.identifier)
                 }
                 self.reloadData()
             }
@@ -759,7 +759,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
             
         }) { (finished) -> Void in
             if finished{
-                self.calculatedRowsHeight.removeValue(forKey: relatedMessage.id)
+                self.calculatedRowsHeight.removeValue(forKey: relatedMessage.identifier)
                 self.reloadData()
             }
         }
@@ -826,7 +826,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
         
         if let messages = messagesOfSection{
             for message in messages{
-                self.calculatedRowsHeight.removeValue(forKey: message.id)
+                self.calculatedRowsHeight.removeValue(forKey: message.identifier)
             }
         }
         else if self.numberOfRows(inSection: section) > 0{
@@ -897,7 +897,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
     open func removeMessagesCells(_ rowsIndexPath:[IndexPath]?,AndSections sections:[Int]?,WithRelatedMessages relatedMessages:[JLMessage]?){
         if let messages = relatedMessages{
             for message in messages{
-                self.calculatedRowsHeight.removeValue(forKey: message.id)
+                self.calculatedRowsHeight.removeValue(forKey: message.identifier)
             }
         }
         else{
@@ -1282,7 +1282,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
     //MARK: Cell methods
     open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         if let message = self.chatDataSource!.jlChatMessageAtIndexPath(indexPath){
-            if let value = calculatedRowsHeight[message.id] , value != 0{
+            if let value = calculatedRowsHeight[message.identifier] , value != 0{
                 return value
             }
         }
@@ -1291,7 +1291,7 @@ open class JLChatTableView: UITableView,ToolBarFrameDelegate,UITableViewDelegate
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let message = self.chatDataSource!.jlChatMessageAtIndexPath(indexPath){
-            if let value = calculatedRowsHeight[message.id] , value != 0{
+            if let value = calculatedRowsHeight[message.identifier] , value != 0{
                 print("calculated \((indexPath as NSIndexPath).row)")
                 return value
             }

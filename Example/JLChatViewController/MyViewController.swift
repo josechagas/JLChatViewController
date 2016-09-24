@@ -56,11 +56,11 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             
             let newMessage:JLMessage
             if arc4random()%4 == 0{
-                newMessage = JLImageMessage(id: nextValidMessID,senderID: id, messageDate: Date(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil, relatedImage: UIImage(named: "imagem2"))
+                newMessage = JLImageMessage(identifier: nextValidMessID,senderID: id, messageDate: Date(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil, relatedImage: UIImage(named: "imagem2"))
             }
             else{
 
-                newMessage = JLTextMessage(id: nextValidMessID,text: "teste \(i)", senderID: id, messageDate: Date(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil) as JLMessage
+                newMessage = JLTextMessage(identifier: nextValidMessID,text: "teste \(i)", senderID: id, messageDate: Date(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil) as JLMessage
             }
             if i > 17{
                 newMessage.messageRead = false
@@ -69,7 +69,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             addOnMessagesBySectionNewMessage(newMessage)
         }
         
-        let newMessage = JLTextMessage(id: nextValidMessID,text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: id, messageDate: Date(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil) as JLMessage
+        let newMessage = JLTextMessage(identifier: nextValidMessID,text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: id, messageDate: Date(), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil) as JLMessage
         newMessage.messageRead = false
 
         addOnMessagesBySectionNewMessage(newMessage)
@@ -97,7 +97,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
                 id = arc4random()%2 == 0 ? ID.myID.rawValue : ID.otherID.rawValue
                 
                 let currentOldMessageDate = Date(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 0.01*3600)
-                let oldMessage = JLTextMessage(id: self.nextValidMessID, text: "teste velhas\(i)", senderID: id, messageDate: currentOldMessageDate, senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil) as JLMessage
+                let oldMessage = JLTextMessage(identifier: self.nextValidMessID, text: "teste velhas\(i)", senderID: id, messageDate: currentOldMessageDate, senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil) as JLMessage
                 if i > 15{
                     lastOlderDate = Date(timeIntervalSince1970: currentOldMessageDate.timeIntervalSince1970 - 1*3600)
 
@@ -108,7 +108,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
                 self.addOnMessagesBySectionOldMessage(oldMessage)
             }
             
-            let oldMessage = JLTextMessage(id: self.nextValidMessID, text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: id, messageDate: Date(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 3*3600), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil)
+            let oldMessage = JLTextMessage(identifier: self.nextValidMessID, text: "teste  sdas'dbfoasbdfbsdfasdkf;basd;fkbask;fbkdsfbksbfs;kdjfb;kasdbjfkasbdfk;asdbf;bsd;fkbsad;kbfsjkfb;absd;kfbas;dkfb;skdbf;asdfjabksdbfas;dfakdsbf;sdkfb;asjdkfb;skbfjkbs;dfk;asdjfskdfbjasf;sdjf;bskdbfa;djfdkf agora vai , so testando", senderID: id, messageDate: Date(timeIntervalSince1970: lastOlderDate.timeIntervalSince1970 - 3*3600), senderImage: id == ID.otherID.rawValue ?  UIImage(named: "imagem") : nil)
             
             self.addOnMessagesBySectionOldMessage(oldMessage)
             
@@ -146,38 +146,38 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
             let text = "This is a small message"
 
             let date = Date(timeIntervalSince1970: newerDate.timeIntervalSince1970 + 3*3600)
-            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(id: nextValidMessID, text: text, senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))))
+            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(identifier: nextValidMessID, text: text, senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))))
             
         }
         else if sort == 1{//text message
             let text = "This is a message a little bigger! ;)"
             
             let date = Date(timeIntervalSince1970: newerDate.timeIntervalSince1970 + 3*3600)
-            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(id: nextValidMessID, text: text, senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))) )
+            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(identifier: nextValidMessID, text: text, senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))) )
         }
         else if sort == 2{//text message
             let text = "Hey This is JLChatViewController, a pods made to help everybody to be faster when developing some app with a nice chat, with many resources to customize, like color, form of bubbles, font, custom sections and an easy way for you to create your own messages cells I hope it will really help you."
             
             let date = Date(timeIntervalSince1970: newerDate.timeIntervalSince1970 + 3*3600)
-            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(id: nextValidMessID, text: text, senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))) )
+            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(identifier: nextValidMessID, text: text, senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))) )
         }
         else if sort == 3{//Product message
             let date = Date(timeIntervalSince1970: newerDate.timeIntervalSince1970 + 0.2*3600)
             
-           indexPaths.append( self.addOnMessagesBySectionNewMessage(ProductMessage(id: nextValidMessID, senderID: ID.otherID.rawValue, messageDate: date, senderImage: UIImage(named: "imagem"), text: "Produto", relatedImage: UIImage(named: "imagem")!, productPrice: nil)))
+           indexPaths.append( self.addOnMessagesBySectionNewMessage(ProductMessage(identifier: nextValidMessID, senderID: ID.otherID.rawValue, messageDate: date, senderImage: UIImage(named: "imagem"), text: "Produto", relatedImage: UIImage(named: "imagem")!, productPrice: nil)))
             
         }
         else if sort == 4{//text message
             let date = Date(timeIntervalSince1970: newerDate.timeIntervalSince1970 + 1*3600)
             
             
-            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(id: nextValidMessID, text: "a", senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))))
+            indexPaths.append( self.addOnMessagesBySectionNewMessage(JLTextMessage(identifier: nextValidMessID, text: "a", senderID: ID.otherID.rawValue,messageDate: date, senderImage: UIImage(named: "imagem"))))
             
         }
         else{//Image message
             let date = Date(timeIntervalSince1970: newerDate.timeIntervalSince1970 + 0.1*3600)
             
-            let newerMessage = JLImageMessage(id: nextValidMessID, senderID: ID.otherID.rawValue, messageDate: date, senderImage: UIImage(named: "imagem"), relatedImage: nil)
+            let newerMessage = JLImageMessage(identifier: nextValidMessID, senderID: ID.otherID.rawValue, messageDate: date, senderImage: UIImage(named: "imagem"), relatedImage: nil)
             
             let index = addOnMessagesBySectionNewMessage(newerMessage)
 
@@ -766,7 +766,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         let productFileButton = UIAlertAction(title: "Product", style: UIAlertActionStyle.default) { (action) in
             //se ainda nao tiver um arquivo adicionado adiciona um
             
-            self.addedFile = ProductMessage(id: self.nextValidMessID, senderID: self.chatTableView.myID, messageDate: Date(), senderImage: UIImage(named: "imagem"), text: "What a good makeup!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
+            self.addedFile = ProductMessage(identifier: self.nextValidMessID, senderID: self.chatTableView.myID, messageDate: Date(), senderImage: UIImage(named: "imagem"), text: "What a good makeup!!!", relatedImage: UIImage(named: "imagem")!, productPrice: nil)
             
             self.toolBar.inputText.addFile(JLFile(title: "Product", image: UIImage(named: "imagem")))
 
@@ -792,7 +792,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         if self.toolBar.thereIsSomeFileAdded(),let addedFile = self.addedFile{
             
             if addedFile is UIImage{
-                let newMessage = JLImageMessage(id: nextValidMessID, senderID: self.chatTableView.myID,messageDate:Date(), senderImage: nil, relatedImage: addedFile as? UIImage)
+                let newMessage = JLImageMessage(identifier: nextValidMessID, senderID: self.chatTableView.myID,messageDate:Date(), senderImage: nil, relatedImage: addedFile as? UIImage)
                 newMessages.append(newMessage)
                 quant += 1
 
@@ -809,7 +809,7 @@ class MyViewController:JLChatViewController,ChatDataSource,ChatToolBarDelegate,J
         }
         
         if self.toolBar.inputText.thereIsSomeText(){
-            let message = JLTextMessage(id: nextValidMessID, text: self.toolBar.inputText.text, senderID: self.chatTableView.myID,messageDate:Date(), senderImage: nil)
+            let message = JLTextMessage(identifier: nextValidMessID, text: self.toolBar.inputText.text, senderID: self.chatTableView.myID,messageDate:Date(), senderImage: nil)
             newMessages.append(message)
 
             quant += 1
